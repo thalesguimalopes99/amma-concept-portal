@@ -1,0 +1,28 @@
+# Site React (repo separado em github.com/thalesguimalopes99/amm-concept)
+amma-concept-site/
+
+# Pacote gráfica entregue à agência
+pacote-grafica/
+Amma-Concept-Producao-Grafica.zip
+
+# Pasta legacy
+Ammá Concept/
+
+# Engineering docs / dev tooling
+docs/
+.superpowers/
+.claude/
+
+# PDFs entregáveis
+*.pdf
+
+# Node + sistema
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Vercel local
+.vercel/
+
+# Claude internal
+CLAUDE.md

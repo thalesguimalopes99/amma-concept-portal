@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ammá Concept · Logo 01 · Ouro on Cream · Uso principal positivo -->
+<!-- Swash bezier: NÃO MODIFICAR coordenadas sem revalidar contra logo-mark.png -->
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+  </defs>
+  <rect width="480" height="200" fill="#F5F0E8"/>
+  <text x="240" y="140" text-anchor="middle"
+    font-family="'Cormorant Garamond', serif" font-weight="300" font-size="108" letter-spacing="4"
+    fill="#B8965C">AMM&#193;</text>
+  <path d="M 128,148 C 150,100 172,72 200,104 C 222,130 238,148 258,120 C 278,92 305,72 328,108"
+    stroke="#B8965C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <text x="240" y="172" text-anchor="middle"
+    font-family="'Cormorant Garamond', serif" font-weight="300" font-size="13" letter-spacing="12"
+    fill="#B8965C">CONCEPT</text>
+</svg>

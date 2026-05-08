@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Papel Timbrado</title>
+<meta name="description" content="Briefing de produção · Papel timbrado A4 Ammá Concept · offset 120g cream · cabeçalho com logo ouro hot stamping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #e8e4de; color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  /* PAGE WRAPPER */
+  .page { max-width: 900px; margin: 0 auto; padding: 32px 24px 64px; }
+
+
+  /* A4 DOCUMENT */
+  .a4 {
+    width: 100%;
+    max-width: 794px;
+    min-height: 1123px;
+    background: var(--fundo);
+    margin: 0 auto 48px;
+    position: relative;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.14);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* DOCUMENT HEADER */
+  .doc-header {
+    padding: 52px 64px 36px;
+    border-bottom: 1px solid var(--champanhe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .doc-header__left {}
+  .doc-header__logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .doc-header__logo-tag {
+    font-family: var(--font-b);
+    font-size: 7px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .doc-header__swash {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .doc-header__tag {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--linha);
+    margin-top: 8px;
+  }
+  .doc-header__hairline {
+    width: 28px;
+    height: 1px;
+    background: var(--ouro);
+    margin: 12px 0 0;
+  }
+  .doc-header__right {
+    text-align: right;
+  }
+  .doc-header__doc-type {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .doc-header__doc-num {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .doc-header__doc-date {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--linha);
+    margin-top: 4px;
+  }
+
+  /* TOP GOLD LINE */
+  .doc-header__top-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+
+  /* BODY */
+  .doc-body { padding: 44px 64px; flex: 1; }
+
+  /* CLIENT BLOCK */
+  .client-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 44px;
+  }
+  .block-label {
+    font-family: var(--font-b);
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .block-label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .field-row {
+    margin-bottom: 10px;
+  }
+  .field-row .f-label {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .field-row .f-value {
+    font-size: 12px;
+    color: var(--texto);
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--champanhe);
+    padding-bottom: 6px;
+    min-height: 22px;
+  }
+  .field-row .f-value--filled {
+    border-bottom-color: var(--linha);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--champanhe);
+    margin: 0 0 40px;
+  }
+
+  /* SERVICES TABLE */
+  .services-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--cacau);
+    margin-bottom: 20px;
+  }
+  .services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 32px;
+  }
+  .services-table thead tr th {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    font-weight: 300;
+    text-align: left;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--ouro);
+  }
+  .services-table thead tr th:last-child { text-align: right; }
+  .services-table tbody tr td {
+    font-size: 12px;
+    color: var(--texto);
+    padding: 13px 0;
+    border-bottom: 1px solid var(--champanhe);
+    vertical-align: top;
+  }
+  .services-table tbody tr td:last-child { text-align: right; color: var(--cacau); }
+  .services-table tbody tr td .svc-name {
+    font-family: var(--font-b);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--texto);
+  }
+  .services-table tbody tr td .svc-desc {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+    letter-spacing: 0.02em;
+  }
+  .services-table tfoot tr td {
+    padding: 16px 0 0;
+    font-size: 11px;
+  }
+  .services-table tfoot .total-label {
+    font-family: var(--font-b);
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .services-table tfoot .total-value {
+    text-align: right;
+    font-family: var(--font-d);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .services-table tfoot .total-note {
+    font-size: 9px;
+    color: var(--linha);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* CONDITIONS */
+  .conditions {
+    background: var(--perola);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+  .conditions__title {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .conditions__title::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .conditions__list {
+    list-style: none;
+  }
+  .conditions__list li {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 2;
+    padding-left: 14px;
+    position: relative;
+  }
+  .conditions__list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ouro-ink);
+  }
+
+  /* NOTE */
+  .doc-note {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cacau);
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    padding: 24px 64px 48px;
+    border-top: 1px solid var(--champanhe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+  .doc-footer__brand {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--linha);
+  }
+  .doc-footer__brand strong {
+    font-weight: 300;
+    color: var(--cacau);
+  }
+  .doc-footer__contact {
+    text-align: right;
+    font-family: var(--font-b);
+    font-size: 9px;
+    color: var(--linha);
+    letter-spacing: 0.14em;
+    line-height: 1.9;
+  }
+  .doc-footer__contact a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  /* EDITABLE FIELDS */
+  .ed { outline: none; cursor: text; transition: background-color 0.15s ease, box-shadow 0.15s ease; padding: 1px 4px; margin: -1px -4px; border-radius: 0; }
+  .ed:hover { background-color: rgba(184,150,92,0.08); }
+  .ed:focus { background-color: rgba(184,150,92,0.14); box-shadow: inset 0 -1px 0 var(--ouro); }
+  .ed:empty::before { content: attr(data-placeholder); color: var(--linha); font-style: italic; opacity: 0.7; }
+  .f-value.ed:empty::before { font-style: normal; letter-spacing: inherit; }
+
+  /* TOOLBAR */
+  .toolbar { position: sticky; top: 0; z-index: 50; background: var(--cacau); color: var(--ouro); padding: 12px 24px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+  .toolbar__label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-right: 8px; }
+  .toolbar__btn { background: transparent; border: 1px solid var(--ouro); color: var(--ouro); font-family: var(--font-b); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; padding: 7px 14px; cursor: pointer; transition: all 0.15s ease; font-weight: 400; }
+  .toolbar__btn:hover { background: var(--ouro); color: var(--cacau); }
+  .toolbar__btn--print { background: var(--ouro); color: var(--cacau); margin-left: auto; }
+  .toolbar__btn--print:hover { background: var(--champanhe); color: var(--cacau); border-color: var(--champanhe); }
+  .toolbar__status { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--champanhe); opacity: 0.7; min-width: 100px; text-align: right; }
+  .toolbar__select { background: transparent; border: 1px solid var(--ouro); color: var(--champanhe); font-family: var(--font-b); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 7px 14px; cursor: pointer; max-width: 220px; }
+  .toolbar__select option { background: var(--cacau); color: var(--champanhe); }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--cacau); color: var(--ouro); padding: 12px 24px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; z-index: 100; opacity: 0; pointer-events: none; transition: all 0.25s ease; box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* SERVICES — ROW ACTIONS */
+  .services-table tbody tr td.svc-actions { width: 32px; text-align: center; vertical-align: middle; padding: 0 4px; }
+  .btn-row { background: transparent; border: 1px solid var(--linha); color: var(--linha); width: 22px; height: 22px; cursor: pointer; font-size: 14px; line-height: 1; padding: 0; transition: all 0.15s ease; }
+  .btn-row:hover { border-color: var(--cacau); color: var(--cacau); }
+  .btn-add-row { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px dashed var(--linha); color: var(--ouro-ink); font-family: var(--font-b); font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; padding: 10px 18px; cursor: pointer; margin: 8px 0 0; transition: all 0.15s ease; }
+  .btn-add-row:hover { border-color: var(--ouro); color: var(--cacau); background: rgba(184,150,92,0.06); }
+  .svc-subtotal { font-size: 11px; color: var(--cacau); white-space: nowrap; }
+  .services-table .desconto-row td { font-size: 10px; color: var(--muted); padding: 12px 0 8px; border-top: 1px dashed var(--champanhe); border-bottom: none; }
+  .services-table .desconto-row td:last-child { color: var(--cacau); }
+  .desconto-label { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .desc-label-print, .desc-print-value { display: none; }
+  .btn-tipo { background: var(--ouro); border: 1px solid var(--ouro); color: var(--cacau); font-family: var(--font-b); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; padding: 3px 10px; cursor: pointer; font-weight: 500; min-width: 36px; transition: all 0.15s ease; }
+  .btn-tipo:hover { background: var(--cacau); color: var(--ouro); border-color: var(--cacau); }
+  .desc-hint { font-size: 8px; letter-spacing: 0.18em; color: var(--linha); text-transform: none; font-style: italic; }
+  .desc-computed { font-size: 9px; color: var(--muted); margin-left: 8px; letter-spacing: 0.12em; }
+
+  /* PAYMENT */
+  .payment-block { background: var(--perola); padding: 24px 28px; margin-bottom: 32px; }
+  .payment-block__title { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .payment-block__title::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ouro); }
+  .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .payment-field { font-size: 10.5px; }
+  .payment-field .pay-label { font-size: 8px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+  .payment-field .pay-value { font-size: 11.5px; color: var(--texto); letter-spacing: 0.02em; padding-bottom: 4px; border-bottom: 1px solid var(--champanhe); min-height: 20px; }
+
+  /* OBSERVATIONS */
+  .obs-block { margin-bottom: 32px; }
+  .obs-block__title { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .obs-block__title::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ouro); }
+  .obs-block__field { font-size: 11px; color: var(--texto); line-height: 1.7; min-height: 60px; padding: 10px 12px; border: 1px solid var(--champanhe); white-space: pre-wrap; }
+
+  /* SIGNATURE */
+  .signature-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin: 44px 0 8px; }
+  .signature { text-align: center; }
+  .signature__line { border-top: 1px solid var(--cacau); margin-bottom: 8px; padding-top: 8px; min-height: 50px; }
+  .signature__label { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+  .signature__name { font-size: 10px; color: var(--texto); margin-bottom: 4px; min-height: 14px; }
+
+  /* CONTACT FIELDS */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 14px; }
+  @media(max-width:640px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  /* PRINT */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { margin: 0; padding: 0; }
+    body { background: white; }
+    .toolbar, .toast, .no-print { display: none !important; }
+    .page { padding: 0; max-width: none; }
+    .a4 {
+      box-shadow: none;
+      max-width: none;
+      width: 100%;
+      min-height: auto;
+      margin: 0;
+      display: block;
+    }
+    .doc-header, .doc-body, .doc-footer { padding-left: 5mm; padding-right: 5mm; }
+    .doc-header { padding-top: 5mm; padding-bottom: 5mm; }
+    .doc-body { padding-top: 5mm; padding-bottom: 5mm; }
+    .doc-footer { padding-bottom: 5mm; padding-top: 5mm; margin-top: 0; }
+    .ed:hover, .ed:focus { background-color: transparent; box-shadow: none; }
+    .ed:empty::before { content: ''; }
+    .btn-add-row, .btn-row, .btn-tipo, .desc-hint, .desc-computed { display: none !important; }
+    .desc-label-edit, .desc-edit-wrap { display: none !important; }
+    .desc-label-print { display: inline !important; }
+    .desc-print-value { display: inline !important; }
+    #desconto-row.hide-print { display: none !important; }
+
+    /* evita quebrar bloco entre páginas */
+    .payment-block, .conditions, .obs-block, .signature-block, .doc-footer, .services-table tfoot {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .payment-block__title, .conditions__title, .obs-block__title {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    .services-table tbody tr {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+
+  @media(max-width:860px) {
+    .page { padding: 40px 24px 80px; }
+    .doc-header, .doc-body, .doc-footer { padding-left: 32px; padding-right: 32px; }
+    .client-block { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="toolbar__label">Ammá · Editor de Orçamento</span>
+  <select class="toolbar__select" id="orc-select" title="Orçamento atual">
+    <option value="">— Sem orçamento —</option>
+  </select>
+  <button class="toolbar__btn" id="btn-novo" type="button" title="Criar novo orçamento">+ Novo</button>
+  <button class="toolbar__btn" id="btn-renomear" type="button" title="Renomear orçamento atual">Renomear</button>
+  <button class="toolbar__btn" id="btn-excluir" type="button" title="Excluir orçamento atual">Excluir</button>
+  <button class="toolbar__btn" id="btn-export" type="button" title="Baixar JSON">↓ Export</button>
+  <label class="toolbar__btn" for="file-import" style="cursor:pointer;display:inline-block;" title="Importar JSON">↑ Import</label>
+  <input type="file" id="file-import" accept=".json,application/json" style="display:none;">
+  <span class="toolbar__status" id="ed-status">Auto-save ativo</span>
+  <button class="toolbar__btn" id="btn-reset" type="button">Limpar tudo</button>
+  <button class="toolbar__btn toolbar__btn--print" id="btn-print" type="button">Imprimir / PDF</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="page">
+
+  <!-- DOCUMENT -->
+  <div class="a4">
+    <div class="doc-header__top-accent"></div>
+
+    <div class="doc-header">
+      <div class="doc-header__left">
+        <svg class="doc-header__swash" viewBox="0 0 80 16" width="90" height="18"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <div class="doc-header__logo">AMMÁ</div>
+        <div class="doc-header__logo-tag">CONCEPT</div>
+        <div class="doc-header__tag">Atelier de Beleza · Porto Alegre, RS</div>
+        <div class="doc-header__hairline"></div>
+      </div>
+      <div class="doc-header__right">
+        <div class="doc-header__doc-type"><span class="ed" contenteditable="true" data-field="doc-type" data-placeholder="Proposta de Serviço">Proposta de Serviço</span></div>
+        <div class="doc-header__doc-num">Nº <span class="ed" contenteditable="true" data-field="doc-num" data-placeholder="000/2026">000/2026</span></div>
+        <div class="doc-header__doc-date"><span class="ed" contenteditable="true" data-field="doc-validade" data-placeholder="Válido por 15 dias corridos">Válido por 15 dias corridos</span></div>
+      </div>
+    </div>
+
+    <div class="doc-body">
+
+      <!-- CLIENT -->
+      <div class="client-block">
+        <div>
+          <div class="block-label">Para</div>
+          <div class="field-row">
+            <span class="f-label">Nome</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-nome" data-placeholder="Nome completo"></div>
+          </div>
+          <div class="field-row">
+            <span class="f-label">Ocasião</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-ocasiao" data-placeholder="Casamento · Debutante · Evento"></div>
+          </div>
+          <div class="field-row">
+            <span class="f-label">Data do evento</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-data" data-placeholder="DD de Mês de AAAA"></div>
+          </div>
+        </div>
+        <div>
+          <div class="block-label">Detalhes</div>
+          <div class="field-row">
+            <span class="f-label">Elaborado por</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-artista" data-placeholder="Nome da artista"></div>
+          </div>
+          <div class="field-row">
+            <span class="f-label">Localização do atendimento</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-local" data-placeholder="Atelier · Domicílio · Hotel"></div>
+          </div>
+          <div class="field-row">
+            <span class="f-label">Horário previsto</span>
+            <div class="f-value ed" contenteditable="true" data-field="cli-hora" data-placeholder="HH:MM"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="field-row">
+          <span class="f-label">CPF</span>
+          <div class="f-value ed" contenteditable="true" data-field="cli-cpf" data-placeholder="000.000.000-00"></div>
+        </div>
+        <div class="field-row">
+          <span class="f-label">Telefone / WhatsApp</span>
+          <div class="f-value ed" contenteditable="true" data-field="cli-tel" data-placeholder="(51) 9 0000-0000"></div>
+        </div>
+        <div class="field-row">
+          <span class="f-label">E-mail</span>
+          <div class="f-value ed" contenteditable="true" data-field="cli-email" data-placeholder="email@exemplo.com"></div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- SERVICES -->
+      <div class="services-title">Rituais selecionados.</div>
+
+      <table class="services-table">
+        <thead>
+          <tr>
+            <th style="width:46%;">Ritual / Serviço</th>
+            <th style="width:12%;">Qtd</th>
+            <th style="width:18%;">Valor unit.</th>
+            <th style="width:18%;">Subtotal</th>
+            <th style="width:6%;" class="no-print"></th>
+          </tr>
+        </thead>
+        <tbody id="services-tbody">
+          <!-- linhas renderizadas via JS -->
+        </tbody>
+        <tfoot>
+          <tr class="desconto-row" id="desconto-row">
+            <td colspan="3" class="desconto-label">
+              <span class="desc-label-edit">Desconto / acréscimo</span>
+              <span class="desc-label-print">Desconto</span>
+              <button class="btn-tipo no-print" id="btn-desc-tipo" type="button" title="Alternar entre porcentagem e valor fixo">R$</button>
+              <span class="desc-hint no-print" id="desc-hint">use sinal: -100 para desconto</span>
+            </td>
+            <td>
+              <span class="desc-edit-wrap"><span id="desc-prefix">R$</span> <span class="ed" contenteditable="true" data-field="desconto" data-placeholder="0,00"></span></span>
+              <span class="desc-print-value" id="desc-print-value"></span>
+              <span class="desc-computed no-print" id="desc-computed"></span>
+            </td>
+            <td class="no-print"></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="total-label">Total da proposta</td>
+            <td class="total-value" id="total-cell">R$ <span id="total-display">0,00</span></td>
+            <td class="no-print"></td>
+          </tr>
+          <tr>
+            <td colspan="5" style="padding:4px 0 0;border:none;">
+              <span class="total-note">Valores em Reais · inclui todos os itens acima</span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+      <button class="btn-add-row no-print" id="btn-add-svc" type="button">+ Adicionar serviço</button>
+
+      <!-- PAYMENT -->
+      <div class="payment-block">
+        <div class="payment-block__title">Forma de pagamento</div>
+        <div class="payment-grid">
+          <div class="payment-field">
+            <span class="pay-label">Forma</span>
+            <div class="pay-value ed" contenteditable="true" data-field="pay-forma" data-placeholder="PIX · Transferência · Cartão (até 3×)"></div>
+          </div>
+          <div class="payment-field">
+            <span class="pay-label">Sinal</span>
+            <div class="pay-value ed" contenteditable="true" data-field="pay-sinal" data-placeholder="50% na confirmação · saldo até 48h antes"></div>
+          </div>
+          <div class="payment-field">
+            <span class="pay-label">Chave PIX</span>
+            <div class="pay-value ed" contenteditable="true" data-field="pay-pix" data-placeholder="CNPJ / CPF / e-mail / telefone"></div>
+          </div>
+          <div class="payment-field">
+            <span class="pay-label">Titular</span>
+            <div class="pay-value ed" contenteditable="true" data-field="pay-titular" data-placeholder="Razão social / nome"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONDITIONS -->
+      <div class="conditions">
+        <div class="conditions__title">Condições</div>
+        <ul class="conditions__list">
+          <li>Sinal de 50% para confirmação do agendamento, sem sinal não há reserva de data</li>
+          <li>Saldo restante liquidado até 48h antes do evento</li>
+          <li>Cancelamento com menos de 7 dias: sinal não reembolsável</li>
+          <li>Reagendamento aceito uma vez, com aviso mínimo de 5 dias úteis</li>
+          <li>Deslocamento fora de Porto Alegre: taxa de deslocamento e hospedagem à combinar</li>
+          <li>Sessão de teste/simulação já incluída nos rituais de noiva e debutante quando indicado</li>
+        </ul>
+      </div>
+
+      <!-- OBSERVATIONS -->
+      <div class="obs-block">
+        <div class="obs-block__title">Observações</div>
+        <div class="obs-block__field ed" contenteditable="true" data-field="observacoes" data-placeholder="Notas livres · particularidades do evento · pedidos especiais · alergias · etc."></div>
+      </div>
+
+      <!-- NOTE -->
+      <p class="doc-note">
+        "Não transformamos. Revelamos quem você já é."
+      </p>
+
+      <!-- SIGNATURE -->
+      <div class="signature-block">
+        <div class="signature">
+          <div class="signature__name ed" contenteditable="true" data-field="sig-cliente-nome" data-placeholder=""></div>
+          <div class="signature__line"></div>
+          <div class="signature__label">Cliente · aprovação e ciência</div>
+        </div>
+        <div class="signature">
+          <div class="signature__name ed" contenteditable="true" data-field="sig-amma-nome" data-placeholder="Ammá Concept"></div>
+          <div class="signature__line"></div>
+          <div class="signature__label">Ammá Concept · responsável</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="doc-footer">
+      <div class="doc-footer__brand">
+        <strong>AMMÁ CONCEPT</strong><br>
+        Porto Alegre · RS · Brasil
+      </div>
+      <div class="doc-footer__contact">
+        <a href="https://instagram.com/ammaconceptt">@ammaconceptt</a><br>
+        Agenda sob consulta
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ========== STORAGE ==========
+  var STORE_KEY = 'amma-orcamentos-v2';
+  var LEGACY_KEY = 'amma-papel-timbrado-v1';
+
+  function uid() { return 'orc-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 7); }
+
+  function loadStore() {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    var legacy = null;
+    try { legacy = JSON.parse(localStorage.getItem(LEGACY_KEY) || 'null'); } catch (e) {}
+    var initial = { current: null, list: {} };
+    if (legacy && Object.keys(legacy).length) {
+      var id = uid();
+      initial.list[id] = { name: 'Orçamento (importado)', data: legacy, ts: Date.now() };
+      initial.current = id;
+    }
+    return initial;
+  }
+
+  function saveStore() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { toast('Erro ao salvar', true); }
+  }
+
+  var store = loadStore();
+
+  // ========== CURRENCY ==========
+  function parseBR(str) {
+    if (typeof str !== 'string') str = String(str || '');
+    str = str.trim();
+    if (!str) return 0;
+    var neg = str.indexOf('-') === 0;
+    str = str.replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+    var n = parseFloat(str);
+    if (isNaN(n)) return 0;
+    return neg && n > 0 ? -n : n;
+  }
+
+  function formatBR(n) {
+    if (typeof n !== 'number' || isNaN(n)) n = 0;
+    return n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  // ========== SERVICES RENDER ==========
+  var defaultServices = [
+    { nome: 'Maquiagem de Noiva', desc: 'Com teste prévio incluído', qtd: '1', valor: '' },
+    { nome: 'Penteado de Noiva', desc: 'Com simulação em data a combinar', qtd: '1', valor: '' },
+    { nome: 'Maquiagem Social', desc: 'Madrinhas / familiares', qtd: '', valor: '' },
+    { nome: 'Deslocamento', desc: 'Se fora do atelier · a combinar', qtd: '·', valor: '' }
+  ];
+
+  var tbody = document.getElementById('services-tbody');
+  var totalDisplay = document.getElementById('total-display');
+
+  function getCurrentOrc() {
+    if (!store.current || !store.list[store.current]) return null;
+    return store.list[store.current];
+  }
+
+  function ensureCurrent() {
+    if (getCurrentOrc()) return;
+    var id = uid();
+    store.list[id] = { name: 'Orçamento ' + (Object.keys(store.list).length + 1), data: { services: defaultServices.slice() }, ts: Date.now() };
+    store.current = id;
+    saveStore();
+  }
+
+  function getServices() {
+    var orc = getCurrentOrc();
+    if (!orc) return [];
+    if (!orc.data.services) orc.data.services = defaultServices.slice();
+    return orc.data.services;
+  }
+
+  function setService(idx, field, value) {
+    var svcs = getServices();
+    if (!svcs[idx]) return;
+    svcs[idx][field] = value;
+    saveStore();
+    recalc();
+  }
+
+  function renderServices() {
+    var svcs = getServices();
+    tbody.innerHTML = '';
+    svcs.forEach(function(svc, idx) {
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' +
+          '<div class="svc-name ed" contenteditable="true" data-row="' + idx + '" data-prop="nome" data-placeholder="Nome do serviço">' + escapeHTML(svc.nome || '') + '</div>' +
+          '<div class="svc-desc ed" contenteditable="true" data-row="' + idx + '" data-prop="desc" data-placeholder="Descrição">' + escapeHTML(svc.desc || '') + '</div>' +
+        '</td>' +
+        '<td><div class="svc-name ed" contenteditable="true" data-row="' + idx + '" data-prop="qtd" data-placeholder="1">' + escapeHTML(svc.qtd || '') + '</div></td>' +
+        '<td>R$ <span class="ed" contenteditable="true" data-row="' + idx + '" data-prop="valor" data-placeholder="0,00">' + escapeHTML(svc.valor || '') + '</span></td>' +
+        '<td class="svc-subtotal" data-subtotal="' + idx + '">R$ 0,00</td>' +
+        '<td class="svc-actions no-print"><button class="btn-row" type="button" title="Remover linha" data-remove="' + idx + '">×</button></td>';
+      tbody.appendChild(tr);
+    });
+    bindRowEditors();
+    recalc();
+  }
+
+  function escapeHTML(s) { return String(s).replace(/[&<>"']/g, function(c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); }
+
+  function bindRowEditors() {
+    tbody.querySelectorAll('[data-row]').forEach(function(el) {
+      el.addEventListener('input', debouncedRowSave);
+      el.addEventListener('blur', function() {
+        var prop = el.getAttribute('data-prop');
+        if (prop === 'valor') {
+          var n = parseBR(el.textContent);
+          el.textContent = n ? formatBR(n) : '';
+        }
+        rowSave();
+      });
+      el.addEventListener('paste', plainPaste);
+    });
+    tbody.querySelectorAll('[data-remove]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var idx = parseInt(btn.getAttribute('data-remove'), 10);
+        var svcs = getServices();
+        if (svcs.length <= 1) { toast('Mantenha ao menos 1 serviço'); return; }
+        if (!confirm('Remover linha "' + (svcs[idx].nome || 'sem nome') + '"?')) return;
+        svcs.splice(idx, 1);
+        saveStore();
+        renderServices();
+      });
+    });
+  }
+
+  var rowSaveTimer;
+  function debouncedRowSave() { clearTimeout(rowSaveTimer); rowSaveTimer = setTimeout(rowSave, 400); }
+  function rowSave() {
+    var svcs = getServices();
+    tbody.querySelectorAll('[data-row]').forEach(function(el) {
+      var idx = parseInt(el.getAttribute('data-row'), 10);
+      var prop = el.getAttribute('data-prop');
+      if (svcs[idx]) svcs[idx][prop] = el.textContent;
+    });
+    saveStore();
+    recalc();
+  }
+
+  // ========== RECALC ==========
+  function recalc() {
+    var svcs = getServices();
+    var subtotal = 0;
+    svcs.forEach(function(svc, idx) {
+      var qtd = parseBR(svc.qtd) || 1;
+      if (!svc.qtd || /^[^\d-]+$/.test(svc.qtd)) qtd = 1;
+      var v = parseBR(svc.valor);
+      var sub = qtd * v;
+      subtotal += sub;
+      var cell = tbody.querySelector('[data-subtotal="' + idx + '"]');
+      if (cell) cell.textContent = 'R$ ' + formatBR(sub);
+    });
+    var orc = getCurrentOrc();
+    var fields = (orc && orc.data && orc.data.fields) || {};
+    var desconto = parseBR(fields.desconto || '');
+    var tipo = fields.descontoTipo || 'rs';
+    var efetivo = (tipo === 'pct') ? subtotal * (desconto / 100) : desconto;
+    var total = subtotal + efetivo;
+    if (totalDisplay) totalDisplay.textContent = formatBR(total);
+    var compEl = document.getElementById('desc-computed');
+    if (compEl) {
+      if (tipo === 'pct' && desconto !== 0) {
+        compEl.textContent = '→ R$ ' + formatBR(efetivo);
+      } else {
+        compEl.textContent = '';
+      }
+    }
+    var row = document.getElementById('desconto-row');
+    var printVal = document.getElementById('desc-print-value');
+    if (row && printVal) {
+      if (efetivo < 0) {
+        row.classList.remove('hide-print');
+        printVal.textContent = '− R$ ' + formatBR(Math.abs(efetivo));
+      } else {
+        row.classList.add('hide-print');
+        printVal.textContent = '';
+      }
+    }
+  }
+
+  // ========== STATIC FIELDS (non-row) ==========
+  var staticFields = document.querySelectorAll('[data-field]');
+
+  function getFields() {
+    var orc = getCurrentOrc();
+    if (!orc) return {};
+    if (!orc.data.fields) orc.data.fields = {};
+    return orc.data.fields;
+  }
+
+  function loadFields() {
+    var f = getFields();
+    staticFields.forEach(function(el) {
+      var key = el.getAttribute('data-field');
+      el.textContent = (f[key] !== undefined) ? f[key] : '';
+    });
+  }
+
+  function saveFields() {
+    var f = getFields();
+    staticFields.forEach(function(el) {
+      f[el.getAttribute('data-field')] = el.textContent;
+    });
+    var orc = getCurrentOrc();
+    if (orc) orc.ts = Date.now();
+    saveStore();
+    recalc();
+  }
+
+  var fieldSaveTimer;
+  function debouncedFieldSave() { clearTimeout(fieldSaveTimer); fieldSaveTimer = setTimeout(saveFields, 400); }
+
+  staticFields.forEach(function(el) {
+    el.addEventListener('input', debouncedFieldSave);
+    el.addEventListener('blur', function() {
+      var key = el.getAttribute('data-field');
+      if (key === 'desconto') {
+        var n = parseBR(el.textContent);
+        var tipo = (getFields().descontoTipo) || 'rs';
+        if (tipo === 'pct') {
+          el.textContent = n ? String(n).replace('.', ',') : '';
+        } else {
+          el.textContent = n ? formatBR(n) : '';
+        }
+      }
+      saveFields();
+    });
+    el.addEventListener('paste', plainPaste);
+  });
+
+  function plainPaste(e) {
+    e.preventDefault();
+    var text = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  }
+
+  // ========== ORÇAMENTO MGMT ==========
+  var orcSelect = document.getElementById('orc-select');
+
+  function refreshSelect() {
+    orcSelect.innerHTML = '';
+    var ids = Object.keys(store.list).sort(function(a, b) { return store.list[b].ts - store.list[a].ts; });
+    if (!ids.length) {
+      var opt = document.createElement('option');
+      opt.value = ''; opt.textContent = '— Sem orçamento —';
+      orcSelect.appendChild(opt);
+      return;
+    }
+    ids.forEach(function(id) {
+      var opt = document.createElement('option');
+      opt.value = id;
+      opt.textContent = store.list[id].name;
+      if (id === store.current) opt.selected = true;
+      orcSelect.appendChild(opt);
+    });
+  }
+
+  orcSelect.addEventListener('change', function() {
+    if (orcSelect.value && store.list[orcSelect.value]) {
+      store.current = orcSelect.value;
+      saveStore();
+      reloadAll();
+    }
+  });
+
+  document.getElementById('btn-novo').addEventListener('click', function() {
+    var name = prompt('Nome do novo orçamento:', 'Orçamento ' + (Object.keys(store.list).length + 1));
+    if (!name) return;
+    var id = uid();
+    store.list[id] = { name: name, data: { fields: {}, services: defaultServices.slice() }, ts: Date.now() };
+    store.current = id;
+    saveStore();
+    refreshSelect();
+    reloadAll();
+    toast('Novo: ' + name);
+  });
+
+  document.getElementById('btn-renomear').addEventListener('click', function() {
+    var orc = getCurrentOrc();
+    if (!orc) { toast('Nenhum orçamento ativo'); return; }
+    var name = prompt('Renomear orçamento:', orc.name);
+    if (!name) return;
+    orc.name = name;
+    orc.ts = Date.now();
+    saveStore();
+    refreshSelect();
+    toast('Renomeado');
+  });
+
+  document.getElementById('btn-excluir').addEventListener('click', function() {
+    var orc = getCurrentOrc();
+    if (!orc) { toast('Nenhum orçamento ativo'); return; }
+    if (!confirm('Excluir "' + orc.name + '"? Esta ação não pode ser desfeita.')) return;
+    delete store.list[store.current];
+    var ids = Object.keys(store.list);
+    store.current = ids.length ? ids[0] : null;
+    saveStore();
+    refreshSelect();
+    if (store.current) reloadAll();
+    else { ensureCurrent(); refreshSelect(); reloadAll(); }
+    toast('Excluído');
+  });
+
+  document.getElementById('btn-export').addEventListener('click', function() {
+    var orc = getCurrentOrc();
+    if (!orc) { toast('Nenhum orçamento ativo'); return; }
+    var blob = new Blob([JSON.stringify({ name: orc.name, data: orc.data, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (orc.name || 'orcamento').replace(/[^\w\-]+/g, '_') + '.json';
+    document.body.appendChild(a); a.click();
+    setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 100);
+    toast('Exportado');
+  });
+
+  document.getElementById('file-import').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      try {
+        var parsed = JSON.parse(ev.target.result);
+        var name = parsed.name || file.name.replace(/\.json$/i, '');
+        var data = parsed.data || parsed;
+        var id = uid();
+        store.list[id] = { name: name + ' (importado)', data: data, ts: Date.now() };
+        store.current = id;
+        saveStore();
+        refreshSelect();
+        reloadAll();
+        toast('Importado: ' + name);
+      } catch (err) {
+        toast('JSON inválido', true);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  // ========== DESCONTO TIPO TOGGLE ==========
+  var btnDescTipo = document.getElementById('btn-desc-tipo');
+  var descPrefix = document.getElementById('desc-prefix');
+  var descHint = document.getElementById('desc-hint');
+
+  function applyDescTipo() {
+    var fields = getFields();
+    var tipo = fields.descontoTipo || 'rs';
+    if (tipo === 'pct') {
+      btnDescTipo.textContent = '%';
+      descPrefix.textContent = '%';
+      descHint.textContent = 'use sinal: -10 para 10% de desconto';
+    } else {
+      btnDescTipo.textContent = 'R$';
+      descPrefix.textContent = 'R$';
+      descHint.textContent = 'use sinal: -100 para R$ 100 de desconto';
+    }
+    recalc();
+  }
+
+  btnDescTipo.addEventListener('click', function() {
+    var fields = getFields();
+    fields.descontoTipo = (fields.descontoTipo === 'pct') ? 'rs' : 'pct';
+    var orc = getCurrentOrc(); if (orc) orc.ts = Date.now();
+    saveStore();
+    applyDescTipo();
+    toast('Modo: ' + (fields.descontoTipo === 'pct' ? 'porcentagem' : 'valor fixo'));
+  });
+
+  // ========== SERVICES BUTTONS ==========
+  document.getElementById('btn-add-svc').addEventListener('click', function() {
+    var svcs = getServices();
+    svcs.push({ nome: '', desc: '', qtd: '1', valor: '' });
+    saveStore();
+    renderServices();
+    var last = tbody.querySelector('tr:last-child .svc-name[data-prop="nome"]');
+    if (last) last.focus();
+  });
+
+  // ========== TOOLBAR ==========
+  document.getElementById('btn-print').addEventListener('click', function() {
+    saveFields();
+    rowSave();
+    var orc = getCurrentOrc();
+    var cliNome = (getFields()['cli-nome'] || '').trim();
+    var docNum = (getFields()['doc-num'] || '').trim();
+    var origTitle = document.title;
+    document.title = (cliNome ? cliNome + ' · ' : '') + (docNum ? 'Nº ' + docNum : 'Orçamento');
+    window.print();
+    setTimeout(function() { document.title = origTitle; }, 100);
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', function() {
+    if (!confirm('Limpar todos os campos do orçamento atual? Esta ação não pode ser desfeita.')) return;
+    var orc = getCurrentOrc();
+    if (orc) { orc.data = { fields: {}, services: defaultServices.slice() }; orc.ts = Date.now(); saveStore(); }
+    reloadAll();
+    toast('Limpo');
+  });
+
+  // ========== TOAST ==========
+  var toastEl = document.getElementById('toast');
+  var toastTimer;
+  function toast(msg, isErr) {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.style.background = isErr ? '#7a1f1f' : '';
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() { toastEl.classList.remove('show'); }, 2200);
+  }
+
+  function flashStatus(msg) {
+    var s = document.getElementById('ed-status');
+    if (s) s.textContent = msg;
+  }
+
+  // ========== RELOAD ==========
+  function reloadAll() {
+    loadFields();
+    renderServices();
+    applyDescTipo();
+    flashStatus('Carregado');
+  }
+
+  // ========== INIT ==========
+  ensureCurrent();
+  refreshSelect();
+  reloadAll();
+  flashStatus('Pronto · auto-save ativo');
+})();
+</script>
+
+</body>
+</html>

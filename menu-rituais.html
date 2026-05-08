@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Menu dos Rituais</title>
+<meta name="description" content="Menu de Rituais Ammá Concept · Capa cacau, miolo cream, três rituais (rosto, cabelo, presença) e fechamento editorial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #e8e4de; color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  /* PAGE WRAPPER */
+  .wrapper { max-width: 1000px; margin: 0 auto; padding: 64px 48px 120px; }
+  .top-bar { background: var(--cacau); color: var(--ouro); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; padding: 10px; }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: 2.5rem; letter-spacing: -0.01em; color: var(--cacau); margin: 48px 0 8px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 56px; }
+
+  /* DOCUMENT */
+  .menu-doc {
+    background: var(--fundo);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.14);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: var(--cacau);
+    padding: 80px 72px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .cover__top {}
+  .cover__eyebrow {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.55);
+    margin-bottom: 12px;
+  }
+  .cover__logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 3.5rem;
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    line-height: 1;
+  }
+  .cover__logo-tag {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.55);
+    margin-top: 4px;
+  }
+  .cover__swash {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .cover__bottom {}
+  .cover__title {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--champanhe);
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .cover__tagline {
+    font-family: var(--font-b);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.5);
+  }
+  .cover__corner {
+    position: absolute;
+    top: 48px;
+    right: 72px;
+    width: 1px;
+    height: 48px;
+    background: rgba(212,165,116,0.25);
+  }
+
+  /* INTRO */
+  .intro {
+    padding: 64px 72px 56px;
+    border-bottom: 1px solid var(--champanhe);
+  }
+  .intro__quote {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1.5;
+    max-width: 640px;
+    margin-bottom: 20px;
+  }
+  .intro__note {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    border-left: 2px solid var(--ouro);
+    padding-left: 16px;
+    max-width: 540px;
+  }
+
+  /* RITUAL SECTION */
+  .ritual-section {
+    padding: 64px 72px;
+    border-bottom: 1px solid var(--champanhe);
+  }
+  .ritual-section:last-of-type { border-bottom: none; }
+
+  .ritual-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .ritual-header__left {}
+  .ritual-header__idx {
+    font-family: var(--font-b);
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ritual-header__idx::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .ritual-header__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 2.25rem;
+    color: var(--cacau);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .ritual-header__title em { font-style: italic; }
+  .ritual-header__right {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-align: right;
+    line-height: 2;
+  }
+
+  /* SERVICE LIST */
+  .service-list {
+    list-style: none;
+  }
+  .service-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--champanhe);
+    gap: 24px;
+  }
+  .service-item:first-child { border-top: 1px solid var(--champanhe); }
+  .service-item__left {}
+  .service-item__name {
+    font-family: var(--font-b);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--texto);
+    margin-bottom: 3px;
+  }
+  .service-item__desc {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .service-item__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .service-item__duration {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--linha);
+  }
+  .service-item__divider {
+    width: 1px;
+    height: 12px;
+    background: var(--champanhe);
+  }
+  .service-item__price {
+    font-family: var(--font-d);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--cacau);
+    white-space: nowrap;
+  }
+  .service-item--highlight .service-item__name { color: var(--cacau); }
+  .service-item--highlight .service-item__price { color: var(--ouro-ink); }
+
+  /* RITUAL HIGHLIGHT BOX */
+  .ritual-highlight {
+    background: var(--perola);
+    padding: 20px 24px;
+    margin-top: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .ritual-highlight__line {
+    width: 2px;
+    height: 40px;
+    background: var(--ouro);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .ritual-highlight__text {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .ritual-highlight__text strong {
+    font-weight: 400;
+    color: var(--cacau);
+  }
+
+  /* CLOSING PAGE */
+  .closing {
+    background: var(--cacau);
+    padding: 72px;
+    text-align: center;
+    position: relative;
+  }
+  .closing::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .closing__logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .closing__logo-tag {
+    font-family: var(--font-b);
+    font-size: 7px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.55);
+    margin-bottom: 8px;
+  }
+  .closing__swash {
+    display: block;
+    margin-bottom: 4px;
+  }
+  .closing__hairline {
+    width: 28px;
+    height: 1px;
+    background: rgba(212,165,116,0.4);
+    margin: 20px auto;
+  }
+  .closing__phrase {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--champanhe);
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+  .closing__cta {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid rgba(212,165,116,0.4);
+    display: inline-block;
+    transition: border-color 0.2s;
+  }
+  .closing__city {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.35);
+    margin-top: 32px;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .top-bar, h1, .subtitle { display: none; }
+    .wrapper { padding: 0; max-width: none; }
+    .menu-doc { box-shadow: none; }
+    .cover { page-break-after: always; }
+    .ritual-section { page-break-inside: avoid; }
+    .closing { page-break-before: always; }
+  }
+
+  @media(max-width:768px) {
+    .wrapper { padding: 40px 24px 80px; }
+    .cover, .intro, .ritual-section, .closing { padding-left: 32px; padding-right: 32px; }
+    .ritual-header { flex-direction: column; }
+    .ritual-header__right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Menu dos Rituais · Material para Cliente · Print-Ready</div>
+
+<div class="wrapper">
+
+  <h1>Menu dos <em>Rituais</em>.</h1>
+  <p class="subtitle">Cardápio premium de serviços · Para entrega à cliente ou exibição no atelier</p>
+
+  <div style="background:var(--cacau);color:var(--champanhe);padding:24px 32px;margin-bottom:48px;display:flex;gap:48px;flex-wrap:wrap;">
+    <div style="font-size:10px;"><span style="color:var(--ouro);letter-spacing:0.28em;text-transform:uppercase;font-size:9px;display:block;margin-bottom:4px;">Capa</span><span style="color:var(--champanhe);font-size:13px;">Cacau Pantone 476 C · cobertura total</span></div>
+    <div style="font-size:10px;"><span style="color:var(--ouro);letter-spacing:0.28em;text-transform:uppercase;font-size:9px;display:block;margin-bottom:4px;">Hot stamping</span><span style="color:var(--champanhe);font-size:13px;">Pantone 871 C foil · swash + wordmark</span></div>
+    <div style="font-size:10px;"><span style="color:var(--ouro);letter-spacing:0.28em;text-transform:uppercase;font-size:9px;display:block;margin-bottom:4px;">Miolo</span><span style="color:var(--champanhe);font-size:13px;">Cream Pantone 9183 C · tipografia em cacau 476 C</span></div>
+    <div style="font-size:10px;"><span style="color:var(--ouro);letter-spacing:0.28em;text-transform:uppercase;font-size:9px;display:block;margin-bottom:4px;">Estrutura</span><span style="color:var(--champanhe);font-size:13px;">3 rituais · capa + miolo + fechamento editorial</span></div>
+  </div>
+
+  <div class="menu-doc">
+
+    <!-- COVER -->
+    <div class="cover">
+      <div class="cover__top">
+        <div class="cover__eyebrow">Atelier de Beleza · Porto Alegre, RS</div>
+        <svg class="cover__swash" viewBox="0 0 80 16" width="180" height="36"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1" stroke-linecap="round"/></svg>
+        <div class="cover__logo">AMMÁ</div>
+        <div class="cover__logo-tag">CONCEPT</div>
+      </div>
+      <div class="cover__corner"></div>
+      <div class="cover__bottom">
+        <div class="cover__title">Três rituais.<br>Uma só presença.</div>
+        <div class="cover__tagline">Agenda sob consulta · @ammaconceptt</div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro">
+      <blockquote class="intro__quote">
+        Não existe um serviço certo para todo mundo. Existe o gesto certo para cada momento.
+      </blockquote>
+      <p class="intro__note">
+        Cada ritual abaixo pode ser vivido isolado ou em conjunto, num dia inteiramente dedicado a você.
+        A agenda do Ammá existe para servir, não para lotar. Espera média de três semanas.
+      </p>
+    </div>
+
+    <!-- RITUAL 01 — ROSTO -->
+    <div class="ritual-section">
+      <div class="ritual-header">
+        <div class="ritual-header__left">
+          <div class="ritual-header__idx"> · 01 Ritual</div>
+          <h2 class="ritual-header__title">Para o seu <em>rosto</em>.</h2>
+        </div>
+        <div class="ritual-header__right">
+          Maquiagem · Sobrancelha<br>
+          Estética · Pele
+        </div>
+      </div>
+
+      <ul class="service-list">
+        <li class="service-item service-item--highlight">
+          <div class="service-item__left">
+            <div class="service-item__name">Maquiagem de Noiva</div>
+            <div class="service-item__desc">Inclui teste prévio · produção no dia</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">3–4h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Maquiagem Social</div>
+            <div class="service-item__desc">Festas, formaturas, eventos de alto padrão</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h30</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Design de Sobrancelha</div>
+            <div class="service-item__desc">Fio a fio · mapeamento facial</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">45min</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Brow Lamination</div>
+            <div class="service-item__desc">Alinhamento e definição com efeito duradouro</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Nanopigmentação de Sobrancelha</div>
+            <div class="service-item__desc">Micropigmentação realista · inclui retoque</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">2h30</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Lifting de Cílios + Hidragloss</div>
+            <div class="service-item__desc">Curvatura e brilho · sem extensão</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h15</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Spa Coreano</div>
+            <div class="service-item__desc">Protocolo de cuidado e luminosidade facial</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Depilação Facial</div>
+            <div class="service-item__desc">Buço · queixo · laterais</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">30min</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ritual-highlight">
+        <div class="ritual-highlight__line"></div>
+        <p class="ritual-highlight__text">
+          <strong>Pacote Noiva Completo:</strong> Maquiagem de noiva + design de sobrancelha + lifting de cílios. Agendamento com antecedência mínima recomendada de três meses para datas de alta temporada.
+        </p>
+      </div>
+    </div>
+
+    <!-- RITUAL 02 — CABELO -->
+    <div class="ritual-section">
+      <div class="ritual-header">
+        <div class="ritual-header__left">
+          <div class="ritual-header__idx"> · 02 Ritual</div>
+          <h2 class="ritual-header__title">Para o seu <em>cabelo</em>.</h2>
+        </div>
+        <div class="ritual-header__right">
+          Penteado · Coloração<br>
+          Tratamento · Corte
+        </div>
+      </div>
+
+      <ul class="service-list">
+        <li class="service-item service-item--highlight">
+          <div class="service-item__left">
+            <div class="service-item__name">Penteado de Noiva</div>
+            <div class="service-item__desc">Inclui simulação · produção no dia</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">3–4h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Penteado Social</div>
+            <div class="service-item__desc">Eventos, formaturas, aniversários</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h30</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Escova Modeladora</div>
+            <div class="service-item__desc">Liso sedoso ou ondas naturais</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Corte Feminino</div>
+            <div class="service-item__desc">Inclui escova e finalização</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h30</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Mechas / Coloração</div>
+            <div class="service-item__desc">Consulta prévia obrigatória · preço por extensão</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">2h+</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Hidratação Kerastase</div>
+            <div class="service-item__desc">Protocolo premium · diagnóstico de fio</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h30</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Selagem Orgânica</div>
+            <div class="service-item__desc">Redução de volume · brilho · sem formol</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">3h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Tonalizante</div>
+            <div class="service-item__desc">Correção de tom · vibrância · sem amônia</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">1h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ritual-highlight">
+        <div class="ritual-highlight__line"></div>
+        <p class="ritual-highlight__text">
+          <strong>Serviços de coloração e mechas</strong> requerem consulta prévia para avaliação do histórico químico dos fios. Não realizamos procedimentos sem avaliação, é parte do cuidado.
+        </p>
+      </div>
+    </div>
+
+    <!-- RITUAL 03 — PRESENÇA -->
+    <div class="ritual-section">
+      <div class="ritual-header">
+        <div class="ritual-header__left">
+          <div class="ritual-header__idx"> · 03 Ritual</div>
+          <h2 class="ritual-header__title">Para a sua <em>presença</em>.</h2>
+        </div>
+        <div class="ritual-header__right">
+          Styling · Consultoria<br>
+          Debutante · Editorial
+        </div>
+      </div>
+
+      <ul class="service-list">
+        <li class="service-item service-item--highlight">
+          <div class="service-item__left">
+            <div class="service-item__name">Styling de Noiva</div>
+            <div class="service-item__desc">Curadoria de look completo · do véu ao salto</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">Sob medida</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item service-item--highlight">
+          <div class="service-item__left">
+            <div class="service-item__name">Produção Debutante</div>
+            <div class="service-item__desc">Maquiagem + cabelo + styling · dia inteiro</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">Dia completo</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Consultoria de Imagem</div>
+            <div class="service-item__desc">Análise de coloração pessoal · guarda-roupa · identidade visual</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">2h</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Editorial Fotográfico</div>
+            <div class="service-item__desc">Produção de beleza para ensaios de autor</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">Sob medida</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Eventos de Alto Padrão</div>
+            <div class="service-item__desc">Galas, premiações, jantares formais</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">2h+</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Sob consulta</div>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-item__left">
+            <div class="service-item__name">Parceria Debu do União 2026</div>
+            <div class="service-item__desc">Pacote exclusivo · parceira oficial do evento</div>
+          </div>
+          <div class="service-item__right">
+            <span class="service-item__duration">Pacote</span>
+            <div class="service-item__divider"></div>
+            <div class="service-item__price">Exclusivo</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ritual-highlight">
+        <div class="ritual-highlight__line"></div>
+        <p class="ritual-highlight__text">
+          <strong>Debutante e noiva:</strong> oferecemos acompanhamento desde a consultoria inicial até o dia do evento. Uma artista dedicada exclusivamente à sua produção, sem divisão de atenção.
+        </p>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <svg class="closing__swash" viewBox="0 0 80 16" width="100" height="20"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <div class="closing__logo">AMMÁ</div>
+      <div class="closing__logo-tag">CONCEPT</div>
+      <div class="closing__hairline"></div>
+      <div class="closing__phrase">
+        Não transformamos.<br>Revelamos quem você já é.
+      </div>
+      <a href="https://instagram.com/ammaconceptt" class="closing__cta">@ammaconceptt · Agendar</a>
+      <div class="closing__city">Porto Alegre · RS · Brasil · Agenda sob consulta</div>
+    </div>
+
+  </div>
+
+</div>
+
+
+  <!-- ─── ESPECIFICAÇÃO PANTONE — Sprint 2 ─────────── -->
+  <div style="max-width:860px;margin:48px auto;padding:48px;background:#2b1d13;color:#faf7f2;font-family:'Raleway',sans-serif;">
+    <div style="font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:#B8965C;margin-bottom:20px;font-weight:400;">Especificação para a gráfica</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;margin-bottom:20px;color:#faf7f2;">Pantone · Menu de Rituais</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;color:#e8d9c2;">
+      <thead><tr><th style="text-align:left;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;font-weight:400;color:#B8965C;padding:10px 12px;border-bottom:1px solid rgba(184,150,92,0.3);">Cor</th><th style="text-align:left;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;font-weight:400;color:#B8965C;padding:10px 12px;border-bottom:1px solid rgba(184,150,92,0.3);">HEX</th><th style="text-align:left;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;font-weight:400;color:#B8965C;padding:10px 12px;border-bottom:1px solid rgba(184,150,92,0.3);">Pantone Coated</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);color:#faf7f2;">Ouro (acentos + hairlines)</td><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);">#B8965C</td><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);"><strong style="color:#faf7f2;">871 C</strong> (hot stamping na capa)</td></tr>
+        <tr><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);color:#faf7f2;">Cream (miolo)</td><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);">#FAF7F2</td><td style="padding:14px 12px;border-bottom:1px solid rgba(201,184,154,0.2);"><strong style="color:#faf7f2;">9183 C</strong></td></tr>
+        <tr><td style="padding:14px 12px;color:#faf7f2;">Cacau (capa + sub-marcas)</td><td style="padding:14px 12px;">#2B1D13</td><td style="padding:14px 12px;"><strong style="color:#faf7f2;">476 C</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:24px;font-size:13px;color:#e8d9c2;line-height:1.7;">Capa cacau (476 C cobertura total) com hot stamping ouro 871 C foil no wordmark. Miolo cream 9183 C com tipografia em 476 C.</p>
+  </div>
+
+</body>
+</html>

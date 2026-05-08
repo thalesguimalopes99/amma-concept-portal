@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Cultura Interna</title>
+<meta name="description" content="Cultura interna Ammá Concept · Princípios, padrões, valores e operação cotidiana do atelier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #e8e4de; color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  .top-bar { background: var(--cacau); color: var(--ouro); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; padding: 10px; }
+  .page { max-width: 960px; margin: 0 auto; padding: 64px 48px 120px; }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: 2.5rem; letter-spacing: -0.01em; color: var(--cacau); margin: 48px 0 8px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 64px; }
+
+  .section { margin-bottom: 80px; }
+  .section-label {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ouro); }
+
+  h2 { font-family: var(--font-d); font-weight: 300; font-size: 1.9rem; color: var(--cacau); margin-bottom: 28px; letter-spacing: -0.01em; line-height: 1.2; }
+  h2 em { font-style: italic; }
+
+  /* ─── DOCUMENTO A4 IMPRIMÍVEL ─── */
+  .doc {
+    background: var(--fundo);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.13);
+    margin-bottom: 8px;
+  }
+  .doc-note {
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(184,150,92,0.5); text-align: right;
+    background: #0f0c09; padding: 6px 12px; margin-bottom: 48px;
+  }
+
+  /* ─── MANIFESTO INTERNO ─── */
+  .manifesto-doc {
+    position: relative; overflow: hidden;
+  }
+  .manifesto-doc .top-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--ouro);
+  }
+  .manifesto-doc .header {
+    background: var(--cacau); padding: 52px 64px 44px;
+    position: relative;
+  }
+  .manifesto-doc .header__eyebrow {
+    font-size: 9px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: rgba(184,150,92,0.5); margin-bottom: 14px;
+  }
+  .manifesto-doc .header__logo {
+    font-family: var(--font-d); font-weight: 300; font-size: 2.6rem;
+    letter-spacing: 0.08em; color: var(--ouro); line-height: 1;
+  }
+  .manifesto-doc .header__logo sup {
+    font-family: var(--font-b); font-size: 0.42rem; letter-spacing: 0.42em;
+    text-transform: uppercase; color: rgba(184,150,92,0.4);
+    vertical-align: middle; margin-left: 6px;
+  }
+  .manifesto-doc .header__title {
+    font-family: var(--font-d); font-style: italic; font-weight: 300;
+    font-size: 1.5rem; color: var(--champanhe); margin-top: 20px; line-height: 1.3;
+  }
+  .manifesto-doc .header__corner { display: none; }
+  .manifesto-doc .body { padding: 52px 64px; }
+
+  .m-block { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--champanhe); }
+  .m-block:last-child { border-bottom: none; padding-bottom: 0; }
+  .m-block__label {
+    font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .m-block__label::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ouro); }
+  .m-block__statement {
+    font-family: var(--font-d); font-weight: 300; font-size: 1.5rem;
+    color: var(--cacau); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.01em;
+  }
+  .m-block__statement em { font-style: italic; }
+  .m-block__body {
+    font-size: 13px; color: var(--muted); line-height: 1.85;
+  }
+  .m-block__body strong { color: var(--cacau); font-weight: 400; }
+
+  .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+  .m-col__label {
+    font-size: 8px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 10px;
+  }
+  .m-col ul { list-style: none; }
+  .m-col li {
+    font-size: 12px; color: var(--muted); line-height: 2;
+    padding-left: 14px; position: relative;
+  }
+  .m-col li::before { content: '—'; position: absolute; left: 0; color: var(--linha); }
+
+  .manifesto-doc .footer {
+    background: var(--cacau); padding: 28px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(212,165,116,0.2);
+  }
+  .manifesto-doc .footer__phrase {
+    font-family: var(--font-d); font-style: italic; font-size: 1.1rem;
+    color: var(--champanhe); line-height: 1.5;
+  }
+  .manifesto-doc .footer__mark {
+    font-family: var(--font-d); font-size: 1.1rem; color: rgba(184,150,92,0.5);
+    letter-spacing: 0.06em; white-space: nowrap;
+  }
+
+  /* ─── RITUAL DE BOAS-VINDAS ─── */
+  .ritual-doc { position: relative; overflow: hidden; }
+  .ritual-doc .top-accent { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--ouro); }
+  .ritual-doc .r-header {
+    padding: 52px 64px 36px; border-bottom: 1px solid var(--champanhe);
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .ritual-doc .r-header__left {}
+  .ritual-doc .r-header__eyebrow {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 10px;
+  }
+  .ritual-doc .r-header__title {
+    font-family: var(--font-d); font-weight: 300; font-size: 2rem;
+    color: var(--cacau); line-height: 1; letter-spacing: -0.01em;
+  }
+  .ritual-doc .r-header__title em { font-style: italic; }
+  .ritual-doc .r-header__right {
+    font-family: var(--font-d); font-style: italic; font-size: 1rem;
+    color: var(--muted); text-align: right; line-height: 1.6; max-width: 260px;
+  }
+
+  .ritual-doc .r-body { padding: 48px 64px 56px; }
+
+  .r-intro {
+    font-size: 13.5px; color: var(--muted); line-height: 1.8; max-width: 620px;
+    margin-bottom: 40px; border-left: 2px solid var(--ouro); padding-left: 20px;
+  }
+
+  /* PERGUNTA CARDS */
+  .perguntas { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
+  .pergunta { border-top: 1px solid var(--champanhe); padding: 32px 0; }
+  .pergunta:last-child { border-bottom: 1px solid var(--champanhe); }
+  .pergunta__row { display: grid; grid-template-columns: 56px 1fr; gap: 24px; align-items: start; }
+  .pergunta__num {
+    font-family: var(--font-d); font-size: 2.5rem; font-weight: 300;
+    color: var(--champanhe); line-height: 1;
+  }
+  .pergunta__right {}
+  .pergunta__label {
+    font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .pergunta__label::before { content: ''; display: block; width: 14px; height: 1px; background: var(--ouro); }
+  .pergunta__q {
+    font-family: var(--font-d); font-weight: 300; font-size: 1.45rem;
+    color: var(--cacau); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.01em;
+  }
+  .pergunta__q em { font-style: italic; }
+  .pergunta__why { font-size: 12px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .pergunta__escuta {
+    background: var(--perola); padding: 14px 18px; margin-top: 14px;
+  }
+  .pergunta__escuta-label {
+    font-size: 8px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 6px;
+  }
+  .pergunta__escuta-body { font-size: 12px; color: var(--muted); line-height: 1.7; }
+  .pergunta__escuta-body strong { color: var(--cacau); font-weight: 400; }
+
+  /* CHECKLIST */
+  .checklist-section { margin-top: 48px; }
+  .checklist-title {
+    font-family: var(--font-d); font-weight: 300; font-size: 1.5rem;
+    color: var(--cacau); margin-bottom: 20px; letter-spacing: -0.01em;
+  }
+  .checklist-title em { font-style: italic; }
+
+  .checklist-flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-step {
+    display: grid; grid-template-columns: 40px 1fr; gap: 20px;
+    padding: 20px 0; border-bottom: 1px solid var(--champanhe); align-items: start;
+  }
+  .flow-step:first-child { padding-top: 0; }
+  .flow-step__dot {
+    width: 6px; height: 6px;
+    background: var(--ouro); margin-top: 7px; margin-left: 17px; flex-shrink: 0;
+  }
+  .flow-step__content {}
+  .flow-step__moment {
+    font-size: 8px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 5px;
+  }
+  .flow-step__action {
+    font-size: 13px; color: var(--texto); line-height: 1.6; margin-bottom: 6px;
+  }
+  .flow-step__action strong { font-weight: 400; color: var(--cacau); }
+  .flow-step__standard {
+    font-size: 11px; color: var(--muted); line-height: 1.6;
+    font-style: italic;
+  }
+
+  .ritual-doc .r-footer {
+    background: var(--cacau); padding: 28px 64px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .ritual-doc .r-footer__phrase {
+    font-family: var(--font-d); font-style: italic; font-size: 1rem;
+    color: var(--champanhe);
+  }
+  .ritual-doc .r-footer__logo {
+    font-family: var(--font-d); font-weight: 300; font-size: 1rem;
+    letter-spacing: 0.08em; color: rgba(184,150,92,0.5);
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .top-bar, h1, .subtitle, .doc-note, .section-label, h2 { display: none; }
+    .page { padding: 0; max-width: none; }
+    .doc { box-shadow: none; page-break-after: always; }
+    .manifesto-doc .body, .ritual-doc .r-body { padding-left: 20mm; padding-right: 20mm; }
+    .manifesto-doc .header, .ritual-doc .r-header, .manifesto-doc .footer, .ritual-doc .r-footer { padding-left: 20mm; padding-right: 20mm; }
+  }
+
+  @media(max-width: 768px) {
+    .page { padding: 40px 24px 80px; }
+    .manifesto-doc .header, .manifesto-doc .body, .manifesto-doc .footer { padding-left: 28px; padding-right: 28px; }
+    .ritual-doc .r-header, .ritual-doc .r-body, .ritual-doc .r-footer { padding-left: 28px; padding-right: 28px; }
+    .r-header { flex-direction: column; gap: 16px; }
+    .m-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Cultura Interna · Uso Exclusivo do Time · Confidencial</div>
+
+<div class="page">
+
+  <h1>Cultura <em>Interna</em>.</h1>
+  <p class="subtitle">Manifesto do time · Ritual de boas-vindas · Checklist de atendimento</p>
+
+  <!-- ═══════════════════════════════════════
+       DOCUMENTO 1 — MANIFESTO INTERNO
+  ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Documento 01 · Para imprimir e afixar no atelier</div>
+    <h2>O que somos quando <em>ninguém está olhando</em>.</h2>
+
+    <div class="doc manifesto-doc">
+      <div class="top-accent"></div>
+
+      <div class="header">
+        <div class="header__corner"></div>
+        <div class="header__eyebrow">Uso interno · Time Ammá Concept</div>
+        <div class="header__logo">AMMÁ <sup>CONCEPT</sup></div>
+        <div class="header__title">O que acreditamos · e como isso<br>aparece no nosso trabalho.</div>
+      </div>
+
+      <div class="body">
+
+        <div class="m-block">
+          <div class="m-block__label">A marca em uma frase</div>
+          <div class="m-block__statement">Não transformamos. <em>Revelamos.</em></div>
+          <div class="m-block__body">
+            Essa não é uma frase de marketing. É uma descrição do que realmente fazemos.
+            Cada cliente que chega já é quem é. Nossa função não é criar uma versão nova dela, é encontrar e amplificar o que já estava lá, esperando aparecer.
+            Quando perdemos isso de vista, deixamos de ser a Ammá.
+          </div>
+        </div>
+
+        <div class="m-block">
+          <div class="m-block__label">O que nos separa de qualquer outro lugar</div>
+          <div class="m-block__statement">A escuta vem antes <em>do pincel</em>.</div>
+          <div class="m-block__body">
+            Todo atendimento começa com uma pergunta, não com uma técnica.
+            Antes de qualquer gesto, existe uma conversa. Breve, às vezes.
+            Mas sempre presente. <strong>Quem não pergunta está replicando padrão.</strong>
+            Quem pergunta está revelando.
+          </div>
+        </div>
+
+        <div class="m-block">
+          <div class="m-block__label">O que o luxo significa aqui</div>
+          <div class="m-block__statement">Tempo é o único <em>produto</em> que vendemos.</div>
+          <div class="m-block__body">
+            Não vendemos maquiagem. Não vendemos penteado. Vendemos horas em que a cliente
+            é a única coisa que importa. Isso significa: sem pressa entre atendimentos,
+            sem olhar para o celular durante o ritual, sem conversa paralela com outro membro do time.
+            <strong>A presença total da artista é o produto.</strong>
+          </div>
+          <div class="m-grid">
+            <div class="m-col">
+              <div class="m-col__label">Isso parece</div>
+              <ul>
+                <li>Silêncio quando a cliente precisa de silêncio</li>
+                <li>Conversa quando ela quer conversar</li>
+                <li>Ritmo adaptado ao estado dela</li>
+                <li>Nenhuma menção a outros clientes</li>
+                <li>Ambiente preparado antes da chegada</li>
+              </ul>
+            </div>
+            <div class="m-col">
+              <div class="m-col__label">Isso não parece</div>
+              <ul>
+                <li>Celular na mão durante o atendimento</li>
+                <li>Conversa sobre outras clientes</li>
+                <li>Comentário sobre horário ou agenda</li>
+                <li>Apressar o processo para encerrar</li>
+                <li>Resultado bom, experiência indiferente</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-block">
+          <div class="m-block__label">Sobre as três recusas que fundaram a Ammá</div>
+          <div class="m-block__statement">Viemos de uma <em>inconformidade</em>.</div>
+          <div class="m-block__body">
+            A Ammá não nasceu de uma oportunidade de mercado. Nasceu de uma recusa.
+            A recusa da agenda lotada, da padronização estética e da rapidez como valor.
+            Cada decisão que tomamos, sobre agenda, sobre técnica, sobre comunicação, deve poder ser medida contra essas três recusas.
+            <strong>Se a decisão contraria uma delas, precisa ser reconsiderada.</strong>
+          </div>
+        </div>
+
+        <div class="m-block">
+          <div class="m-block__label">A voz que usamos · dentro e fora</div>
+          <div class="m-block__statement">O tom não muda quando <em>a câmera desliga</em>.</div>
+          <div class="m-block__body">
+            A forma como falamos sobre clientes entre nós é a mesma com que falamos para o mundo.
+            Sem fofoca. Sem comparação. Sem classificação de "cliente difícil".
+            Cada cliente chega com uma história, e nosso trabalho começa pela escuta, não pelo julgamento.
+            <strong>A marca é o comportamento. Não o feed.</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <div class="footer__phrase">"A Ammá não precisa parecer luxuosa.<br>Ela precisa ser inevitável."</div>
+        <div class="footer__mark">AMMÁ · 2026</div>
+      </div>
+    </div>
+    <div class="doc-note">Documento 01 · Manifesto Interno · Imprimir em A4 · Afixar no atelier</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       DOCUMENTO 2 — RITUAL DE BOAS-VINDAS
+  ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Documento 02 · Para consulta rápida antes de cada atendimento</div>
+    <h2>As três perguntas que <em>abrem</em> todo atendimento.</h2>
+
+    <div class="doc ritual-doc">
+      <div class="top-accent"></div>
+
+      <div class="r-header">
+        <div class="r-header__left">
+          <div class="r-header__eyebrow">Ritual de abertura · Todo atendimento · Sem exceção</div>
+          <div class="r-header__title">Antes do <em>pincel</em>,<br>a escuta.</div>
+        </div>
+        <div class="r-header__right">
+          "Nosso ofício começa pela escuta, e só depois pelo pincel."<br> · Manifesto Ammá
+        </div>
+      </div>
+
+      <div class="r-body">
+
+        <div class="r-intro">
+          Estas três perguntas não são roteiro de entrevista. São o gesto de escuta que abre o espaço para o trabalho real. Fazê-las leva menos de dois minutos. Não fazê-las significa que o atendimento começou no automático, e a cliente percebe, mesmo que não saiba nomear.
+        </div>
+
+        <div class="perguntas">
+
+          <div class="pergunta">
+            <div class="pergunta__row">
+              <div class="pergunta__num">1.</div>
+              <div class="pergunta__right">
+                <div class="pergunta__label">Ocasião · o contexto</div>
+                <div class="pergunta__q">"Me conta sobre <em>hoje</em> · qual é o momento?"</div>
+                <div class="pergunta__why">
+                  Não perguntamos "o que você quer". Perguntamos sobre o momento. A ocasião carrega a emoção, e a emoção informa a estética. Uma noiva em véspera de casamento e uma executiva antes de uma reunião de conselho pedem gestos completamente diferentes, mesmo que peçam "maquiagem social".
+                </div>
+                <div class="pergunta__escuta">
+                  <div class="pergunta__escuta-label">O que escutar</div>
+                  <div class="pergunta__escuta-body">
+                    <strong>Palavras de emoção</strong> ("estou nervosa", "quero me sentir poderosa", "preciso de algo sutil"), elas definem o resultado antes da técnica.
+                    <strong>Nível de cerimônia</strong> · íntimo ou público? Fotos? Duração do evento?
+                    <strong>Estado interno</strong>, ela está presente ou sobrecarregada?
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <div class="pergunta__row">
+              <div class="pergunta__num">2.</div>
+              <div class="pergunta__right">
+                <div class="pergunta__label">Identidade · quem ela é</div>
+                <div class="pergunta__q">"Tem alguma referência de como você <em>costuma se sentir melhor</em>, não mais bonita, mais você?"</div>
+                <div class="pergunta__why">
+                  A pergunta deliberadamente evita "referência de look". Ela pergunta sobre sentimento, porque o que revelamos é quem ela é, não uma estética que ela viu. A diferença entre "quero igual a essa foto" e "quando me sinto mais eu mesma" é a diferença entre um resultado replicado e um resultado revelado.
+                </div>
+                <div class="pergunta__escuta">
+                  <div class="pergunta__escuta-label">O que escutar</div>
+                  <div class="pergunta__escuta-body">
+                    <strong>Vocabulário de identidade</strong> ("discreta", "marcante", "natural", "forte"), esses adjetivos são o briefing real.
+                    <strong>Resistências</strong> ("odeio quando fica muito", "nunca me sinto bem com"), limites que revelam o núcleo.
+                    <strong>Referência de período</strong>, se citar uma fase da vida em que se sentiu bem, isso é ouro.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pergunta">
+            <div class="pergunta__row">
+              <div class="pergunta__num">3.</div>
+              <div class="pergunta__right">
+                <div class="pergunta__label">Presença · o que ela precisa</div>
+                <div class="pergunta__q">"Tem algo que você precisa que eu <em>saiba</em> antes de começar?"</div>
+                <div class="pergunta__why">
+                  Pergunta aberta. Pode revelar alergias, inseguranças específicas, experiências ruins anteriores, ou simplesmente dar espaço para ela dizer que está com pressa ou que prefere silêncio. É o gesto de presença mais simples que existe: perguntar antes de agir.
+                </div>
+                <div class="pergunta__escuta">
+                  <div class="pergunta__escuta-label">O que escutar</div>
+                  <div class="pergunta__escuta-body">
+                    <strong>Restrições técnicas</strong> (pele sensível, alergia, produto que não pode usar), anota antes de começar.
+                    <strong>Estado emocional</strong>, se ela estiver sobrecarregada, o ritmo do atendimento se adapta.
+                    <strong>Silêncio</strong>, se ela disser "não, pode começar", respeite. Nem toda cliente quer conversa.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CHECKLIST DE ATENDIMENTO -->
+        <div class="checklist-section">
+          <div class="checklist-title">Checklist de <em>atendimento</em> · do agendamento ao pós.</div>
+
+          <div class="checklist-flow">
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">48h antes · Confirmação</div>
+                <div class="flow-step__action">Enviar mensagem de confirmação pelo WhatsApp. <strong>Tom: presença, não lembrete.</strong></div>
+                <div class="flow-step__standard">"Confirmando sua chegada amanhã às [hora]. Estamos prontas para você.", Usar script do whatsapp-scripts.html.</div>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">30min antes · Preparação do espaço</div>
+                <div class="flow-step__action">Ambiente preparado antes da chegada. <strong>Nenhuma cliente deve esperar com a artista ainda montando o set.</strong></div>
+                <div class="flow-step__standard">Iluminação, ferramentas organizadas, superfícies limpas. O espaço comunica o padrão antes da primeira palavra.</div>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">Abertura · As três perguntas</div>
+                <div class="flow-step__action">Fazer as 3 perguntas do ritual. <strong>Escutar de fato antes de qualquer gesto técnico.</strong></div>
+                <div class="flow-step__standard">Sem celular. Sem checagem de agenda. Presença total desde o primeiro momento.</div>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">Durante · O ritual</div>
+                <div class="flow-step__action">Adaptar ritmo, conversa e silêncio ao estado da cliente. <strong>Ela define o tom da experiência, não a artista.</strong></div>
+                <div class="flow-step__standard">Nenhum comentário sobre outras clientes. Nenhuma menção a horário. Se precisar de mais tempo, use. A agenda foi construída para isso.</div>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">Encerramento · O espelho</div>
+                <div class="flow-step__action">Antes de mostrar o resultado: <strong>"Antes de você ver, como você está se sentindo?"</strong></div>
+                <div class="flow-step__standard">A pergunta reforça que o trabalho é interno antes de ser externo. O espelho confirma · não revela. Essa é a experiência Ammá.</div>
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div><div class="flow-step__dot"></div></div>
+              <div class="flow-step__content">
+                <div class="flow-step__moment">24h depois · Pós-atendimento</div>
+                <div class="flow-step__action">Mensagem de follow-up. <strong>Não pedir avaliação, perguntar sobre a experiência.</strong></div>
+                <div class="flow-step__standard">"Como você chegou no evento ontem?", Usar script do whatsapp-scripts.html. O follow-up abre a porta para indicação sem pedir.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="r-footer">
+        <div class="r-footer__phrase">"A escuta vem antes do pincel. Sempre."</div>
+        <div class="r-footer__logo">AMMÁ CONCEPT · 2026</div>
+      </div>
+    </div>
+    <div class="doc-note">Documento 02 · Ritual de Boas-Vindas · Imprimir em A4 · Plastificar · Manter no atelier</div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* ============================================================
+   Ammá Concept — Brand Tokens (single source of truth)
+   Versão: 1.0  ·  Data: 2026-05-07
+   Consumido por: brand-book.html · manual-identidade-visual.html
+                  · index-central.html
+   Regra: qualquer alteração de paleta, tipografia ou easing
+          deve ser feita aqui. Nunca duplicar em outros arquivos.
+   ============================================================ */
+
+:root {
+  /* Paleta fundamental */
+  --ouro:        #B8965C;  /* Acento, hairlines, labels       */
+  --fundo:       #FAF7F2;  /* Superfície primária             */
+  --cream:       #FAF7F2;  /* Alias de --fundo                */
+  --texto:       #2A2A2A;  /* Texto principal (nunca #000)    */
+  --cacau:       #2B1D13;  /* Dark frames, footer             */
+  --champanhe:   #E8D9C2;  /* Blocos suaves                   */
+
+  /* Paleta editorial (extensões — formalizadas no Sprint 1B) */
+  --perola:      #F3ECE2;  /* Superfície alternativa          */
+  --linha:       #C9B89A;  /* Hairlines secundários           */
+  --camelo:      #A87444;  /* Midtone fotográfico             */
+
+  /* Acentos derivados */
+  --accent-ink:  #B88954;  /* Italics em highlights           */
+  --ouro-ink:    #A07840;  /* Hover/active de --ouro          */
+  --muted:       #6B6B6B;  /* Body secundário                 */
+
+  /* Tipografia */
+  --font-d:      'Cormorant Garamond', Georgia, serif;
+  --font-b:      'Raleway', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Espaço */
+  --hairline-w:  1px;        /* Largura padrão de hairlines e divisores ouro */
+
+  /* Movimento */
+  --ease-silk:   cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast:      280ms;
+  --t-base:      420ms;
+  --t-slow:      720ms;
+}

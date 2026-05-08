@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Apresentação para Parcerias</title>
+<meta name="description" content="Apresentação Ammá Concept para parcerias · 9 slides editoriais para florista, buffet, fotógrafo e eventos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #1a1410; color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  /* SLIDE DECK */
+  .deck { max-width: 960px; margin: 0 auto; padding: 0; }
+
+  /* SLIDE BASE */
+  .slide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── SLIDE 01 — COVER ─── */
+  .s01 { background: var(--cacau); justify-content: space-between; padding: 64px 80px; }
+  .s01__top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .s01__eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.5);
+  }
+  .s01__logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    line-height: 1;
+    margin-top: 12px;
+  }
+  .s01__logo sup {
+    font-family: var(--font-b);
+    font-size: 0.45rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.4);
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  .s01__bottom {}
+  .s01__title {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    color: var(--champanhe);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .s01__sub {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.45);
+  }
+  .s01__corner {
+    position: absolute;
+    top: 64px;
+    right: 80px;
+    width: 1px;
+    height: 56px;
+    background: rgba(212,165,116,0.2);
+  }
+
+  /* ─── SLIDE 02 — QUEM SOMOS ─── */
+  .s02 { background: var(--fundo); display: grid; grid-template-columns: 1fr 1fr; }
+  .s02__left {
+    background: var(--cacau);
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .s02__left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 1px;
+    background: var(--ouro);
+  }
+  .s02__num {
+    font-family: var(--font-d);
+    font-size: 5rem;
+    font-weight: 300;
+    color: rgba(212,165,116,0.12);
+    line-height: 1;
+    position: absolute;
+    top: 40px;
+    right: 52px;
+  }
+  .s02__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s02__eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .s02__heading {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--champanhe);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .s02__heading em { font-style: italic; }
+  .s02__right {
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .s02__body {
+    font-size: clamp(11px, 1.3vw, 14px);
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 28px;
+  }
+  .s02__stats {
+    display: flex;
+    gap: 40px;
+  }
+  .s02__stat-num {
+    font-family: var(--font-d);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .s02__stat-label {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ─── SLIDE 03 — POSICIONAMENTO ─── */
+  .s03 { background: var(--fundo); padding: 56px 80px; justify-content: space-between; }
+  .s03__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s03__eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .s03__quote {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    color: var(--cacau);
+    line-height: 1.35;
+    max-width: 680px;
+    border-left: 2px solid var(--ouro);
+    padding-left: 32px;
+    margin: 0 auto;
+    align-self: center;
+  }
+  .s03__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .s03__onlyness {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .s03__onlyness strong { color: var(--cacau); font-weight: 400; }
+  .s03__mark {
+    font-family: var(--font-d);
+    font-size: 1.2rem;
+    color: var(--linha);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── SLIDE 04 — OS TRÊS RITUAIS ─── */
+  .s04 { background: var(--perola); padding: 56px 80px; justify-content: space-between; }
+  .s04__head {}
+  .s04__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .s04__eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ouro); }
+  .s04__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    color: var(--cacau);
+    letter-spacing: -0.01em;
+  }
+  .s04__title em { font-style: italic; }
+  .s04__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .s04__ritual {
+    border-top: 1px solid var(--ouro);
+    padding-top: 20px;
+  }
+  .s04__ritual-num {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    margin-bottom: 8px;
+  }
+  .s04__ritual-name {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--cacau);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .s04__ritual-items {
+    list-style: none;
+  }
+  .s04__ritual-items li {
+    font-size: clamp(9px, 1vw, 11px);
+    color: var(--muted);
+    padding: 3px 0;
+    border-bottom: 1px solid var(--champanhe);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── SLIDE 05 — PERFIL DA CLIENTE ─── */
+  .s05 { background: var(--cacau); padding: 56px 80px; justify-content: space-between; }
+  .s05__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s05__eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ouro); }
+  .s05__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    color: var(--champanhe);
+    letter-spacing: -0.01em;
+    margin: 14px 0 40px;
+  }
+  .s05__title em { font-style: italic; }
+  .s05__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .s05__card {
+    border-top: 1px solid rgba(212,165,116,0.3);
+    padding-top: 16px;
+  }
+  .s05__card-label {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.6);
+    margin-bottom: 8px;
+  }
+  .s05__card-value {
+    font-size: clamp(10px, 1.1vw, 12px);
+    color: var(--champanhe);
+    line-height: 1.75;
+  }
+
+  /* ─── SLIDE 06 — POR QUE PARCERIA ─── */
+  .s06 { background: var(--fundo); padding: 56px 80px; justify-content: space-between; }
+  .s06__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s06__eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ouro); }
+  .s06__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    color: var(--cacau);
+    letter-spacing: -0.01em;
+    margin: 14px 0;
+  }
+  .s06__title em { font-style: italic; }
+  .s06__reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .s06__reason {
+    padding: 24px 0 0;
+    border-top: 1px solid var(--champanhe);
+  }
+  .s06__reason-n {
+    font-family: var(--font-d);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--linha);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .s06__reason-title {
+    font-family: var(--font-b);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--cacau);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .s06__reason-body {
+    font-size: clamp(10px, 1vw, 12px);
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ─── SLIDE 07 — MODELO DE PARCERIA ─── */
+  .s07 { background: var(--cacau); padding: 56px 80px; justify-content: space-between; }
+  .s07__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .s07__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s07__eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ouro); }
+  .s07__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    color: var(--champanhe);
+    letter-spacing: -0.01em;
+    margin-top: 14px;
+  }
+  .s07__title em { font-style: italic; }
+  .s07__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  .s07__table thead th {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    font-weight: 300;
+    text-align: left;
+    padding: 0 16px 12px 0;
+    border-bottom: 1px solid rgba(212,165,116,0.25);
+  }
+  .s07__table tbody td {
+    font-size: clamp(10px, 1.1vw, 12px);
+    color: var(--champanhe);
+    padding: 12px 16px 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+  .s07__table tbody td:first-child {
+    color: var(--ouro);
+    font-family: var(--font-b);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    width: 30%;
+    font-weight: 400;
+  }
+
+  /* ─── SLIDE 08 — DEPOIMENTOS ─── */
+  .s08 { background: var(--perola); padding: 56px 80px; justify-content: space-between; }
+  .s08__eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro-ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .s08__eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ouro); }
+  .s08__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 28px;
+  }
+  .s08__depo {
+    border-top: 1px solid var(--ouro);
+    padding-top: 20px;
+  }
+  .s08__depo-q {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: clamp(11px, 1.3vw, 14px);
+    color: var(--cacau);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .s08__depo-attr {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ─── SLIDE 09 — CONTATO / ENCERRAMENTO ─── */
+  .s09 { background: var(--cacau); padding: 64px 80px; justify-content: center; align-items: center; text-align: center; }
+  .s09::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .s09__logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .s09__logo sup {
+    font-family: var(--font-b);
+    font-size: 0.4rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.4);
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .s09__hairline {
+    width: 28px;
+    height: 1px;
+    background: rgba(212,165,116,0.35);
+    margin: 20px auto;
+  }
+  .s09__phrase {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: var(--champanhe);
+    line-height: 1.45;
+    margin-bottom: 36px;
+  }
+  .s09__contact-grid {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .s09__contact-item {}
+  .s09__contact-label {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.5);
+    margin-bottom: 4px;
+  }
+  .s09__contact-value {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--champanhe);
+  }
+  .s09__cta {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    text-decoration: none;
+    padding: 12px 28px;
+    border: 1px solid rgba(212,165,116,0.35);
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  /* SLIDE LABELS (screen only) */
+  .slide-label {
+    background: #0f0c09;
+    color: rgba(212,165,116,0.4);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    text-align: right;
+    font-family: var(--font-b);
+  }
+
+  /* CONTROLS */
+  .deck-controls {
+    text-align: center;
+    padding: 24px;
+    background: #0f0c09;
+  }
+  .deck-controls p {
+    font-size: 10px;
+    color: rgba(212,165,116,0.4);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-b);
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .slide-label, .deck-controls { display: none; }
+    .slide {
+      page-break-after: always;
+      aspect-ratio: auto;
+      min-height: 180mm;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .s02 { grid-template-columns: 1fr; }
+    .s04__grid { grid-template-columns: 1fr; gap: 16px; }
+    .s04__ritual-items li { display: none; }
+    .s04__ritual-items li:nth-child(-n+3) { display: block; }
+    .s05__grid { grid-template-columns: repeat(2, 1fr); }
+    .s06__reasons { grid-template-columns: 1fr; }
+    .s07__table { font-size: 10px; }
+    .s08__grid { grid-template-columns: 1fr; gap: 20px; }
+    .s09__contact-grid { flex-direction: column; gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- SLIDE 01 — COVER -->
+  <div class="slide s01">
+    <div class="s01__top-line"></div>
+    <div class="s01__corner"></div>
+    <div class="s01__top">
+      <div>
+        <div class="s01__eyebrow">Apresentação de Parceria · Confidencial</div>
+        <div class="s01__logo">AMMÁ <sup>CONCEPT</sup></div>
+      </div>
+    </div>
+    <div class="s01__bottom">
+      <div class="s01__title">Uma parceria não é uma venda.<br>É um alinhamento de <em>valores</em>.</div>
+      <div class="s01__sub">Porto Alegre, RS · Sul do Brasil · 2026</div>
+    </div>
+  </div>
+  <div class="slide-label">01 · Capa</div>
+
+  <!-- SLIDE 02 — QUEM SOMOS -->
+  <div class="slide s02">
+    <div class="s02__left">
+      <div class="s02__num">02</div>
+      <div class="s02__eyebrow">Quem somos</div>
+      <h2 class="s02__heading">Um atelier onde a beleza encontra <em>propósito</em>.</h2>
+    </div>
+    <div class="s02__right">
+      <p class="s02__body">
+        Em 2025, Francine Savi e Amanda Grundler fundaram o Ammá a partir de uma recusa, a recusa do modelo que prioriza volume sobre presença, velocidade sobre cuidado, padrão sobre interpretação. O que nasceu não foi um salão melhor. Foi uma categoria diferente.
+        <br><br>
+        Hub de talentos em formação contínua, com referências internacionais e sensibilidade local. Uma agenda que existe para servir, não para lotar.
+      </p>
+      <div class="s02__stats">
+        <div>
+          <div class="s02__stat-num">2025</div>
+          <div class="s02__stat-label">Fundação</div>
+        </div>
+        <div>
+          <div class="s02__stat-num">3 sem</div>
+          <div class="s02__stat-label">Espera média</div>
+        </div>
+        <div>
+          <div class="s02__stat-num">Sul BR</div>
+          <div class="s02__stat-label">Referência</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-label">02 · Quem somos</div>
+
+  <!-- SLIDE 03 — POSICIONAMENTO -->
+  <div class="slide s03">
+    <div class="s03__eyebrow">Posicionamento</div>
+    <blockquote class="s03__quote">
+      "Não transformamos.<br>Revelamos quem você já é."
+    </blockquote>
+    <div class="s03__bottom">
+      <p class="s03__onlyness">
+        O Ammá Concept é o único atelier de beleza do Sul do Brasil que <strong>não transforma · apenas revela</strong>. Beleza não é padrão. É interpretação.
+      </p>
+      <div class="s03__mark">AMMÁ</div>
+    </div>
+  </div>
+  <div class="slide-label">03 · Posicionamento</div>
+
+  <!-- SLIDE 04 — OS TRÊS RITUAIS -->
+  <div class="slide s04">
+    <div class="s04__head">
+      <div class="s04__eyebrow">O que oferecemos</div>
+      <h2 class="s04__title">Três <em>rituais</em>, um só gesto.</h2>
+    </div>
+    <div class="s04__grid">
+      <div class="s04__ritual">
+        <div class="s04__ritual-num"> · 01 Ritual</div>
+        <div class="s04__ritual-name">Para o rosto</div>
+        <ul class="s04__ritual-items">
+          <li>Maquiagem Social e de Noiva</li>
+          <li>Design de Sobrancelha</li>
+          <li>Brow Lamination</li>
+          <li>Nanopigmentação</li>
+          <li>Lifting de Cílios · Hidragloss</li>
+          <li>Spa Coreano</li>
+        </ul>
+      </div>
+      <div class="s04__ritual">
+        <div class="s04__ritual-num"> · 02 Ritual</div>
+        <div class="s04__ritual-name">Para o cabelo</div>
+        <ul class="s04__ritual-items">
+          <li>Penteado Social e de Noiva</li>
+          <li>Escova · Corte</li>
+          <li>Mechas · Coloração</li>
+          <li>Hidratação Kerastase</li>
+          <li>Selagem Orgânica</li>
+          <li>Tonalizante</li>
+        </ul>
+      </div>
+      <div class="s04__ritual">
+        <div class="s04__ritual-num"> · 03 Ritual</div>
+        <div class="s04__ritual-name">Para a presença</div>
+        <ul class="s04__ritual-items">
+          <li>Styling de Noiva</li>
+          <li>Produção de Debutante</li>
+          <li>Consultoria de Imagem</li>
+          <li>Editoriais de Autor</li>
+          <li>Eventos de Alto Padrão</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="slide-label">04 · Os três rituais</div>
+
+  <!-- SLIDE 05 — PERFIL DA CLIENTE -->
+  <div class="slide s05">
+    <div>
+      <div class="s05__eyebrow">Nossa cliente</div>
+      <h2 class="s05__title">Quem já sabe <em>quem é</em>.</h2>
+    </div>
+    <div class="s05__grid">
+      <div class="s05__card">
+        <div class="s05__card-label">Perfil</div>
+        <div class="s05__card-value">Mulher 25–55 anos. Alta renda. Exige excelência, não por ostentação, mas por padrão interno.</div>
+      </div>
+      <div class="s05__card">
+        <div class="s05__card-label">Ocasiões</div>
+        <div class="s05__card-value">Casamentos, debutantes, eventos corporativos de prestígio, jantares formais, galas.</div>
+      </div>
+      <div class="s05__card">
+        <div class="s05__card-label">Comportamento</div>
+        <div class="s05__card-value">Chega por indicação. Pesquisa antes. Valoriza exclusividade, atenção singular e tempo respeitado.</div>
+      </div>
+      <div class="s05__card">
+        <div class="s05__card-label">Decisão</div>
+        <div class="s05__card-value">Não decide por preço. Decide por confiança, alinhamento estético e histórico de resultados.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-label">05 · Perfil da cliente</div>
+
+  <!-- SLIDE 06 — POR QUE PARCERIA -->
+  <div class="slide s06">
+    <div>
+      <div class="s06__eyebrow">A proposta</div>
+      <h2 class="s06__title">Por que construir <em>juntos</em>.</h2>
+    </div>
+    <div class="s06__reasons">
+      <div class="s06__reason">
+        <div class="s06__reason-n">I.</div>
+        <div class="s06__reason-title">Mesma cliente</div>
+        <div class="s06__reason-body">Servimos a mesma mulher. Quando os padrões se alinham, a experiência dela se multiplica, sem ruído.</div>
+      </div>
+      <div class="s06__reason">
+        <div class="s06__reason-n">II.</div>
+        <div class="s06__reason-title">Indicação qualificada</div>
+        <div class="s06__reason-body">Cada parceria gera indicações bilaterais naturais, sem campanhas, apenas confiança transferida.</div>
+      </div>
+      <div class="s06__reason">
+        <div class="s06__reason-n">III.</div>
+        <div class="s06__reason-title">Reputação somada</div>
+        <div class="s06__reason-body">Associar marcas de excelência eleva ambas. Não queremos estar em todo lugar, só nos lugares certos.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-label">06 · Por que parceria</div>
+
+  <!-- SLIDE 07 — MODELO DE PARCERIA -->
+  <div class="slide s07">
+    <div class="s07__top">
+      <div>
+        <div class="s07__eyebrow">Como funciona</div>
+        <h2 class="s07__title">Modelo de <em>parceria</em>.</h2>
+      </div>
+    </div>
+    <table class="s07__table">
+      <thead>
+        <tr>
+          <th>Modalidade</th>
+          <th>O que inclui</th>
+          <th>Benefícios mútuos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Indicação preferencial</td>
+          <td>Menção ativa às clientes em comum. Materiais físicos no local parceiro.</td>
+          <td>Fluxo de indicações qualificadas bilateral.</td>
+        </tr>
+        <tr>
+          <td>Co-produção de eventos</td>
+          <td>Presença Ammá em eventos parceiros. Produção no local.</td>
+          <td>Entrega de experiência completa à cliente final.</td>
+        </tr>
+        <tr>
+          <td>Pacote exclusivo conjunto</td>
+          <td>Oferta criada em conjunto para uma ocasião específica.</td>
+          <td>Diferenciação de mercado e mídia compartilhada.</td>
+        </tr>
+        <tr>
+          <td>Presença editorial</td>
+          <td>Ammá integra editoriais e conteúdos produzidos pelo parceiro.</td>
+          <td>Conteúdo premium para ambas as marcas.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-label">07 · Modelo de parceria</div>
+
+  <!-- SLIDE 08 — DEPOIMENTOS -->
+  <div class="slide s08">
+    <div class="s08__eyebrow">Quem viveu</div>
+    <div class="s08__grid">
+      <div class="s08__depo">
+        <blockquote class="s08__depo-q">
+          "Fui ao Ammá pela primeira vez para o meu casamento. Voltei porque não consigo imaginar outra experiência."
+        </blockquote>
+        <cite class="s08__depo-attr"> · M. R. · Noiva 2024</cite>
+      </div>
+      <div class="s08__depo">
+        <blockquote class="s08__depo-q">
+          "A atenção que recebo aqui não existe em nenhum outro lugar de Porto Alegre. É outro nível de cuidado."
+        </blockquote>
+        <cite class="s08__depo-attr"> · C. F. · Cliente desde 2022</cite>
+      </div>
+      <div class="s08__depo">
+        <blockquote class="s08__depo-q">
+          "Eu sabia que queria algo diferente para o meu debut. O Ammá entregou além do que eu poderia imaginar."
+        </blockquote>
+        <cite class="s08__depo-attr"> · L. B. · Debutante 2025</cite>
+      </div>
+    </div>
+  </div>
+  <div class="slide-label">08 · Depoimentos</div>
+
+  <!-- SLIDE 09 — CONTATO -->
+  <div class="slide s09">
+    <div class="s09__logo">AMMÁ <sup>CONCEPT</sup></div>
+    <div class="s09__hairline"></div>
+    <div class="s09__phrase">
+      Parcerias que constroem,<br>não parcerias que somam números.
+    </div>
+    <div class="s09__contact-grid">
+      <div class="s09__contact-item">
+        <div class="s09__contact-label">Instagram</div>
+        <div class="s09__contact-value">@ammaconceptt</div>
+      </div>
+      <div class="s09__contact-item">
+        <div class="s09__contact-label">WhatsApp</div>
+        <div class="s09__contact-value">Via link no Instagram</div>
+      </div>
+      <div class="s09__contact-item">
+        <div class="s09__contact-label">Localização</div>
+        <div class="s09__contact-value">Porto Alegre, RS</div>
+      </div>
+    </div>
+    <a href="https://instagram.com/ammaconceptt" class="s09__cta">Iniciar conversa →</a>
+  </div>
+  <div class="slide-label">09 · Encerramento</div>
+
+  <div class="deck-controls">
+    <p>9 slides · Apresentação para parcerias · Ammá Concept · 2026 · Imprimir: Ctrl+P → Paisagem · PDF</p>
+  </div>
+
+</div>
+
+</body>
+</html>

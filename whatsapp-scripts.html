@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Scripts de WhatsApp</title>
+<meta name="description" content="Scripts de WhatsApp Ammá Concept · 9 cenários de atendimento com copy editorial pronta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #b88954;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-b); font-weight: 300; background: var(--fundo); color: var(--texto); -webkit-font-smoothing: antialiased; line-height: 1.75; }
+
+  .top-bar { background: var(--cacau); color: var(--ouro); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; padding: 10px; }
+
+  .page { max-width: 960px; margin: 0 auto; padding: 64px 56px 120px; }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 12px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 56px; }
+
+  .rules { background: var(--cacau); padding: 40px 48px; margin-bottom: 64px; }
+  .rules__label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 20px; }
+  .rules__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .rules__col h4 { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 12px; }
+  .rules__col--yes h4 { color: var(--ouro); }
+  .rules__col--no h4 { color: #a87444; }
+  .rules__col li { font-size: 13px; color: var(--champanhe); line-height: 2; list-style: none; }
+  .rules__col--no li { color: rgba(201,184,154,0.6); text-decoration: line-through; }
+
+  .scenario { margin-bottom: 72px; }
+  .scenario__header { display: flex; align-items: baseline; gap: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--linha); margin-bottom: 32px; }
+  .scenario__num { font-family: var(--font-d); font-style: italic; font-size: 2rem; color: var(--ouro); line-height: 1; }
+  .scenario__title { font-family: var(--font-d); font-weight: 300; font-size: 1.75rem; letter-spacing: -0.01em; }
+  .scenario__title em { font-style: italic; }
+  .scenario__desc { font-size: 13px; color: var(--muted); margin-bottom: 28px; line-height: 1.7; }
+  .scenario__desc strong { color: var(--texto); font-weight: 500; }
+
+  .message-block { margin-bottom: 24px; }
+  .message-block__label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+  .message-block__label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ouro); }
+
+  .bubble {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 24px 28px;
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--texto);
+    white-space: pre-line;
+    position: relative;
+  }
+  .bubble--alt { background: #eee8e0; border-left-color: var(--linha); }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--linha);
+    padding: 8px 16px;
+    cursor: pointer;
+    background: transparent;
+    margin-top: 10px;
+    transition: background 300ms, color 300ms;
+  }
+  .copy-btn:hover { background: var(--texto); color: var(--fundo); border-color: var(--texto); }
+  .copy-btn.copied { background: var(--cacau); color: var(--ouro); border-color: var(--cacau); }
+
+  .var-note { font-size: 11px; color: var(--muted); margin-top: 12px; font-style: italic; }
+  .var-note code { background: var(--champanhe); padding: 1px 5px; font-style: normal; font-size: 11px; color: var(--texto); }
+
+  .divider { border: none; border-top: 1px solid var(--linha); margin: 64px 0; }
+
+  .alert { background: var(--perola); border-left: 2px solid var(--ouro-ink); padding: 20px 24px; margin-bottom: 24px; font-size: 13px; color: var(--muted); }
+  .alert strong { color: var(--texto); }
+
+  @media(max-width: 640px) {
+    .page { padding: 40px 24px 80px; }
+    .rules__grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Scripts de Atendimento WhatsApp · Uso Interno</div>
+
+<div class="page">
+
+  <h1>Scripts de <em>WhatsApp</em>.</h1>
+  <p class="subtitle">9 cenários · Voz editorial · Sem emoji · Sem urgência artificial</p>
+
+  <div class="rules">
+    <div class="rules__label">Regras de Voz · WhatsApp</div>
+    <div class="rules__grid">
+      <ul class="rules__col rules__col--yes">
+        <li><h4>Sempre</h4></li>
+        <li>Frases curtas com peso</li>
+        <li>Segunda pessoa indireta</li>
+        <li>Tom contemplativo, seguro</li>
+        <li>Resposta pessoal · nunca automática</li>
+        <li>Prazo de 48h como declaração de atenção</li>
+        <li>Vocabulário proprietário: ritual, atelier, presença</li>
+      </ul>
+      <ul class="rules__col rules__col--no">
+        <li><h4>Nunca</h4></li>
+        <li>Emoji de qualquer tipo</li>
+        <li>Ponto de exclamação</li>
+        <li>Promoção ou desconto</li>
+        <li>Preço visível na primeira mensagem</li>
+        <li>Urgência falsa ("última vaga")</li>
+        <li>Resposta automatizada</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CENÁRIO 1 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">01.</div>
+      <h2 class="scenario__title">Primeira mensagem · <em>Noiva</em>.</h2>
+    </div>
+    <p class="scenario__desc">Cliente entra em contato perguntando sobre maquiagem para casamento. <strong>Objetivo:</strong> acolher, qualificar, mostrar que a Ammá escuta antes de responder sobre valores.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Resposta inicial</div>
+      <div class="bubble">Olá. Que honra acompanhar um momento tão especial.
+
+Antes de qualquer informação prática, gostaríamos de entender melhor a sua ocasião. Poderia nos contar um pouco mais sobre o casamento, a data, o estilo que você imagina e como você quer se sentir naquele dia?
+
+Respondemos pessoalmente cada mensagem. Não temos atendimento automatizado.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+
+    <div class="message-block">
+      <div class="message-block__label">Após receber os detalhes, qualificação</div>
+      <div class="bubble">Obrigada por compartilhar. Sua visão está muito alinhada com o que fazemos aqui.
+
+Nossa agenda para casamentos em <code>[mês/ano]</code> está sendo preenchida. Para garantir a sua data, o próximo passo seria uma conversa mais detalhada.
+
+A agenda é sob consulta. Assim que confirmarmos disponibilidade, te retornamos com as informações.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+    <p class="var-note">Substitua <code>[mês/ano]</code> pela data do casamento mencionado pela cliente.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 2 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">02.</div>
+      <h2 class="scenario__title">Primeira mensagem · <em>Debutante</em>.</h2>
+    </div>
+    <p class="scenario__desc">Mãe ou debutante entra em contato sobre o debut. <strong>Objetivo:</strong> validar a parceria com o Debu do União quando aplicável, entender o perfil.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Resposta inicial</div>
+      <div class="bubble">Olá. O debut é um momento único, e estamos aqui para que ele seja revelador, não apenas bonito.
+
+Somos parceiras oficiais do Debu do União 2026. Se for esse o evento, temos pacotes específicos para ele.
+
+Poderia nos contar um pouco mais sobre a data e sobre como a debutante imagina o seu momento?</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+
+    <div class="message-block">
+      <div class="message-block__label">Se não for o Debu do União</div>
+      <div class="bubble">Olá. O debut é um momento que merece presença real, não um look aplicado sobre uma superfície.
+
+Poderia nos contar mais sobre a data, o evento e como a debutante imagina se sentir naquele dia?
+
+Trabalhamos com número limitado de debutantes por temporada. A agenda é sob consulta.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 3 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">03.</div>
+      <h2 class="scenario__title">Primeira mensagem · <em>Evento social</em>.</h2>
+    </div>
+    <p class="scenario__desc">Cliente quer maquiagem ou cabelo para evento. <strong>Objetivo:</strong> qualificar e entender se o perfil é compatível com o atelier.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Resposta inicial</div>
+      <div class="bubble">Olá. Poderia nos contar sobre a ocasião, a data e o que você imagina para a sua presença naquele dia?
+
+Nossa agenda é sob consulta e trabalhamos com número reduzido de clientes. Retornamos em até 48 horas úteis.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 4 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">04.</div>
+      <h2 class="scenario__title">Pergunta sobre <em>preço</em>.</h2>
+    </div>
+    <p class="scenario__desc">Cliente pergunta diretamente "quanto custa". <strong>Objetivo:</strong> redirecionar sem ser evasiva, reforçar que preço vem depois da conversa.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Resposta padrão</div>
+      <div class="bubble">Os valores dependem do ritual escolhido e da ocasião. Não publicamos tabela de preços, cada experiência é construída após a conversa inicial.
+
+O que podemos dizer é que trabalhamos com número reduzido de clientes justamente para garantir que o cuidado seja integral.
+
+Se quiser, me conte mais sobre a sua ocasião e eu te passo as informações com mais precisão.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+
+    <div class="alert"><strong>Nota interna:</strong> nunca envie tabela de preços sem antes ter uma conversa. O preço sem contexto desqualifica a experiência, e filtra quem não é a cliente certa.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 5 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">05.</div>
+      <h2 class="scenario__title">Confirmação de <em>agendamento</em>.</h2>
+    </div>
+    <p class="scenario__desc">Após confirmar a data e o ritual. <strong>Objetivo:</strong> consolidar o compromisso com tom de cuidado, não transacional.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Confirmação</div>
+      <div class="bubble">Está confirmado. <code>[DATA]</code>, às <code>[HORÁRIO]</code>.
+
+Reservamos esse tempo inteiramente para você. Nosso endereço é <code>[ENDEREÇO]</code>.
+
+Nos dias que antecedem, se tiver qualquer dúvida ou quiser compartilhar referências, estamos aqui.
+
+Até lá.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+      <p class="var-note">Substitua <code>[DATA]</code>, <code>[HORÁRIO]</code> e <code>[ENDEREÇO]</code>.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 6 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">06.</div>
+      <h2 class="scenario__title">Lembrete · <em>véspera</em>.</h2>
+    </div>
+    <p class="scenario__desc">Enviado na véspera do atendimento. <strong>Objetivo:</strong> reforçar o cuidado, criar antecipação, confirmar detalhes práticos.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Mensagem véspera</div>
+      <div class="bubble">Amanhã é o seu dia.
+
+Lembramos que o horário é <code>[HORÁRIO]</code>. Chegue com o rosto limpo e hidratado, sem maquiagem prévia.
+
+Se quiser trazer referências de imagens, fique à vontade. Mas saiba que nossa conversa começa pela escuta, o resultado sempre parte de quem você é.
+
+Te esperamos.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 7 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">07.</div>
+      <h2 class="scenario__title">Pós-atendimento · <em>follow-up</em>.</h2>
+    </div>
+    <p class="scenario__desc">Enviado 1-2 dias após o atendimento. <strong>Objetivo:</strong> fechar o ciclo com cuidado, abrir espaço para depoimento orgânico.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Mensagem pós-atendimento</div>
+      <div class="bubble">Esperamos que o <code>[EVENTO/OCASIÃO]</code> tenha sido exatamente o que você merecia.
+
+Foi um prazer cuidar da sua presença. Se quiser compartilhar como foi, uma foto, uma palavra, gostaríamos de saber.
+
+Quando surgir um próximo momento especial, estaremos aqui.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 8 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">08.</div>
+      <h2 class="scenario__title">Agenda <em>indisponível</em>.</h2>
+    </div>
+    <p class="scenario__desc">Data solicitada não tem vaga. <strong>Objetivo:</strong> recusar com elegância, reforçar o valor da escassez sem criar falsa urgência.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Resposta sem vaga</div>
+      <div class="bubble">Nossa agenda para <code>[DATA]</code> está completa.
+
+Nossa agenda é limitada por convicção, não por falta de capacidade. É o que garante que cada cliente receba atenção integral.
+
+Se quiser, posso te incluir em nossa lista de consulta para datas próximas. Quando surgir uma abertura, você será uma das primeiras a saber.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+
+    <div class="alert"><strong>Nota interna:</strong> nunca diga "infelizmente não temos mais vagas" com tom de desculpa excessiva. A agenda fechada é um valor, não um problema. O tom é de cuidado, não de lamento.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CENÁRIO 9 -->
+  <div class="scenario">
+    <div class="scenario__header">
+      <div class="scenario__num">09.</div>
+      <h2 class="scenario__title">Resposta automática · <em>fora do horário</em>.</h2>
+    </div>
+    <p class="scenario__desc">Mensagem automática para quando não estiver disponível. <strong>Objetivo:</strong> manter a voz da marca mesmo na ausência, e reforçar a proposta de resposta pessoal.</p>
+
+    <div class="message-block">
+      <div class="message-block__label">Mensagem automática (configurar no WhatsApp Business)</div>
+      <div class="bubble">Obrigada por entrar em contato com o Ammá Concept.
+
+Respondemos cada mensagem pessoalmente. Retornamos em até 48 horas úteis.
+
+Até lá, e obrigada pela paciência que é, em si, o primeiro gesto de quem entende o que fazemos aqui.</div>
+      <button class="copy-btn" onclick="copyText(this)">Copiar mensagem</button>
+    </div>
+    <p class="var-note">Para configurar: WhatsApp Business → Ferramentas → Mensagem de ausência → Cole o texto acima.</p>
+  </div>
+
+</div>
+
+<script>
+function copyText(btn) {
+  const bubble = btn.previousElementSibling;
+  const text = bubble.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copiado.';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copiar mensagem';
+      btn.classList.remove('copied');
+    }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>

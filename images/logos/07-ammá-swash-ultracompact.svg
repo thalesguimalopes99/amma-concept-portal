@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ammá Concept · Logo 07 · Swash ultracompact · Favicon 32px, selo, embossing -->
+<!-- Uso mínimo: 32px / 8mm. Abaixo disso usar somente tipografia. -->
+<!-- O swash isolado é o asset de menor dimensão da marca. NÃO REDESENHAR. -->
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Swash wave isolado — proporcional ao original nos M's -->
+  <path
+    d="M 10,60 C 25,32 40,18 58,36 C 72,50 80,62 92,46 C 104,30 116,18 126,34"
+    stroke="#B8965C"
+    stroke-width="2"
+    fill="none"
+    stroke-linecap="round"/>
+  <!-- "á" como âncora mínima de identidade no canto inferior direito -->
+  <text x="108" y="76"
+    font-family="'Cormorant Garamond', serif" font-weight="300" font-size="18"
+    fill="#B8965C" opacity="0.6">á</text>
+</svg>

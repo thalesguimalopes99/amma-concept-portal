@@ -1,0 +1,29 @@
+# Vercel ignore — portal de HTMLs Ammá Concept
+# Inclui apenas raiz + assets/ + images/ + páginas públicas
+
+# Site React (deploy separado em amm-concept.vercel.app)
+amma-concept-site
+
+# Pacote gráfica (delivery a agência, não portal)
+pacote-grafica
+Amma-Concept-Producao-Grafica.zip
+
+# Pastas legacy / raw / shadow
+Ammá Concept
+
+# Engineering docs (specs + plans + brainstorm)
+docs
+.superpowers
+
+# PDFs entregáveis (não portal)
+*.pdf
+
+# Node + sistema
+node_modules
+.DS_Store
+Thumbs.db
+.git
+.gitignore
+
+# CLAUDE.md (interno)
+CLAUDE.md

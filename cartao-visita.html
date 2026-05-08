@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Cartão de Visita</title>
+<meta name="description" content="Especificação técnica do cartão de visita Ammá Concept · 85×55mm · papel algodão 350g · hot stamping Pantone 871 C ouro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #e8e4de; color: var(--texto); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+  /* PAGE WRAPPER */
+  .page { max-width: 1100px; margin: 0 auto; padding: 64px 48px 100px; }
+
+  .top-bar { background: var(--cacau); color: var(--ouro); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; padding: 10px; }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: 2.5rem; letter-spacing: -0.01em; color: var(--cacau); margin: 48px 0 8px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 48px; }
+
+  /* SPECS BANNER */
+  .specs { background: var(--cacau); color: var(--champanhe); padding: 24px 32px; margin-bottom: 64px; display: flex; gap: 48px; flex-wrap: wrap; }
+  .spec-item { font-size: 10px; }
+  .spec-item .label { color: var(--ouro); letter-spacing: 0.28em; text-transform: uppercase; font-size: 9px; display: block; margin-bottom: 4px; }
+  .spec-item .value { color: var(--champanhe); font-size: 13px; }
+
+  /* CARD PREVIEW */
+  .cards-row { display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 64px; }
+
+  .card-wrap { }
+  .card-label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .card-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ouro); }
+
+  /* CARTÃO — dimensões reais: 85mm × 55mm → ratio 1.545 */
+  /* Renderizando a 340px × 220px (4× miniatura) */
+  .card {
+    width: 340px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+  }
+
+  /* FRENTE */
+  .card--front {
+    background: var(--fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 32px;
+  }
+  .card--front .hairline-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .card--front .logo-mark {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    color: var(--texto);
+    line-height: 1;
+  }
+  .card--front .logo-tag {
+    font-family: var(--font-b);
+    font-size: 7px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .card--front .person { }
+  .card--front .person__name {
+    font-family: var(--font-b);
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--texto);
+  }
+  .card--front .person__role {
+    font-family: var(--font-b);
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .card--front .hairline-gold {
+    width: 28px;
+    height: 1px;
+    background: var(--ouro);
+    margin: 10px 0;
+  }
+  .card--front .city {
+    font-family: var(--font-b);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--linha);
+  }
+
+  /* VERSO */
+  .card--back {
+    background: var(--cacau);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 28px 32px;
+  }
+  .card--back .logo-back {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 1.7rem;
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .card--back .logo-tag-back {
+    font-family: var(--font-b);
+    font-size: 7px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.55);
+    margin-bottom: 16px;
+  }
+  .card--back .hairline-back {
+    width: 28px;
+    height: 1px;
+    background: rgba(212,165,116,0.4);
+    margin-bottom: 16px;
+  }
+  .card--back .insta {
+    font-family: var(--font-b);
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    color: var(--champanhe);
+  }
+  .card--back .city-back {
+    font-family: var(--font-b);
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.45);
+    margin-top: 6px;
+  }
+  .card--back .corner-mark {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    width: 1px;
+    height: 16px;
+    background: rgba(212,165,116,0.2);
+  }
+
+  /* VARIANTES */
+  .variants-section { margin-top: 64px; }
+  .variants-label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 24px; }
+  .variants-grid { display: grid; grid-template-columns: repeat(3, auto); gap: 32px; align-items: start; flex-wrap: wrap; }
+
+  /* VARIANTE MINI — 170×110 */
+  .card-mini {
+    width: 170px;
+    height: 110px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .card-mini--champanhe { background: var(--champanhe); }
+  .card-mini--cacau { background: var(--cacau); }
+  .card-mini--perola { background: var(--perola); }
+
+  .card-mini .logo-mini-wrap {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+  }
+  .card-mini .logo-mini-wrap svg { display: block; margin-bottom: 1px; }
+  .card-mini .logo-mini {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+  .card-mini--champanhe .logo-mini { color: var(--cacau); }
+  .card-mini--cacau .logo-mini { color: var(--ouro); }
+  .card-mini--perola .logo-mini { color: var(--texto); }
+
+  .card-mini .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1.5px;
+    background: var(--ouro);
+  }
+
+  /* PRINT INSTRUCTIONS */
+  .print-section { background: var(--perola); padding: 36px 40px; margin-top: 64px; border-left: 2px solid var(--ouro); }
+  .print-section h3 { font-family: var(--font-d); font-weight: 300; font-size: 1.5rem; margin-bottom: 20px; }
+  .print-section h3 em { font-style: italic; }
+  .print-section ul { list-style: none; }
+  .print-section li { font-size: 13px; color: var(--muted); line-height: 2.2; padding-left: 16px; position: relative; }
+  .print-section li::before { content: '—'; position: absolute; left: 0; color: var(--ouro-ink); }
+
+  /* PRINT MODE */
+  @media print {
+    body { background: white; }
+    .top-bar, h1, .subtitle, .specs, .variants-section, .print-section, .card-label { display: none; }
+    .page { padding: 0; max-width: none; }
+    .cards-row { gap: 0; page-break-inside: avoid; }
+    .card { box-shadow: none; }
+  }
+
+  @media(max-width: 768px) {
+    .page { padding: 40px 24px 80px; }
+    .cards-row { gap: 32px; }
+    .variants-grid { grid-template-columns: repeat(2, auto); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Cartão de Visita · Material Interno · Print-Ready</div>
+
+<div class="page">
+
+  <h1>Cartão de <em>Visita</em>.</h1>
+  <p class="subtitle">Versão principal · 85mm × 55mm · Frente e verso</p>
+
+  <div class="specs">
+    <div class="spec-item"><span class="label">Dimensão</span><span class="value">85mm × 55mm (padrão ISO)</span></div>
+    <div class="spec-item"><span class="label">Sangria</span><span class="value">3mm em todos os lados</span></div>
+    <div class="spec-item"><span class="label">Papel</span><span class="value">350g/m² · papel algodão</span></div>
+    <div class="spec-item"><span class="label">Acabamento</span><span class="value">Hot stamping Pantone 871 C · swash + wordmark</span></div>
+    <div class="spec-item"><span class="label">Verso</span><span class="value">Cacau Pantone 476 C · cobertura total</span></div>
+  </div>
+
+  <!-- FRENTE E VERSO PRINCIPAIS -->
+  <div class="cards-row">
+
+    <div class="card-wrap">
+      <div class="card-label">Frente · Fundo Cream</div>
+      <div class="card card--front">
+        <div class="hairline-top"></div>
+        <div>
+          <svg viewBox="0 0 80 16" width="80" height="16" style="display:block;margin-bottom:2px;"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <div class="logo-mark">AMMÁ</div>
+          <div class="logo-tag">CONCEPT</div>
+        </div>
+        <div class="person">
+          <div class="person__name">[Seu Nome]</div>
+          <div class="person__role">[Cargo] · Atelier de Beleza</div>
+          <div class="hairline-gold"></div>
+          <div class="city">Porto Alegre · RS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrap">
+      <div class="card-label">Verso · Fundo Cacau</div>
+      <div class="card card--back">
+        <svg viewBox="0 0 80 16" width="74" height="15" style="display:block;margin-bottom:2px;"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <div class="logo-back">AMMÁ</div>
+        <div class="logo-tag-back">CONCEPT</div>
+        <div class="hairline-back"></div>
+        <div class="insta">@ammaconceptt</div>
+        <div class="city-back">Porto Alegre · RS · Brasil</div>
+        <div class="corner-mark"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VARIANTES DE COR -->
+  <div class="variants-section">
+    <div class="variants-label">Variantes de fundo · Frente</div>
+    <div class="variants-grid">
+
+      <div>
+        <div class="card-label" style="font-size:8px;margin-bottom:10px;">Champanhe</div>
+        <div class="card-mini card-mini--champanhe">
+          <div class="top-line"></div>
+          <div class="logo-mini-wrap">
+            <svg viewBox="0 0 80 16" width="50" height="10"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div class="logo-mini">AMMÁ</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card-label" style="font-size:8px;margin-bottom:10px;">Cacau (premium)</div>
+        <div class="card-mini card-mini--cacau">
+          <div class="top-line"></div>
+          <div class="logo-mini-wrap">
+            <svg viewBox="0 0 80 16" width="50" height="10"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div class="logo-mini">AMMÁ</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card-label" style="font-size:8px;margin-bottom:10px;">Pérola</div>
+        <div class="card-mini card-mini--perola">
+          <div class="top-line"></div>
+          <div class="logo-mini-wrap">
+            <svg viewBox="0 0 80 16" width="50" height="10"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <div class="logo-mini">AMMÁ</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INSTRUÇÕES DE IMPRESSÃO -->
+  <div class="print-section">
+    <h3>Instruções para <em>gráfica</em>.</h3>
+    <ul>
+      <li>Exportar em PDF com sangria de 3mm e marca de corte</li>
+      <li>Resolução mínima 300 dpi para todos os elementos</li>
+      <li>Espaço de cor: CMYK, não enviar RGB para impressão</li>
+      <li>Ouro: Pantone 871 C (ouro fosco) ou hot stamping Pantone 871 C, não simular com CMYK. Nenhuma variação autorizada sem aprovação do atelier.</li>
+      <li>Papel obrigatório: 350g algodão (cotton paper) cream natural · sem brilho · sem couchê</li>
+      <li>Verso: cacau Pantone 476 C cobertura total · verificar densidade de tinta (não exceder 280%)</li>
+      <li>Logo: swash bezier + wordmark AMMÁ + tag CONCEPT — sempre os três elementos juntos, hot stamping ouro 871 C</li>
+      <li>Tipografia: incorporar todas as fontes no PDF antes de enviar para gráfica</li>
+      <li>Arquivo de aprovação: sempre solicitar prova física (mockup ou blueline) antes de imprimir tiragem completa</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

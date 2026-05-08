@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Guia de Conteúdo Instagram</title>
+<meta name="description" content="Guia de conteúdo Instagram Ammá Concept · Pilares editoriais, frequência, vocabulário e governança.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #b88954;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); font-weight: 300; background: #e8e4de; color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: 1000px; margin: 0 auto; padding: 64px 48px 120px; }
+  .top-bar { background: var(--cacau); color: var(--ouro); font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; text-align: center; padding: 10px; }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: 2.5rem; letter-spacing: -0.01em; color: var(--cacau); margin: 48px 0 8px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 56px; }
+
+  /* SECTION */
+  .section { margin-bottom: 72px; }
+  .section-label {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--ouro-ink); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--ouro); }
+
+  h2 { font-family: var(--font-d); font-weight: 300; font-size: 1.75rem; color: var(--cacau); margin-bottom: 24px; letter-spacing: -0.01em; }
+  h2 em { font-style: italic; }
+
+  /* PRINCIPLE BLOCK */
+  .principle {
+    background: var(--cacau); padding: 32px 40px; margin-bottom: 48px;
+    border-left: 2px solid var(--ouro);
+  }
+  .principle .p-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 12px; }
+  .principle p { font-family: var(--font-d); font-style: italic; font-size: 1.2rem; color: var(--champanhe); line-height: 1.6; }
+  .principle p strong { font-style: normal; font-weight: 300; color: var(--ouro); }
+
+  /* CEP TABLE */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+  thead th { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); font-weight: 300; text-align: left; padding: 0 16px 12px 0; border-bottom: 1px solid var(--ouro); }
+  tbody td { font-size: 12.5px; color: var(--texto); padding: 14px 16px 14px 0; border-bottom: 1px solid var(--champanhe); vertical-align: top; line-height: 1.6; }
+  tbody td:first-child { font-family: var(--font-b); font-weight: 400; color: var(--cacau); font-size: 11px; letter-spacing: 0.06em; }
+  .status-ok { color: #5a8a5a; font-size: 11px; }
+  .status-warn { color: var(--ouro-ink); font-size: 11px; }
+  .status-off { color: var(--linha); font-size: 11px; }
+
+  /* PILLAR CARDS */
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+  .pillar {
+    background: var(--fundo); border-top: 1px solid var(--ouro);
+    padding: 28px 28px 24px;
+  }
+  .pillar__num { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 8px; }
+  .pillar__name { font-family: var(--font-d); font-weight: 300; font-size: 1.5rem; color: var(--cacau); margin-bottom: 6px; }
+  .pillar__name em { font-style: italic; }
+  .pillar__cep { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 12px; }
+  .pillar__trigger { font-size: 12px; color: var(--texto); font-style: italic; line-height: 1.6; border-left: 1px solid var(--linha); padding-left: 12px; margin-bottom: 14px; }
+  .pillar__day { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ouro); }
+
+  /* COPY BLOCKS */
+  .copy-block { margin-bottom: 32px; }
+  .copy-block__header {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 0;
+    background: var(--cacau); padding: 14px 20px;
+    cursor: pointer; user-select: none;
+  }
+  .copy-block__header:hover { background: #3a2a1f; }
+  .copy-block__pillar { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); }
+  .copy-block__title { font-size: 11px; letter-spacing: 0.14em; color: var(--champanhe); font-weight: 300; }
+  .copy-block__day { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(184,150,92,0.45); margin-left: auto; }
+  .copy-block__body {
+    background: var(--perola); padding: 24px 28px;
+    display: none;
+  }
+  .copy-block__body.is-open { display: block; }
+  .copy-block__caption {
+    font-family: var(--font-d); font-size: 1.1rem; color: var(--cacau);
+    line-height: 1.75; white-space: pre-line; margin-bottom: 16px;
+  }
+  .copy-block__meta { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 16px; }
+  .copy-block__note { font-size: 11px; color: var(--muted); line-height: 1.7; border-left: 1px solid var(--ouro); padding-left: 12px; margin-bottom: 16px; }
+  .copy-btn {
+    font-family: var(--font-b); font-size: 8px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ouro); background: none; border: 1px solid rgba(184,150,92,0.4);
+    padding: 8px 16px; cursor: pointer; transition: all 0.2s;
+  }
+  .copy-btn:hover { border-color: var(--ouro); background: rgba(184,150,92,0.06); }
+  .copy-btn.copied { color: #5a8a5a; border-color: #5a8a5a; }
+
+  /* RHYTHM */
+  .rhythm { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 40px; }
+  .day-cell { padding: 16px 8px; text-align: center; }
+  .day-cell__name { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .day-cell__content { font-size: 10px; color: var(--texto); line-height: 1.6; }
+  .day-cell__content strong { display: block; color: var(--cacau); font-weight: 400; font-size: 11px; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .day-cell--active { background: var(--fundo); border-top: 1px solid var(--ouro); }
+  .day-cell--story { background: var(--cacau); }
+  .day-cell--story .day-cell__name { color: rgba(184,150,92,0.5); }
+  .day-cell--story .day-cell__content { color: var(--champanhe); }
+  .day-cell--story .day-cell__content strong { color: var(--ouro); }
+  .day-cell--rest { background: rgba(255,255,255,0.3); }
+  .day-cell--rest .day-cell__content { color: var(--linha); font-size: 9px; }
+
+  /* RULES */
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+  .rule-card { padding: 24px 24px 20px; }
+  .rule-card--do { background: var(--perola); border-top: 1px solid var(--ouro); }
+  .rule-card--dont { background: #f7f0ee; border-top: 1px solid #c9a0a0; }
+  .rule-card__label { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 14px; }
+  .rule-card--do .rule-card__label { color: var(--ouro-ink); }
+  .rule-card--dont .rule-card__label { color: #a06060; }
+  .rule-card ul { list-style: none; }
+  .rule-card li { font-size: 12px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.6; padding-left: 14px; position: relative; }
+  .rule-card--do li::before { content: '—'; position: absolute; left: 0; color: var(--ouro-ink); }
+  .rule-card--dont li::before { content: '×'; position: absolute; left: 0; color: #c09090; }
+
+  /* STORIES SECTION */
+  .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+  .story-type { background: var(--cacau); padding: 24px 20px; }
+  .story-type__label { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 10px; }
+  .story-type__name { font-family: var(--font-d); font-style: italic; font-size: 1.2rem; color: var(--champanhe); margin-bottom: 10px; }
+  .story-type__freq { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(184,150,92,0.4); margin-bottom: 12px; }
+  .story-type__desc { font-size: 11px; color: rgba(201,184,154,0.7); line-height: 1.7; }
+
+  /* SHARP PRINCIPLE */
+  .sharp-box { background: var(--texto); color: var(--champanhe); padding: 40px 44px; margin-bottom: 48px; }
+  .sharp-box .s-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(184,150,92,0.5); margin-bottom: 16px; }
+  .sharp-box .s-quote { font-family: var(--font-d); font-style: italic; font-size: 1.3rem; color: var(--champanhe); line-height: 1.6; margin-bottom: 16px; }
+  .sharp-box .s-note { font-size: 12px; color: rgba(201,184,154,0.6); line-height: 1.75; }
+  .sharp-box .s-note strong { color: var(--ouro); font-weight: 300; }
+
+  @media(max-width: 768px) {
+    .page { padding: 40px 24px 80px; }
+    .pillars { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .stories-grid { grid-template-columns: 1fr; }
+    .rhythm { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Guia de Conteúdo Instagram · Material Interno · 2026</div>
+
+<div class="page">
+
+  <h1>Guia de Conteúdo <em>Instagram</em>.</h1>
+  <p class="subtitle">5 pilares · Cadência semanal · Copy pronta · Regras de voz</p>
+
+  <!-- PRINCÍPIO SHARP -->
+  <div class="sharp-box">
+    <div class="s-label">Princípio de crescimento, Byron Sharp</div>
+    <div class="s-quote">"Cada post alcança 100 pessoas. 2 podem agendar agora. As outras 98 criam memória de marca, e vão indicar ou converter no futuro."</div>
+    <div class="s-note">
+      <strong>Nunca otimizar para conversão imediata.</strong> Otimizar para lembrança no momento do gatilho mental. A Ammá não cresce em capacidade, cresce em top of mind. Quando uma noiva pensa "beleza premium Porto Alegre", a Ammá precisa ser a única resposta possível.
+    </div>
+  </div>
+
+  <!-- CEP TABLE -->
+  <div class="section">
+    <div class="section-label">Category Entry Points · Gatilhos Mentais</div>
+    <h2>Onde a <em>cliente</em> começa a nos procurar.</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Pilar</th>
+          <th>CEP · Situação de compra</th>
+          <th>Gatilho mental</th>
+          <th>Dia fixo</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Noiva</td>
+          <td>Noivado recente</td>
+          <td>"Preciso me sentir eu mesma no meu casamento"</td>
+          <td>Quarta (ciclo 1)</td>
+          <td><span class="status-warn">· Fraco</span></td>
+        </tr>
+        <tr>
+          <td>Debutante</td>
+          <td>15 anos se aproximando</td>
+          <td>"Esse dia não pode ser igual a qualquer outro"</td>
+          <td>Quarta (ciclo 2)</td>
+          <td><span class="status-ok">✓ Ativo</span></td>
+        </tr>
+        <tr>
+          <td>Presença</td>
+          <td>Evento de prestígio iminente</td>
+          <td>"Tenho um jantar importante, não posso errar"</td>
+          <td>Quarta (ciclo 3)</td>
+          <td><span class="status-off">· Ausente</span></td>
+        </tr>
+        <tr>
+          <td>Revelação</td>
+          <td>Crise de identidade / mudança de fase</td>
+          <td>"Não me reconheço mais quando me olho"</td>
+          <td>Segunda</td>
+          <td><span class="status-off">· Ausente</span></td>
+        </tr>
+        <tr>
+          <td>Merecimento</td>
+          <td>Pós-conquista pessoal ou profissional</td>
+          <td>"Conquistei algo grande, mereço cuidar de mim"</td>
+          <td>Sexta</td>
+          <td><span class="status-off">· Ausente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PILLAR CARDS -->
+  <div class="section">
+    <div class="section-label">Os cinco pilares</div>
+    <h2>Um pilar por <em>gatilho</em>.</h2>
+    <div class="pillars">
+
+      <div class="pillar">
+        <div class="pillar__num"> · 01 Pilar</div>
+        <div class="pillar__name"><em>Revelação</em></div>
+        <div class="pillar__cep">CEP: Crise de identidade · Mudança de fase</div>
+        <div class="pillar__trigger">"Não me reconheço mais quando me olho."</div>
+        <div class="pillar__day">Segunda-feira · Filosófico · Reforça onlyness</div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__num"> · 02 Pilar</div>
+        <div class="pillar__name"><em>Noiva</em></div>
+        <div class="pillar__cep">CEP: Noivado · Casamento marcado</div>
+        <div class="pillar__trigger">"Preciso me sentir eu mesma no dia mais importante."</div>
+        <div class="pillar__day">Quarta · Ciclo 1 · Alta intenção de compra</div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__num"> · 03 Pilar</div>
+        <div class="pillar__name"><em>Debutante</em></div>
+        <div class="pillar__cep">CEP: 15 anos · Parceria Debu União 2026</div>
+        <div class="pillar__trigger">"Esse momento merece algo que nunca foi feito antes."</div>
+        <div class="pillar__day">Quarta · Ciclo 2 · Sazonal · Parceria ativa</div>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar__num"> · 04 Pilar</div>
+        <div class="pillar__name"><em>Presença</em></div>
+        <div class="pillar__cep">CEP: Evento social / corporativo de prestígio</div>
+        <div class="pillar__trigger">"Tenho um jantar importante, não posso errar."</div>
+        <div class="pillar__day">Quarta · Ciclo 3 · CEP mais imediato e recorrente</div>
+      </div>
+
+      <div class="pillar" style="grid-column: 1 / -1;">
+        <div class="pillar__num"> · 05 Pilar</div>
+        <div class="pillar__name"><em>Merecimento</em></div>
+        <div class="pillar__cep">CEP: Pós-conquista pessoal ou profissional</div>
+        <div class="pillar__trigger">"Conquistei algo grande, mereço cuidar de mim."</div>
+        <div class="pillar__day">Sexta · Emocional · Fecha a semana · Alta abertura de Instagram às sextas</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WEEKLY RHYTHM -->
+  <div class="section">
+    <div class="section-label">Cadência semanal</div>
+    <h2>3 posts por semana. <em>Sempre.</em></h2>
+    <div class="rhythm">
+      <div class="day-cell day-cell--active">
+        <div class="day-cell__name">Seg</div>
+        <div class="day-cell__content"><strong>Revelação</strong>Filosófico · onlyness · identidade</div>
+      </div>
+      <div class="day-cell day-cell--rest">
+        <div class="day-cell__name">Ter</div>
+        <div class="day-cell__content"> · </div>
+      </div>
+      <div class="day-cell day-cell--active">
+        <div class="day-cell__name">Qua</div>
+        <div class="day-cell__content"><strong>Rotativo</strong>Noiva → Debutante → Presença em ciclo de 3 semanas</div>
+      </div>
+      <div class="day-cell day-cell--rest">
+        <div class="day-cell__name">Qui</div>
+        <div class="day-cell__content"> · </div>
+      </div>
+      <div class="day-cell day-cell--active">
+        <div class="day-cell__name">Sex</div>
+        <div class="day-cell__content"><strong>Merecimento</strong>Emocional · pós-conquista · auto-cuidado</div>
+      </div>
+      <div class="day-cell day-cell--rest">
+        <div class="day-cell__name">Sáb</div>
+        <div class="day-cell__content"> · </div>
+      </div>
+      <div class="day-cell day-cell--rest">
+        <div class="day-cell__name">Dom</div>
+        <div class="day-cell__content"> · </div>
+      </div>
+    </div>
+    <div class="day-cell day-cell--story" style="padding:16px 20px;margin-bottom:24px;">
+      <div class="day-cell__name">Stories, todos os dias (quando houver conteúdo real)</div>
+      <div class="day-cell__content">Bastidores · Escassez de agenda · Depoimentos adaptados · Processo, sem forçar frequência artificial</div>
+    </div>
+  </div>
+
+  <!-- COPY BLOCKS -->
+  <div class="section">
+    <div class="section-label">Copy pronta, clique para expandir e copiar</div>
+    <h2>Modelos de <em>legenda</em> por pilar.</h2>
+
+    <!-- 01 Revelação -->
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 01</span>
+        <span class="copy-block__title">Revelação · Onlyness</span>
+        <span class="copy-block__day">Segunda</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-01a">O espelho não mente.
+Mas às vezes precisa de alguém que saiba o que procurar.
+
+Não transformamos. Revelamos.
+
+@ammaconceptt · Agenda sob consulta</div>
+        <div class="copy-block__note">Tom: declarativo, sem urgência. Reforça o onlyness toda semana. Este copy pode ser repetido a cada 6–8 semanas, o algoritmo entrega para pessoas diferentes.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-01a', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 01</span>
+        <span class="copy-block__title">Revelação · Variação filosófica</span>
+        <span class="copy-block__day">Segunda</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-01b">Beleza não é o que adicionamos.
+É o que deixamos aparecer.
+
+Cada gesto aqui começa pela escuta, e só depois pelo pincel.
+
+@ammaconceptt · Porto Alegre · Sul do Brasil</div>
+        <div class="copy-block__note">Variação: foca no processo (escuta → gesto). Usar quando tiver foto de bastidor ou detalhe de mão/ferramenta.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-01b', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <!-- 02 Noiva -->
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 02</span>
+        <span class="copy-block__title">Noiva · Principal</span>
+        <span class="copy-block__day">Quarta · Ciclo 1</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-02a">Você não vai estar diferente no seu casamento.
+Vai estar mais você do que nunca.
+
+Esse é o único resultado que nos interessa.
+
+Rituais de noiva · Porto Alegre · Agenda sob consulta</div>
+        <div class="copy-block__note">Posiciona a promessa sem mencionar serviço. A noiva que se identifica com "mais eu" já é a nossa cliente.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-02a', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 02</span>
+        <span class="copy-block__title">Noiva · Processo / Teste prévio</span>
+        <span class="copy-block__day">Quarta · Ciclo 1 variação</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-02b">O dia do casamento não é o momento de descobrir.
+É o momento de confirmar.
+
+Por isso o teste prévio não é opcional, é parte do ritual.
+
+Noivas 2026 · Agenda sob consulta · @ammaconceptt</div>
+        <div class="copy-block__note">Educa sobre o processo e posiciona o teste como diferencial. Usar com foto de sessão de teste ou detalhe de maquiagem.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-02b', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <!-- 03 Debutante -->
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 03</span>
+        <span class="copy-block__title">Debutante · Principal</span>
+        <span class="copy-block__day">Quarta · Ciclo 2</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-03a">Quinze anos não é um visual.
+É uma declaração de quem você está se tornando.
+
+Parceira oficial Debu do União 2026.
+
+@ammaconceptt · Sul do Brasil</div>
+        <div class="copy-block__note">Conecta identidade ao milestone. A menção ao Debu do União transfere prestígio do evento para a marca.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-03a', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 03</span>
+        <span class="copy-block__title">Debutante · Para a mãe</span>
+        <span class="copy-block__day">Quarta · Ciclo 2 variação</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-03b">Ela vai se lembrar de como se sentiu nesse dia.
+
+Não do batom. Não do penteado.
+Da certeza de que estava inteiramente ela mesma.
+
+Debutantes 2026 · Agenda sob consulta · @ammaconceptt</div>
+        <div class="copy-block__note">Fala com a mãe, quem geralmente decide e paga. Gatilho emocional: memória afetiva, não estética.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-03b', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <!-- 04 Presença -->
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 04</span>
+        <span class="copy-block__title">Presença · Evento de prestígio</span>
+        <span class="copy-block__day">Quarta · Ciclo 3</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-04a">Há eventos que exigem mais do que a roupa certa.
+Exigem que você chegue inteira.
+
+Eventos sociais e corporativos de alto padrão.
+
+Agenda sob consulta · @ammaconceptt</div>
+        <div class="copy-block__note">CEP mais imediato e recorrente, eventos acontecem o ano todo. "Chegue inteira" conecta ao onlyness sem repetir o onlyness.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-04a', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 04</span>
+        <span class="copy-block__title">Presença · Urgência velada</span>
+        <span class="copy-block__day">Quarta · Ciclo 3 variação</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-04b">Espera média de três semanas.
+
+Não porque não há tempo, porque cada atendimento exige tempo inteiro.
+
+@ammaconceptt · Porto Alegre</div>
+        <div class="copy-block__note">Serve qualquer CEP. Usa a escassez como argumento de qualidade, não de correria. Ideal para impulsionar agendamentos sem urgência falsa.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-04b', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <!-- 05 Merecimento -->
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 05</span>
+        <span class="copy-block__title">Merecimento · Principal</span>
+        <span class="copy-block__day">Sexta</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-05a">Algumas conquistas merecem ser marcadas no corpo.
+No gesto. Na presença.
+
+Para quem já sabe que merece, e quer o espelho confirmando.
+
+@ammaconceptt · Agenda sob consulta</div>
+        <div class="copy-block__note">Fecha a semana com tom emocional e de auto-cuidado. Não cita serviço específico, a cliente projeta o dela.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-05a', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <div class="copy-block__header" onclick="toggleCopy(this)">
+        <span class="copy-block__pillar"> · 05</span>
+        <span class="copy-block__title">Merecimento · Tempo como luxo</span>
+        <span class="copy-block__day">Sexta</span>
+      </div>
+      <div class="copy-block__body">
+        <div class="copy-block__caption" id="copy-05b">O luxo, para nós, não é o produto.
+É o tempo, inteiramente dedicado a você.
+
+Por algumas horas, você é a única coisa no mundo que importa.
+
+@ammaconceptt · Porto Alegre · Sul do Brasil</div>
+        <div class="copy-block__note">Extrato direto do manifesto. Reforça o posicionamento de luxo-como-tempo de Kapferer. Usar com foto de ambiente ou detalhe do atelier.</div>
+        <button class="copy-btn" onclick="copyCaption('copy-05b', this)">Copiar legenda</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STORIES -->
+  <div class="section">
+    <div class="section-label">Stories · Tipos e frequência</div>
+    <h2>Presença diária sem <em>performance</em>.</h2>
+    <div class="stories-grid">
+      <div class="story-type">
+        <div class="story-type__label">Tipo 01</div>
+        <div class="story-type__name">Escassez real</div>
+        <div class="story-type__freq">1× por semana</div>
+        <div class="story-type__desc">Atualização real da agenda. "Agenda de julho: 4 datas disponíveis." Nunca inventar, escassez falsa destrói credibilidade de luxo.</div>
+      </div>
+      <div class="story-type">
+        <div class="story-type__label">Tipo 02</div>
+        <div class="story-type__name">Bastidores</div>
+        <div class="story-type__freq">2–3× por semana</div>
+        <div class="story-type__desc">Processo, detalhe, gesto, ferramenta. Nunca rosto de cliente sem autorização expressa. O que mostrar: mão + pincel, detalhe de olho, preparação de paleta, cabelo em construção.</div>
+      </div>
+      <div class="story-type">
+        <div class="story-type__label">Tipo 03</div>
+        <div class="story-type__name">Depoimento</div>
+        <div class="story-type__freq">1× por semana</div>
+        <div class="story-type__desc">Adaptar depoimento real para 9:16 usando template do instagram-templates.html. Texto sobre fundo cacau. Sem foto da cliente · a palavra é suficiente.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RULES -->
+  <div class="section">
+    <div class="section-label">Regras de voz · aplicar em toda peça</div>
+    <h2>O que a marca <em>é</em> e o que ela nunca é.</h2>
+    <div class="rules-grid">
+      <div class="rule-card rule-card--do">
+        <div class="rule-card__label">A Ammá sempre</div>
+        <ul>
+          <li>Fala na primeira pessoa do plural (nós, nosso)</li>
+          <li>Usa ponto final · fecha com dignidade</li>
+          <li>Nomeia serviços como rituais, gestos, presenças</li>
+          <li>Referencia Porto Alegre como operação, Sul do Brasil como território</li>
+          <li>Trata a escassez como convicção, não como urgência</li>
+          <li>Cita o Debu do União como parceria, não como cliente</li>
+          <li>Mantém espaço entre as frases, respiração no copy</li>
+          <li>Termina com @ammaconceptt · localização ou agenda</li>
+        </ul>
+      </div>
+      <div class="rule-card rule-card--dont">
+        <div class="rule-card__label">A Ammá nunca</div>
+        <ul>
+          <li>Usa emoji · em nenhuma plataforma</li>
+          <li>Usa ponto de exclamação</li>
+          <li>Menciona preço, em nenhuma peça pública</li>
+          <li>Compara com concorrentes, direta ou indiretamente</li>
+          <li>Usa "transformação", "antes e depois", "nova você"</li>
+          <li>Cria urgência falsa ("últimas vagas", "só hoje")</li>
+          <li>Usa adjetivos supérfluos (incrível, maravilhoso, lindo)</li>
+          <li>Posta resultado sem contexto de identidade por trás</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING PRINCIPLE -->
+  <div class="principle">
+    <div class="p-label">Regra final · Sharp + Kapferer</div>
+    <p>O Instagram da Ammá não existe para lotar a agenda. Existe para ser <strong>inevitável</strong>. Quando a cliente certa, no momento certo, pensa em beleza premium, a Ammá precisa ser o único nome que vem à mente. Esse é o trabalho do conteúdo.</p>
+  </div>
+
+</div>
+
+<script>
+  function toggleCopy(header) {
+    var body = header.nextElementSibling;
+    body.classList.toggle('is-open');
+  }
+
+  function copyCaption(id, btn) {
+    var text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text.trim()).then(function() {
+      btn.textContent = 'Copiado';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = 'Copiar legenda';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>

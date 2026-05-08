@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Briefing de Produção: Tag</title>
+<meta name="description" content="Briefing de produção · Tag Ammá Concept · 55×90mm · papel algodão · cordão linho com ilhós dourado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --cacau:     #2b1d13;
+    --cream:     #faf7f2;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --texto:     #2a2a2a;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+  @media print {
+    body { background: white; }
+    .cover { min-height: auto; padding: 60px 48px; }
+  }
+  @page { size: A4; margin: 0; }
+
+  .cover {
+    min-height: 100vh;
+    background: var(--cacau);
+    color: var(--cream);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+  }
+  .doc { max-width: 860px; margin: 0 auto; padding: 72px 48px 100px; }
+
+  .eyebrow { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); display: flex; align-items: center; gap: 14px; }
+  .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--ouro); }
+  .cover-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; margin-top: 48px; }
+  .cover-title em { font-style: italic; color: var(--ouro); }
+  .cover-sub { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 20px; color: var(--champanhe); margin-top: 20px; max-width: 480px; line-height: 1.45; }
+  .cover-meta { border-top: 1px solid rgba(184,150,92,0.3); padding-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .meta-item { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); }
+  .meta-item strong { display: block; color: var(--champanhe); font-weight: 400; margin-bottom: 3px; font-size: 11px; }
+
+  .section { padding: 60px 0 44px; border-top: 1px solid var(--linha); }
+  .section:first-child { border-top: none; padding-top: 0; }
+  .section-num { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .section-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; margin-bottom: 28px; }
+  .section-title em { font-style: italic; }
+
+  p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 500; color: var(--texto); }
+  h3 { font-family: var(--font-d); font-weight: 300; font-size: 22px; margin: 36px 0 14px; letter-spacing: -0.01em; color: var(--texto); }
+
+  .highlight {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 24px 28px;
+    margin: 28px 0;
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.35;
+    color: var(--texto);
+  }
+
+  .dark-block { background: var(--cacau); color: var(--cream); padding: 40px 44px; margin: 28px 0; }
+  .dark-block .label { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+  .dark-block p { color: var(--champanhe); font-size: 14px; }
+  .dark-block strong { color: var(--cream); font-weight: 500; }
+  .dark-block .statement { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 1.35rem; line-height: 1.25; color: var(--cream); margin-bottom: 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .card { background: var(--perola); padding: 24px 28px; }
+  .card .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .card .title { font-family: var(--font-d); font-weight: 300; font-size: 20px; margin-bottom: 10px; color: var(--texto); }
+  .card p { font-size: 13px; color: var(--muted); margin: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  th { text-align: left; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; color: var(--ouro); padding: 10px 12px; border-bottom: 1px solid var(--linha); }
+  td { padding: 12px; border-bottom: 1px solid rgba(201,184,154,0.3); vertical-align: top; color: var(--muted); line-height: 1.6; }
+  td:first-child { color: var(--texto); font-weight: 400; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  .alert { border: 1px solid var(--ouro); padding: 20px 24px; margin: 24px 0; }
+  .alert .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .alert p { font-size: 13px; margin: 0; color: var(--texto); }
+
+  /* TAG MOCKUP */
+  .mockup-area { display: flex; justify-content: center; gap: 60px; align-items: flex-start; padding: 48px; background: var(--perola); margin: 32px 0; }
+
+  .tag-wrapper { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+  .tag-cord {
+    width: 1.5px;
+    height: 40px;
+    background: var(--linha);
+    position: relative;
+  }
+
+  .tag-card {
+    width: 110px;
+    position: relative;
+    box-shadow: 2px 3px 12px rgba(0,0,0,0.12);
+  }
+
+  .tag-front {
+    background: var(--cacau);
+    width: 110px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+  }
+  .tag-front::before {
+    content: '○';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--ouro);
+    line-height: 1;
+  }
+  .tag-back {
+    background: var(--cream);
+    width: 110px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 14px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--champanhe);
+  }
+  .tag-back::before {
+    content: '○';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--linha);
+    line-height: 1;
+  }
+
+  .tag-logo-name { font-family: var(--font-d); font-weight: 300; font-size: 18px; color: var(--ouro); letter-spacing: 0.06em; }
+  .tag-logo-sub { font-family: var(--font-b); font-weight: 300; font-size: 6px; letter-spacing: 0.32em; color: var(--ouro); text-transform: uppercase; }
+
+  .tag-back-text { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .tag-back-insta { font-family: var(--font-b); font-weight: 300; font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ouro); margin-top: 12px; }
+
+  .tag-face-label { font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); font-family: var(--font-b); margin-top: 6px; }
+  .tag-dims { font-size: 10px; color: var(--texto); background: var(--champanhe); padding: 6px 12px; margin-top: 4px; letter-spacing: 0.04em; }
+
+  .footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--linha); display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div>
+    <div class="eyebrow">Ammá Concept · Briefing de Produção Gráfica</div>
+    <h1 class="cover-title">Tag de<br><em>Produto</em></h1>
+    <p class="cover-sub">Especificação técnica completa, papel algodão · hot stamping · ilhós dourado · cordão linho</p>
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item"><strong>Documento</strong>BG-02 · Tag</div>
+    <div class="meta-item"><strong>Versão</strong>1.0 · Abril 2026</div>
+    <div class="meta-item"><strong>Uso</strong>Envio à gráfica / cotação</div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- PROPÓSITO -->
+  <div class="section">
+    <div class="section-num">Propósito</div>
+    <h2 class="section-title">A tag não é etiqueta. É <em>cartão de identidade</em>.</h2>
+
+    <div class="highlight">Na Ammá não existe preço visível. A tag existe para identificar a autoria, comunicar o DNA da marca e ser um objeto que a cliente decide guardar.</div>
+
+    <p>Dimensões idênticas ao cartão de visita (<strong>55 × 90 mm</strong>) · coerência de sistema. O mesmo objeto que a mão da profissional entrega, a sacola também carrega.</p>
+  </div>
+
+  <!-- MOCKUP -->
+  <div class="section">
+    <div class="section-num">Visual · Frente e Verso</div>
+    <h2 class="section-title">O que a cliente <em>vê</em>.</h2>
+
+    <div class="mockup-area">
+      <div class="tag-wrapper">
+        <div class="tag-cord"></div>
+        <div class="tag-card">
+          <div class="tag-front">
+            <svg viewBox="0 0 64 20" width="48" xmlns="http://www.w3.org/2000/svg" style="fill:none;stroke:#B8965C;stroke-linecap:round;stroke-width:1.8;margin-bottom:2px;">
+              <path d="M 4,14 C 9,6 14,2 22,8 C 28,13 31,16 38,10 C 44,5 51,2 58,8"/>
+            </svg>
+            <div class="tag-logo-name">AMMÁ</div>
+            <div class="tag-logo-sub">Concept</div>
+          </div>
+        </div>
+        <div class="tag-face-label">Frente · Fundo Cacau</div>
+        <div class="tag-dims">55 × 90 mm</div>
+      </div>
+
+      <div class="tag-wrapper">
+        <div class="tag-cord"></div>
+        <div class="tag-card">
+          <div class="tag-back">
+            <div class="tag-back-text">Não transformamos.<br>Revelamos<br>quem você já é.</div>
+            <div class="tag-back-insta">@ammaconceptt</div>
+          </div>
+        </div>
+        <div class="tag-face-label">Verso · Fundo Cream</div>
+        <div class="tag-dims">55 × 90 mm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESPECIFICAÇÃO TÉCNICA -->
+  <div class="section">
+    <div class="section-num">Especificação Técnica</div>
+    <h2 class="section-title">Cada <em>detalhe</em> especificado.</h2>
+
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>55 × 90 mm</strong></td><td>Orientação vertical. Mesmas dimensões do cartão de visita, coerência de sistema.</td></tr>
+        <tr><td>Material</td><td><strong>Papel algodão 300g/m²</strong></td><td>Primeira opção. Tátil premium, sem laminação necessária. Opção B: Triplex 400g/m² se algodão inviável.</td></tr>
+        <tr><td>Acabamento</td><td><strong>Sem laminação</strong></td><td>O algodão não lamina · isso é desejado. O fosco natural é parte da experiência tátil.</td></tr>
+        <tr><td>Corte</td><td>Guilhotina de precisão</td><td>Sem cantos arredondados. Nunca.</td></tr>
+        <tr><td>Furo</td><td><strong>ø5mm</strong>, centro superior, 8mm da borda</td><td>Reforçado com <strong>ilhós metálico dourado</strong> pressionado. Não perfurar sem ilhós.</td></tr>
+        <tr><td>Cordão</td><td><strong>Fio de linho torcido</strong>, cor natural</td><td>Comprimento 200mm, nó duplo no ilhós. Não usar elástico, não usar fita.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Frente · Fundo Cacau</h3>
+    <table>
+      <thead><tr><th>Elemento</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Fundo</td><td>Cacau <strong>#2B1D13</strong>, impressão offset ou digital de alta cobertura</td></tr>
+        <tr><td>Logo</td><td>Wordmark AMMÁ + swash + CONCEPT · <strong>hot stamping Pantone 871 C</strong> (ouro fosco). Nenhuma variação autorizada sem aprovação do atelier. Opção B apenas se hot stamping inviável: serigrafia ouro metalizado fosco.</td></tr>
+        <tr><td>Tamanho da logo</td><td>Largura <strong>35mm</strong>, centrada horizontalmente, posição vertical: centro óptico</td></tr>
+        <tr><td>Área de proteção</td><td>8mm mínimo em todos os lados da logo</td></tr>
+        <tr><td>Outros elementos</td><td>Nenhum. A logo é suficiente.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Verso · Fundo Cream</h3>
+    <p>Padrão canônico (MIV): manifesto fragmentado. Não substituir por identificação.</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Canônico · Manifesto</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:18px;margin:12px 0;color:var(--texto);line-height:1.4;">"Não transformamos.<br>Revelamos quem você já é."</div>
+        <p>Cormorant Garamond 300 Italic · 11pt · centralizado · cor cacau/70% · line-height 1.5</p>
+      </div>
+      <div class="card" style="opacity:0.6;border-style:dashed;">
+        <div class="label">Não-canônico · Identificação (uso restrito)</div>
+        <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;margin:12px 0;color:var(--muted);">@ammaconceptt<br><span style="color:var(--linha);">Porto Alegre, RS</span></div>
+        <p>Apenas se manifesto inviável (ex: tag pequena de coleção limitada). Requer aprovação fundadoras. MIV manda manifesto.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUÇÃO -->
+  <div class="section">
+    <div class="section-num">Produção e Montagem</div>
+    <h2 class="section-title">Como chega à <em>cliente</em>.</h2>
+
+    <div class="dark-block">
+      <div class="label">Entrega da Gráfica</div>
+      <p>Tags entregues <strong>já montadas, em packs de 50 unidades</strong>, cordão de linho com nó duplo, ilhós dourado instalado, pronta para fixar na sacola. A gráfica faz a montagem completa. <strong>Não aceitar entrega de tags avulsas sem cordão.</strong></p>
+      <p>Exigir <strong>prova física aprovada antes de qualquer tiragem</strong>. Na prova, verificar: fundo cacau sem manchas ou variação de cor, hot stamping centralizado e com brilho uniforme, ilhós sem amassados ou marcas, cordão com tensão e nó firme. Aprovação por escrito antes de liberar produção.</p>
+    </div>
+
+    <table>
+      <thead><tr><th>Item</th><th>Qtd mínima</th><th>Prazo estimado</th></tr></thead>
+      <tbody>
+        <tr><td>Tag 55×90mm, frente cacau / verso cream</td><td>500 unidades</td><td>10–15 dias úteis</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert">
+      <div class="label">Arquivos para a Gráfica</div>
+      <p>Logo em <strong>AI ou EPS</strong> com traços expandidos · Frente e verso em arquivos separados · Cor cacau: <strong>Pantone 476 C</strong> · Cor cream: <strong>Pantone 9183 C</strong> · Se hot stamping: cor ouro <strong>Pantone 871 C</strong> · Incluir furo e ilhós como especificação de acabamento, não como elemento de arte</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ammá Concept · BG-02 Tag · v1.0</span>
+    <span>Confidencial · Abril 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Briefing de Produção: Envelope</title>
+<meta name="description" content="Briefing de produção · Envelope DL + C5 Ammá Concept · interior cacau · logo ouro hot stamping na aba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --cacau:     #2b1d13;
+    --cream:     #faf7f2;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --texto:     #2a2a2a;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+  @media print {
+    body { background: white; }
+    .cover { min-height: auto; padding: 60px 48px; }
+  }
+  @page { size: A4; margin: 0; }
+
+  .cover {
+    min-height: 100vh;
+    background: var(--cacau);
+    color: var(--cream);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+  }
+  .doc { max-width: 860px; margin: 0 auto; padding: 72px 48px 100px; }
+
+  .eyebrow { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); display: flex; align-items: center; gap: 14px; }
+  .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--ouro); }
+  .cover-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; margin-top: 48px; }
+  .cover-title em { font-style: italic; color: var(--ouro); }
+  .cover-sub { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 20px; color: var(--champanhe); margin-top: 20px; max-width: 480px; line-height: 1.45; }
+  .cover-meta { border-top: 1px solid rgba(184,150,92,0.3); padding-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .meta-item { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); }
+  .meta-item strong { display: block; color: var(--champanhe); font-weight: 400; margin-bottom: 3px; font-size: 11px; }
+
+  .section { padding: 60px 0 44px; border-top: 1px solid var(--linha); }
+  .section:first-child { border-top: none; padding-top: 0; }
+  .section-num { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .section-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; margin-bottom: 28px; }
+  .section-title em { font-style: italic; }
+
+  p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 500; color: var(--texto); }
+  h3 { font-family: var(--font-d); font-weight: 300; font-size: 22px; margin: 36px 0 14px; letter-spacing: -0.01em; color: var(--texto); }
+  h3 em { font-style: italic; }
+
+  .highlight {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 24px 28px;
+    margin: 28px 0;
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.35;
+    color: var(--texto);
+  }
+
+  .dark-block { background: var(--cacau); color: var(--cream); padding: 40px 44px; margin: 28px 0; }
+  .dark-block .label { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+  .dark-block p { color: var(--champanhe); font-size: 14px; }
+  .dark-block strong { color: var(--cream); font-weight: 400; }
+  .dark-block .statement { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 1.35rem; line-height: 1.25; color: var(--cream); margin-bottom: 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .card { background: var(--perola); padding: 24px 28px; }
+  .card .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .card .title { font-family: var(--font-d); font-weight: 300; font-size: 20px; margin-bottom: 10px; color: var(--texto); }
+  .card p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  th { text-align: left; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; color: var(--ouro); padding: 10px 12px; border-bottom: 1px solid var(--linha); }
+  td { padding: 12px; border-bottom: 1px solid rgba(201,184,154,0.3); vertical-align: top; color: var(--muted); line-height: 1.6; }
+  td:first-child { color: var(--texto); font-weight: 400; }
+  tr:last-child td { border-bottom: none; }
+
+  .alert { border: 1px solid var(--ouro); padding: 20px 24px; margin: 24px 0; }
+  .alert .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .alert p { font-size: 13px; margin: 0; color: var(--texto); }
+
+  /* ENVELOPE MOCKUPS */
+  .mockup-area {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px;
+    background: var(--perola);
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .env-wrapper { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+  .env {
+    background: var(--cream);
+    border: 1.5px solid var(--linha);
+    position: relative;
+    overflow: visible;
+  }
+
+  /* DL envelope: 220×110mm — scale ~1.8x for display */
+  .env-dl { width: 220px; height: 110px; }
+  /* C5 envelope: 229×162mm — scale ~1.5x */
+  .env-c5 { width: 229px; height: 115px; }
+
+  .env-front {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 12px 14px;
+  }
+
+  .env-logo-small {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 9px;
+    color: var(--ouro);
+    letter-spacing: 0.1em;
+    text-align: right;
+    line-height: 1.4;
+    opacity: 0.8;
+  }
+
+  .env-back-wrapper {
+    position: relative;
+    margin-top: 4px;
+  }
+
+  .env-back {
+    background: var(--cream);
+    border: 1.5px solid var(--linha);
+    position: relative;
+    overflow: visible;
+  }
+
+  .env-dl-back { width: 220px; height: 110px; }
+  .env-c5-back { width: 229px; height: 115px; }
+
+  /* Triangular flap */
+  .env-flap {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 54px;
+  }
+  .env-flap::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--champanhe);
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    border: 1.5px solid var(--linha);
+  }
+  .env-flap-logo {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 8px;
+    color: var(--ouro);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .env-interior {
+    width: 100%;
+    height: 100%;
+    background: var(--cacau);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .env-interior-text {
+    font-size: 7px;
+    color: var(--ouro);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .env-label { font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); font-family: var(--font-b); margin-top: 4px; }
+  .env-dims { font-size: 10px; color: var(--texto); background: var(--champanhe); padding: 4px 10px; letter-spacing: 0.04em; }
+
+  .view-label { font-size: 8px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); font-family: var(--font-b); margin-bottom: 4px; }
+
+  .footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--linha); display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div>
+    <div class="eyebrow">Ammá Concept · Briefing de Produção Gráfica</div>
+    <h1 class="cover-title">Envelope<br><em>Impresso</em></h1>
+    <p class="cover-sub">Dois formatos · Interior cacau · Logo ouro na aba · Para correspondência premium e contratos</p>
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item"><strong>Documento</strong>BG-03 · Envelope</div>
+    <div class="meta-item"><strong>Versão</strong>1.0 · Abril 2026</div>
+    <div class="meta-item"><strong>Uso</strong>Envio à gráfica / cotação</div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- PROPÓSITO -->
+  <div class="section">
+    <div class="section-num">Propósito</div>
+    <h2 class="section-title">O envelope chega antes do <em>conteúdo</em>.</h2>
+
+    <div class="highlight">Para uma noiva que recebe seu contrato, o envelope é o primeiro momento do atelier em sua casa. Deve comunicar: isto é diferente de tudo o que você já recebeu.</div>
+
+    <p>Dois formatos são necessários para cobrir todos os cenários de correspondência da Ammá. <strong>DL</strong> para cartas, notas e folhas A4 dobradas em três. <strong>C5</strong> para contratos e documentos A4 dobrados ao meio.</p>
+  </div>
+
+  <!-- MOCKUPS -->
+  <div class="section">
+    <div class="section-num">Visual: Frente, Verso e Interior</div>
+    <h2 class="section-title">O que a destinatária <em>recebe</em>.</h2>
+
+    <div class="mockup-area">
+      <!-- DL -->
+      <div class="env-wrapper">
+        <div class="view-label">Formato DL · Frente</div>
+        <div class="env env-dl">
+          <div class="env-front">
+            <div class="env-logo-small">AMMÁ<br><span style="font-family:'Raleway',sans-serif;font-size:6px;letter-spacing:0.28em;">CONCEPT</span></div>
+          </div>
+        </div>
+        <div class="env-label">220 × 110 mm</div>
+        <div class="env-dims">DL · Cartas e notas</div>
+      </div>
+
+      <div class="env-wrapper">
+        <div class="view-label">Formato DL · Verso (aba)</div>
+        <div style="position:relative; margin-top:54px;">
+          <div class="env-flap">
+            <div class="env-flap-logo">
+              <svg viewBox="0 0 80 16" width="40" height="8" style="display:block;margin:0 auto 1px;"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.5" stroke-linecap="round"/></svg>
+              AMMÁ<br><span style="font-family:'Raleway',sans-serif;font-size:5px;letter-spacing:0.32em;">CONCEPT</span>
+            </div>
+          </div>
+          <div class="env env-dl-back">
+            <div class="env-interior">
+              <div class="env-interior-text">interior cacau</div>
+            </div>
+          </div>
+        </div>
+        <div class="env-label">Aba triangular · Logo centrada</div>
+        <div class="env-dims">Interior #2B1D13</div>
+      </div>
+
+      <!-- C5 -->
+      <div class="env-wrapper">
+        <div class="view-label">Formato C5 · Verso (aba)</div>
+        <div style="position:relative; margin-top:54px;">
+          <div class="env-flap">
+            <div class="env-flap-logo">
+              <svg viewBox="0 0 80 16" width="40" height="8" style="display:block;margin:0 auto 1px;"><path d="M 4,12 C 14,4 26,2 38,8 C 48,12 56,14 66,9 C 72,5 76,4 78,6" fill="none" stroke="#B8965C" stroke-width="1.5" stroke-linecap="round"/></svg>
+              AMMÁ<br><span style="font-family:'Raleway',sans-serif;font-size:5px;letter-spacing:0.32em;">CONCEPT</span>
+            </div>
+          </div>
+          <div class="env env-c5-back">
+            <div class="env-interior">
+              <div class="env-interior-text">interior cacau</div>
+            </div>
+          </div>
+        </div>
+        <div class="env-label">229 × 162 mm</div>
+        <div class="env-dims">C5 · Contratos e A5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESPECIFICAÇÃO TÉCNICA -->
+  <div class="section">
+    <div class="section-num">Especificação Técnica · Formato DL</div>
+    <h2 class="section-title">Envelope DL · <em>correspondência</em> padrão.</h2>
+
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>220 × 110 mm</strong></td><td>Formato padrão internacional. Acomoda folha A4 dobrada em três.</td></tr>
+        <tr><td>Papel</td><td>Offset <strong>120g/m²</strong> · cor cream #FAF7F2</td><td>Pantone equivalente: 9183 C. Gramatura suficiente para interior impresso.</td></tr>
+        <tr><td>Exterior</td><td>Impressão <strong>1 cor · ouro metalizado fosco</strong></td><td>Hot stamping Pantone 871 C foil (canônico MIV). Serigrafia apenas como fallback se a gráfica não suportar hot stamp. Apenas a logo na aba, sem mais nenhum elemento externo.</td></tr>
+        <tr><td>Interior</td><td>Fundo <strong>cacau #2B1D13</strong> sólido</td><td>Impressão offset ou digital cobertura total. Verificar compatibilidade com papel 120g antes de produção.</td></tr>
+        <tr><td>Fechamento</td><td><strong>Aba triangular com fita adesiva removível</strong> (strip seal)</td><td>Mais prático para uso frequente. A fita não rasga o envelope ao abrir.</td></tr>
+        <tr><td>Uso</td><td>Cartas, notas de agradecimento, folha A4 dobrada em três</td><td>Uso frequente · correspondência geral.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Logo na aba · Formato DL</h3>
+    <table>
+      <thead><tr><th>Elemento</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Posição</td><td>Verso, <strong>centrada na aba triangular</strong> · eixo horizontal. Posição vertical: 1/3 superior da aba (perto do bico)</td></tr>
+        <tr><td>Variante da logo</td><td>Wordmark completo AMMÁ + swash + CONCEPT · cor ouro via hot stamping Pantone 871 C foil</td></tr>
+        <tr><td>Largura da logo</td><td><strong>60mm</strong></td></tr>
+        <tr><td>Proteção</td><td>8mm mínimo de todas as bordas da aba</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-num">Especificação Técnica · Formato C5</div>
+    <h2 class="section-title">Envelope C5 · <em>contratos</em> e documentos.</h2>
+
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>229 × 162 mm</strong></td><td>Formato padrão internacional. Acomoda folha A4 dobrada ao meio, documentos A5.</td></tr>
+        <tr><td>Papel</td><td>Offset <strong>120g/m²</strong> · cor cream #FAF7F2</td><td>Mesmas especificações do DL, mesma gráfica, mesmo lote se possível.</td></tr>
+        <tr><td>Exterior</td><td>Impressão <strong>1 cor · ouro metalizado fosco</strong></td><td>Logo apenas na aba. Frente: sem impressão.</td></tr>
+        <tr><td>Interior</td><td>Fundo <strong>cacau #2B1D13</strong> sólido</td><td>Mesma especificação do DL.</td></tr>
+        <tr><td>Fechamento</td><td><strong>Aba reta com goma reumidificável</strong></td><td>Mais formal. Adequado para documentos oficiais e contratos. A aba reta dá aparência de documento registrado.</td></tr>
+        <tr><td>Uso</td><td>Contratos (contrato-servicos.html), documentos A5, apresentações impressas</td><td>Uso específico · não rotineiro.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Logo na aba · Formato C5</h3>
+    <table>
+      <thead><tr><th>Elemento</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Posição</td><td>Verso, <strong>centrada na aba</strong>, quando a aba está dobrada, a logo fica visível como "selo" de fechamento</td></tr>
+        <tr><td>Largura da logo</td><td><strong>80mm</strong></td></tr>
+        <tr><td>Efeito visual</td><td>A aba dobrada sobre a logo cria um "selo" dourado, o envelope só pode ser aberto rompendo o visual da marca</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- INTERIOR -->
+  <div class="section">
+    <div class="section-num">Interior Cacau</div>
+    <h2 class="section-title">O que a destinatária vê ao <em>abrir</em>.</h2>
+
+    <p>O interior cacau cumpre três funções: <strong>protege o conteúdo visualmente</strong> (impede leitura por transparência), <strong>cria o momento de revelação</strong> (cream sobre cacau ao abrir), e <strong>comunica que este envelope foi pensado</strong> · não é genérico.</p>
+
+    <div class="dark-block">
+      <div class="label">Nota Técnica · Interior Cacau</div>
+      <p>Impressão de área sólida em papel branco/cream requer cobertura alta. <strong>Verificar com a gráfica</strong> se o papel 120g suporta impressão digital de cobertura total sem enrugar. Se necessário, aumentar para 150g/m² no interior. Alternativa: envelope bicolor (exterior cream, interior cacau) via papel offset escuro colado internamente.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Opção A, Impressão de Cobertura Total</div>
+        <div class="title">Mais econômico</div>
+        <p>Papel cream 120g impresso com fundo cacau no interior via digital ou offset. Verificar adesão de tinta antes de tirar o pedido completo.</p>
+      </div>
+      <div class="card">
+        <div class="label">Opção B · Papel Duplo</div>
+        <div class="title">Mais premium</div>
+        <p>Exterior em papel cream + interior forrado com papel offset cacau 90g colado. Resultado tátil superior, espessura extra comunica qualidade.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <div class="section">
+    <div class="section-num">Resumo para Cotação</div>
+    <h2 class="section-title">O que enviar para a <em>gráfica</em>.</h2>
+
+    <table>
+      <thead><tr><th>Item</th><th>Dimensões</th><th>Fechamento</th><th>Qtd mínima</th><th>Prazo estimado</th></tr></thead>
+      <tbody>
+        <tr><td>Envelope DL</td><td>220 × 110 mm</td><td>Strip seal (fita)</td><td>500 unidades</td><td>10–15 dias úteis</td></tr>
+        <tr><td>Envelope C5</td><td>229 × 162 mm</td><td>Goma reumidificável</td><td>200 unidades</td><td>10–15 dias úteis</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert">
+      <div class="label">Arquivos para a Gráfica</div>
+      <p>Logo em <strong>AI ou EPS</strong> com traços expandidos · Dieline em layer separado · Cor cacau interior: <strong>Pantone 476 C</strong> · Cor cream exterior: <strong>Pantone 9183 C</strong> · Cor logo ouro: <strong>Pantone 871 C</strong> · Solicitar prova física de dobra, papel 120g pode rachar no vinco com cobertura total de tinta · Testar que a goma do C5 não adere prematuramente ao interior impresso</p>
+    </div>
+
+    <div class="dark-block" style="margin-top:36px;">
+      <div class="label">Nota Final</div>
+      <p class="statement" style="font-size:1.2rem;">O envelope que uma noiva abre três dias antes do casamento é parte da experiência Ammá. Não é papelaria. É o atelier chegando na casa dela.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ammá Concept · BG-03 Envelope · v1.0</span>
+    <span>Confidencial · Abril 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

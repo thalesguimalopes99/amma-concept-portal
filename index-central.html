@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Central de Arquivos</title>
+<meta name="description" content="Central de arquivos da Ammá Concept · Brand book, manual de identidade visual, briefings de produção gráfica, scripts e materiais oficiais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/brand-tokens.css">
+<style>
+  /* Tokens de marca consumidos via assets/brand-tokens.css (link no <head>). */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--texto);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--cacau);
+    padding: 72px 48px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--ouro); }
+  .hero-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    color: var(--cream);
+    line-height: 1.05;
+  }
+  .hero-title em { font-style: italic; color: var(--ouro); }
+  .hero-sub {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--champanhe);
+    margin-top: 16px;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(184,150,92,0.25);
+    flex-wrap: wrap;
+  }
+  .hero-meta-item { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); }
+  .hero-meta-item strong { display: block; color: var(--champanhe); font-weight: 400; font-size: 11px; margin-bottom: 3px; }
+
+  /* LAYOUT */
+  .main { max-width: 1100px; margin: 0 auto; padding: 56px 48px 100px; }
+
+  /* CATEGORY */
+  .category { margin-bottom: 64px; }
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--linha);
+  }
+  .category-num { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); }
+  .category-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 26px;
+    color: var(--texto);
+  }
+  .category-title em { font-style: italic; }
+  .category-count { font-size: 10px; letter-spacing: 0.2em; color: var(--muted); margin-left: auto; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
+
+  /* CARD */
+  .card {
+    background: var(--perola);
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.25s;
+    position: relative;
+  }
+  .card:hover { background: var(--champanhe); }
+  .card--internal { background: rgba(43,29,19,0.04); }
+  .card--internal:hover { background: rgba(43,29,19,0.09); }
+  .card--site {
+    background: var(--cacau);
+    color: var(--cream);
+  }
+  .card--site:hover { background: #3d2a1c; }
+
+  .card-badge {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+  }
+  .card-badge--entregue { color: var(--ouro); }
+  .card-badge--interno  { color: #8b4e2a; }
+  .card-badge--externo  { color: var(--muted); }
+  .card-badge--live     { color: #7ab87a; }
+
+  .card-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.2;
+    color: var(--texto);
+  }
+  .card--site .card-title { color: var(--cream); }
+  .card-title em { font-style: italic; }
+
+  .card-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+  .card--site .card-desc { color: var(--champanhe); }
+
+  .card-filename {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--linha);
+    font-family: 'Courier New', monospace;
+    margin-top: 4px;
+  }
+  .card--site .card-filename { color: var(--ouro); opacity: 0.7; }
+
+  .card-arrow {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 14px;
+    color: var(--ouro);
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .card:hover .card-arrow { opacity: 1; transform: translateX(3px); }
+  .card--site .card-arrow { color: var(--ouro); }
+
+  /* INTERNAL WARNING */
+  .internal-note {
+    background: rgba(43,29,19,0.06);
+    border-left: 2px solid var(--cacau);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+    color: var(--texto);
+  }
+  .internal-note strong { font-weight: 500; }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 18px 24px;
+    background: var(--champanhe);
+    margin-bottom: 48px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; color: var(--muted); }
+  .legend-dot { width: 7px; height: 7px; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--linha);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 24px; }
+    .main { padding: 40px 24px 80px; }
+    .grid { grid-template-columns: 1fr; }
+    .hero-meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Ammá Concept · Central de Arquivos</div>
+  <h1 class="hero-title">A identidade da <em>Ammá,</em><br>em um só lugar.</h1>
+  <p class="hero-sub">Estratégia de marca · Identidade visual · Produção gráfica · Presença digital</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><strong>Total de documentos</strong>25 arquivos + 1 pacote ZIP</div>
+    <div class="hero-meta-item"><strong>Site ao vivo</strong>amm-concept.vercel.app</div>
+    <div class="hero-meta-item"><strong>Versão</strong>Maio 2026</div>
+    <div class="hero-meta-item"><strong>Status geral</strong>Ativo · 1 pendência física</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- LEGENDA -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--ouro);"></div> Entregue · pronto para uso</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#7ab87a;"></div> Live · publicado online</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#8b4e2a;"></div> Uso interno, não compartilhar com cliente</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--linha);"></div> Para gráfica · enviar ao fornecedor</div>
+  </div>
+
+  <!-- 01 · FUNDAÇÃO -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">01</div>
+      <h2 class="category-title">Fundação de <em>Marca</em></h2>
+      <div class="category-count">2 documentos</div>
+    </div>
+    <div class="grid">
+      <a href="brand-book.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue · v2.2</div>
+        <div class="card-title">Brand Foundation<br><em>Document</em></div>
+        <div class="card-desc">A fonte de verdade. Origem, posicionamento, Prisma de Kapferer, arquétipo, personas, voz, manifesto, direção visual, cores, tipografia, logo, FOMO, rituais, governança e mapa de touchpoints completo. · PDF exportado em pacote-grafica/00_Manual_Identidade_Visual/AMMA_BRAND-BOOK_v01.pdf.</div>
+        <div class="card-filename">brand-book.html</div>
+      </a>
+      <a href="manual-identidade-visual.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue · v1.0</div>
+        <div class="card-title">Manual de Identidade<br><em>Visual</em></div>
+        <div class="card-desc">Especificação técnica do sistema visual: anatomia da logo, malha modular, área de proteção, redução mínima, 8 variantes oficiais, paleta cromática, tipografia, grid editorial, direção fotográfica e governança. · PDF exportado em pacote-grafica/00_Manual_Identidade_Visual/AMMA_MIV_v01.pdf.</div>
+        <div class="card-filename">manual-identidade-visual.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 02 · IDENTIDADE VISUAL -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">02</div>
+      <h2 class="category-title">Identidade <em>Visual</em></h2>
+      <div class="category-count">3 documentos</div>
+    </div>
+    <div class="grid">
+      <a href="logo-ammá.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Logo · 8 <em>Variantes</em></div>
+        <div class="card-desc">Wheeler spec completo. Variantes: principal, inverse, premium, mono, mono-inv, compact. Swash bezier proprietário. Regras de aplicação por superfície.</div>
+        <div class="card-filename">logo-ammá.html</div>
+      </a>
+      <a href="cartao-visita.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Cartão de <em>Visita</em></div>
+        <div class="card-desc">85×55mm · papel algodão 350g · hot stamping Pantone 871 C ouro · 4/4 CMYK. Frente + verso · 3 variantes. PDF e briefing disponíveis em pacote-grafica/02_Cartao_Visita/.</div>
+        <div class="card-filename">cartao-visita.html</div>
+      </a>
+      <a href="og-image.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">OG Image · <em>Social Sharing</em></div>
+        <div class="card-desc">3 variantes (dark, light, split). 1200×630px. Screenshot para exportar. Usado no compartilhamento do site em redes sociais e WhatsApp.</div>
+        <div class="card-filename">og-image.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 03 · DIGITAL -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">03</div>
+      <h2 class="category-title">Presença <em>Digital</em></h2>
+      <div class="category-count">5 documentos + site ao vivo</div>
+    </div>
+    <div class="grid">
+      <a href="https://amm-concept.vercel.app" target="_blank" rel="noopener noreferrer" class="card card--site">
+        <span class="card-arrow" style="opacity:1;">↗</span>
+        <div class="card-badge card-badge--live">● Live</div>
+        <div class="card-title">Landing Page <em>Oficial</em></div>
+        <div class="card-desc">React + Vite + TypeScript + Tailwind. SEO completo: canonical, JSON-LD, sitemap, robots. LCP otimizado. Formulário → WhatsApp.</div>
+        <div class="card-filename">amm-concept.vercel.app</div>
+      </a>
+      <a href="briefing-fotografico.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Briefing <em>Fotográfico</em></div>
+        <div class="card-desc">Art direction completa. CEPs visuais, moodboard textual, regras de set. Inclui 3 versões de bio para @ammaconceptt.</div>
+        <div class="card-filename">briefing-fotografico.html</div>
+      </a>
+      <a href="instagram-templates.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Templates <em>Instagram</em></div>
+        <div class="card-desc">Grid 1:1 e 4:5 · 3 variantes cada. Stories 9:16. Screenshot para exportar diretamente ao Canva ou ferramentas de agendamento.</div>
+        <div class="card-filename">instagram-templates.html</div>
+      </a>
+      <a href="guia-conteudo-instagram.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Guia de Conteúdo <em>Instagram</em></div>
+        <div class="card-desc">Estratégia de conteúdo para o feed. Categorias, frequência, regras editoriais, exemplos de legenda alinhados ao brand DNA.</div>
+        <div class="card-filename">guia-conteudo-instagram.html</div>
+      </a>
+      <a href="email-signature.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Assinatura de <em>E-mail</em></div>
+        <div class="card-desc">Versão clara e escura. HTML inline pronto para copiar no Gmail ou Outlook. Sem imagens externas, funciona em qualquer cliente de e-mail.</div>
+        <div class="card-filename">email-signature.html</div>
+      </a>
+      <a href="whatsapp-scripts.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Scripts <em>WhatsApp</em></div>
+        <div class="card-desc">9 cenários com copy editorial pronta para copiar: primeiro contato, resposta de orçamento, confirmação, follow-up, noiva, debutante e mais.</div>
+        <div class="card-filename">whatsapp-scripts.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 04 · OPERACIONAL -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">04</div>
+      <h2 class="category-title">Documentos <em>Operacionais</em></h2>
+      <div class="category-count">6 documentos</div>
+    </div>
+    <div class="internal-note">
+      <strong>Atenção:</strong> os documentos marcados como Uso Interno não devem ser compartilhados com clientes finais nem fornecedores externos.
+    </div>
+    <div class="grid">
+      <a href="tabela-precos-interna.html" class="card card--internal">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--interno">● Uso interno</div>
+        <div class="card-title">Tabela de <em>Preços</em></div>
+        <div class="card-desc">Preços editáveis por serviço. Cálculo automático de comissão (30–70%). Toggle de alta temporada (+25%). 3 pacotes combinados com totais automáticos.</div>
+        <div class="card-filename">tabela-precos-interna.html</div>
+      </a>
+      <a href="tabela-precos-v2.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue · v2</div>
+        <div class="card-title">Tabela de <em>Preços (Pública)</em></div>
+        <div class="card-desc">Documento público de preços para clientes. Versão limpa sem cálculos internos. Atelier ultra-premium em Porto Alegre.</div>
+        <div class="card-filename">tabela-precos-v2.html</div>
+      </a>
+      <a href="contrato-servicos.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Contrato de <em>Serviços</em></div>
+        <div class="card-desc">10 cláusulas legais. 2 vias sincronizadas. Campos editáveis. Numeração sequencial automática (AMM-2026-001). Política de cancelamento e direito de imagem.</div>
+        <div class="card-filename">contrato-servicos.html</div>
+      </a>
+      <a href="papel-timbrado.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Papel <em>Timbrado</em></div>
+        <div class="card-desc">A4 210×297mm · offset 120g cream Pantone 9183 C · margens 20mm · cabeçalho com hot stamping ouro 871 C no swash + wordmark · cacau Pantone 476 C no texto. Campos editáveis. PDF + briefing em pacote-grafica/06_Papel_Timbrado/.</div>
+        <div class="card-filename">papel-timbrado.html</div>
+      </a>
+      <a href="protocolo-indicacao.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Protocolo de <em>Indicação</em></div>
+        <div class="card-desc">Círculo Ammá · 3 tiers. Tabela de rastreamento. 6 scripts prontos para WhatsApp. Cartão-convite imprimível. Regras operacionais completas.</div>
+        <div class="card-filename">protocolo-indicacao.html</div>
+      </a>
+      <a href="onboarding-artistas.html" class="card card--internal">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--interno">● Uso interno</div>
+        <div class="card-title">Onboarding de <em>Artistas</em></div>
+        <div class="card-desc">Carta de boas-vindas das fundadoras. 4 valores do atelier. Protocolo de atendimento em 7 passos. Tom de voz, regras de redes sociais. Checklist 30/60/90 dias. 7 não-negociáveis.</div>
+        <div class="card-filename">onboarding-artistas.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 05 · MARKETING E PARCERIAS -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">05</div>
+      <h2 class="category-title">Marketing e <em>Parcerias</em></h2>
+      <div class="category-count">3 documentos</div>
+    </div>
+    <div class="grid">
+      <a href="apresentacao-parcerias.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Apresentação para <em>Parcerias</em></div>
+        <div class="card-desc">9 slides editoriais para parceiros (florista, buffet, fotógrafo, eventos como Debu União 2026). PDF em pacote-grafica/09_Apresentacao/.</div>
+        <div class="card-filename">apresentacao-parcerias.html</div>
+      </a>
+      <a href="debu-uniao-2026.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Debu do União <em>2026</em></div>
+        <div class="card-desc">Documento completo da parceria oficial. Proposta, condições, comunicação e materiais para a parceria com o Debu do União 2026.</div>
+        <div class="card-filename">debu-uniao-2026.html</div>
+      </a>
+      <a href="menu-rituais.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--entregue">● Entregue</div>
+        <div class="card-title">Menu dos <em>Rituais</em></div>
+        <div class="card-desc">Capa cacau Pantone 476 C com hot stamping ouro 871 C · miolo cream Pantone 9183 C · 3 rituais (rosto · cabelo · presença) + fechamento. PDF em pacote-grafica/07_Menu_Rituais/.</div>
+        <div class="card-filename">menu-rituais.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 06 · PRODUÇÃO GRÁFICA -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">06</div>
+      <h2 class="category-title">Produção <em>Gráfica</em></h2>
+      <div class="category-count">4 itens · pacote pronto para envio à gráfica</div>
+    </div>
+    <div class="grid">
+      <a href="Amma-Concept-Producao-Grafica.zip" download class="card" style="background:var(--cacau);color:var(--cream);">
+        <span class="card-arrow" style="color:var(--ouro);opacity:1;">↓</span>
+        <div class="card-badge card-badge--externo" style="color:var(--ouro);">◎ Pacote completo</div>
+        <div class="card-title" style="color:var(--cream);">Pacote para <em>Gráfica</em></div>
+        <div class="card-desc" style="color:var(--champanhe);">ZIP único com 13 pastas: MIV + brand book + 8 logos SVG/PNG + 9 peças com briefing + matriz Pantone + FAQ gráfica + tipografia OFL + COLOR-PROOF. Pronto para envio à agência ou gráfica.</div>
+        <div class="card-filename" style="color:var(--ouro);opacity:0.7;">Amma-Concept-Producao-Grafica.zip · 5.94 MB</div>
+      </a>
+      <a href="briefing-sacola.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--externo">◎ Para gráfica</div>
+        <div class="card-title">Briefing <em>Sacola</em></div>
+        <div class="card-desc">BG-01 · 3 tamanhos P/M/G · offset 350g cream fosco · hot stamping Pantone 871 C · fita cetim/grogrão cacau · ilhós dourado · interior papel de seda. PDF + briefing em pacote-grafica/03_Sacola/.</div>
+        <div class="card-filename">briefing-sacola.html</div>
+      </a>
+      <a href="briefing-tag.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--externo">◎ Para gráfica</div>
+        <div class="card-title">Briefing <em>Tag</em></div>
+        <div class="card-desc">BG-02 · 55×90mm · papel algodão 300g · frente cacau Pantone 476 C com logo ouro 871 C · verso cream Pantone 9183 C com manifesto · ilhós dourado ø5mm · cordão linho. PDF + briefing em pacote-grafica/04_Tag/.</div>
+        <div class="card-filename">briefing-tag.html</div>
+      </a>
+      <a href="briefing-envelope.html" class="card">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--externo">◎ Para gráfica</div>
+        <div class="card-title">Briefing <em>Envelope</em></div>
+        <div class="card-desc">BG-03 · DL 220×110mm strip seal + C5 229×162mm goma · offset 120g cream Pantone 9183 C · interior cacau Pantone 476 C · logo ouro 871 C hot stamping na aba. PDF + briefing em pacote-grafica/05_Envelope/.</div>
+        <div class="card-filename">briefing-envelope.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 07 · CULTURA INTERNA -->
+  <div class="category">
+    <div class="category-header">
+      <div class="category-num">07</div>
+      <h2 class="category-title">Cultura <em>Interna</em></h2>
+      <div class="category-count">1 documento</div>
+    </div>
+    <div class="grid">
+      <a href="cultura-interna.html" class="card card--internal">
+        <span class="card-arrow">→</span>
+        <div class="card-badge card-badge--interno">● Uso interno</div>
+        <div class="card-title">Cultura <em>Interna</em></div>
+        <div class="card-desc">Os valores, rituais e formas de trabalhar do atelier. Para as fundadoras e a equipe, não para circulação externa.</div>
+        <div class="card-filename">cultura-interna.html</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ammá Concept · Central de Arquivos · v1.1</span>
+    <span>Confidencial · Maio 2026 · 25 documentos + pacote gráfica ZIP · Peças sincronizadas com MIV</span>
+  </div>
+
+</div>
+</body>
+</html>

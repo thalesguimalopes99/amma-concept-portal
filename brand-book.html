@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Brand Foundation Document</title>
+<meta name="description" content="Brand Foundation Document oficial da Ammá Concept · Posicionamento, prisma de Kapferer, arquétipo, personas, voz, manifesto, FOMO, rituais, governança.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/brand-tokens.css">
+<style>
+  /* Tokens de marca consumidos via assets/brand-tokens.css (link no <head>). */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: var(--fundo);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── DOCUMENT LAYOUT ─────────────────────────── */
+  .doc { max-width: 900px; margin: 0 auto; padding: 80px 48px 120px; }
+
+  /* ── COVER ───────────────────────────────────── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 48px;
+    background: var(--cacau);
+    color: var(--fundo);
+    page-break-after: always;
+  }
+  .cover__top { display: flex; align-items: center; gap: 16px; }
+  .cover__hairline { width: 48px; height: 1px; background: var(--ouro); }
+  .cover__eyebrow { font-family: var(--font-b); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); }
+  .cover__title { font-family: var(--font-d); font-weight: 300; font-size: clamp(3.5rem, 8vw, 7rem); line-height: 1; letter-spacing: -0.01em; margin-top: 40px; }
+  .cover__title em { font-style: italic; color: var(--ouro); }
+  .cover__sub { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 22px; color: var(--champanhe); margin-top: 24px; max-width: 540px; line-height: 1.4; }
+  .cover__meta { border-top: 1px solid rgba(184,150,92,0.3); padding-top: 32px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .cover__meta-item { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); }
+  .cover__meta-item strong { display: block; color: var(--champanhe); font-weight: 400; margin-bottom: 4px; }
+
+  /* ── SECTION HEADERS ─────────────────────────── */
+  .section {
+    padding: 72px 0 56px;
+    border-top: 1px solid var(--linha);
+    page-break-inside: avoid;
+  }
+  .section:first-child { border-top: none; padding-top: 0; }
+  .section__num { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); font-family: var(--font-b); font-weight: 400; margin-bottom: 12px; }
+  .section__title { font-family: var(--font-d); font-weight: 300; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.01em; color: var(--texto); margin-bottom: 40px; }
+  .section__title em { font-style: italic; }
+
+  /* ── PROSE ───────────────────────────────────── */
+  p { margin-bottom: 20px; font-size: 15px; color: var(--muted); line-height: 1.8; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 500; color: var(--texto); }
+
+  /* ── HIGHLIGHT BLOCK ─────────────────────────── */
+  .highlight {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 28px 32px;
+    margin: 32px 0;
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+    line-height: 1.35;
+    color: var(--texto);
+  }
+  .highlight em { color: var(--accent-ink); font-style: normal; }
+
+  /* ── DARK BLOCK ──────────────────────────────── */
+  .dark-block {
+    background: var(--cacau);
+    color: var(--fundo);
+    padding: 48px;
+    margin: 32px 0;
+  }
+  .dark-block .label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 20px; font-family: var(--font-b); font-weight: 400; }
+  .dark-block p { color: var(--champanhe); font-size: 17px; line-height: 1.65; margin-bottom: 16px; }
+  .dark-block strong { color: var(--fundo); font-weight: 400; }
+  .dark-block .statement {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    line-height: 1.2;
+    color: var(--fundo);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* ── GRID 2 ──────────────────────────────────── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin: 32px 0; }
+  @media (max-width: 640px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  /* ── CARD ────────────────────────────────────── */
+  .card { background: var(--perola); padding: 28px; }
+  .card__label { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent-ink); font-weight: 400; margin-bottom: 12px; }
+  .card__title { font-family: var(--font-d); font-weight: 300; font-size: 24px; margin-bottom: 12px; }
+  .card__body { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+  /* ── PRISM ───────────────────────────────────── */
+  .prism { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 32px 0; }
+  .prism__cell { padding: 28px 24px; }
+  .prism__cell:nth-child(1) { background: var(--cacau); color: var(--fundo); }
+  .prism__cell:nth-child(2) { background: var(--cacau); color: var(--fundo); }
+  .prism__cell:nth-child(3) { background: var(--champanhe); }
+  .prism__cell:nth-child(4) { background: var(--champanhe); }
+  .prism__cell:nth-child(5) { background: var(--perola); }
+  .prism__cell:nth-child(6) { background: var(--perola); }
+  .prism__face { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 8px; font-weight: 400; opacity: 0.65; }
+  .prism__title { font-family: var(--font-d); font-size: 22px; font-weight: 300; margin-bottom: 10px; }
+  .prism__cell:nth-child(1) .prism__title,
+  .prism__cell:nth-child(2) .prism__title { color: var(--ouro); }
+  .prism__desc { font-size: 13px; line-height: 1.65; margin: 0; }
+  .prism__cell:nth-child(1) p,
+  .prism__cell:nth-child(2) p { color: var(--champanhe); }
+
+  /* ── TABLE ───────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; color: var(--accent-ink); padding: 10px 12px; border-bottom: 1px solid var(--linha); }
+  td { padding: 14px 12px; border-bottom: 1px solid rgba(201,184,154,0.3); vertical-align: top; color: var(--muted); }
+  td:first-child { color: var(--texto); font-weight: 400; }
+  tr:last-child td { border-bottom: none; }
+
+  /* ── VOCAB LIST ──────────────────────────────── */
+  .vocab { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--linha); margin: 24px 0; }
+  .vocab__header { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; padding: 12px 20px; background: var(--champanhe); }
+  .vocab__header--no { color: #8b3a3a; }
+  .vocab__header--yes { color: var(--accent-ink); }
+  .vocab__col { padding: 20px; }
+  .vocab__col--no { border-right: 1px solid var(--linha); }
+  .vocab__item { font-size: 13.5px; padding: 6px 0; border-bottom: 1px solid rgba(201,184,154,0.25); display: flex; align-items: baseline; gap: 8px; color: var(--muted); }
+  .vocab__item:last-child { border-bottom: none; }
+  .vocab__item .word { font-family: var(--font-d); font-size: 17px; font-weight: 300; color: var(--texto); }
+
+  /* ── COLOR SWATCHES ──────────────────────────── */
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+  .swatch { flex: 1; min-width: 100px; }
+  .swatch__color { height: 64px; width: 100%; }
+  .swatch__name { font-size: 11px; font-weight: 400; letter-spacing: 0.06em; margin-top: 8px; }
+  .swatch__hex { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* ── PERSONA ─────────────────────────────────── */
+  .persona { border: 1px solid var(--linha); padding: 36px; margin: 24px 0; }
+  .persona__header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--linha); }
+  .persona__name { font-family: var(--font-d); font-size: 32px; font-weight: 300; }
+  .persona__tag { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-ink); }
+  .persona__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .persona__item h5 { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 8px; font-weight: 400; }
+  .persona__item p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.65; }
+
+  /* ── FOMO MECHANICS ──────────────────────────── */
+  .mechanic { display: flex; gap: 20px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(201,184,154,0.3); }
+  .mechanic:last-child { border-bottom: none; }
+  .mechanic__num { font-family: var(--font-d); font-style: italic; font-size: 28px; color: var(--ouro); flex-shrink: 0; width: 40px; }
+  .mechanic__title { font-weight: 400; font-size: 15px; color: var(--texto); margin-bottom: 4px; }
+  .mechanic__desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+  .mechanic__copy { font-family: var(--font-d); font-style: italic; font-size: 15px; color: var(--accent-ink); margin-top: 8px; margin-bottom: 0; }
+
+  /* ── PAGE BREAK ──────────────────────────────── */
+  .page-break { page-break-after: always; border: none; margin: 0; height: 0; }
+
+  @media print {
+    .cover { min-height: auto; }
+    .doc { padding: 40px; }
+    .section { padding: 48px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  CAPA                                          -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="cover">
+  <div>
+    <div class="cover__top">
+      <div class="cover__hairline"></div>
+      <span class="cover__eyebrow">Documento Confidencial</span>
+    </div>
+    <h1 class="cover__title">Ammá<br><em>Concept</em></h1>
+    <p class="cover__sub">Brand Foundation Document · Estratégia, Identidade e Direção Visual para o Time de Design</p>
+  </div>
+  <div class="cover__meta">
+    <div class="cover__meta-item">
+      <strong>Versão</strong>2.0 · Abril 2026
+    </div>
+    <div class="cover__meta-item">
+      <strong>Categoria</strong>Atelier de Beleza Ultra-Premium
+    </div>
+    <div class="cover__meta-item">
+      <strong>Mercado</strong>Porto Alegre, RS · Brasil
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--  DOCUMENTO                                     -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="doc">
+
+  <!-- ─── PRÓLOGO · ORIGEM ──────────────────────── -->
+  <div class="section">
+    <div class="section__num">Prólogo · Origem</div>
+    <h2 class="section__title">De onde a Ammá <em>nasce</em>.</h2>
+
+    <div class="dark-block">
+      <div class="label">Porto Alegre, 2025</div>
+      <p>Francine Savi e Amanda Grundler tinham anos de trajetória dentro do mercado tradicional de beleza. Conheciam o ofício. Conheciam as clientes. Conheciam, com precisão crescente, o que não estavam dispostas a fazer.</p>
+      <p>O modelo que encontraram priorizava volume sobre experiência. O tempo da cliente era recurso de gestão, não de cuidado. O resultado seguia padrões replicáveis. O atendimento era funcional: eficiente, mas não relacional.</p>
+      <p class="statement">A incompatibilidade não foi uma crise. Foi uma clareza.</p>
+    </div>
+
+    <p>A decisão de criar o Ammá Concept foi, antes de tudo, uma decisão de posicionamento. Não criar "um salão melhor", criar uma categoria diferente.</p>
+
+    <div class="grid-3" style="margin:32px 0;">
+      <div class="card">
+        <div class="card__label">Primeira Recusa</div>
+        <div class="card__title">Agenda Lotada</div>
+        <p class="card__body">O modelo de volume (quanto mais clientes, melhor) foi recusado desde o primeiro dia. A agenda limitada não nasceu como estratégia. Nasceu como convicção.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Segunda Recusa</div>
+        <div class="card__title">Padronização Estética</div>
+        <p class="card__body">Beleza replicável é beleza sem autoria. A Ammá nasceu para interpretar, não para reproduzir padrões de mercado ou tendências de consumo.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Terceira Recusa</div>
+        <div class="card__title">Velocidade como Valor</div>
+        <p class="card__body">Em um mercado onde "rápido" é vendido como vantagem, a Ammá escolheu o oposto: o tempo como recurso central, de quem cuida e de quem é cuidada.</p>
+      </div>
+    </div>
+
+    <div class="highlight">Em seu lugar: <em>tempo como recurso central</em>. Atendimento intencional. Resultado interpretado, nunca reproduzido.</div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Sobre o <em>nome</em>.</h3>
+
+    <p>"Ammá" não descreve um serviço. Evoca um estado.</p>
+
+    <div class="dark-block">
+      <div class="label">Etimologia &amp; Intenção</div>
+      <p>Carrega no fonema a suavidade do cuidado, a continuidade do "mm", o fluxo de um gesto que não termina. O acento final não é decorativo: é assinatura, é singularidade, é recusa do lugar comum.</p>
+      <p>Na etimologia, remete a <strong style="color:var(--fundo);">origem, cuidado e presença</strong>. Na experiência, é isso que a marca entrega.</p>
+      <p class="statement">O nome não precisa ser entendido. Precisa ser sentido.</p>
+    </div>
+  </div>
+
+  <!-- ─── 00 · SUMÁRIO ─────────────────────────── -->
+  <div class="section">
+    <div class="section__num">00 · Índice</div>
+    <h2 class="section__title">O que você <em>encontra</em> aqui.</h2>
+    <table>
+      <thead><tr><th>#</th><th>Seção</th><th>Para quem</th></tr></thead>
+      <tbody>
+        <tr><td>Prólogo</td><td>Origem · A História da Ammá e o Nome</td><td>Todo o time</td></tr>
+        <tr><td>01</td><td>A Marca em Uma Frase</td><td>Todo o time</td></tr>
+        <tr><td>02</td><td>Posicionamento &amp; Estratégia</td><td>Estratégia, Copy</td></tr>
+        <tr><td>03</td><td>Identidade da Marca · Prisma de Kapferer</td><td>Estratégia, Design</td></tr>
+        <tr><td>04</td><td>Arquétipo &amp; Personalidade</td><td>Design, Copy, Social</td></tr>
+        <tr><td>05</td><td>Público-Alvo · Personas</td><td>Marketing, Copy, Social</td></tr>
+        <tr><td>06</td><td>Voz, Tom e Vocabulário</td><td>Copy, Social, CRM</td></tr>
+        <tr><td>07</td><td>Manifesto</td><td>Todo o time</td></tr>
+        <tr><td>08</td><td>Direção Visual · Brief para o Designer</td><td>Design, Fotografia</td></tr>
+        <tr><td>09</td><td>Sistema de Cores &amp; Tipografia</td><td>Design</td></tr>
+        <tr><td>10</td><td>Logo · Direção &amp; Aplicações</td><td>Design</td></tr>
+        <tr><td>11</td><td>Estratégia de FOMO &amp; Escassez</td><td>Marketing, Copy, Site</td></tr>
+        <tr><td>12</td><td>Arquitetura de Marca · Os Três Rituais</td><td>Estratégia, Site</td></tr>
+        <tr><td>06.b</td><td>BrandScript · Heroína, Guia, One-Liner, Plano e Stakes</td><td>Copy, Marketing, Social</td></tr>
+        <tr><td>13</td><td>Território da Marca · Como a Ammá existe no mundo</td><td>Estratégia, Fundadoras</td></tr>
+        <tr><td>14</td><td>Checklist do Time de Design</td><td>Design</td></tr>
+        <tr><td>15</td><td>Governança de Marca · Aprovação, Proteção e Revisão</td><td>Fundadoras, Design</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 01 · A MARCA EM UMA FRASE ───────────────────── -->
+  <div class="section">
+    <div class="section__num">01 · Essência</div>
+    <h2 class="section__title">A marca em <em>uma frase</em>.</h2>
+
+    <div class="dark-block">
+      <div class="label">Brand Essence</div>
+      <p class="statement">O único atelier de beleza do Sul do Brasil onde a agenda fechada não é um inconveniente, é a prova do valor.</p>
+    </div>
+
+    <p>Esta frase captura os três pilares que fazem a Ammá Concept ser irreplicável: <strong>escassez deliberada</strong> (agenda fechada como sinal de luxo), <strong>posicionamento geográfico de liderança</strong> (Sul do Brasil, não apenas Porto Alegre) e <strong>reframing de expectativa</strong> (a espera vira prova social).</p>
+    <p>Toda decisão de design, copy, comunicação e experiência deve ser avaliada contra esta frase. Se não reforça pelo menos um desses três pilares, reconsidere.</p>
+  </div>
+
+  <!-- ─── 02 · POSICIONAMENTO ─────────────────── -->
+  <div class="section">
+    <div class="section__num">02 · Posicionamento</div>
+    <h2 class="section__title">Onde a Ammá <em>existe</em> na mente.</h2>
+
+    <p>Posicionamento não é o que você diz sobre a marca, é o espaço que você ocupa na mente do cliente antes de ele chegar. A Ammá deve ocupar uma posição única e insubstituível. Para isso, precisamos definir o que ela <em>não é</em> tanto quanto o que ela <em>é</em>.</p>
+
+    <div class="highlight">
+      Para mulheres do Sul do Brasil que entendem o luxo como experiência, a Ammá Concept é o atelier de beleza em Porto Alegre que revela o cuidado pessoal como <em>ritual de presença</em>, único porque trata o tempo da cliente como o recurso mais valioso do mundo.
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:32px 0 16px;letter-spacing:-0.01em;">Only-ness Statement <span style="font-style:italic">(Neumeier)</span></h3>
+    <p>O only-ness é o que apenas a Ammá pode dizer com honestidade. Uma coisa. Uma frase. Com a palavra "único". Se não cabe nisso, não é um zag, é uma lista de features.</p>
+
+    <div class="dark-block">
+      <div class="label">Only-ness Statement</div>
+      <p class="statement">O Ammá Concept é o único atelier de beleza do Sul do Brasil que não transforma, apenas revela.</p>
+    </div>
+
+    <p>Este é o zag. O mercado inteiro promete transformação: antes e depois, resultados, mudança. A Ammá declara o oposto, que a cliente já existe, plenamente. O atelier apenas revela o que já estava lá. É posicionamento ontológico, não de preço ou qualidade. Não pode ser copiado sem parecer imitação.</p>
+
+    <div class="highlight">Filtro de decisão: <em>toda peça de comunicação deve reforçar revelação, nunca transformação.</em></div>
+
+    <div class="grid-2" style="margin-top:32px;">
+      <div class="card">
+        <div class="card__label">A Ammá É</div>
+        <div class="card__title" style="font-size:18px;margin-bottom:0;">
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Atelier · não salão, não clínica</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Experiência editorial</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Escassez como qualidade</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Tempo como luxo máximo</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Formação + referência internacional</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0;">· Presença · não visual, não look</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__label">A Ammá Nunca É</div>
+        <div class="card__title" style="font-size:18px;margin-bottom:0;">
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Promoções ou descontos</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· "A melhor do mercado" (julgamento externo)</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Agenda disponível a qualquer hora</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Atenção dividida com muitos clientes</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0 2px;">· Comunicação gritada (caps, exclamações)</p>
+          <p style="font-size:14px;color:var(--muted);margin:4px 0;">· Preços visíveis ou comparáveis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 03 · PRISMA DE KAPFERER ──────────────── -->
+  <div class="section">
+    <div class="section__num">03 · Identidade</div>
+    <h2 class="section__title">Prisma de <em>Identidade</em> de Marca.</h2>
+    <p>O Prisma de Kapferer define a identidade em seis facetas interdependentes. Ele é a base para qualquer decisão de design e comunicação, do logo ao tom de um e-mail.</p>
+
+    <div class="prism">
+      <div class="prism__cell">
+        <div class="prism__face">Físico</div>
+        <div class="prism__title">Aparência</div>
+        <p class="prism__desc">Cores cream, cacau e ouro. Tipografia serif light. Fotografia editorial dessaturada. Espaços amplos, silêncio visual. O ouro aparece em detalhes de 1px, nunca em massas. A logo tem um traço calligráfico que evoca o gesto de um pincel.</p>
+      </div>
+      <div class="prism__cell">
+        <div class="prism__face">Personalidade</div>
+        <div class="prism__title">Caráter</div>
+        <p class="prism__desc">Contemplativa. Deliberada. Rigorosa sem ser fria. Distância reverente, como um alfaiate italiano que te trata com respeito absoluto, não como uma amiga próxima. Filosófica antes de comercial. Segura demais para precisar gritar.</p>
+      </div>
+      <div class="prism__cell">
+        <div class="prism__face">Relação</div>
+        <div class="prism__title">Vínculo</div>
+        <p class="prism__desc">Mestre–discípula. A Ammá não vende serviços, ela conduz rituais. A cliente não é consumidora, é protagonista de uma experiência curada. A relação é de cuidado intencional, não de transação rápida.</p>
+      </div>
+      <div class="prism__cell">
+        <div class="prism__face">Cultura</div>
+        <div class="prism__title">Valores</div>
+        <p class="prism__desc">Rigor técnico. Formação contínua. Referências internacionais com sensibilidade local. Escassez como filosofia, não como artifício. A agenda fechada é convicção, não estratégia de marketing.</p>
+      </div>
+      <div class="prism__cell">
+        <div class="prism__face">Reflexo</div>
+        <div class="prism__title">Cliente Idealizada</div>
+        <p class="prism__desc">Mulher classe A/B, 25–45 anos, que se orgulha de entender o valor das coisas antes do preço. Não compra o mais caro · compra o mais certo. Valoriza experiência sobre conveniência. Está disposta a esperar pela escolha correta.</p>
+      </div>
+      <div class="prism__cell">
+        <div class="prism__face">Auto-imagem</div>
+        <div class="prism__title">Como a Cliente se Vê</div>
+        <p class="prism__desc">Ao escolher a Ammá, ela se vê como alguém que entende luxo de verdade. Não como vaidade, como inteligência estética. Ela não vai a um salão. Ela tem o seu atelier. Esse pertencimento é parte do valor que ela paga.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 04 · ARQUÉTIPO ────────────────────────── -->
+  <div class="section">
+    <div class="section__num">04 · Arquétipo</div>
+    <h2 class="section__title">A personalidade <em>arquetípica</em>.</h2>
+    <p>Baseado no sistema de 12 arquétipos de Jung aplicado a marcas. O arquétipo não é uma persona de marketing, é o núcleo emocional da marca. Define como ela se sente, não apenas como ela fala.</p>
+
+    <div class="dark-block">
+      <div class="label">Arquétipo Primário</div>
+      <p class="statement">O Criador, com traços do Sábio e do Amante.</p>
+      <p>O Criador acredita que a visão se torna realidade através do talento e do rigor. Ele não segue tendências, ele as interpreta. O Sábio adiciona a dimensão da expertise e da formação. O Amante traz a sensorialidade, o prazer estético e a atenção ao detalhe.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card__label">O Criador</div>
+        <div class="card__title">Visão → Forma</div>
+        <p class="card__body">A Ammá acredita que beleza é uma forma de arte. Cada cliente é uma tela. Cada gesto é uma escolha intencional. O resultado não é uma tendência aplicada, é uma interpretação singular.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">O Sábio</div>
+        <div class="card__title">Conhecimento</div>
+        <p class="card__body">Formação contínua. Referências internacionais. Técnicas nomeadas e estudadas. A expertise não é decorativa, é a fundação de cada decisão estética.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">O Amante</div>
+        <div class="card__title">Sensorialidade</div>
+        <p class="card__body">A experiência no atelier é sensorial: iluminação, música, aroma, textura. O prazer estético não começa no espelho, começa quando a cliente entra pela porta.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;">O que o arquétipo significa na prática</h3>
+    <table>
+      <thead><tr><th>Dimensão</th><th>Expressão</th></tr></thead>
+      <tbody>
+        <tr><td>Tom de voz</td><td>Contemplativo. Seguro. Nunca ansioso. Frases curtas com peso de quem sabe.</td></tr>
+        <tr><td>Visual</td><td>Editorial italiano. Espaço em branco. A beleza do que não está dito.</td></tr>
+        <tr><td>Atendimento</td><td>Escuta antes de oferecer. Personalização real. Não repete a fórmula.</td></tr>
+        <tr><td>Conteúdo</td><td>Educativo sem ser didático. Mostra o processo, não o resultado.</td></tr>
+        <tr><td>O que evita</td><td>Urgência, promoção, comparação com concorrentes, linguagem de vendas.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 05 · PERSONAS ─────────────────────────── -->
+  <div class="section">
+    <div class="section__num">05 · Público</div>
+    <h2 class="section__title">As três <em>clientes</em> da Ammá.</h2>
+    <p>Personas não são perfis demográficos, são mundos interiores. Elas definem o que a cliente sente <em>antes</em> de entrar no atelier e o que ela quer sentir <em>depois</em>.</p>
+
+    <div class="persona">
+      <div class="persona__header">
+        <div>
+          <div class="persona__name">A Noiva</div>
+          <div class="persona__tag">Rituais 01 + 02 + 03 · Ticket mais alto</div>
+        </div>
+      </div>
+      <div class="persona__grid">
+        <div class="persona__item">
+          <h5>Perfil</h5>
+          <p>28–38 anos. Classe A/B. Casamento em hotel de luxo ou espaço curado. Pesquisou extensivamente antes de escolher. Não escolhe pela indicação de todo mundo, escolhe pela indicação certa.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Dor</h5>
+          <p>Medo de não se reconhecer no espelho no dia mais importante da sua vida. Já ouviu histórias de maquiagem que não ficou bonita nas fotos. Desconfia de quem promete muito.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Desejo</h5>
+          <p>Ser a versão mais ela mesma, não uma versão genérica de noiva. Quer que o processo seja tão bom quanto o resultado. Quer lembrar daquela manhã como parte da experiência do casamento.</p>
+        </div>
+        <div class="persona__item">
+          <h5>O que a Ammá entrega</h5>
+          <p>Um dia inteiro curado. Escuta antes de qualquer pincel. Resultado que ela vai reconhecer como seu. A Parceria Debu/Casamentos como prova de confiança do mercado.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Mensagem-chave</h5>
+          <p>"Para a sua <em>presença</em>.", A Ammá não a transforma em outra pessoa. Revela quem ela já é.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Canal principal</h5>
+          <p>Instagram (referências de casamento). Indicação. Google (pesquisa ativa). Site, ela vai pesquisar antes de contatar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona__header">
+        <div>
+          <div class="persona__name">A Mulher de Presença</div>
+          <div class="persona__tag">Ritual 01 + 02 · Cliente recorrente</div>
+        </div>
+      </div>
+      <div class="persona__grid">
+        <div class="persona__item">
+          <h5>Perfil</h5>
+          <p>32–48 anos. Executiva, empresária ou profissional liberal. Tem agenda cheia. Entende que cuidar de si é cuidar do seu papel no mundo. Não vai ao atelier por vaidade, vai por estratégia.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Dor</h5>
+          <p>Não tem tempo para salão que não respeita o seu tempo. Já ficou esperando. Já saiu com resultado mediano. Não quer explicar o que quer toda vez, quer ser conhecida.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Desejo</h5>
+          <p>Ter o seu atelier. Uma equipe que a conhece. Resultado consistente que ela não precisa gerenciar, só confiar. O atendimento como um intervalo de qualidade no dia agitado.</p>
+        </div>
+        <div class="persona__item">
+          <h5>O que a Ammá entrega</h5>
+          <p>Agenda que respeita o tempo dela. Equipe que lembra das suas preferências. Resultado que nunca é genérico. O privilégio de um atelier que não está disponível para todo mundo.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Mensagem-chave</h5>
+          <p>"Uma agenda que existe para servir, não para lotar."</p>
+        </div>
+        <div class="persona__item">
+          <h5>Canal principal</h5>
+          <p>Indicação boca-a-boca qualificada. Instagram (ela segue). Site quando quer confirmar a qualidade antes de contatar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="persona">
+      <div class="persona__header">
+        <div>
+          <div class="persona__name">A Debutante e a Família</div>
+          <div class="persona__tag">Ritual 03 · Decisora é a mãe</div>
+        </div>
+      </div>
+      <div class="persona__grid">
+        <div class="persona__item">
+          <h5>Perfil</h5>
+          <p>Mãe: 40–55 anos. Classe A. Quer o melhor para a filha. Entende que o debut é um investimento em memória. Já está acostumada a contratar serviços de alto padrão, venue, buffet, fotógrafo. A beleza precisa estar no mesmo nível.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Dor</h5>
+          <p>Filha com 15 anos que tem opinião forte sobre como quer se sentir. Mãe que quer algo que "pareça caro" mas seja natural. O risco de um resultado que envergonhe nas fotos que durarão décadas.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Desejo</h5>
+          <p>Que a filha se sinta extraordinária, não fantasiada. Que o processo seja leve e memorizável. Que o resultado seja inesquecível e atemporal.</p>
+        </div>
+        <div class="persona__item">
+          <h5>O que a Ammá entrega</h5>
+          <p>A Parceria Debu União 2026 como âncora de credibilidade. Experiência curada. Resultado que vai "durar" nas fotos por décadas.</p>
+        </div>
+        <div class="persona__item">
+          <h5>Mensagem-chave</h5>
+          <p>"A beleza que nos interessa respira. Nunca cobre, apenas revela quem já estava lá."</p>
+        </div>
+        <div class="persona__item">
+          <h5>Canal principal</h5>
+          <p>Indicação. Instagram (referências de debuts). Site, a mãe vai pesquisar com rigor antes de ligar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 06 · VOZ E TOM ────────────────────────── -->
+  <div class="section">
+    <div class="section__num">06 · Comunicação</div>
+    <h2 class="section__title">Voz, Tom e <em>Vocabulário</em>.</h2>
+
+    <p>A voz da Ammá é uma das suas maiores vantagens competitivas. Enquanto concorrentes gritam promoções, a Ammá fala em tom de manifesto. A diferença é imediata e memorável.</p>
+
+    <div class="dark-block">
+      <div class="label">A Regra de Ouro da Voz</div>
+      <p class="statement">Fale como um alfaiate italiano fala com um cliente de primeira classe, com distância reverente, não com familiaridade de amigo próximo.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:32px;">
+      <div class="card">
+        <div class="card__label">Estrutura da Frase</div>
+        <div class="card__title" style="font-size:17px;">Curta. Seca. Com peso.</div>
+        <p class="card__body">Frases curtas. Ponto final onde outros usariam ponto e vírgula. Pausas com reticências quando a frase precisa respirar. Nunca ponto de exclamação. Nunca emoji. Adjetivos escassos, um por frase, no máximo.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Pessoa Gramatical</div>
+        <div class="card__title" style="font-size:17px;">Segunda pessoa indireta</div>
+        <p class="card__body">"Para o seu rosto." "Inicie sua experiência." Nunca "tu". Nunca "você" de forma casual. O tratamento é respeitoso e um pouco formal, como se você fosse a pessoa mais importante da sala (porque você é).</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Tom Filosófico</div>
+        <div class="card__title" style="font-size:17px;">Manifesto antes de comercial</div>
+        <p class="card__body">Cada linha de copy deveria poder existir em uma exposição de arte. Mesmo uma legenda de endereço tem o sabor de uma declaração. Nunca "Nossos serviços incluem…". Sempre "Três rituais, um só gesto."</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Caixa Alta</div>
+        <div class="card__title" style="font-size:17px;">SPACED CAPS para labels</div>
+        <p class="card__body">Eyebrows, labels de seção e títulos de serviços técnicos (Brow Lamination, Hidragloss) aparecem em SPACED CAPS com letter-spacing amplo. Nunca caps agressivos em títulos principais.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Vocabulário Proprietário</h3>
+    <p>Estas são as palavras que a Ammá possui. Usá-las consistentemente cria uma linguagem própria que os concorrentes não podem copiar sem parecer imitação.</p>
+
+    <table>
+      <thead><tr><th>Palavra Ammá</th><th>Nunca usar</th><th>Por quê importa</th></tr></thead>
+      <tbody>
+        <tr><td>Ritual</td><td>Serviço, procedimento, tratamento</td><td>Eleva o ato de cuidar à categoria de experiência sagrada</td></tr>
+        <tr><td>Atelier</td><td>Salão, estúdio, clínica, espaço</td><td>Posiciona no mesmo nível de maisons de moda</td></tr>
+        <tr><td>Gesto</td><td>Contato, processo, ação</td><td>Humaniza a interação, um gesto é intencional e delicado</td></tr>
+        <tr><td>Presença</td><td>Visual, look, resultado, aparência</td><td>Vai além do estético, é como você existe no mundo</td></tr>
+        <tr><td>Hub de Talentos</td><td>Time, staff, equipe, profissionais</td><td>Reposiciona a equipe como curadoria, não como funcionários</td></tr>
+        <tr><td>Inicie sua experiência</td><td>Agende agora, entre em contato</td><td>É um convite, não um comando. Mantém a distância reverente</td></tr>
+        <tr><td>Agenda sob consulta</td><td>Horários disponíveis, vagas abertas</td><td>Transforma escassez em exclusividade</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Exemplos Canônicos</h3>
+    <div class="vocab">
+      <div class="vocab__header vocab__header--no">✕ Nunca escrevemos</div>
+      <div class="vocab__header vocab__header--yes">✓ Escrevemos assim</div>
+      <div class="vocab__col vocab__col--no">
+        <div class="vocab__item"><span class="word">Agende já!</span></div>
+        <div class="vocab__item"><span class="word">Horários disponíveis esta semana!</span></div>
+        <div class="vocab__item"><span class="word">A melhor maquiagem de POA</span></div>
+        <div class="vocab__item"><span class="word">Pacote completo com desconto</span></div>
+        <div class="vocab__item"><span class="word">Resposta rápida via WhatsApp!</span></div>
+        <div class="vocab__item"><span class="word">Nossos serviços de maquiagem</span></div>
+        <div class="vocab__item"><span class="word">Preços acessíveis</span></div>
+        <div class="vocab__item"><span class="word">Clique aqui e saiba mais!!</span></div>
+      </div>
+      <div class="vocab__col">
+        <div class="vocab__item"><span class="word">Inicie sua experiência →</span></div>
+        <div class="vocab__item"><span class="word">Agenda sob consulta.</span></div>
+        <div class="vocab__item"><span class="word">Um espaço onde a beleza encontra propósito.</span></div>
+        <div class="vocab__item"><span class="word">Três rituais, um só gesto.</span></div>
+        <div class="vocab__item"><span class="word">Respondemos pessoalmente, em até 48h úteis.</span></div>
+        <div class="vocab__item"><span class="word">Para o seu rosto.</span></div>
+        <div class="vocab__item"><span class="word">Agenda com espera média de três semanas.</span></div>
+        <div class="vocab__item"><span class="word">Um gesto. Uma resposta.</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 16px;letter-spacing:-0.01em;">O que nunca aparece na comunicação</h3>
+    <div class="grid-2">
+      <div>
+        <p style="margin-bottom:8px;"><strong>Formato</strong></p>
+        <p>· Pontos de exclamação<br>· Emoji (em qualquer plataforma)<br>· Hashtags no corpo do texto<br>· Caps agressivos em títulos<br>· CTAs duplicados na mesma página</p>
+      </div>
+      <div>
+        <p style="margin-bottom:8px;"><strong>Conteúdo</strong></p>
+        <p>· Preços visíveis<br>· Promoções ou descontos<br>· Comparações com concorrentes<br>· Número de clientes atendidos<br>· "Antes e depois" genérico</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 06.b · BRANDSCRIPT ──────────────────────── -->
+  <div class="section">
+    <div class="section__num">06.b · BrandScript</div>
+    <h2 class="section__title">A heroína e o <em>guia</em>.</h2>
+
+    <p>A cliente é a heroína. A Ammá é o guia. Não o contrário. Toda comunicação deve refletir essa estrutura: a cliente tem um desejo, encontra um obstáculo, e a Ammá aparece para conduzir, nunca para protagonizar.</p>
+
+    <div class="grid-2" style="margin:32px 0;">
+      <div class="card">
+        <div class="card__label">A Heroína</div>
+        <div class="card__title">Ela já sabe quem é</div>
+        <p class="card__body">Mulher que não quer ser transformada em outra pessoa. Quer que o espelho confirme quem ela já é. Problema interno: em todo atelier tem que se explicar, e ainda assim sai sem se reconhecer. Esse sentimento é onde a venda acontece.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">O Guia</div>
+        <div class="card__title">Ammá escuta antes de tocar</div>
+        <p class="card__body">Empatia primeiro: "Sabemos como é sair de um atelier sem se reconhecer no espelho." Autoridade depois: formação internacional, Parceria Debu União 2026, noivas que ainda se reconhecem nas fotos anos depois.</p>
+      </div>
+    </div>
+
+    <div class="dark-block">
+      <div class="label">One-Liner, Filtro de Toda Comunicação</div>
+      <p class="statement">O Ammá não te transforma. Revela quem você já é.</p>
+      <p>Fórmula: Problema (sair de ateliers sem se reconhecer) + Solução (atelier que escuta e revela) + Resultado (ver no espelho exatamente quem você já era). Memorável. Impossível de ser dito com honestidade por qualquer outra marca.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;letter-spacing:-0.01em;">O Plano em 3 Passos</h3>
+    <p>Todo processo de decisão precisa de clareza. Três passos. Nunca mais, mais passos criam paralisia.</p>
+    <table>
+      <thead><tr><th>Passo</th><th>O que acontece</th><th>Mensagem canônica</th></tr></thead>
+      <tbody>
+        <tr><td>1. Inicie</td><td>Cliente entra em contato, conta sua história, sua ocasião</td><td>"Inicie sua experiência →"</td></tr>
+        <tr><td>2. Escuta</td><td>Ammá escuta antes de qualquer gesto técnico</td><td>"Nosso ofício começa pela escuta"</td></tr>
+        <tr><td>3. Revelação</td><td>Resultado que ela reconhece como seu, não como tendência aplicada</td><td>"Não transformamos. Revelamos."</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;letter-spacing:-0.01em;">As Stakes · O que está em jogo</h3>
+    <p>Sem risco declarado, não há urgência. A Ammá não usa urgência falsa, mas a urgência real existe e pode ser nomeada com honestidade.</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Para a Noiva</div>
+        <p class="card__body">Décadas de fotos que não se parecem com ela. A manhã mais importante da sua vida registrada como a versão errada de si mesma. Esse risco é real, e é exatamente o que a Ammá elimina.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Para a Mulher de Presença</div>
+        <p class="card__body">Cada reunião, cada evento importante com um rosto que não é o seu. A versão genérica de si mesma no momento em que a versão real mais importaria.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 07 · MANIFESTO ────────────────────────── -->
+  <div class="section">
+    <div class="section__num">07 · Manifesto</div>
+    <h2 class="section__title">O que a Ammá <em>acredita</em>.</h2>
+    <p>O manifesto é o documento mais importante da marca. Ele não é marketing · é convicção. Deve ser lido por cada pessoa que trabalha no atelier. Deve guiar cada decisão de comunicação.</p>
+
+    <div class="dark-block" style="padding:56px;">
+      <div class="label" style="margin-bottom:32px;">Manifesto Ammá Concept</div>
+      <p class="statement" style="font-size:clamp(1.35rem,2.8vw,2rem);margin-bottom:32px;">Beleza não é padrão. É interpretação.</p>
+      <p style="font-size:17px;margin-bottom:20px;">Vivemos numa época em que todo salão promete excelência, toda maquiadora se diz especialista e toda agenda está aberta a qualquer momento. Nós escolhemos o caminho contrário.</p>
+      <p style="font-size:17px;margin-bottom:20px;">Escolhemos a espera, porque o que vale a pena esperar é o que não pode ser substituído. Escolhemos a escuta, porque cada cliente chega com uma história que nenhum filtro de Instagram captura. Escolhemos o silêncio, porque a beleza que nos interessa não grita.</p>
+      <p style="font-size:17px;margin-bottom:20px;">O luxo, para nós, não é ostentação. É tempo. É atenção. É a certeza de que, por algumas horas, você é a única coisa no mundo que importa.</p>
+      <p style="font-size:17px;margin-bottom:20px;">Nosso atelier não é um espaço onde você vai ser transformada. É um espaço onde você vai ser revelada. A beleza que oferecemos não é aplicada sobre a superfície, ela emerge de dentro, conduzida por mãos que estudaram para entender o que já estava lá.</p>
+      <p style="font-size:17px;margin-bottom:0;">Se você procura o mais rápido, o mais barato ou o mais disponível, há lugares melhores que o nosso. Se você procura o mais certo, bem-vinda ao Ammá.</p>
+    </div>
+
+    <p style="margin-top:24px;">O manifesto pode ser usado integralmente ou em fragmentos. Os fragmentos canônicos para uso em peças isoladas são:</p>
+    <div class="highlight">"Beleza não é padrão. É interpretação."</div>
+    <div class="highlight">"O luxo, para nós, não é ostentação. É <em>tempo</em>."</div>
+    <div class="highlight">"A beleza que nos interessa respira. Nunca cobre · apenas <em>revela</em>."</div>
+    <div class="highlight">"Se você procura o mais rápido, há lugares melhores. Se você procura o mais certo, <em>bem-vinda ao Ammá</em>."</div>
+  </div>
+
+  <!-- ─── 08 · DIREÇÃO VISUAL ───────────────────── -->
+  <div class="section">
+    <div class="section__num">08 · Direção Visual</div>
+    <h2 class="section__title">Brief para o <em>time de design</em>.</h2>
+    <p>Este brief define as intenções visuais da marca. Não é uma lista de especificações técnicas (ver seção 09), é a <em>atmosfera</em> que o design deve evocar.</p>
+
+    <div class="dark-block">
+      <div class="label">Referências de Mundo Visual</div>
+      <p>La Mer · Dior Beauty · Maison Valentino · Vogue Italia · Louis Vuitton Voyages · Hermès Annual Report · Editorial Blanc Magazine</p>
+      <p class="statement" style="font-size:1.4rem;margin-top:16px;">O que esses mundos têm em comum: silêncio visual. Espaço como luxo. A ausência como presença.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:40px 0 20px;letter-spacing:-0.01em;">Os Cinco Princípios Visuais</h3>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Princípio 01</div>
+        <div class="card__title">Silêncio como Luxo</div>
+        <p class="card__body">Espaço em branco não é espaço desperdiçado, é o elemento mais premium da composição. Margens generosas. Padding excessivo. O design "respira". Nunca competição entre elementos.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Princípio 02</div>
+        <div class="card__title">Editorial, Nunca Comercial</div>
+        <p class="card__body">Cada peça deve parecer que poderia estar na Vogue Brasil, não em um panfleto. Assimetria sutil nos grids. Fotografias tratadas com dessaturação editorial. Nunca fundos coloridos estridentes.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Princípio 03</div>
+        <div class="card__title">O Ouro em Detalhes</div>
+        <p class="card__body">O dourado aparece em linhas de 1px, em labels SPACED CAPS, em hovers sutis. Nunca como cor de fundo. Nunca em grandes massas. É a assinatura, como um monograma bordado, não como um banner de vitrine.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Princípio 04</div>
+        <div class="card__title">Fotografia como DNA</div>
+        <p class="card__body">Fotografias editorial-dessaturadas (saturate 0.85, contrast 0.95). Retratos em P&amp;B para seções de equipe. Luz natural ou estúdio neutro. Nunca flash duro. Nunca filtros saturados de Instagram. Fundos cream ou cinza neutro.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Princípio 05</div>
+        <div class="card__title">Geometria Quadrada</div>
+        <p class="card__body">Sem cantos arredondados (exceto avatares circulares). Sem sombras excessivas. Sem gradientes. A forma é direta, confiante, alfandegária. Os únicos ornamentos são a hairline de 1px e o traço da logo.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Princípio 06</div>
+        <div class="card__title">Movimento Lento</div>
+        <p class="card__body">Transições longas (420–720ms). Ease-silk: cubic-bezier(0.22, 1, 0.36, 1). Fades lentos, sem bounce, sem spring. A marca não "pula" · ela desliza. O ritmo visual comunica o mesmo que o texto: paciência e deliberação.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Diretrizes de Fotografia</h3>
+    <table>
+      <thead><tr><th>Uso</th><th>Estilo</th><th>O que evitar</th></tr></thead>
+      <tbody>
+        <tr><td>Retratos da equipe</td><td>P&amp;B editorial. Fundo neutro (cream ou cinza). Postura de atelier · não sorriso forçado.</td><td>Flash duro. Filtros. Fundo colorido. Emoji ou props.</td></tr>
+        <tr><td>Behind the scenes</td><td>Natural, âmbar, luminoso. Cliente como protagonista, equipe como suporte discreto. Champagne, detalhes, gestos.</td><td>Poses forçadas. Balões. Decoração chamativa. Fundo bagunçado.</td></tr>
+        <tr><td>Rituais (resultado)</td><td>Dessaturado (+- 85%). Close no detalhe, sobrancelha, cabelo, olho. Não a pessoa inteira.</td><td>Foto de body inteiro no espelho. Selfie. Comparação antes/depois.</td></tr>
+        <tr><td>Noivas</td><td>Dia do casamento · luz natural. Detalhe do penteado, do véu, do gesto de ajuste. Emocional sem ser sentimental.</td><td>Foto genérica de noiva. Filtro de casamento excessivo. Clichê do espelho.</td></tr>
+        <tr><td>Grid do Instagram</td><td>Coerência tonal. Paleta cream-cacau-champanhe dominante. Intercalar retratos + rituais + bastidores + fragmentos editoriais.</td><td>Grid inconsistente. Posts coloridos aleatórios. Mistura de estilos fotográficos.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 09 · CORES E TIPOGRAFIA ──────────────── -->
+  <div class="section">
+    <div class="section__num">09 · Sistema Visual</div>
+    <h2 class="section__title">Cores e <em>tipografia</em>.</h2>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:0 0 24px;letter-spacing:-0.01em;">Paleta Principal · O Trio Fundacional</h3>
+    <p>Três cores definem tudo. Qualquer outra é extensão fotográfica, derivada das imagens, nunca imposta sobre elas.</p>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#B8965C;"></div>
+        <div class="swatch__name">Ouro</div>
+        <div class="swatch__hex">#B8965C, Acento, assinatura, hairlines</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#faf7f2;border:1px solid #e8d9c2;"></div>
+        <div class="swatch__name">Fundo Cream</div>
+        <div class="swatch__hex">#FAF7F2 · Superfície primária. Nunca branco puro.</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#2a2a2a;"></div>
+        <div class="swatch__name">Tinta</div>
+        <div class="swatch__hex">#2A2A2A · Texto principal. Nunca #000.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 20px;letter-spacing:-0.01em;">Paleta Editorial · Extensões Fotográficas</h3>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch__color" style="background:#2b1d13;"></div>
+        <div class="swatch__name">Cacau</div>
+        <div class="swatch__hex">#2B1D13, Dark frames, footer, seção Rituais</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#e8d9c2;"></div>
+        <div class="swatch__name">Champanhe</div>
+        <div class="swatch__hex">#E8D9C2, Blocos suaves, divisores</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#f3ece2;"></div>
+        <div class="swatch__name">Pérola</div>
+        <div class="swatch__hex">#F3ECE2, Superfície alternativa, depoimentos</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#c9b89a;"></div>
+        <div class="swatch__name">Linha</div>
+        <div class="swatch__hex">#C9B89A, Hairlines secundários, bordas</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background:#a87444;"></div>
+        <div class="swatch__name">Camelo</div>
+        <div class="swatch__hex">#A87444 · Midtone fotográfico</div>
+      </div>
+    </div>
+
+    <div class="dark-block" style="margin-top:40px;">
+      <div class="label">Regra Inviolável de Cor</div>
+      <p>O ouro (#B8965C) nunca preenche áreas grandes. Ele é reservado para linhas de 1px, labels, hovers e detalhes de logo. Quando usado em massa, perde toda a sua distinção. É a diferença entre uma fita dourada num presente e um presente embrulhado em ouro.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 16px;letter-spacing:-0.01em;">Tipografia</h3>
+    <p>Dois tipos de letra. Apenas dois. Mistura com uma terceira família é proibida, a identidade tipográfica é parte da voz da marca.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Display, Títulos, Hero, Pull Quotes</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:36px;margin:16px 0 8px;letter-spacing:-0.01em;">Cormorant Garamond</div>
+        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:20px;font-style:italic;margin-bottom:16px;color:var(--muted);">Light 300 · Light Italic 300</div>
+        <p class="card__body">Usado em todos os títulos, hero, pull quotes e nomes. O itálico 300 é a <em>assinatura da marca</em>, uma única palavra italicizada dentro de uma frase display. Substituto: Didot, Bodoni Moda, EB Garamond.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Body, Corpo, Labels, Eyebrows</div>
+        <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:28px;margin:16px 0 8px;letter-spacing:0.06em;">RALEWAY</div>
+        <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:15px;margin-bottom:16px;color:var(--muted);">Thin 200 para corpo · Light 300 para texto regular</div>
+        <p class="card__body">Usado em todo texto corrido, eyebrows, labels, nav, botões. Nunca acima do peso 400 · a leveza é parte da identidade. O letter-spacing 0.28–0.32em nos SPACED CAPS é obrigatório.</p>
+      </div>
+    </div>
+
+    <table style="margin-top:32px;">
+      <thead><tr><th>Elemento</th><th>Família</th><th>Peso</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Hero / Título H1</td><td>Cormorant Garamond</td><td>300</td><td>Uma palavra em itálico 300 como acento</td></tr>
+        <tr><td>H2, H3, Pull Quote</td><td>Cormorant Garamond</td><td>300</td><td>line-height 1.02–1.15</td></tr>
+        <tr><td>Corpo de texto</td><td>Raleway</td><td>200–300</td><td>line-height 1.7–1.8</td></tr>
+        <tr><td>Eyebrows / Labels</td><td>Raleway</td><td>400</td><td>SPACED CAPS, letter-spacing 0.28em</td></tr>
+        <tr><td>Botões / Nav</td><td>Raleway</td><td>300</td><td>Uppercase, letter-spacing 0.3em</td></tr>
+        <tr><td>Captions / micro</td><td>Raleway</td><td>300</td><td>11px, uppercase, color muted</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── 10 · LOGO ─────────────────────────────── -->
+  <div class="section">
+    <div class="section__num">10 · Logo</div>
+    <h2 class="section__title">A logo · direção e <em>aplicações</em>.</h2>
+
+    <p>A logo atual tem fundamentos sólidos: o traço calligráfico que atravessa o "AMMÁ" é uma assinatura visual única, evoca o gesto de um pincel, o flow de um movimento contínuo, a linha de uma mão treinada. Isso é valioso e deve ser preservado.</p>
+
+    <div class="dark-block">
+      <div class="label">Resolução, Logo Entregue · Abril 2026</div>
+      <p>A logo original apresentava um fundo mauve rosado (~#8B7070) fora do sistema de cores. <strong style="color:var(--fundo);">Resolvido:</strong> o arquivo foi refeito como SVG com fundo transparente, disponível em 8 variantes Wheeler-spec (principal, inverse, premium, mono, mono-inv, compact, swash isolado). Aplicar exclusivamente sobre cream, cacau ou champanhe.</p>
+      <p class="statement" style="font-size:1.3rem;">Referência: logo-ammá.html · React: LogoAmma.tsx · Standalone: /images/logos/</p>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;letter-spacing:-0.01em;">Diretrizes de Aplicação</h3>
+    <table>
+      <thead><tr><th>Superfície</th><th>Versão da Logo</th><th>Cor do símbolo</th></tr></thead>
+      <tbody>
+        <tr><td>Fundo cream (#FAF7F2)</td><td>Logo principal</td><td>Tinta #2A2A2A com detalhe em ouro #B8965C</td></tr>
+        <tr><td>Fundo cacau (#2B1D13)</td><td>Logo invertida</td><td>Cream #FAF7F2 com detalhe em ouro #B8965C</td></tr>
+        <tr><td>Fundo champanhe (#E8D9C2)</td><td>Logo principal</td><td>Tinta #2A2A2A com detalhe em ouro</td></tr>
+        <tr><td>Fotografia clara</td><td>Logo em tinta</td><td>Tinta com opacidade, nunca sobre área movimentada</td></tr>
+        <tr><td>Fotografia escura</td><td>Logo invertida</td><td>Cream com área de proteção se necessário</td></tr>
+        <tr><td>Monocromático (bordado, gravação)</td><td>Versão mono</td><td>Ouro ou cream dependendo do suporte</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;letter-spacing:-0.01em;">O que o Time de Design Precisa Entregar</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Arquivos Obrigatórios</div>
+        <p class="card__body">
+          · Logo horizontal (SVG, PNG transparente 2x e 4x)<br>
+          · Logo vertical / stackada (SVG, PNG transparente)<br>
+          · Ícone/monograma, apenas o símbolo calligráfico<br>
+          · Versão monocromática (ouro sólido)<br>
+          · Versão para bordado/gravação (simplificada)<br>
+          · Favicon (32×32 e 192×192)
+        </p>
+      </div>
+      <div class="card">
+        <div class="card__label">Variações de Cor</div>
+        <p class="card__body">
+          · Principal: tinta + ouro sobre fundo cream<br>
+          · Invertida: cream + ouro sobre fundo cacau<br>
+          · Toda ouro: para aplicações em papelaria premium<br>
+          · Toda tinta: para impressão monocromática<br>
+          · Toda cream: para bordado em tecido escuro
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 16px;letter-spacing:-0.01em;">Favicon, O Swash como Marca Autônoma</h3>
+    <p>O favicon da Ammá usa exclusivamente o swash bezier proprietário, o único elemento visual que não existe em nenhuma outra marca. Isolado do wordmark e inscrito num círculo cacau, ele cria reconhecimento imediato em 16px sem depender de texto. Decisão de Neumeier: "é o seu zag visual."</p>
+
+    <div class="dark-block">
+      <div class="label">Especificação Técnica · Wheeler v2.0</div>
+      <p>Formato source: SVG · ViewBox: 0 0 64 64 · Fundo: círculo cacau <strong style="color:var(--fundo)">#2B1D13</strong> · Hairline: stroke ouro <strong style="color:var(--fundo)">#B8965C</strong> 0.8px opacity 0.45 · Swash: stroke ouro 2.5px, fill none, linecap round</p>
+      <p style="font-family:'Courier New',monospace;font-size:12px;color:var(--champanhe);line-height:1.8;">M 12,39.6 C 16.4,30 20.8,24.4 26.4,30.8<br>C 30.8,36 34,39.6 38,34<br>C 42,28.4 47.4,24.4 52,31.6</p>
+      <p class="statement" style="font-size:1.1rem;">Derivado do swash original (viewBox 480×200) via scale 0.2 · offset x−13.6 y+10</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="card">
+        <div class="card__label">16×16 · Browser Tab</div>
+        <p class="card__body">Swash legível como silhueta. Stroke-width 2.5px no SVG source garante espessura mínima após rasterização. Círculo cacau cria contraste imediato.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">32×32 · Legacy</div>
+        <p class="card__body">favicon-32.png gerado via sharp. Todos os detalhes da curva visíveis. Referência: favicon-32.png no /public do projeto.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">192×192 · Apple Touch / PWA</div>
+        <p class="card__body">favicon.png gerado via sharp. Hairline ouro do círculo visível. Padding interno de ~12% do raio garante respiro de atelier. Referência: generate-favicon.mjs.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 16px;letter-spacing:-0.01em;">O Traço Calligráfico · Preservar e Refinar</h3>
+    <p>O elemento diferencial da logo é o traço curvo que atravessa as letras, evocando um pincel em movimento, um gesto único. Este elemento deve ser preservado na reidentificação. O que pode ser refinado:</p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Preservar</div>
+        <p class="card__body">O traço calligráfico como elemento assinatura. A estrutura serif das letras AMMÁ. A relação hierárquica entre AMMÁ (grande) e CONCEPT (pequeno, spaced). A proporção geral da wordmark.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Refinar</div>
+        <p class="card__body">A espessura do traço calligráfico (testar em 0.5pt, 0.75pt, 1pt). A posição exata do traço (mais alto? mais centralizado?). A cor do traço em versão bicolor (ouro no traço, tinta nas letras). A versão sem traço para usos minimalistas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 11 · FOMO ──────────────────────────────── -->
+  <div class="section">
+    <div class="section__num">11 · Estratégia de Escassez</div>
+    <h2 class="section__title">FOMO como <em>filosofia</em>, não truque.</h2>
+
+    <p>Na Ammá, o FOMO (Fear of Missing Out) não é uma tática de marketing, é uma expressão autêntica de como o atelier opera. A escassez é real: a agenda é limitada por convicção, não por artifício. A estratégia é comunicar isso de forma que pareça o que é: uma declaração de valores.</p>
+
+    <div class="dark-block">
+      <div class="label">O Princípio</div>
+      <p class="statement">A Ammá não cria urgência falsa. Comunica escassez real com a mesma voz filosófica que usa para tudo. A diferença entre FOMO de marketing e FOMO de marca é a autenticidade.</p>
+    </div>
+
+    <div style="margin-top:32px;">
+      <div class="mechanic">
+        <div class="mechanic__num">1.</div>
+        <div>
+          <div class="mechanic__title">Announcement Bar · Acima do dobramento</div>
+          <p class="mechanic__desc">Uma barra discreta no topo do site e das redes comunica a espera atual. Não é um countdown falso, é um dado real atualizado mensalmente. Quando a espera cai para zero (raridade), a barra muda para "Vagas abertas para julho", a disponibilidade vira evento.</p>
+          <p class="mechanic__copy">"Agenda com espera média de três semanas."</p>
+        </div>
+      </div>
+      <div class="mechanic">
+        <div class="mechanic__num">2.</div>
+        <div>
+          <div class="mechanic__title">Preço Invisível, A arquitetura da consulta</div>
+          <p class="mechanic__desc">Nunca um preço visível. A ausência de preço não é omissão, é posicionamento. Quem precisa saber o preço antes de entrar em contato não é a cliente da Ammá. Quem pergunta "quanto custa?" sem antes entender o que é, não chegará. A consulta filtra.</p>
+          <p class="mechanic__copy">"Agenda sob consulta. Respondemos cada mensagem pessoalmente, em até 48 horas úteis."</p>
+        </div>
+      </div>
+      <div class="mechanic">
+        <div class="mechanic__num">3.</div>
+        <div>
+          <div class="mechanic__title">Parceria como Prova Social de Elite</div>
+          <p class="mechanic__desc">A Parceria Oficial com o Debu do União 2026 é mencionada em todos os pontos de contato, site, Instagram, material impresso, email. Não como "atendemos o Debu do União", como "somos parceiros do evento mais concorrido de Porto Alegre". O prestígio do evento transfere para a marca.</p>
+          <p class="mechanic__copy">"Parceira oficial Debu do União 2026."</p>
+        </div>
+      </div>
+      <div class="mechanic">
+        <div class="mechanic__num">4.</div>
+        <div>
+          <div class="mechanic__title">Resposta como Privilégio, Não como Serviço</div>
+          <p class="mechanic__desc">O prazo de 48h para resposta não é um aviso de demora, é uma declaração de que a mensagem será lida por uma pessoa, não por um bot. Em um mercado onde "resposta em minutos" é a norma, a espera de 48h qualificada se torna o sinal de atenção real.</p>
+          <p class="mechanic__copy">"Respondemos cada mensagem pessoalmente, em até 48 horas úteis. Nenhum atendimento automatizado."</p>
+        </div>
+      </div>
+      <div class="mechanic">
+        <div class="mechanic__num">5.</div>
+        <div>
+          <div class="mechanic__title">Depoimentos como Relíquias, Não como Reviews</div>
+          <p class="mechanic__desc">Depoimentos nunca são apresentados com estrelas, notas ou "4.9/5". São pull quotes editoriais, com nome apenas por inicial e contexto. Isso transforma a prova social em registro histórico, não em avaliação de e-commerce.</p>
+          <p class="mechanic__copy">"Fui ao Ammá pela primeira vez para o meu casamento. Voltei porque não consigo imaginar outra experiência." · M. R. · Noiva 2024</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 12 · ARQUITETURA — OS TRÊS RITUAIS ────── -->
+  <div class="section">
+    <div class="section__num">12 · Arquitetura de Marca</div>
+    <h2 class="section__title">Os três <em>rituais</em>.</h2>
+    <p>A estrutura dos Três Rituais é a arquitetura de marca que organiza todos os serviços da Ammá em territórios com identidade própria. Cada ritual tem um nome poético, uma fotografia própria e um conjunto de serviços, mas todos compartilham o mesmo DNA da marca.</p>
+
+    <div class="grid-3">
+      <div class="card" style="background:var(--cacau);color:var(--fundo);">
+        <div class="card__label" style="color:var(--ouro);"> · 01 Ritual</div>
+        <div class="card__title" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;font-style:italic;color:var(--fundo);">Para o seu rosto.</div>
+        <p class="card__body" style="color:var(--champanhe);">Maquiagem Social · Noiva · Sobrancelha · Brow Lamination · Nanopigmentação · Hidragloss · Lifting de Cílios · Depilação Facial · Spa Coreano</p>
+      </div>
+      <div class="card" style="background:var(--cacau);color:var(--fundo);">
+        <div class="card__label" style="color:var(--ouro);"> · 02 Ritual</div>
+        <div class="card__title" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;font-style:italic;color:var(--fundo);">Para o seu cabelo.</div>
+        <p class="card__body" style="color:var(--champanhe);">Escova · Penteado · Penteado de Noiva · Hidratação · Mechas · Tonalizante · Corte · Selagem · Hidratação Kerastase</p>
+      </div>
+      <div class="card" style="background:var(--cacau);color:var(--fundo);">
+        <div class="card__label" style="color:var(--ouro);"> · 03 Ritual</div>
+        <div class="card__title" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;font-style:italic;color:var(--fundo);">Para a sua presença.</div>
+        <p class="card__body" style="color:var(--champanhe);">Styling de Noiva · Consultoria de Imagem · Editoriais de Autor · Debutantes · Eventos de Alto Padrão · Parceria Debu União 2026</p>
+      </div>
+    </div>
+
+    <p style="margin-top:32px;">A nomenclatura "Para o seu ___" é canônica. Não pode ser alterada. "Para o seu rosto" não é uma frase de serviço, é uma declaração de intenção. O seu (possessivo) personaliza. O substantivo sem adjetivo (rosto, cabelo, presença) eleva. O ponto final fecha com dignidade.</p>
+
+    <div class="highlight">A estrutura dos Rituais deve aparecer em todos os materiais de comunicação, site, Instagram, cartão de visita, papelaria. É a espinha dorsal da marca.</div>
+  </div>
+
+  <!-- ─── 13 · TERRITÓRIO DA MARCA ──────────────── -->
+  <div class="section">
+    <div class="section__num">13 · Território</div>
+    <h2 class="section__title">Como a Ammá <em>existe</em> no mundo.</h2>
+
+    <p>A Ammá não se posiciona em relação ao mercado. Ela declara seu território, e o mercado é que se posiciona em relação a ela. Luxo não é comparativo. É superlativo. O que segue não é um mapa competitivo: é a definição do território que a Ammá ocupa sozinha.</p>
+
+    <table>
+      <thead><tr><th>Dimensão</th><th>Como a Ammá existe</th></tr></thead>
+      <tbody>
+        <tr><td>Agenda</td><td>Espera de semanas, por convicção, não por limitação</td></tr>
+        <tr><td>Preço</td><td>Invisível, sob consulta. Quem precisa saber antes de entender o que é, não é a cliente da Ammá.</td></tr>
+        <tr><td>Comunicação</td><td>Manifesto. Voz editorial. Silêncio como presença. Nunca urgência.</td></tr>
+        <tr><td>Resultado</td><td>Presença, revelação, interpretação, nunca look genérico ou antes/depois.</td></tr>
+        <tr><td>Relação</td><td>Ritual curado de longo prazo. Mestre e protagonista, não prestador e consumidora.</td></tr>
+        <tr><td>Espaço</td><td>Atelier. Uma palavra que carrega posicionamento inteiro.</td></tr>
+        <tr><td>Prova social</td><td>Depoimentos como relíquias editoriais. Parcerias de prestígio. Nunca estrelas ou avaliações.</td></tr>
+        <tr><td>Escassez</td><td>Estruturalmente real. Parte da filosofia operacional, não tática de marketing.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="dark-block" style="margin-top:32px;">
+      <div class="label">O que torna a Ammá inimitável</div>
+      <p>Uma concorrente pode copiar a paleta, a tipografia, até o vocabulário. Não pode copiar a <em>filosofia de escassez operacionalizada</em>. Uma agenda que realmente não aceita qualquer cliente a qualquer momento é uma convicção, não um posicionamento. Convicções não se copiam.</p>
+      <p class="statement">A Ammá não precisa parecer luxuosa. Ela precisa parecer inevitável.</p>
+    </div>
+  </div>
+
+  <!-- ─── 14 · CHECKLIST DO DESIGNER ───────────── -->
+  <div class="section">
+    <div class="section__num">14 · Para o Time de Design</div>
+    <h2 class="section__title">O que precisa ser <em>criado</em>.</h2>
+    <p>Lista priorizada de entregáveis para o time de design, baseada no que a marca precisa para operar no nível premium proposto.</p>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:0 0 20px;letter-spacing:-0.01em;">Prioridade Alta · Antes do Lançamento</h3>
+    <table>
+      <thead><tr><th>Entregável</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Logo em SVG (fundo transparente)</td><td>✅ Entregue · logo-ammá.html · 8 variantes Wheeler-spec (principal, inverse, premium, mono, mono-inv, compact, swash isolado). SVG com fundo transparente. React: LogoAmma.tsx. Standalone: images/logos/.</td></tr>
+        <tr><td>Favicon · Swash Mark</td><td>✅ Entregue · Wheeler spec v2.0. Swash bezier proprietário isolado em círculo cacau #2B1D13 com hairline ouro. ViewBox 64×64. Arquivos: favicon.svg (source) + favicon-32.png (32×32) + favicon.png (192×192). Gerado via sharp.</td></tr>
+        <tr><td>Brand Book PDF</td><td>✅ Entregue · brand-book.html (versão web interativa, v2.2). Para exportar PDF: Chrome → Ctrl+P → Salvar como PDF → A4 sem margens. Todas as seções com page-break correto.</td></tr>
+        <tr><td>Templates de Instagram</td><td>✅ Entregue · instagram-templates.html · Grid 1:1 e 4:5 (3 variantes cada) + Stories 9:16. Screenshot para exportar ao Canva ou agendar.</td></tr>
+        <tr><td>Cartão de Visita</td><td>✅ Entregue · cartao-visita.html · Frente + verso + 3 variantes de cor. Print-ready 85×55mm via Chrome.</td></tr>
+        <tr><td>Papel Timbrado</td><td>✅ Entregue · papel-timbrado.html · A4, campos editáveis, hairline ouro. Print via Chrome → PDF.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 20px;letter-spacing:-0.01em;">Prioridade Média · Primeiros 30 Dias</h3>
+    <table>
+      <thead><tr><th>Entregável</th><th>Status</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Site (landing page)</td><td>✅ Ativo</td><td>LP oficial: Lovable v1.1.0 · React + Vite + Tailwind. Copy alinhada ao brand-book.</td></tr>
+        <tr><td>Story Templates Instagram</td><td>✅ Entregue</td><td>instagram-templates.html, formatos 1:1, 4:5, 9:16.</td></tr>
+        <tr><td>Packaging / Sacola</td><td>⬜ Pendente</td><td>Requer designer externo. Fundo cream ou cacau. Logo hot stamping ouro.</td></tr>
+        <tr><td>Tag de produto/serviço</td><td>✅ Briefing entregue</td><td>briefing-tag.html (BG-02), 55×90mm, papel algodão 300g, frente cacau com logo ouro hot stamping, verso cream com manifesto ou Instagram, ilhós dourado ø5mm, cordão linho natural. Pronto para cotação gráfica.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:22px;margin:40px 0 20px;letter-spacing:-0.01em;">Prioridade Baixa · Expansão</h3>
+    <table>
+      <thead><tr><th>Entregável</th><th>Status</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Envelope impresso</td><td>✅ Briefing entregue</td><td>briefing-envelope.html (BG-03), DL (220×110mm) strip seal + C5 (229×162mm) goma reumidificável. Offset 120g cream, interior cacau, logo ouro na aba. Pronto para cotação gráfica.</td></tr>
+        <tr><td>Menu de rituais impresso</td><td>✅ Entregue</td><td>menu-rituais.html, capa cacau, três rituais, fechamento.</td></tr>
+        <tr><td>Apresentação para parcerias</td><td>✅ Entregue</td><td>apresentacao-parcerias.html · 9 slides editoriais.</td></tr>
+        <tr><td>Assinatura de e-mail</td><td>✅ Entregue</td><td>email-signature.html · versão clara e escura. HTML inline.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="dark-block" style="margin-top:48px;">
+      <div class="label">Nota Final para o Time</div>
+      <p>Este documento é a fonte de verdade. Quando houver dúvida sobre qualquer decisão de design ou comunicação, volte à seção 01 · A Marca em Uma Frase. Se a decisão não reforça a escassez deliberada, a excelência técnica ou o luxo-como-tempo, reconsidere.</p>
+      <p class="statement" style="font-size:1.3rem;">A Ammá não precisa parecer luxuosa. Ela precisa parecer inevitável.</p>
+    </div>
+  </div>
+
+  <!-- ─── 15 · GOVERNANÇA ─────────────────────────── -->
+  <div class="section">
+    <div class="section__num">15 · Governança</div>
+    <h2 class="section__title">Como a identidade <em>se mantém</em>.</h2>
+
+    <p>Identidade não é projeto, é ativo vivo. Sem governança ativa, deteriora. A cada peça aprovada fora do sistema, a marca perde um grau de coerência. A governança é o que impede que isso aconteça silenciosamente.</p>
+
+    <div class="dark-block">
+      <div class="label">Princípio de Governança</div>
+      <p class="statement">A identidade da Ammá pertence à marca, não ao designer, não à rede social, não ao momento. Cada decisão visual é uma decisão de marca.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:40px 0 20px;letter-spacing:-0.01em;">Matriz de Aprovação</h3>
+    <p>Clareza sobre quem pode criar, quem deve aprovar. Sem essa matriz, a identidade se fragmenta por boa intenção.</p>
+    <table>
+      <thead><tr><th>Tipo de peça</th><th>Pode criar</th><th>Deve aprovar</th></tr></thead>
+      <tbody>
+        <tr><td>Post Instagram orgânico</td><td>Social manager / equipe</td><td>Fundadoras ou designer designado</td></tr>
+        <tr><td>Story informativo</td><td>Social manager</td><td>Fundadoras</td></tr>
+        <tr><td>Material para parceria externa</td><td>Designer</td><td>Fundadoras · obrigatório</td></tr>
+        <tr><td>Adaptação ou variação de logo</td><td>Apenas designer</td><td>Designer + Fundadoras · nunca sozinho</td></tr>
+        <tr><td>Novo template de comunicação</td><td>Designer</td><td>Fundadoras</td></tr>
+        <tr><td>Orçamento / proposta impressa</td><td>Equipe (usando template aprovado)</td><td>Template aprovado previamente</td></tr>
+        <tr><td>Promoção ou desconto</td><td>Não existe</td><td>Não existe</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Checklist Pré-Publicação</h3>
+    <p>Toda peça, digital ou impressa, passa por este checklist antes de sair. Sem exceção.</p>
+    <div class="grid-2" style="margin:24px 0;">
+      <div class="card">
+        <div class="card__label">Sistema Visual</div>
+        <p class="card__body">
+          · Paleta: cream, cacau, ouro, champanhe, pérola, nenhuma outra cor<br>
+          · Tipografia: Cormorant Garamond + Raleway, nunca terceira família<br>
+          · Ouro em detalhes de 1px, nunca em área grande ou fundo<br>
+          · Espaço em branco generoso, nunca composição lotada<br>
+          · Fotografia dessaturada, nunca filtros saturados ou flash duro<br>
+          · Sem cantos arredondados, sem gradientes, sem sombras excessivas
+        </p>
+      </div>
+      <div class="card">
+        <div class="card__label">Voz e Mensagem</div>
+        <p class="card__body">
+          · Sem emoji em nenhuma plataforma<br>
+          · Sem ponto de exclamação<br>
+          · Sem preço visível ou comparação de valor<br>
+          · Sem menção a concorrentes, direta ou indireta<br>
+          · Tom: contemplativo, seguro, sem urgência<br>
+          · One-liner test: a peça reforça revelação, nunca transformação?<br>
+          · CTA: "Inicie sua experiência" ou "Agenda sob consulta"
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Mapa de Touchpoints · Prioridades</h3>
+    <p>Identidade não é logo. É sistema em cada ponto de contato. Este mapa define o que existe, o que falta e em que ordem construir.</p>
+    <table>
+      <thead><tr><th>Touchpoint</th><th>Prioridade</th><th>Status</th><th>Spec crítica</th></tr></thead>
+      <tbody>
+        <tr><td>Logo · arquivos SVG limpos</td><td>Urgente</td><td>✅ Entregue</td><td>logo-ammá.html, 8 variantes Wheeler-spec. React: LogoAmma.tsx. Standalone: images/logos/ (01–08).</td></tr>
+        <tr><td>Briefing fotográfico</td><td>Alta</td><td>✅ Entregue</td><td>briefing-fotografico.html, art direction, CEPs visuais, moodboard textual, regras de set.</td></tr>
+        <tr><td>Bio Instagram</td><td>Alta</td><td>✅ Entregue</td><td>briefing-fotografico.html (seção 06), 3 versões de bio para @ammaconceptt.</td></tr>
+        <tr><td>Website (Landing Page oficial)</td><td>Alta</td><td>✅ Ativo</td><td>Stack: React + Vite + TypeScript + Tailwind CSS (Lovable v1.1.0). Deploy: amm-concept.vercel.app. SEO: canonical, JSON-LD LocalBusiness, robots.txt, sitemap.xml. Performance: hero LCP fetchpriority="high", Google Fonts async. Formulário: abre WhatsApp com dados pré-preenchidos. Alt texts descritivos nos rituais. Segurança: rel="noopener noreferrer" em todos os links externos.</td></tr>
+        <tr><td>Instagram · templates de grid</td><td>Alta</td><td>✅ Entregue</td><td>instagram-templates.html · 1:1 e 4:5. 3 variantes cada. Screenshot para export.</td></tr>
+        <tr><td>Instagram Stories</td><td>Alta</td><td>✅ Entregue</td><td>instagram-templates.html · 9:16. Variantes: quote e anúncio. Screenshot para export.</td></tr>
+        <tr><td>WhatsApp · mensagem padrão</td><td>Alta</td><td>✅ Entregue</td><td>whatsapp-scripts.html, 9 cenários com copy editorial pronta para copiar.</td></tr>
+        <tr><td>Material Debu União 2026</td><td>Alta</td><td>✅ Entregue</td><td>debu-uniao-2026.html, documento completo de parceria.</td></tr>
+        <tr><td>Cartão de visita</td><td>Alta</td><td>✅ Entregue</td><td>cartao-visita.html, frente/verso + 3 variantes. Print-ready 85×55mm.</td></tr>
+        <tr><td>Papel timbrado / orçamento</td><td>Alta</td><td>✅ Entregue</td><td>papel-timbrado.html, A4, campos editáveis, print via Chrome.</td></tr>
+        <tr><td>Tabela de preços interna</td><td>Alta</td><td>✅ Entregue</td><td>tabela-precos-interna.html, preços editáveis, comissão automática, toggle alta temporada, pacotes combinados. USO INTERNO.</td></tr>
+        <tr><td>Contrato de Serviços</td><td>Alta</td><td>✅ Entregue</td><td>contrato-servicos.html, 10 cláusulas, 2 vias, campos editáveis, sincronização automática, política de cancelamento e direito de imagem.</td></tr>
+        <tr><td>Protocolo de Indicação</td><td>Alta</td><td>✅ Entregue</td><td>protocolo-indicacao.html, Círculo Ammá (3 tiers), rastreamento, 6 scripts prontos, cartão-convite, regras operacionais.</td></tr>
+        <tr><td>Onboarding de Artistas</td><td>Alta</td><td>✅ Entregue</td><td>onboarding-artistas.html, carta de boas-vindas, padrões, protocolo de atendimento, tom de voz, regras de redes sociais, checklist 30/60/90 dias, não-negociáveis.</td></tr>
+        <tr><td>Assinatura de e-mail</td><td>Média</td><td>✅ Entregue</td><td>email-signature.html · versão clara e escura. HTML inline para Gmail/Outlook.</td></tr>
+        <tr><td>Navegação · Logo e Links</td><td>Alta</td><td>✅ Calibrado</td><td>Nav.tsx: logo desktop width=240 (era 190), mobile width=160 (era 140). CONCEPT fontSize 18 (era 13 · ilegível). Links nav text-[15px] font-light (era text-sm font-extralight). LogoAmma.tsx letterSpacing 9 (era 12).</td></tr>
+        <tr><td>Packaging / Sacola</td><td>Média</td><td>✅ Briefing entregue</td><td>briefing-sacola.html (BG-01), 3 tamanhos P/M/G (200×80×250 / 280×110×320 / 380×140×420mm), offset 350g cream fosco, hot stamping Pantone 871 C, fita cetim/grogrão cacau com ilhós dourado, interior papel de seda cream. Pronto para cotação gráfica.</td></tr>
+        <tr><td>Menu dos rituais impresso</td><td>Média</td><td>✅ Entregue</td><td>menu-rituais.html, capa cacau + 3 rituais + fechamento. Print-ready.</td></tr>
+        <tr><td>Apresentação para parcerias</td><td>Média</td><td>✅ Entregue</td><td>apresentacao-parcerias.html · 9 slides (16:9). PDF via Chrome.</td></tr>
+        <tr><td>Ambiente físico do atelier</td><td>Alta</td><td>⬜ Sem specs</td><td>Sinalização, iluminação, materiais, extensão da identidade. Requer execução presencial.</td></tr>
+        <tr><td>Perfil OG / social sharing</td><td>Média</td><td>✅ Entregue</td><td>og-image.html, 3 variantes (dark, light, split). 1200×630px. Screenshot para export.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Gestão de Arquivos</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Nomenclatura Padrão</div>
+        <p class="card__body">
+          amma-logo-principal.svg<br>
+          amma-logo-invertida.svg<br>
+          amma-logo-mono-ouro.svg<br>
+          amma-logo-mono-tinta.svg<br>
+          amma-mark-only.svg<br>
+          amma-favicon-32.png<br>
+          amma-favicon-192.png<br>
+          amma-og-image.jpg
+        </p>
+      </div>
+      <div class="card">
+        <div class="card__label">Regras de Arquivo</div>
+        <p class="card__body">
+          · Masters sempre em SVG, nunca rasterizar a logo original<br>
+          · Uma pasta única de ativos aprovados acessível à equipe<br>
+          · Versões em uso separadas de versões em desenvolvimento<br>
+          · Qualquer nova versão requer aprovação antes de entrar na pasta master<br>
+          · Backups em nuvem com histórico de versões
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-d);font-weight:300;font-size:26px;margin:48px 0 20px;letter-spacing:-0.01em;">Revisão Semestral de Identidade</h3>
+    <p>A cada seis meses, as fundadoras revisam o sistema contra três perguntas:</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card__label">Coerência</div>
+        <p class="card__body">Todos os touchpoints ainda comunicam o mesmo sistema visual? Algum elemento se desviou silenciosamente?</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Relevância</div>
+        <p class="card__body">O sistema ainda reflete quem a Ammá é? Houve crescimento ou mudança que o identitário não acompanhou?</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Lacunas</div>
+        <p class="card__body">Há novos touchpoints sem identidade? Parcerias novas, plataformas novas, formatos novos?</p>
+      </div>
+    </div>
+
+    <div class="dark-block" style="margin-top:40px;">
+      <div class="label">A Regra Final</div>
+      <p class="statement">Uma marca de luxo não se deteriora de repente. Deteriora um pixel de cada vez, uma exceção de cada vez, uma urgência de cada vez.</p>
+      <p>Governança não é burocracia. É respeito pelo ativo que foi construído.</p>
+    </div>
+  </div>
+
+  <!-- ─── FIM ───────────────────────────────────── -->
+  <div style="margin-top:80px;padding-top:40px;border-top:1px solid var(--linha);display:flex;justify-content:space-between;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);">
+    <span>Ammá Concept, Brand Foundation Document v2.2</span>
+    <span>Confidencial · Abril 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

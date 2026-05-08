@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Briefing de Produção: Sacola</title>
+<meta name="description" content="Briefing de produção gráfica · Sacola Ammá Concept · 3 tamanhos P/M/G · offset cream fosco · hot stamping Pantone 871 C.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --cacau:     #2b1d13;
+    --cream:     #faf7f2;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --texto:     #2a2a2a;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .no-print { display: none; }
+    .page-break { page-break-after: always; }
+    .cover { min-height: auto; padding: 60px 48px; }
+  }
+  @page { size: A4; margin: 0; }
+
+  /* LAYOUT */
+  .cover {
+    min-height: 100vh;
+    background: var(--cacau);
+    color: var(--cream);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    page-break-after: always;
+  }
+  .doc { max-width: 860px; margin: 0 auto; padding: 72px 48px 100px; }
+
+  /* COVER ELEMENTS */
+  .eyebrow { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); display: flex; align-items: center; gap: 14px; }
+  .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--ouro); }
+  .cover-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1; margin-top: 48px; }
+  .cover-title em { font-style: italic; color: var(--ouro); }
+  .cover-sub { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 20px; color: var(--champanhe); margin-top: 20px; max-width: 480px; line-height: 1.45; }
+  .cover-meta { border-top: 1px solid rgba(184,150,92,0.3); padding-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .meta-item { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--linha); }
+  .meta-item strong { display: block; color: var(--champanhe); font-weight: 400; margin-bottom: 3px; font-size: 11px; }
+
+  /* SECTION */
+  .section { padding: 64px 0 48px; border-top: 1px solid var(--linha); }
+  .section:first-child { border-top: none; padding-top: 0; }
+  .section-num { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .section-title { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; margin-bottom: 32px; }
+  .section-title em { font-style: italic; }
+
+  /* TYPOGRAPHY */
+  p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 500; color: var(--texto); }
+
+  /* HIGHLIGHT */
+  .highlight {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 24px 28px;
+    margin: 28px 0;
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.35;
+    color: var(--texto);
+  }
+
+  /* DARK BLOCK */
+  .dark-block { background: var(--cacau); color: var(--cream); padding: 40px 44px; margin: 28px 0; }
+  .dark-block .label { font-size: 9px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+  .dark-block p { color: var(--champanhe); font-size: 14px; }
+  .dark-block strong { color: var(--cream); font-weight: 400; }
+  .dark-block .statement { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: 1.4rem; line-height: 1.25; color: var(--cream); margin-bottom: 0; }
+
+  /* GRID */
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 24px 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  @media (max-width: 640px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card { background: var(--perola); padding: 24px 28px; }
+  .card .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .card .title { font-family: var(--font-d); font-weight: 300; font-size: 20px; margin-bottom: 10px; color: var(--texto); }
+  .card p { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  th { text-align: left; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; color: var(--ouro); padding: 10px 12px; border-bottom: 1px solid var(--linha); }
+  td { padding: 12px; border-bottom: 1px solid rgba(201,184,154,0.3); vertical-align: top; color: var(--muted); line-height: 1.6; }
+  td:first-child { color: var(--texto); font-weight: 400; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  /* SPEC TAG */
+  .spec-tag { display: inline-block; font-size: 10px; letter-spacing: 0.12em; background: var(--champanhe); color: var(--texto); padding: 2px 8px; margin: 2px 2px 2px 0; font-weight: 400; }
+  .spec-tag.gold { background: var(--ouro); color: var(--cacau); }
+  .spec-tag.dark { background: var(--cacau); color: var(--ouro); }
+
+  /* MOCKUP */
+  .mockup-row { display: flex; gap: 40px; align-items: flex-end; justify-content: center; margin: 40px 0; padding: 56px 40px 48px; background: #e8e2da; }
+  .bag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.18));
+  }
+  .bag-handle {
+    width: 38%;
+    height: 24px;
+    border: 2px solid var(--ouro);
+    border-bottom: none;
+    position: relative;
+  }
+  .bag-handle::before, .bag-handle::after {
+    content: '●';
+    position: absolute;
+    bottom: -5px;
+    font-size: 7px;
+    color: var(--ouro);
+    line-height: 1;
+  }
+  .bag-handle::before { left: -4px; }
+  .bag-handle::after  { right: -4px; }
+
+  .bag-body {
+    background: var(--cream);
+    border: 1px solid #d5cfc7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 4px;
+  }
+
+  /* swash SVG no centro */
+  .bag-swash { fill: none; stroke: var(--ouro); stroke-linecap: round; stroke-linejoin: round; }
+
+  .bag-wordmark {
+    font-family: var(--font-d);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--ouro);
+    text-align: center;
+    line-height: 1;
+  }
+  .bag-concept {
+    font-family: var(--font-b);
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    color: var(--ouro);
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+  /* detalhe lateral */
+  .bag-body::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 10px;
+    background: rgba(201,184,154,0.12);
+    border-right: 1px solid rgba(201,184,154,0.2);
+  }
+
+  .bag-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 12px;
+    font-family: var(--font-b);
+    text-align: center;
+  }
+
+  /* SIZE P */
+  .bag-p .bag-body { width: 108px; height: 135px; }
+  .bag-p .bag-wordmark { font-size: 13px; }
+  .bag-p .bag-concept { font-size: 5.5px; }
+  .bag-p .bag-swash { width: 60px; margin-bottom: 2px; }
+
+  /* SIZE M */
+  .bag-m .bag-body { width: 152px; height: 174px; }
+  .bag-m .bag-wordmark { font-size: 17px; }
+  .bag-m .bag-concept { font-size: 7px; }
+  .bag-m .bag-swash { width: 84px; margin-bottom: 3px; }
+
+  /* SIZE G */
+  .bag-g .bag-body { width: 206px; height: 230px; }
+  .bag-g .bag-wordmark { font-size: 22px; }
+  .bag-g .bag-concept { font-size: 9px; }
+  .bag-g .bag-swash { width: 112px; margin-bottom: 4px; }
+
+  .dimensions {
+    background: var(--champanhe);
+    padding: 8px 16px;
+    margin: 0;
+    font-size: 11px;
+    color: var(--texto);
+    letter-spacing: 0.04em;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* DESIGN APLICADO — página on-brand */
+  .design-page {
+    background: var(--cream);
+    border: 1px solid var(--linha);
+    padding: 48px;
+    margin: 32px 0;
+  }
+  .design-page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--champanhe);
+  }
+  .design-page-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    margin-bottom: 12px;
+  }
+  .design-page-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--cacau);
+    line-height: 1.1;
+  }
+  .design-page-title em { font-style: italic; }
+
+  .design-spec-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--linha);
+    margin-bottom: 1px;
+  }
+  .design-spec-cell {
+    background: var(--perola);
+    padding: 16px 20px;
+  }
+  .design-spec-cell:first-child { background: var(--cacau); }
+  .design-spec-label { font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro); margin-bottom: 4px; }
+  .design-spec-cell:first-child .design-spec-label { color: rgba(184,150,92,0.6); }
+  .design-spec-value { font-family: var(--font-d); font-weight: 300; font-size: 15px; color: var(--texto); }
+  .design-spec-cell:first-child .design-spec-value { color: var(--champanhe); }
+  .design-spec-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* FOOTER */
+  .footer { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--linha); display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+  /* ALERT */
+  .alert { border: 1px solid var(--ouro); padding: 20px 24px; margin: 24px 0; }
+  .alert .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .alert p { font-size: 13px; margin: 0; color: var(--texto); }
+
+  h3 { font-family: var(--font-d); font-weight: 300; font-size: 22px; margin: 40px 0 14px; letter-spacing: -0.01em; color: var(--texto); }
+  h3 em { font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div>
+    <div class="eyebrow">Ammá Concept · Briefing de Produção Gráfica</div>
+    <h1 class="cover-title">Sacola de<br><em>Apresentação</em></h1>
+    <p class="cover-sub">Especificação técnica completa para produção, 3 tamanhos · Hot stamping · Fita cetim/grogrão</p>
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item"><strong>Documento</strong>BG-01 · Sacola</div>
+    <div class="meta-item"><strong>Versão</strong>1.0 · Abril 2026</div>
+    <div class="meta-item"><strong>Uso</strong>Envio à gráfica / cotação</div>
+  </div>
+</div>
+
+<div class="doc">
+
+  <!-- PROPÓSITO -->
+  <div class="section">
+    <div class="section-num">Propósito</div>
+    <h2 class="section-title">A sacola é o último <em>gesto</em> do atelier.</h2>
+
+    <div class="highlight">Uma cliente da Ammá não sai com embalagem. Sai com um objeto que ela vai querer manter.</div>
+
+    <p>A sacola existe em três tamanhos para cobrir todos os cenários de entrega, desde um produto avulso até o kit completo de noiva. Em todos os casos, o princípio é o mesmo: <strong>material que comunica valor antes de ser aberto.</strong></p>
+
+    <div class="dark-block">
+      <div class="label">Regra Inviolável</div>
+      <p class="statement">Nunca sacola plástica. Nunca papel fino. Nunca alça de papel torcido. Nunca logo impressa em tinta comum sobre o fundo principal.</p>
+    </div>
+  </div>
+
+  <!-- MOCKUP VISUAL -->
+  <div class="section">
+    <div class="section-num">Visão Geral · Proporções</div>
+    <h2 class="section-title">Os três <em>tamanhos</em>.</h2>
+
+    <div class="mockup-row">
+      <div class="bag bag-p">
+        <div class="bag-handle"></div>
+        <div class="bag-body">
+          <svg class="bag-swash" viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg" stroke-width="1.8">
+            <path d="M 4,14 C 9,6 14,2 22,8 C 28,13 31,16 38,10 C 44,5 51,2 58,8"/>
+          </svg>
+          <div class="bag-wordmark">AMMÁ</div>
+          <div class="bag-concept">Concept</div>
+        </div>
+        <div class="dimensions">200 × 80 × 250 mm</div>
+        <div class="bag-label">Tamanho P<br>Fita cetim 10mm · Ilhós ø5mm</div>
+      </div>
+
+      <div class="bag bag-m">
+        <div class="bag-handle"></div>
+        <div class="bag-body">
+          <svg class="bag-swash" viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg" stroke-width="1.6">
+            <path d="M 4,14 C 9,6 14,2 22,8 C 28,13 31,16 38,10 C 44,5 51,2 58,8"/>
+          </svg>
+          <div class="bag-wordmark">AMMÁ</div>
+          <div class="bag-concept">Concept</div>
+        </div>
+        <div class="dimensions">280 × 110 × 320 mm</div>
+        <div class="bag-label">Tamanho M<br>Fita cetim 15mm · Ilhós ø6mm</div>
+      </div>
+
+      <div class="bag bag-g">
+        <div class="bag-handle"></div>
+        <div class="bag-body">
+          <svg class="bag-swash" viewBox="0 0 64 20" xmlns="http://www.w3.org/2000/svg" stroke-width="1.4">
+            <path d="M 4,14 C 9,6 14,2 22,8 C 28,13 31,16 38,10 C 44,5 51,2 58,8"/>
+          </svg>
+          <div class="bag-wordmark">AMMÁ</div>
+          <div class="bag-concept">Concept</div>
+        </div>
+        <div class="dimensions">380 × 140 × 420 mm</div>
+        <div class="bag-label">Tamanho G<br>Fita grogrão 20mm · Ilhós ø8mm</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIGN APLICADO -->
+  <div class="section">
+    <div class="section-num">Design Aplicado · Arte Final</div>
+    <h2 class="section-title">Como a logo <em>aparece</em> na sacola.</h2>
+
+    <p>A logo aplicada via hot stamping ouro (Pantone 871 C) sobre o papel cream fosco. Face frontal centralizada, silêncio total nas laterais e verso. O swash bezier é o único elemento visual além do wordmark.</p>
+
+    <!-- SACOLA P -->
+    <div class="design-page" style="margin-bottom:24px;">
+      <div class="design-page-header">
+        <div class="design-page-eyebrow">Tamanho P · Face Frontal · Arte Final</div>
+        <div class="design-page-title">Sacola <em>Pequena</em></div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:center;padding:40px 0 32px;background:var(--cream);border:1px solid var(--champanhe);margin-bottom:24px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <svg viewBox="0 0 200 28" width="200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10,20 C 28,6 46,0 70,12 C 88,20 99,26 122,14 C 142,4 164,0 186,12" fill="none" stroke="#B8965C" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:36px;letter-spacing:0.1em;color:#B8965C;line-height:1;">AMMÁ</div>
+          <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:8px;letter-spacing:0.36em;text-transform:uppercase;color:#B8965C;opacity:0.75;">Concept</div>
+        </div>
+      </div>
+
+      <div class="design-spec-row">
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Tamanho</div>
+          <div class="design-spec-value">200 × 250 mm</div>
+          <div class="design-spec-sub">L × A · fundo 80mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Logo</div>
+          <div class="design-spec-value">Largura 80mm</div>
+          <div class="design-spec-sub">Centrada · proteção 20mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Técnica</div>
+          <div class="design-spec-value">Hot stamping</div>
+          <div class="design-spec-sub">Pantone 871 C fosco</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SACOLA M -->
+    <div class="design-page" style="margin-bottom:24px;">
+      <div class="design-page-header">
+        <div class="design-page-eyebrow">Tamanho M · Face Frontal · Arte Final</div>
+        <div class="design-page-title">Sacola <em>Média</em></div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:center;padding:48px 0 40px;background:var(--cream);border:1px solid var(--champanhe);margin-bottom:24px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:7px;">
+          <svg viewBox="0 0 260 32" width="260" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 12,24 C 36,6 60,0 90,16 C 114,26 128,32 158,18 C 184,6 212,0 242,16" fill="none" stroke="#B8965C" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:50px;letter-spacing:0.1em;color:#B8965C;line-height:1;">AMMÁ</div>
+          <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#B8965C;opacity:0.75;">Concept</div>
+        </div>
+      </div>
+
+      <div class="design-spec-row">
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Tamanho</div>
+          <div class="design-spec-value">280 × 320 mm</div>
+          <div class="design-spec-sub">L × A · fundo 110mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Logo</div>
+          <div class="design-spec-value">Largura 110mm</div>
+          <div class="design-spec-sub">Centrada · proteção 20mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Alça</div>
+          <div class="design-spec-value">Cetim 15mm</div>
+          <div class="design-spec-sub">Cacau · ilhós dourado ø6mm</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SACOLA G -->
+    <div class="design-page">
+      <div class="design-page-header">
+        <div class="design-page-eyebrow">Tamanho G · Face Frontal · Arte Final</div>
+        <div class="design-page-title">Sacola <em>Grande · Kit Noiva</em></div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:center;padding:56px 0 48px;background:var(--cream);border:1px solid var(--champanhe);margin-bottom:24px;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:9px;">
+          <svg viewBox="0 0 340 38" width="340" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 14,28 C 46,6 78,0 118,20 C 148,32 166,38 206,22 C 240,8 276,0 316,20" fill="none" stroke="#B8965C" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:68px;letter-spacing:0.1em;color:#B8965C;line-height:1;">AMMÁ</div>
+          <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:13px;letter-spacing:0.36em;text-transform:uppercase;color:#B8965C;opacity:0.75;">Concept</div>
+        </div>
+      </div>
+
+      <div class="design-spec-row">
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Tamanho</div>
+          <div class="design-spec-value">380 × 420 mm</div>
+          <div class="design-spec-sub">L × A · fundo 140mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Logo</div>
+          <div class="design-spec-value">Largura 140mm</div>
+          <div class="design-spec-sub">Centrada · proteção 20mm</div>
+        </div>
+        <div class="design-spec-cell">
+          <div class="design-spec-label">Alça</div>
+          <div class="design-spec-value">Grogrão 20mm</div>
+          <div class="design-spec-sub">Cacau · ilhós dourado ø8mm</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dark-block">
+      <div class="label">Regra de Arte Final</div>
+      <p>Faces laterais e verso: <strong style="color:var(--cream);">sem impressão</strong>. O silêncio é parte do design. A única impressão é a logo na face frontal via hot stamping. Interior: papel de seda cream, sem impressão.</p>
+    </div>
+  </div>
+
+  <!-- ESPECIFICAÇÃO POR TAMANHO -->
+  <div class="section">
+    <div class="section-num">Especificação Técnica</div>
+    <h2 class="section-title">Dimensões e <em>componentes</em>.</h2>
+
+    <h3>Tamanho P, Kits menores / produtos avulsos</h3>
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>200 × 80 × 250 mm</strong> (L × P × A)</td></tr>
+        <tr><td>Uso</td><td>Produtos avulsos, brindes, caixas de mimo, presentes pequenos</td></tr>
+        <tr><td>Alça</td><td>Fita de cetim dupla-face <strong>10mm de largura</strong>, cor cacau #2B1D13, fixada com <strong>ilhós metálico dourado ø5mm</strong></td></tr>
+        <tr><td>Logo · posição</td><td>Face frontal, centralizada (eixo H e V). Largura da logo: <strong>80mm</strong></td></tr>
+        <tr><td>Interior</td><td>Papel de seda <strong>cream #FAF7F2</strong>, sem impressão</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tamanho M, Kit padrão / rituais avulsos</h3>
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>280 × 110 × 320 mm</strong> (L × P × A)</td></tr>
+        <tr><td>Uso</td><td>Kit pós-atendimento padrão, presenteação individual, ritual avulso</td></tr>
+        <tr><td>Alça</td><td>Fita de cetim dupla-face <strong>15mm de largura</strong>, cor cacau, ilhós dourado <strong>ø6mm</strong></td></tr>
+        <tr><td>Logo · posição</td><td>Face frontal, centralizada. Largura da logo: <strong>110mm</strong></td></tr>
+        <tr><td>Interior</td><td>Papel de seda cream + cartão de agradecimento (tag BG-02)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tamanho G, Kit noiva / kits completos</h3>
+    <table>
+      <thead><tr><th>Componente</th><th>Especificação</th></tr></thead>
+      <tbody>
+        <tr><td>Dimensões</td><td><strong>380 × 140 × 420 mm</strong> (L × P × A)</td></tr>
+        <tr><td>Uso</td><td>Kit noiva, kit debutante, Debu do União 2026, entregas especiais</td></tr>
+        <tr><td>Alça</td><td>Fita de grogrão <strong>20mm de largura</strong>, cor cacau, ilhós dourado <strong>ø8mm</strong></td></tr>
+        <tr><td>Logo · posição</td><td>Face frontal, centralizada. Largura da logo: <strong>140mm</strong></td></tr>
+        <tr><td>Interior</td><td>Papel de seda cream + leito de papel tissue cacau</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MATERIAL E ACABAMENTO -->
+  <div class="section">
+    <div class="section-num">Material e Acabamento</div>
+    <h2 class="section-title">O que comunicar antes de <em>abrir</em>.</h2>
+
+    <table>
+      <thead><tr><th>Camada</th><th>Especificação</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Papel externo</td><td>Offset <strong>350g/m²</strong> · cor cream #FAF7F2</td><td>Equivalente Pantone: 9183 C. Pedir amostra de cor antes de fechar pedido.</td></tr>
+        <tr><td>Laminação</td><td><strong>Fosca somente no exterior</strong></td><td>Nunca brilhante. O fosco comunica sofisticação. Interno sem laminação.</td></tr>
+        <tr><td>Logo · impressão</td><td><strong>Hot stamping ouro fosco</strong></td><td>Filme: dourado fosco (não espelhado). Opção B: serigrafia tinta ouro metalizado fosco se hot stamping inviável em quantidade.</td></tr>
+        <tr><td>Estrutura</td><td>Base reforçada com <strong>papelão interno colado</strong></td><td>Não usar cartão simples, a sacola deve manter a forma mesmo vazia.</td></tr>
+        <tr><td>Acabamento base</td><td>Fundo plano com abas coladas</td><td>Base quadrada firme. Sem fundo em ponta ou oval.</td></tr>
+        <tr><td>Faces laterais</td><td><strong>Sem impressão</strong></td><td>O silêncio nas faces é parte do design.</td></tr>
+        <tr><td>Verso</td><td><strong>Sem impressão</strong></td><td>Idem. Minimalismo total.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- LOGO APLICADA -->
+  <div class="section">
+    <div class="section-num">Aplicação da Logo</div>
+    <h2 class="section-title">Variante, posição e <em>proteção</em>.</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Variante da Logo</div>
+        <div class="title">Principal · Ouro on Cream</div>
+        <p>Logo completa: wordmark AMMÁ + swash bezier + CONCEPT (spaced caps). Cor: ouro #B8965C via hot stamping. Fundo: cream do próprio papel da sacola.</p>
+      </div>
+      <div class="card">
+        <div class="label">Área de Proteção</div>
+        <div class="title">20mm mínimo</div>
+        <p>Margem mínima de 20mm em todos os quatro lados da logo. Nenhum elemento, dobra ou ilhós deve violar esta área.</p>
+      </div>
+    </div>
+
+    <table style="margin-top:24px;">
+      <thead><tr><th>Tamanho</th><th>Largura da logo</th><th>Posição H</th><th>Posição V</th></tr></thead>
+      <tbody>
+        <tr><td>P (200×250)</td><td>80mm</td><td>Centro da face frontal</td><td>Centro óptico (ligeiramente acima do centro geométrico)</td></tr>
+        <tr><td>M (280×320)</td><td>110mm</td><td>Centro da face frontal</td><td>Centro óptico</td></tr>
+        <tr><td>G (380×420)</td><td>140mm</td><td>Centro da face frontal</td><td>Centro óptico</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert">
+      <div class="label">Nota Crítica para a Gráfica</div>
+      <p>A logo deve ser fornecida em arquivo <strong>AI ou EPS com traços expandidos</strong> (não PDF, não PNG). A cor ouro do hot stamping: <strong>Pantone 871 C</strong> (ouro fosco médio, cor institucional da marca). Nenhuma variação autorizada sem aprovação do atelier. Solicitar prova física antes de tiragem. Matriz de hot stamping tem custo único por tamanho.</p>
+    </div>
+  </div>
+
+  <!-- RESUMO DE PRODUÇÃO -->
+  <div class="section">
+    <div class="section-num">Resumo para Cotação</div>
+    <h2 class="section-title">O que enviar para a <em>gráfica</em>.</h2>
+
+    <table>
+      <thead><tr><th>Item</th><th>Dimensões</th><th>Qtd mínima</th><th>Prazo estimado</th></tr></thead>
+      <tbody>
+        <tr><td>Sacola Tamanho P</td><td>200 × 80 × 250 mm</td><td>200 unidades</td><td>15–20 dias úteis</td></tr>
+        <tr><td>Sacola Tamanho M</td><td>280 × 110 × 320 mm</td><td>200 unidades</td><td>15–20 dias úteis</td></tr>
+        <tr><td>Sacola Tamanho G</td><td>380 × 140 × 420 mm</td><td>100 unidades</td><td>15–20 dias úteis</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Arquivos necessários para envio</h3>
+    <div class="grid-2">
+      <div class="card">
+        <div class="label">Arte Final</div>
+        <p>Logo em <strong>AI ou EPS</strong> com traços expandidos · Dieline (linhas de corte, vinco e colagem) em layer separado · Cor cacau: <strong>Pantone 476 C</strong> · Cor cream: <strong>Pantone 9183 C</strong> · Cor ouro: <strong>Pantone 871 C</strong></p>
+      </div>
+      <div class="card">
+        <div class="label">Aprovações</div>
+        <p>Solicitar <strong>mockup digital</strong> 3D antes de produção · Solicitar <strong>prova física</strong> do hot stamping em papel equivalente · Solicitar amostra do papel cream para aprovação de cor</p>
+      </div>
+    </div>
+
+    <div class="dark-block" style="margin-top:36px;">
+      <div class="label">Nota Final</div>
+      <p class="statement" style="font-size:1.2rem;">"Seize every touchpoint." A sacola que a cliente carrega nas ruas de Porto Alegre é um outdoor silencioso. Execute-a no nível do atelier.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Ammá Concept · BG-01 Sacola · v1.0</span>
+    <span>Confidencial · Abril 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Protocolo de Indicação</title>
+<meta name="description" content="Protocolo de indicação Ammá Concept · Círculo Ammá com 3 tiers · Rastreamento, scripts e regras.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --ouro-light:#d4a574;
+    --fundo:     #faf7f2;
+    --texto:     #2a2a2a;
+    --cacau:     #2b1d13;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --verde:     #4a7c59;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: #e5e0d8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP BAR ─────────────────────────────────── */
+  .top-bar {
+    background: var(--cacau);
+    color: rgba(184,150,92,0.7);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 9px 16px;
+  }
+
+  /* ── WRAPPER ─────────────────────────────────── */
+  .wrapper { max-width: 900px; margin: 0 auto; padding: 56px 40px 120px; }
+
+  /* ── PAGE HEADER ─────────────────────────────── */
+  .page-header { margin-bottom: 64px; }
+  .page-header__eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .page-header__eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--ouro); }
+  h1.page-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    color: var(--cacau);
+    margin-bottom: 16px;
+  }
+  h1.page-title em { font-style: italic; }
+  .page-header__sub {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.8;
+    border-left: 2px solid var(--ouro);
+    padding-left: 16px;
+  }
+
+  /* ── SECTION ─────────────────────────────────── */
+  .section {
+    margin-bottom: 72px;
+  }
+  .section__label {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section__label::after { content: ''; flex: 1; height: 1px; background: var(--linha); }
+  .section__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: -0.01em;
+    color: var(--texto);
+    margin-bottom: 20px;
+  }
+  .section__title em { font-style: italic; }
+
+  /* ── HIGHLIGHT ───────────────────────────────── */
+  .highlight {
+    background: var(--perola);
+    border-left: 2px solid var(--ouro);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .highlight strong { color: var(--texto); font-weight: 500; }
+
+  /* ── PHILOSOPHY ──────────────────────────────── */
+  .philosophy-block {
+    background: var(--cacau);
+    padding: 40px 48px;
+    margin-bottom: 0;
+  }
+  .philosophy-block__quote {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    color: var(--champanhe);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .philosophy-block__body {
+    font-size: 13px;
+    color: rgba(201,184,154,0.6);
+    line-height: 1.8;
+    max-width: 680px;
+  }
+  .philosophy-block__body strong { color: var(--ouro-light); font-weight: 400; }
+
+  /* ── MECHANIC STEPS ──────────────────────────── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 0;
+  }
+  .step {
+    background: var(--fundo);
+    padding: 28px 24px;
+    position: relative;
+  }
+  .step__num {
+    font-family: var(--font-d);
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(184,150,92,0.18);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .step__title {
+    font-family: var(--font-d);
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--cacau);
+    margin-bottom: 8px;
+  }
+  .step__title em { font-style: italic; }
+  .step__body {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .step__arrow {
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    background: var(--ouro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-size: 12px;
+    color: #fff;
+  }
+  .steps .step:last-child .step__arrow { display: none; }
+
+  /* ── REWARD TIERS ────────────────────────────── */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .tier {
+    background: var(--fundo);
+    padding: 28px 24px;
+    border-top: 3px solid transparent;
+    transition: border-color .2s;
+  }
+  .tier--1 { border-top-color: rgba(184,150,92,0.35); }
+  .tier--2 { border-top-color: var(--ouro); }
+  .tier--3 { border-top-color: var(--cacau); background: var(--cacau); }
+  .tier__num {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    margin-bottom: 8px;
+    font-family: var(--font-b);
+  }
+  .tier--3 .tier__num { color: rgba(184,150,92,0.6); }
+  .tier__name {
+    font-family: var(--font-d);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--cacau);
+    margin-bottom: 6px;
+  }
+  .tier__name em { font-style: italic; }
+  .tier--3 .tier__name { color: var(--champanhe); }
+  .tier__trigger {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .tier--3 .tier__trigger { color: rgba(201,184,154,0.5); }
+  .tier__reward-list {
+    list-style: none;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+  }
+  .tier__reward-list li { display: flex; gap: 8px; }
+  .tier__reward-list li::before { content: '·'; color: var(--ouro); flex-shrink: 0; }
+  .tier--3 .tier__reward-list { color: rgba(201,184,154,0.7); }
+  .tier--3 .tier__reward-list li::before { color: var(--ouro-light); }
+
+  /* ── TRACKING TABLE ──────────────────────────── */
+  .track-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--fundo);
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    font-size: 12px;
+  }
+  .track-table thead tr { background: var(--cacau); }
+  .track-table thead th {
+    padding: 10px 14px;
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(184,150,92,0.65);
+    text-align: left;
+    font-weight: 400;
+    font-family: var(--font-b);
+  }
+  .track-table tbody tr { border-bottom: 1px solid var(--champanhe); }
+  .track-table tbody tr:hover { background: #f5f0e6; }
+  .track-table td {
+    padding: 10px 14px;
+    color: var(--muted);
+    vertical-align: middle;
+  }
+  .track-table td.example { font-style: italic; color: rgba(106,106,106,0.55); }
+  .status-badge {
+    display: inline-block;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: var(--font-b);
+  }
+  .status-badge--pending  { background: rgba(201,184,154,0.25); color: var(--muted); }
+  .status-badge--booked   { background: rgba(184,150,92,0.2);   color: #8a6830; }
+  .status-badge--done     { background: rgba(74,124,89,0.15);   color: var(--verde); }
+  .status-badge--rewarded { background: var(--cacau);            color: var(--ouro); }
+
+  /* ── SCRIPTS ─────────────────────────────────── */
+  .scripts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .script-card {
+    background: var(--fundo);
+    padding: 24px 28px;
+    border-left: 3px solid var(--ouro);
+    position: relative;
+  }
+  .script-card__label {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 12px;
+  }
+  .script-card__text {
+    font-size: 13px;
+    color: var(--texto);
+    line-height: 1.9;
+    white-space: pre-line;
+    font-family: var(--font-b);
+    font-weight: 300;
+  }
+  .script-card__copy {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: 1px solid var(--linha);
+    padding: 5px 12px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-b);
+    transition: all .15s;
+  }
+  .script-card__copy:hover { border-color: var(--ouro); color: var(--ouro); }
+  .script-card__copy.copied { border-color: var(--verde); color: var(--verde); }
+  .script-card__note {
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 10px;
+    opacity: .7;
+  }
+
+  /* ── CARD ARTE ───────────────────────────────── */
+  .referral-card-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+  }
+  .referral-card {
+    width: 340px;
+    background: var(--cacau);
+    padding: 0;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .referral-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ouro), transparent);
+  }
+  .referral-card__body {
+    padding: 32px 28px 24px;
+  }
+  .referral-card__logo {
+    font-family: var(--font-d);
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--ouro);
+    margin-bottom: 4px;
+  }
+  .referral-card__sub {
+    font-size: 7px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.3);
+    margin-bottom: 24px;
+  }
+  .referral-card__title {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--champanhe);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+  .referral-card__desc {
+    font-size: 10px;
+    color: rgba(201,184,154,0.45);
+    letter-spacing: 0.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .referral-card__code {
+    background: rgba(184,150,92,0.12);
+    border: 1px solid rgba(184,150,92,0.3);
+    padding: 10px 16px;
+    font-family: var(--font-b);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--ouro);
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .referral-card__footer {
+    background: rgba(0,0,0,0.2);
+    padding: 10px 28px;
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.35);
+  }
+
+  /* ── RULES ───────────────────────────────────── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .rule-card {
+    background: var(--fundo);
+    padding: 20px 24px;
+  }
+  .rule-card__title {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 10px;
+  }
+  .rule-card ul {
+    list-style: none;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+  }
+  .rule-card ul li { display: flex; gap: 8px; }
+  .rule-card ul li::before { content: '·'; color: var(--ouro); flex-shrink: 0; }
+  .rule-card ul li strong { color: var(--texto); font-weight: 500; }
+
+  /* ── PRINT ───────────────────────────────────── */
+  .btn-print {
+    background: var(--cacau);
+    color: var(--ouro-light);
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+  .btn-print svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+  @media print {
+    .top-bar, .btn-print { display: none; }
+    body { background: #fff; }
+    .wrapper { padding: 24px; }
+    .script-card__copy { display: none; }
+  }
+  @media (max-width: 700px) {
+    .steps, .tiers { grid-template-columns: 1fr; }
+    .step__arrow { display: none; }
+    .rules-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Ammá Concept · Protocolo de Indicação · Uso Interno</div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <div class="page-header__eyebrow">Ammá Concept · Aquisição Orgânica</div>
+    <h1 class="page-title">Protocolo de<br><em>Indicação</em>.</h1>
+    <div class="page-header__sub">
+      A Ammá não veicula anúncios pagos. Clientes que se tornam embaixadoras são
+      o único canal de aquisição estruturado. Este protocolo define como ativar, rastrear e reconhecer cada indicação.
+    </div>
+  </div>
+
+  <button class="btn-print" onclick="window.print()">
+    <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+    Imprimir documento
+  </button>
+
+  <!-- ── 01. FILOSOFIA ───────────────────────────── -->
+  <div class="section">
+    <div class="section__label">01 · Filosofia</div>
+    <div class="philosophy-block">
+      <div class="philosophy-block__quote">
+        "Indicação não é marketing. É confiança transferida."
+      </div>
+      <div class="philosophy-block__body">
+        Quando uma cliente da Ammá indica alguém, ela está colocando <strong>sua reputação pessoal</strong> em jogo.
+        Isso vale mais do que qualquer anúncio. O protocolo existe para que esse ato seja <strong>reconhecido com a mesma elegância</strong>
+        que a cliente espera do atelier, sem pontos, sem cupons, sem mecânica de loja de conveniência.
+        A recompensa é <strong>privilégio, não desconto.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 02. MECÂNICA ────────────────────────────── -->
+  <div class="section">
+    <div class="section__label">02 · Como funciona</div>
+    <h2 class="section__title">Três <em>gestos</em>.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step__num">01</div>
+        <div class="step__title">A cliente <em>indica</em>.</div>
+        <div class="step__body">
+          Menciona a Ammá para alguém de confiança, via WhatsApp, Instagram ou pessoalmente.
+          Pode usar o cartão-convite físico ou o script digital.
+          O nome da indicante é registrado <strong>no primeiro contato</strong> da nova cliente.
+        </div>
+        <div class="step__arrow">›</div>
+      </div>
+      <div class="step">
+        <div class="step__num">02</div>
+        <div class="step__title">A nova cliente <em>agenda</em>.</div>
+        <div class="step__body">
+          No primeiro contato via WhatsApp, pergunta-se:
+          <em>"Como você nos conheceu?"</em>
+          O nome da indicante é registrado na planilha de rastreamento com status <strong>Em espera</strong>.
+        </div>
+        <div class="step__arrow">›</div>
+      </div>
+      <div class="step">
+        <div class="step__num">03</div>
+        <div class="step__title">A indicante <em>é reconhecida</em>.</div>
+        <div class="step__body">
+          Após a nova cliente completar o primeiro atendimento, o benefício é ativado automaticamente
+          para a indicante. Ela recebe contato <strong>pessoal</strong> da Amanda · nunca automatizado.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 03. BENEFÍCIOS ──────────────────────────── -->
+  <div class="section">
+    <div class="section__label">03 · Benefícios por tier</div>
+    <h2 class="section__title">Círculo <em>Ammá</em>.</h2>
+    <div class="highlight">
+      Nenhuma recompensa usa a palavra "desconto". O vocabulário é <strong>privilégio, prioridade, reconhecimento</strong>.
+      O benefício deve fazer a indicante sentir que a Ammá a vê, não que a comprou.
+    </div>
+    <div class="tiers">
+      <div class="tier tier--1">
+        <div class="tier__num">Tier 01 · Primeira indicação</div>
+        <div class="tier__name"><em>Gesto de Gratidão</em></div>
+        <div class="tier__trigger">Após a 1ª indicação converter</div>
+        <ul class="tier__reward-list">
+          <li>Mensagem pessoal da Amanda com agradecimento</li>
+          <li>Prioridade de agenda no próximo agendamento por 60 dias</li>
+          <li>Cartão escrito à mão entregue no próximo atendimento</li>
+        </ul>
+      </div>
+      <div class="tier tier--2">
+        <div class="tier__num">Tier 02 · Segunda indicação</div>
+        <div class="tier__name"><em>Ritual Bônus</em></div>
+        <div class="tier__trigger">Após a 2ª indicação converter</div>
+        <ul class="tier__reward-list">
+          <li>Um serviço complementar grátis na próxima visita (lifting de cílios, spa coreano ou brow lamination)</li>
+          <li>Prioridade permanente de agenda</li>
+          <li>Menção discreta no Instagram (com autorização)</li>
+        </ul>
+      </div>
+      <div class="tier tier--3">
+        <div class="tier__num">Tier 03 · Três ou mais</div>
+        <div class="tier__name"><em>Membro Fundadora</em></div>
+        <div class="tier__trigger">A partir da 3ª indicação convertida</div>
+        <ul class="tier__reward-list">
+          <li>Status vitalício de Membro Fundadora</li>
+          <li>Acesso à agenda antes de qualquer outra cliente</li>
+          <li>Um ritual completo por semestre com valor especial</li>
+          <li>Convite para eventos fechados do atelier</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 04. RASTREAMENTO ────────────────────────── -->
+  <div class="section">
+    <div class="section__label">04 · Rastreamento interno</div>
+    <h2 class="section__title">Planilha de <em>controle</em>.</h2>
+    <div class="highlight">
+      Registrar <strong>sempre no primeiro contato</strong> da nova cliente, antes de confirmar agendamento.
+      Pergunta padrão: <em>"Como você chegou até a gente?"</em>
+    </div>
+
+    <table class="track-table">
+      <thead>
+        <tr>
+          <th>Indicante</th>
+          <th>Nova cliente</th>
+          <th>Data contato</th>
+          <th>Serviço agendado</th>
+          <th>Data atendimento</th>
+          <th>Status</th>
+          <th>Benefício entregue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="example">Ex: Marina K.</td>
+          <td class="example">Sofia A.</td>
+          <td class="example">12/04/2026</td>
+          <td class="example">Maq. Social</td>
+          <td class="example">28/04/2026</td>
+          <td><span class="status-badge status-badge--done">Convertida</span></td>
+          <td class="example">Cartão + prioridade 60d</td>
+        </tr>
+        <tr>
+          <td class="example">Ex: Luísa R.</td>
+          <td class="example">Camila F.</td>
+          <td class="example">15/04/2026</td>
+          <td class="example">Penteado noiva</td>
+          <td class="example"> · </td>
+          <td><span class="status-badge status-badge--booked">Agendada</span></td>
+          <td class="example"> · </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="status-badge status-badge--pending">Em espera</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="status-badge status-badge--rewarded">Reconhecida</span></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--muted);margin-top:10px;font-style:italic;">
+      Exportar para Google Sheets, manter acesso apenas para Amanda Grundler, Francine Savi e artistas com nível de acesso definido internamente <span contenteditable="true" style="border-bottom:1px dashed rgba(255,255,255,0.25);padding:0 4px;">(a definir)</span>.
+    </div>
+  </div>
+
+  <!-- ── 05. SCRIPTS ─────────────────────────────── -->
+  <div class="section">
+    <div class="section__label">05 · Scripts de ativação</div>
+    <h2 class="section__title">Mensagens <em>prontas</em>.</h2>
+
+    <div class="scripts-grid">
+
+      <div class="script-card">
+        <div class="script-card__label">01 · Pergunta de rastreamento, primeira mensagem da nova cliente</div>
+        <div class="script-card__text" id="script-1">Olá! Que bom ter você por aqui.
+Antes de tudo, como você chegou até a Ammá?</div>
+        <button class="script-card__copy" onclick="copyScript('script-1', this)">Copiar</button>
+        <div class="script-card__note">Fazer isso sempre antes de qualquer informação sobre agenda ou serviços.</div>
+      </div>
+
+      <div class="script-card">
+        <div class="script-card__label">02 · Convite que a cliente envia para indicar alguém</div>
+        <div class="script-card__text" id="script-2">Preciso te contar de um lugar que mudou a forma como eu me preparo para eventos importantes.
+
+Atelier Ammá Concept, em Porto Alegre, maquiagem, cabelo e styling em um nível que eu nunca tinha encontrado antes.
+
+A agenda é sob consulta e as datas somem rápido. Se quiser, fala que foi eu quem indicou, acredito que você vai entender logo no primeiro atendimento por que faz diferença.
+
+Instagram: @ammaconceptt</div>
+        <button class="script-card__copy" onclick="copyScript('script-2', this)">Copiar</button>
+        <div class="script-card__note">Tom: recomendação pessoal, não propaganda. A cliente fala como ela, com as palavras dela, este é apenas o template-base.</div>
+      </div>
+
+      <div class="script-card">
+        <div class="script-card__label">03 · Mensagem da Amanda para a indicante, Tier 01 (1ª conversão)</div>
+        <div class="script-card__text" id="script-3">[Nome],
+
+Quero que saiba que a [nome da nova cliente] agendou com a gente e mencionou seu nome.
+
+Isso significa muito para mim, uma indicação é uma confiança que não peço e que não compro. Você colocou sua reputação em jogo, e isso eu levo a sério.
+
+Da próxima vez que quiser agendar, me fala antes de abrir a agenda para qualquer pessoa. Sua data é prioridade.
+
+Com carinho,
+Amanda · Ammá Concept</div>
+        <button class="script-card__copy" onclick="copyScript('script-3', this)">Copiar</button>
+        <div class="script-card__note">Enviar somente após o primeiro atendimento da nova cliente ser concluído. Nunca antes, não prometer o que ainda não aconteceu.</div>
+      </div>
+
+      <div class="script-card">
+        <div class="script-card__label">04 · Mensagem da Amanda, Tier 02 (2ª conversão · Ritual Bônus)</div>
+        <div class="script-card__text" id="script-4">[Nome],
+
+Você indicou a Ammá pela segunda vez. E as duas pessoas chegaram até aqui.
+
+Isso não é coincidência, você fala de um lugar de convicção, e isso chega. Quero te oferecer algo: na sua próxima visita, escolha um ritual complementar que você ainda não experimentou. Por minha conta. Sem condição, sem data de validade.
+
+É uma forma pequena de dizer: você faz parte do que a Ammá está construindo.
+
+Amanda</div>
+        <button class="script-card__copy" onclick="copyScript('script-4', this)">Copiar</button>
+      </div>
+
+      <div class="script-card">
+        <div class="script-card__label">05 · Mensagem da Amanda, Tier 03 (Membro Fundadora)</div>
+        <div class="script-card__text" id="script-5">[Nome],
+
+Três pessoas chegaram à Ammá porque você quis que elas conhecessem. Cada uma delas saiu diferente, não transformada, revelada.
+
+Você fez isso acontecer três vezes.
+
+A partir de agora, você é Membro Fundadora da Ammá. Isso significa que sua agenda tem prioridade absoluta, antes de qualquer outra abertura. Significa também que quando tivermos momentos fechados, convites especiais, você vai estar na lista.
+
+Isso não tem prazo. Não tem letra miúda. É reconhecimento.
+
+Obrigada por confiar.
+Amanda</div>
+        <button class="script-card__copy" onclick="copyScript('script-5', this)">Copiar</button>
+      </div>
+
+      <div class="script-card">
+        <div class="script-card__label">06 · Resposta quando nova cliente diz "fui indicada por [nome]"</div>
+        <div class="script-card__text" id="script-6">Que nome importante. [Nome da indicante] é uma das nossas clientes mais queridas, e o fato de ela ter falado de nós para você já diz muito sobre quem você é.
+
+Fico feliz em te receber. Vou anotar que foi ela quem indicou, isso vai significar algo para ela também.
+
+Agora me conta: qual é a ocasião? Quero entender o que faz sentido para você.</div>
+        <button class="script-card__copy" onclick="copyScript('script-6', this)">Copiar</button>
+        <div class="script-card__note">Adaptar o [Nome da indicante] conforme o caso. Nunca ignorar quem indicou, sempre mencionar.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── 06. CARTÃO-CONVITE ──────────────────────── -->
+  <div class="section">
+    <div class="section__label">06 · Cartão-convite físico</div>
+    <h2 class="section__title">Arte para <em>impressão</em>.</h2>
+    <div class="highlight">
+      Entregar ao final de cada atendimento. Formato aproximado 9×5cm, frente/verso.
+      Papel cotton ou kraft com impressão em ouro. A cliente passa para quem ela quiser.
+    </div>
+
+    <div class="referral-card-wrap">
+      <div class="referral-card">
+        <div class="referral-card__body">
+          <div class="referral-card__logo">AMMÁ</div>
+          <div class="referral-card__sub">Concept · Porto Alegre</div>
+          <div class="referral-card__title">
+            Para quem você acredita<br>que já merecia isso.
+          </div>
+          <div class="referral-card__desc">
+            Maquiagem · Cabelo · Styling<br>
+            Atelier ultra-premium · Agenda sob consulta
+          </div>
+          <div class="referral-card__code">@ammaconceptt</div>
+          <div style="font-size:9px;color:rgba(201,184,154,0.3);letter-spacing:.1em;">
+            Diga que veio de mim.
+          </div>
+        </div>
+        <div class="referral-card__footer">
+          Apresente este cartão no primeiro contato
+        </div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);font-style:italic;text-align:center;">
+      Verso: fundo cacau · logo ouro · Instagram · "Apresente este cartão no primeiro contato"
+    </div>
+  </div>
+
+  <!-- ── 07. REGRAS ──────────────────────────────── -->
+  <div class="section">
+    <div class="section__label">07 · Regras operacionais</div>
+    <h2 class="section__title">O que <em>não fazer</em>.</h2>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="rule-card__title">Jamais fazer</div>
+        <ul>
+          <li>Usar a palavra <strong>"desconto"</strong> em qualquer contexto de indicação</li>
+          <li>Enviar mensagem automática de agradecimento, deve ser <strong>pessoal</strong></li>
+          <li>Prometer o benefício <strong>antes</strong> da nova cliente converter</li>
+          <li>Divulgar quem indicou quem publicamente sem autorização</li>
+          <li>Criar "código de desconto", isso é modelo de varejo, não de atelier</li>
+          <li>Tratar igual quem indicou uma pessoa e quem indicou cinco</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Sempre fazer</div>
+        <ul>
+          <li>Perguntar <strong>"como chegou até nós?"</strong> no primeiro contato</li>
+          <li>Registrar na planilha <strong>antes</strong> de responder sobre agenda</li>
+          <li>Citar o nome da indicante na resposta à nova cliente</li>
+          <li>Contato pessoal da Amanda, nunca da equipe, para o reconhecimento</li>
+          <li>Entregar cartão-convite em <strong>todo</strong> atendimento finalizado</li>
+          <li>Revisar planilha semanalmente para não atrasar o reconhecimento</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Casos especiais</div>
+        <ul>
+          <li>Indicação que não converteu: <strong>sem benefício</strong>, mas pode receber mensagem de reconhecimento do esforço</li>
+          <li>Indicação de noiva/debu: sobe automaticamente um tier, impacto maior merece reconhecimento maior</li>
+          <li>Indicante que virou parceira (ex: fotógrafo, cerimonialista): protocolo de parceria, não de indicação</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Revisão periódica</div>
+        <ul>
+          <li>Planilha revisada <strong>toda segunda-feira</strong></li>
+          <li>Benefícios pendentes entregues em até <strong>7 dias</strong> após conversão</li>
+          <li>Tabela de tiers revisada a cada <strong>3 meses</strong> · ajustar se necessário</li>
+          <li>Cartões-convite repostos quando estoque &lt; 5 unidades</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.wrapper -->
+
+<script>
+function copyScript(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+    btn.textContent = 'Copiado ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copiar';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>

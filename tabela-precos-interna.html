@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Tabela de Preços Interna</title>
+<meta name="description" content="Tabela de preços interna Ammá Concept · USO INTERNO · Comissão automática e pacotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --ouro-light:#d4a574;
+    --fundo:     #faf7f2;
+    --texto:     #2a2a2a;
+    --cacau:     #2b1d13;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --danger:    #b44;
+    --verde:     #4a7c59;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--texto);
+    background: #e8e3db;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP BAR ──────────────────────────────────── */
+  .top-bar {
+    background: var(--danger);
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+
+  /* ── WRAPPER ──────────────────────────────────── */
+  .wrapper { max-width: 1100px; margin: 0 auto; padding: 48px 32px 120px; }
+
+  /* ── PAGE HEADER ──────────────────────────────── */
+  .page-header { margin-bottom: 40px; }
+  .page-header__eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .page-header__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .page-header__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--cacau);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .page-header__title em { font-style: italic; }
+  .page-header__meta {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+  }
+
+  /* ── CONTROLS PANEL ───────────────────────────── */
+  .controls {
+    background: var(--cacau);
+    border-radius: 3px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .control-group { display: flex; flex-direction: column; gap: 6px; }
+  .control-group label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.65);
+    font-family: var(--font-b);
+  }
+  .control-group__value {
+    font-family: var(--font-d);
+    font-size: 1.6rem;
+    color: var(--ouro-light);
+    font-weight: 300;
+    line-height: 1;
+  }
+  .control-group__value span {
+    font-family: var(--font-b);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(232,217,194,0.5);
+    margin-left: 4px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 160px;
+    height: 2px;
+    background: rgba(184,150,92,0.3);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ouro);
+    cursor: pointer;
+  }
+  .toggle-wrap { display: flex; align-items: center; gap: 10px; }
+  .toggle { position: relative; width: 44px; height: 24px; cursor: pointer; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle__track {
+    position: absolute;
+    inset: 0;
+    background: rgba(184,150,92,0.25);
+    border-radius: 12px;
+    transition: background .2s;
+  }
+  .toggle input:checked + .toggle__track { background: var(--ouro); }
+  .toggle__thumb {
+    position: absolute;
+    top: 3px; left: 3px;
+    width: 18px; height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    transition: left .2s;
+  }
+  .toggle input:checked ~ .toggle__thumb { left: 23px; }
+  .toggle-label {
+    font-size: 11px;
+    color: var(--champanhe);
+    font-family: var(--font-b);
+    font-weight: 300;
+  }
+  .toggle-label em {
+    font-style: normal;
+    color: var(--ouro-light);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    margin-left: 4px;
+  }
+  .controls__divider {
+    width: 1px; height: 40px;
+    background: rgba(201,184,154,0.2);
+    align-self: center;
+  }
+  .controls__note {
+    font-size: 10px;
+    color: rgba(201,184,154,0.45);
+    max-width: 180px;
+    line-height: 1.6;
+  }
+  .controls__actions { display: flex; gap: 10px; align-items: center; margin-left: auto; }
+
+  /* Print button */
+  .btn-print {
+    background: var(--cacau);
+    color: var(--ouro-light);
+    border: 1px solid rgba(184,150,92,0.35);
+    padding: 10px 18px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .15s;
+  }
+  .btn-print:hover { background: #3a2a1c; }
+  .btn-print svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+  /* Budget button */
+  .btn-budget {
+    background: transparent;
+    color: var(--ouro-light);
+    border: 1px solid var(--ouro);
+    padding: 10px 18px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all .15s;
+  }
+  .btn-budget:hover { background: rgba(184,150,92,0.12); }
+  .btn-budget svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+  /* Season pct input */
+  .season-pct-input {
+    width: 46px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(184,150,92,.5);
+    color: var(--ouro-light);
+    font-size: .9rem;
+    text-align: center;
+    padding: 2px 0;
+    outline: none;
+    font-family: var(--font-b);
+  }
+
+  /* ── SECTION WRAPPER ──────────────────────────── */
+  .section-wrap { position: relative; margin-bottom: 8px; }
+  .section-wrap:hover .btn-section-delete { opacity: 1; }
+
+  /* ── SECTION HEADER ───────────────────────────── */
+  .ritual-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--linha);
+    position: relative;
+  }
+  .ritual-header__num {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    white-space: nowrap;
+  }
+  .ritual-header__title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--texto);
+    letter-spacing: -0.01em;
+  }
+  .ritual-header__title em { font-style: italic; }
+  .ritual-header__sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+    padding-right: 8px;
+  }
+
+  /* contenteditable shared styles */
+  [contenteditable="true"] {
+    outline: none;
+    cursor: text;
+    transition: background .15s, box-shadow .15s;
+  }
+  [contenteditable="true"]:hover { background: rgba(184,150,92,0.06); }
+  [contenteditable="true"]:focus {
+    background: rgba(184,150,92,0.1);
+    box-shadow: 0 1px 0 var(--ouro);
+  }
+  .ritual-header__title[contenteditable="true"]:focus,
+  .ritual-header__sub[contenteditable="true"]:focus {
+    box-shadow: none;
+    border-bottom: 1px dashed var(--ouro);
+  }
+
+  /* Section delete button */
+  .btn-section-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .2s;
+    padding: 4px 6px;
+    letter-spacing: 0.1em;
+    font-family: var(--font-b);
+    font-size: 9px;
+    text-transform: uppercase;
+  }
+  .btn-section-delete:hover { opacity: 1 !important; }
+
+  /* ── TABLE ────────────────────────────────────── */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+    background: var(--fundo);
+    box-shadow: 0 2px 20px rgba(0,0,0,.07);
+  }
+  .price-table thead tr { background: var(--cacau); }
+  .price-table thead th {
+    padding: 10px 14px;
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(184,150,92,0.7);
+    font-weight: 400;
+    text-align: left;
+    font-family: var(--font-b);
+    white-space: nowrap;
+  }
+  .price-table thead th.right { text-align: right; }
+  .price-table thead th.center { text-align: center; }
+  .price-table tbody tr {
+    border-bottom: 1px solid var(--champanhe);
+    transition: background .12s;
+    position: relative;
+  }
+  .price-table tbody tr:hover { background: #f5f0e6; }
+  .price-table tbody tr.highlight-row { background: var(--perola); }
+  .price-table tbody tr.highlight-row:hover { background: #ede5d5; }
+  .price-table td {
+    padding: 11px 14px;
+    vertical-align: middle;
+    color: var(--texto);
+  }
+
+  .td-name { font-weight: 400; font-size: 13px; min-width: 200px; }
+  .td-name .badge {
+    display: inline-block;
+    font-size: 7px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--ouro);
+    color: #fff;
+    padding: 1px 5px;
+    margin-left: 6px;
+    font-family: var(--font-b);
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .badge-edit {
+    font-size: 10px;
+    color: var(--muted);
+    background: transparent;
+    border: 1px dashed var(--linha);
+    padding: 1px 5px;
+    font-family: var(--font-b);
+    width: 70px;
+    outline: none;
+    cursor: text;
+  }
+  .badge-edit:focus { border-color: var(--ouro); background: rgba(184,150,92,0.06); }
+
+  .td-desc { font-size: 11px; color: var(--muted); max-width: 190px; }
+  .td-duration { font-size: 11px; color: var(--muted); white-space: nowrap; text-align: center; }
+  .td-note { font-size: 10px; color: var(--muted); max-width: 150px; font-style: italic; }
+
+  .price-input-wrap { display: flex; align-items: center; gap: 4px; justify-content: flex-end; }
+  .price-currency { font-size: 10px; color: var(--muted); }
+  input[type="number"].price-input {
+    width: 78px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed var(--linha);
+    padding: 2px 4px;
+    font-family: var(--font-b);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--texto);
+    text-align: right;
+    outline: none;
+    transition: border-color .15s;
+  }
+  input[type="number"].price-input:focus {
+    border-bottom-color: var(--ouro);
+    background: rgba(184,150,92,0.06);
+  }
+  input[type="number"].price-input::-webkit-inner-spin-button,
+  input[type="number"].price-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+  .td-final {
+    text-align: right; font-weight: 500; font-size: 13px;
+    white-space: nowrap; color: var(--texto);
+  }
+  .td-final.season-active { color: var(--ouro); }
+  .td-comm { text-align: right; font-size: 12px; color: var(--verde); white-space: nowrap; }
+  .td-atelier { text-align: right; font-size: 12px; color: var(--cacau); font-weight: 500; white-space: nowrap; }
+
+  /* Row delete button */
+  .row-delete {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+    padding: 0 4px;
+    line-height: 1;
+  }
+  tr:hover .row-delete { opacity: 0.6; }
+  .row-delete:hover { opacity: 1 !important; }
+
+  /* Add row button */
+  .btn-add-row {
+    background: transparent;
+    border: 1px dashed var(--ouro);
+    color: var(--ouro);
+    padding: 8px 16px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+    transition: background .15s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-add-row:hover { background: rgba(184,150,92,0.08); }
+  .btn-add-row::before { content: '+'; font-size: 14px; }
+
+  /* Add section button */
+  .btn-add-section {
+    background: transparent;
+    border: 1px dashed rgba(184,150,92,0.5);
+    color: rgba(184,150,92,0.7);
+    padding: 12px 20px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 48px;
+    transition: all .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-add-section:hover {
+    background: rgba(184,150,92,0.06);
+    border-color: var(--ouro);
+    color: var(--ouro);
+  }
+  .btn-add-section::before { content: '+'; font-size: 16px; }
+
+  /* ── PACKAGES ─────────────────────────────────── */
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin: 48px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--linha); }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .package-card {
+    background: var(--fundo);
+    box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    padding: 20px 24px;
+    border-top: 2px solid var(--ouro);
+    position: relative;
+  }
+  .package-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .package-card__title {
+    font-family: var(--font-d);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--cacau);
+    min-width: 80px;
+  }
+  .package-card__title em { font-style: italic; }
+  .pkg-delete {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+    padding: 0 0 0 8px;
+    line-height: 1;
+  }
+  .package-card:hover .pkg-delete { opacity: 0.5; }
+  .pkg-delete:hover { opacity: 1 !important; }
+
+  .package-discount-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+  .package-discount-input-wrap label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  input.pkg-disc-input {
+    width: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed var(--linha);
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: var(--verde);
+    text-align: center;
+    padding: 1px 2px;
+    outline: none;
+  }
+  input.pkg-disc-input:focus { border-bottom-color: var(--ouro); }
+  input.pkg-disc-input::-webkit-inner-spin-button,
+  input.pkg-disc-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+
+  .package-card__items {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 2;
+    margin-bottom: 16px;
+    list-style: none;
+  }
+  .package-card__items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .pkg-item-name { flex: 1; }
+  .pkg-item-price { font-size: 10px; color: var(--linha); white-space: nowrap; }
+  .pkg-item-delete {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+    padding: 0 2px;
+    line-height: 1;
+  }
+  .package-card__items li:hover .pkg-item-delete { opacity: 0.6; }
+  .pkg-item-delete:hover { opacity: 1 !important; }
+
+  /* Add service to package */
+  .pkg-add-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 14px 16px;
+    background: var(--perola);
+    border: 1px dashed rgba(184,150,92,0.4);
+  }
+  .pkg-add-wrap__label {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 2px;
+  }
+  .pkg-service-select {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--champanhe);
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: var(--texto);
+    padding: 10px 32px 10px 12px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b8965c'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .pkg-service-select:focus { border-color: var(--ouro); }
+  .btn-pkg-add-item {
+    background: var(--cacau);
+    color: var(--ouro-light);
+    border: none;
+    padding: 11px 14px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: background .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-pkg-add-item::before { content: '+'; font-size: 16px; font-weight: 300; line-height: 1; }
+  .btn-pkg-add-item:hover { background: #3a2a1c; }
+
+  .package-divider { height: 1px; background: var(--champanhe); margin: 12px 0; }
+  .package-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 11px;
+  }
+  .package-total-label {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 8px;
+    color: var(--muted);
+  }
+  .package-total-sum { font-size: 16px; font-weight: 500; color: var(--cacau); font-family: var(--font-d); }
+  .package-discount-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--verde);
+    margin-top: 4px;
+  }
+  .package-final {
+    font-size: 18px; font-weight: 500; color: var(--ouro);
+    font-family: var(--font-d); text-align: right; margin-top: 4px;
+  }
+
+  /* New package button */
+  .btn-add-package {
+    background: transparent;
+    border: 1px dashed rgba(184,150,92,0.5);
+    color: rgba(184,150,92,0.7);
+    padding: 10px 20px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 48px;
+    transition: all .15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .btn-add-package:hover { background: rgba(184,150,92,0.06); border-color: var(--ouro); color: var(--ouro); }
+  .btn-add-package::before { content: '+'; font-size: 16px; }
+
+  /* ── POLICIES ─────────────────────────────────── */
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .policy-card {
+    background: var(--fundo);
+    padding: 20px 24px;
+    box-shadow: 0 1px 12px rgba(0,0,0,.05);
+    position: relative;
+  }
+  .policy-card__title {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 12px;
+  }
+  .policy-card ul { list-style: none; }
+  .policy-card ul li {
+    display: flex;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+    align-items: flex-start;
+    position: relative;
+  }
+  .policy-card ul li .policy-bullet { color: var(--ouro); flex-shrink: 0; margin-top: 1px; }
+  .policy-item-text { flex: 1; }
+  .policy-item-text strong { font-weight: 500; color: var(--texto); }
+
+  .policy-item-delete {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+    padding: 0 2px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .policy-card ul li:hover .policy-item-delete { opacity: 0.5; }
+  .policy-item-delete:hover { opacity: 1 !important; }
+
+  .btn-policy-add {
+    background: none;
+    border: none;
+    color: var(--ouro);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 6px 0;
+    font-family: var(--font-b);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    opacity: 0.7;
+    transition: opacity .15s;
+  }
+  .btn-policy-add:hover { opacity: 1; }
+  .btn-policy-add::before { content: '+'; font-size: 14px; }
+
+  /* ── FOOTER ───────────────────────────────────── */
+  .doc-footer {
+    border-top: 1px solid var(--linha);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+  }
+  .doc-footer__logo { font-family: var(--font-d); font-size: 1rem; color: var(--ouro); letter-spacing: 0.06em; }
+
+  /* ── BUDGET MODAL ─────────────────────────────── */
+  .budget-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.72);
+    z-index: 500;
+    overflow-y: auto;
+    padding: 32px 16px;
+  }
+  .budget-modal.is-open { display: flex; align-items: flex-start; justify-content: center; }
+  .budget-modal__card {
+    background: var(--fundo);
+    width: 100%;
+    max-width: 960px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+  }
+  .budget-modal__header {
+    background: var(--cacau);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .budget-modal__header-title {
+    font-family: var(--font-d);
+    font-size: 1.3rem;
+    color: var(--ouro-light);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+  .budget-modal__close {
+    background: none;
+    border: none;
+    color: rgba(184,150,92,0.6);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color .15s;
+  }
+  .budget-modal__close:hover { color: var(--ouro-light); }
+  .budget-modal__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .budget-modal__left {
+    padding: 28px;
+    border-right: 1px solid var(--champanhe);
+    overflow-y: auto;
+    max-height: 70vh;
+  }
+  .budget-modal__right {
+    padding: 28px;
+    overflow-y: auto;
+    max-height: 70vh;
+  }
+  .budget-modal__section-title {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    font-family: var(--font-b);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--champanhe);
+  }
+  .budget-client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .budget-field { display: flex; flex-direction: column; gap: 4px; }
+  .budget-field label {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-b);
+  }
+  .budget-field input,
+  .budget-field textarea {
+    background: var(--perola);
+    border: 1px solid var(--champanhe);
+    padding: 8px 10px;
+    font-family: var(--font-b);
+    font-size: 12px;
+    color: var(--texto);
+    outline: none;
+    font-weight: 300;
+    transition: border-color .15s;
+    width: 100%;
+  }
+  .budget-field input:focus,
+  .budget-field textarea:focus { border-color: var(--ouro); }
+  .budget-field textarea { resize: vertical; min-height: 60px; }
+  .budget-field.full { grid-column: 1 / -1; }
+
+  .budget-service-list { margin-bottom: 16px; }
+  .budget-service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--champanhe);
+    cursor: pointer;
+  }
+  .budget-service-item:last-child { border-bottom: none; }
+  .budget-service-item input[type="checkbox"] { accent-color: var(--ouro); width: 14px; height: 14px; cursor: pointer; }
+  .budget-service-item__name { flex: 1; font-size: 12px; color: var(--texto); font-weight: 400; }
+  .budget-service-item__price { font-size: 11px; color: var(--ouro); font-weight: 500; white-space: nowrap; }
+  .budget-service-item__section {
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .budget-modal__footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--champanhe);
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  .btn-budget-print {
+    background: var(--cacau);
+    color: var(--ouro-light);
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background .15s;
+  }
+  .btn-budget-print:hover { background: #3a2a1c; }
+  .btn-budget-close {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--champanhe);
+    padding: 12px 20px;
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-budget-close:hover { border-color: var(--muted); color: var(--texto); }
+
+  /* Quote preview — papel timbrado exact match */
+  .quote-preview {
+    background: var(--fundo);
+    border: 1px solid var(--champanhe);
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .quote-preview__empty {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 48px 24px;
+    font-style: italic;
+  }
+  /* Scoped papel-timbrado — identical to papel-timbrado.html */
+  .quote-preview { position: relative; }
+  .qp-top-accent {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 1px; background: var(--ouro);
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+  .qp-header {
+    padding: 40px 52px 28px;
+    border-bottom: 1px solid var(--champanhe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .qp-logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .qp-logo sup {
+    font-family: var(--font-b);
+    font-size: 0.42rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--muted);
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .qp-tag {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--linha);
+    margin-top: 8px;
+  }
+  .qp-hairline { width: 28px; height: 1px; background: var(--ouro); margin: 12px 0 0; }
+  .qp-doc-type {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1;
+    text-align: right;
+  }
+  .qp-doc-num {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-top: 6px;
+    text-align: right;
+  }
+  .qp-doc-date {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--linha);
+    margin-top: 4px;
+    text-align: right;
+  }
+  .qp-body { padding: 36px 52px; flex: 1; }
+  .qp-client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .qp-block-label {
+    font-family: var(--font-b);
+    font-size: 8px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #a07840;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .qp-block-label::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ouro); }
+  .qp-field { margin-bottom: 10px; }
+  .qp-f-label {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .qp-f-value {
+    font-size: 12px;
+    color: var(--texto);
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--champanhe);
+    padding-bottom: 6px;
+    min-height: 22px;
+  }
+  .qp-divider { height: 1px; background: var(--champanhe); margin: 0 0 32px; }
+  .qp-services-title {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--cacau);
+    margin-bottom: 20px;
+  }
+  .qp-table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+  .qp-table thead th {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #a07840;
+    font-weight: 300;
+    text-align: left;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--ouro);
+  }
+  .qp-table thead th:last-child { text-align: right; }
+  .qp-table tbody td {
+    font-size: 12px;
+    color: var(--texto);
+    padding: 13px 0;
+    border-bottom: 1px solid var(--champanhe);
+    vertical-align: top;
+  }
+  .qp-table tbody td:last-child { text-align: right; color: var(--cacau); }
+  .qp-svc-name { font-family: var(--font-b); font-size: 11px; letter-spacing: 0.06em; color: var(--texto); }
+  .qp-svc-desc { font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: 0.02em; }
+  .qp-table tfoot td { padding: 16px 0 0; font-size: 11px; }
+  .qp-total-label {
+    font-family: var(--font-b);
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .qp-total-value {
+    text-align: right;
+    font-family: var(--font-d);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .qp-total-note {
+    font-size: 9px;
+    color: var(--linha);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    display: block;
+  }
+  .qp-conditions {
+    background: var(--perola);
+    padding: 24px 28px;
+    margin-bottom: 28px;
+  }
+  .qp-cond-title {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #a07840;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .qp-cond-title::before { content: ''; display: block; width: 16px; height: 1px; background: var(--ouro); }
+  .qp-cond-list { list-style: none; }
+  .qp-cond-list li {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 2;
+    padding-left: 14px;
+    position: relative;
+  }
+  .qp-cond-list li::before { content: '—'; position: absolute; left: 0; color: #a07840; }
+  .qp-note {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cacau);
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .qp-footer {
+    padding: 20px 52px 40px;
+    border-top: 1px solid var(--champanhe);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+  }
+  .qp-footer-brand {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--linha);
+    line-height: 1.9;
+  }
+  .qp-footer-brand strong { font-weight: 300; color: var(--cacau); }
+  .qp-footer-qr { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .qp-footer-qr img { display: block; }
+  .qp-footer-qr span {
+    font-family: var(--font-b);
+    font-size: 7px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .qp-footer-contact {
+    text-align: right;
+    font-family: var(--font-b);
+    font-size: 9px;
+    color: var(--linha);
+    letter-spacing: 0.14em;
+    line-height: 1.9;
+  }
+
+  /* ── PRINT ────────────────────────────────────── */
+  @media print {
+    /* Default: print the main table */
+    .budget-modal { display: none !important; }
+    .top-bar { position: relative; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .controls { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .btn-print, .btn-budget, .btn-add-row, .btn-add-section, .btn-add-package,
+    .row-delete, .pkg-delete, .pkg-item-delete, .btn-section-delete,
+    .policy-item-delete, .btn-policy-add, .pkg-add-wrap { display: none !important; }
+    .price-table { box-shadow: none; }
+    .price-table tbody tr { page-break-inside: avoid; }
+    body { background: #fff; }
+    .wrapper { padding: 24px; }
+  }
+
+  /* Budget-only print mode */
+  @page { size: A4; margin: 0; }
+
+  body.printing-budget * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body.printing-budget .wrapper { display: none !important; }
+  body.printing-budget .top-bar { display: none !important; }
+  body.printing-budget .budget-modal {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  body.printing-budget .budget-modal__card { box-shadow: none !important; max-width: 100% !important; }
+  body.printing-budget .budget-modal__header { display: none !important; }
+  body.printing-budget .budget-modal__left { display: none !important; }
+  body.printing-budget .budget-modal__body { display: block !important; }
+  body.printing-budget .budget-modal__right {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  body.printing-budget .budget-modal__footer { display: none !important; }
+  body.printing-budget .quote-preview {
+    border: none !important;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  body.printing-budget .qp-header { padding: 14mm 18mm 10mm; }
+  body.printing-budget .qp-body { padding: 10mm 18mm; flex: 1; }
+  body.printing-budget .qp-top-accent { height: 2px; }
+  body.printing-budget .qp-footer {
+    margin-top: auto;
+    background: var(--fundo);
+    padding: 10px 18mm 14mm;
+    border-top: 1px solid var(--champanhe);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  body.printing-budget .qp-table tbody tr { page-break-inside: avoid; }
+  body.printing-budget .qp-conditions { page-break-inside: avoid; }
+
+  @media (max-width: 768px) {
+    .controls { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .controls__divider { display: none; }
+    .controls__actions { margin-left: 0; }
+    .td-desc, .td-note { display: none; }
+    input[type="number"].price-input { width: 60px; }
+    .budget-modal__body { grid-template-columns: 1fr; }
+    .budget-modal__left { border-right: none; border-bottom: 1px solid var(--champanhe); }
+    .budget-client-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">&#9888; USO INTERNO, CONFIDENCIAL · Ammá Concept · Não compartilhar com clientes</div>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <div class="page-header__eyebrow">Ammá Concept · Gestão Interna</div>
+    <h1 class="page-header__title">Tabela de <em>Preços</em>.</h1>
+    <div class="page-header__meta">
+      Referência interna de valores, comissões e pacotes · Atualizar a cada revisão de tabela
+      &nbsp;·&nbsp; <span id="data-atual"></span>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="control-group">
+      <label>Comissão artista</label>
+      <div class="control-group__value" id="comm-display">50<span>%</span></div>
+      <input type="range" id="comm-slider" min="30" max="70" step="5" value="50">
+    </div>
+    <div class="controls__divider"></div>
+    <div class="control-group">
+      <label>Alta temporada</label>
+      <div class="toggle-wrap">
+        <label class="toggle">
+          <input type="checkbox" id="season-toggle">
+          <div class="toggle__track"></div>
+          <div class="toggle__thumb"></div>
+        </label>
+        <span class="toggle-label" id="season-label">Desativada <em>(+0%)</em></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:8px;">
+        <span style="font-size:10px;color:rgba(201,184,154,0.6);">Acréscimo:</span>
+        <input type="number" id="season-pct" class="season-pct-input" value="25" min="0" max="100" step="5">
+        <span style="font-size:10px;color:rgba(201,184,154,0.6);">%</span>
+      </div>
+    </div>
+    <div class="controls__divider"></div>
+    <div class="control-group">
+      <label>Multiplicador</label>
+      <div class="control-group__value" id="multiplier-display">1.00<span>×</span></div>
+    </div>
+    <div class="controls__divider"></div>
+    <div class="controls__note">
+      Edite os preços clicando nos campos. Textos são editáveis inline. Use "Gerar Orçamento" para criar uma proposta para o cliente.
+    </div>
+    <div class="controls__actions">
+      <button class="btn-budget" id="btn-open-budget" onclick="openBudgetModal()">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Gerar Orçamento
+      </button>
+      <button class="btn-print" onclick="window.print()">
+        <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        Imprimir
+      </button>
+    </div>
+  </div>
+
+  <!-- SECTIONS CONTAINER — rendered by JS -->
+  <div id="sections-container"></div>
+
+  <!-- ADD SECTION -->
+  <button class="btn-add-section" onclick="addSection()">Nova seção</button>
+
+  <!-- PACKAGES -->
+  <div class="section-label">Pacotes combinados</div>
+  <div class="packages-grid" id="packages-grid"></div>
+  <button class="btn-add-package" onclick="addPackage()">Novo pacote</button>
+
+  <!-- POLICIES -->
+  <div class="section-label">Políticas operacionais</div>
+  <div class="policy-grid" id="policy-grid"></div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <span class="doc-footer__logo">AMMÁ CONCEPT</span>
+    <span>Documento interno · Uso exclusivo da equipe · Atualizar preços a cada revisão</span>
+    <span id="footer-date"></span>
+  </div>
+
+</div>
+
+<!-- BUDGET MODAL -->
+<div class="budget-modal" id="budget-modal">
+  <div class="budget-modal__card">
+    <div class="budget-modal__header">
+      <span class="budget-modal__header-title">Gerador de <em>Orçamento</em></span>
+      <button class="budget-modal__close" onclick="closeBudgetModal()">&#215;</button>
+    </div>
+    <div class="budget-modal__body">
+      <div class="budget-modal__left">
+        <div class="budget-modal__section-title">Dados do Cliente</div>
+        <div class="budget-client-grid">
+          <div class="budget-field">
+            <label>Nome do Cliente</label>
+            <input type="text" id="bgt-client-name" placeholder="Ex: Ana Carolina Silva" oninput="updateQuotePreview()">
+          </div>
+          <div class="budget-field">
+            <label>Data do Evento</label>
+            <input type="text" id="bgt-event-date" placeholder="DD/MM/AAAA" maxlength="10" oninput="maskDate(this)">
+          </div>
+          <div class="budget-field">
+            <label>Ocasião</label>
+            <input type="text" id="bgt-occasion" placeholder="Ex: Casamento, Formatura..." oninput="updateQuotePreview()">
+          </div>
+          <div class="budget-field">
+            <label>Validade da Proposta</label>
+            <input type="text" id="bgt-validity" placeholder="30 dias" oninput="updateQuotePreview()">
+          </div>
+          <div class="budget-field full">
+            <label>Observações Internas / Termos Adicionais</label>
+            <textarea id="bgt-obs" placeholder="Ex: Inclui deslocamento até local do evento..." oninput="updateQuotePreview()"></textarea>
+          </div>
+        </div>
+
+        <div class="budget-modal__section-title" style="margin-top:8px;">Selecionar Serviços</div>
+        <div class="budget-service-list" id="budget-service-list"></div>
+      </div>
+      <div class="budget-modal__right">
+        <div class="quote-preview" id="quote-preview">
+          <div class="quote-preview__empty">Selecione serviços ao lado para visualizar o orçamento.</div>
+        </div>
+      </div>
+    </div>
+    <div class="budget-modal__footer">
+      <button class="btn-budget-close" onclick="closeBudgetModal()">Cancelar</button>
+      <button class="btn-budget-print" onclick="printBudget()">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        Imprimir Orçamento
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+const state = {
+  commPct: 50,
+  seasonOn: false,
+  seasonPct: 25,
+  sections: [
+    {
+      id: 's1',
+      num: '01',
+      title: 'Para o seu rosto',
+      titleItalic: 'rosto',
+      sub: 'Maquiagem · Sobrancelha · Estética · Pele',
+      services: [
+        { id: 'mq-noiva',  name: 'Maquiagem de Noiva',              badge: 'Premium',  desc: 'Teste prévio + produção no dia',                        duration: '3–4h',        price: 1200, note: 'Mín. 3 meses antecedência alta temporada', highlight: true  },
+        { id: 'mq-social', name: 'Maquiagem Social',                badge: '',         desc: 'Festas, formaturas, eventos de alto padrão',            duration: '1h30',        price: 420,  note: '',                                        highlight: false },
+        { id: 'design-sb', name: 'Design de Sobrancelha',           badge: '',         desc: 'Fio a fio · mapeamento facial',                         duration: '45min',       price: 150,  note: '',                                        highlight: false },
+        { id: 'brow-lam',  name: 'Brow Lamination',                  badge: '',         desc: 'Alinhamento e definição com efeito duradouro',          duration: '1h',          price: 220,  note: '',                                        highlight: false },
+        { id: 'nanopig',   name: 'Nanopigmentação de Sobrancelha',  badge: 'Premium',  desc: 'Micropigmentação realista · inclui retoque',            duration: '2h30',        price: 1500, note: 'Retoque incluso em até 45 dias',          highlight: true  },
+        { id: 'lifting',   name: 'Lifting de Cílios + Hidragloss',  badge: '',         desc: 'Curvatura e brilho · sem extensão',                    duration: '1h15',        price: 260,  note: '',                                        highlight: false },
+        { id: 'spa-cor',   name: 'Spa Coreano',                      badge: '',         desc: 'Protocolo de cuidado e luminosidade facial',            duration: '1h',          price: 320,  note: '',                                        highlight: false },
+        { id: 'dep-fac',   name: 'Depilação Facial',                 badge: '',         desc: 'Buço · queixo · laterais',                             duration: '30min',       price: 95,   note: '',                                        highlight: false }
+      ]
+    },
+    {
+      id: 's2',
+      num: '02',
+      title: 'Para o seu cabelo',
+      titleItalic: 'cabelo',
+      sub: 'Penteado · Coloração · Tratamento · Corte',
+      services: [
+        { id: 'pent-noiva',  name: 'Penteado de Noiva',        badge: 'Premium', desc: 'Simulação + produção no dia',                      duration: '3–4h',  price: 850,  note: 'Simulação cobrada separado se não fechar',              highlight: true  },
+        { id: 'pent-social', name: 'Penteado Social',          badge: '',        desc: 'Eventos, formaturas, aniversários',                duration: '1h30',  price: 320,  note: '',                                                      highlight: false },
+        { id: 'escova',      name: 'Escova Modeladora',        badge: '',        desc: 'Liso sedoso ou ondas naturais',                    duration: '1h',    price: 190,  note: '',                                                      highlight: false },
+        { id: 'corte',       name: 'Corte Feminino',           badge: '',        desc: 'Inclui escova e finalização',                     duration: '1h30',  price: 320,  note: '',                                                      highlight: false },
+        { id: 'mechas',      name: 'Mechas / Coloração',       badge: 'Consulta',desc: 'Consulta prévia obrigatória · por extensão',      duration: '2h+',   price: 680,  note: 'Valor referência. Ajustar por extensão + técnica',      highlight: true  },
+        { id: 'hidrat',      name: 'Hidratação Kérastase',     badge: '',        desc: 'Protocolo premium · diagnóstico de fio',          duration: '1h30',  price: 280,  note: '',                                                      highlight: false },
+        { id: 'selagem',     name: 'Selagem Orgânica',         badge: '',        desc: 'Redução de volume · brilho · sem formol',         duration: '3h',    price: 580,  note: '',                                                      highlight: false },
+        { id: 'tonal',       name: 'Tonalizante',              badge: '',        desc: 'Correção de tom · vibrância · sem amônia',        duration: '1h',    price: 220,  note: '',                                                      highlight: false }
+      ]
+    },
+    {
+      id: 's3',
+      num: '03',
+      title: 'Para a sua presença',
+      titleItalic: 'presença',
+      sub: 'Styling · Consultoria · Debutante · Editorial',
+      services: [
+        { id: 'sty-noiva',  name: 'Styling de Noiva',               badge: 'Premium', desc: 'Curadoria completa · do véu ao salto',                        duration: 'Sob medida',  price: 1200, note: 'Mínimo 3 sessões de consultoria inclusas',                  highlight: true  },
+        { id: 'debu',       name: 'Produção Debutante',             badge: 'Premium', desc: 'Maquiagem + cabelo + styling · dia completo',                 duration: 'Dia completo',price: 2200, note: 'Artista exclusiva. Inclui ensaio foto se contratado',       highlight: true  },
+        { id: 'consul',     name: 'Consultoria de Imagem',          badge: '',        desc: 'Análise de coloração · guarda-roupa · identidade visual',     duration: '2h',          price: 560,  note: '',                                                          highlight: false },
+        { id: 'edit-foto',  name: 'Editorial Fotográfico',          badge: '',        desc: 'Produção de beleza para ensaios de autor',                    duration: 'Sob medida',  price: 780,  note: 'Alinhado com fotógrafo. Permuta possível',                   highlight: false },
+        { id: 'evento',     name: 'Eventos de Alto Padrão',         badge: '',        desc: 'Galas, premiações, jantares formais',                         duration: '2h+',         price: 580,  note: '',                                                          highlight: false }
+      ]
+    }
+  ],
+  packages: [
+    { id: 'pk-noiva', title: 'Noiva Completo',  items: ['mq-noiva', 'design-sb', 'lifting', 'pent-noiva'], discount: 10 },
+    { id: 'pk-debu',  title: 'Debu Completo',   items: ['debu', 'design-sb', 'lifting'],                   discount: 8  },
+    { id: 'pk-form',  title: 'Formatura',        items: ['mq-social', 'pent-social'],                       discount: 8  }
+  ],
+  policies: [
+    {
+      id: 'pol-cancel',
+      title: 'Cancelamento',
+      items: [
+        { id: 'pc1', text: '<strong>Mais de 7 dias:</strong> reembolso integral (exceto sinal de reserva)' },
+        { id: 'pc2', text: '<strong>Entre 3 e 7 dias:</strong> sinal retido, 50% do valor total' },
+        { id: 'pc3', text: '<strong>Entre 48h e 72h:</strong> 50% do valor total cobrado' },
+        { id: 'pc4', text: '<strong>Menos de 48h ou no-show:</strong> 100% cobrado sem ressalva' },
+        { id: 'pc5', text: '<strong>Alta temporada:</strong> condições mais restritivas — consultar contrato assinado' }
+      ]
+    },
+    {
+      id: 'pol-reagend',
+      title: 'Reagendamento',
+      items: [
+        { id: 'pr1', text: '<strong>1 reagendamento</strong> sem custo com mínimo 5 dias de antecedência' },
+        { id: 'pr2', text: '<strong>A partir do 2º reagendamento:</strong> taxa de R$ 80' },
+        { id: 'pr3', text: '<strong>Alta temporada:</strong> sem reagendamento possível dentro de 7 dias do evento' },
+        { id: 'pr4', text: '<strong>Noiva e debutante:</strong> reagendamentos regidos pelo contrato específico' }
+      ]
+    },
+    {
+      id: 'pol-sinal',
+      title: 'Sinal e Reserva',
+      items: [
+        { id: 'ps1', text: '<strong>Serviços avulsos:</strong> 30% do valor para confirmar o agendamento' },
+        { id: 'ps2', text: '<strong>Noiva e debutante:</strong> 50% no ato da assinatura do contrato' },
+        { id: 'ps3', text: '<strong>Alta temporada:</strong> 50% obrigatório em qualquer serviço' },
+        { id: 'ps4', text: '<strong>Pagamento:</strong> Pix (preferencial) · Cartão com acréscimo de 3%' },
+        { id: 'ps5', text: 'Sinal não reembolsável após confirmação e bloqueio de agenda' }
+      ]
+    },
+    {
+      id: 'pol-season',
+      title: 'Alta Temporada',
+      items: [
+        { id: 'pt1', text: '<strong>Novembro, Dezembro e Janeiro:</strong> acréscimo sobre tabela base (configurável no painel acima)' },
+        { id: 'pt2', text: '<strong>Semana de Carnaval:</strong> mesmo acréscimo da alta temporada' },
+        { id: 'pt3', text: '<strong>Temporada de Formaturas (Out–Nov):</strong> mesmo acréscimo' },
+        { id: 'pt4', text: '<strong>Datas com lotação confirmada:</strong> preço sob consulta individual' },
+        { id: 'pt5', text: 'O percentual de alta temporada é configurável no painel de controles acima' }
+      ]
+    }
+  ]
+};
+
+// ═══════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════
+let _idCounter = 1000;
+function uid(prefix) { return (prefix || 'id') + '-' + (++_idCounter); }
+
+function fmt(v) {
+  return 'R$ ' + Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function getSeasonMult() {
+  return 1 + (state.seasonPct / 100);
+}
+
+function getFinalPrice(serviceId) {
+  const svc = findService(serviceId);
+  if (!svc) return 0;
+  const base = svc.price || 0;
+  return base * (state.seasonOn ? getSeasonMult() : 1);
+}
+
+function findService(id) {
+  for (const sec of state.sections) {
+    const s = sec.services.find(s => s.id === id);
+    if (s) return s;
+  }
+  return null;
+}
+
+function findSection(id) {
+  return state.sections.find(s => s.id === id);
+}
+
+function findPackage(id) {
+  return state.packages.find(p => p.id === id);
+}
+
+// ═══════════════════════════════════════════════
+// RENDER SECTIONS
+// ═══════════════════════════════════════════════
+function renderSections() {
+  const container = document.getElementById('sections-container');
+  container.innerHTML = '';
+  state.sections.forEach((sec, si) => {
+    container.appendChild(buildSectionEl(sec, si));
+  });
+}
+
+function buildSectionEl(sec, si) {
+  const wrap = document.createElement('div');
+  wrap.className = 'section-wrap';
+  wrap.dataset.secId = sec.id;
+
+  // Header
+  const hdr = document.createElement('div');
+  hdr.className = 'ritual-header';
+
+  const numSpan = document.createElement('span');
+  numSpan.className = 'ritual-header__num';
+  numSpan.textContent = '— ' + sec.num;
+
+  const titleH2 = document.createElement('h2');
+  titleH2.className = 'ritual-header__title';
+  // Build title with italic part
+  titleH2.innerHTML = buildSectionTitle(sec);
+  titleH2.contentEditable = 'true';
+  titleH2.dataset.secId = sec.id;
+  titleH2.dataset.field = 'title';
+  titleH2.addEventListener('blur', function() {
+    const s = findSection(this.dataset.secId);
+    if (s) {
+      // preserve inner HTML, extract italic
+      s.title = this.innerText;
+      // Don't re-render on blur to avoid losing cursor
+    }
+  });
+
+  const subSpan = document.createElement('span');
+  subSpan.className = 'ritual-header__sub';
+  subSpan.textContent = sec.sub;
+  subSpan.contentEditable = 'true';
+  subSpan.addEventListener('blur', function() {
+    const s = findSection(sec.id);
+    if (s) s.sub = this.innerText;
+  });
+
+  const delBtn = document.createElement('button');
+  delBtn.className = 'btn-section-delete';
+  delBtn.title = 'Remover seção';
+  delBtn.textContent = '× Remover seção';
+  delBtn.onclick = function() { deleteSection(sec.id); };
+
+  hdr.appendChild(numSpan);
+  hdr.appendChild(titleH2);
+  hdr.appendChild(subSpan);
+  hdr.appendChild(delBtn);
+  wrap.appendChild(hdr);
+
+  // Table
+  const table = buildTableEl(sec);
+  wrap.appendChild(table);
+
+  // Add row button
+  const addRowBtn = document.createElement('button');
+  addRowBtn.className = 'btn-add-row';
+  addRowBtn.textContent = 'Adicionar serviço';
+  addRowBtn.onclick = function() { addService(sec.id); };
+  wrap.appendChild(addRowBtn);
+
+  return wrap;
+}
+
+function buildSectionTitle(sec) {
+  const t = sec.title || '';
+  const italic = sec.titleItalic || '';
+  if (italic && t.includes(italic)) {
+    return t.replace(italic, '<em>' + italic + '</em>');
+  }
+  return t;
+}
+
+function buildTableEl(sec) {
+  const table = document.createElement('table');
+  table.className = 'price-table';
+  table.dataset.secId = sec.id;
+
+  // Thead
+  table.innerHTML = `<thead><tr>
+    <th>Serviço</th>
+    <th>Inclui</th>
+    <th class="center">Duração</th>
+    <th class="right">Preço Base</th>
+    <th class="right">Preço Final</th>
+    <th class="right">Comissão</th>
+    <th class="right">Saldo Atelier</th>
+    <th>Observação</th>
+    <th></th>
+  </tr></thead>`;
+
+  const tbody = document.createElement('tbody');
+  sec.services.forEach(svc => {
+    tbody.appendChild(buildRowEl(svc, sec.id));
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+function buildRowEl(svc, secId) {
+  const tr = document.createElement('tr');
+  if (svc.highlight) tr.classList.add('highlight-row');
+  tr.dataset.svcId = svc.id;
+
+  // Name cell
+  const tdName = document.createElement('td');
+  tdName.className = 'td-name';
+  const nameSpan = document.createElement('span');
+  nameSpan.contentEditable = 'true';
+  nameSpan.textContent = svc.name;
+  nameSpan.addEventListener('blur', function() {
+    const s = findService(svc.id);
+    if (s) s.name = this.innerText;
+    rebuildBudgetServiceList();
+    rebuildPackageSelects();
+  });
+
+  const badgeInput = document.createElement('input');
+  badgeInput.type = 'text';
+  badgeInput.className = 'badge-edit';
+  badgeInput.value = svc.badge || '';
+  badgeInput.placeholder = 'Badge...';
+  badgeInput.title = 'Badge (Premium, Consulta, ou vazio)';
+  badgeInput.addEventListener('input', function() {
+    const s = findService(svc.id);
+    if (s) s.badge = this.value.trim();
+    // update badge display
+    const badgeDisplay = tdName.querySelector('.badge');
+    if (badgeDisplay) {
+      if (s.badge) { badgeDisplay.textContent = s.badge; badgeDisplay.style.display = ''; }
+      else badgeDisplay.style.display = 'none';
+    }
+  });
+
+  const badgeDisplay = document.createElement('span');
+  badgeDisplay.className = 'badge';
+  badgeDisplay.textContent = svc.badge || '';
+  if (!svc.badge) badgeDisplay.style.display = 'none';
+
+  tdName.appendChild(nameSpan);
+  tdName.appendChild(badgeDisplay);
+  tdName.appendChild(document.createTextNode(' '));
+  tdName.appendChild(badgeInput);
+
+  // Desc
+  const tdDesc = document.createElement('td');
+  tdDesc.className = 'td-desc';
+  tdDesc.contentEditable = 'true';
+  tdDesc.textContent = svc.desc;
+  tdDesc.addEventListener('blur', function() {
+    const s = findService(svc.id);
+    if (s) s.desc = this.innerText;
+  });
+
+  // Duration
+  const tdDur = document.createElement('td');
+  tdDur.className = 'td-duration';
+  tdDur.contentEditable = 'true';
+  tdDur.textContent = svc.duration;
+  tdDur.addEventListener('blur', function() {
+    const s = findService(svc.id);
+    if (s) s.duration = this.innerText;
+  });
+
+  // Price
+  const tdPrice = document.createElement('td');
+  const priceWrap = document.createElement('div');
+  priceWrap.className = 'price-input-wrap';
+  const currSpan = document.createElement('span');
+  currSpan.className = 'price-currency';
+  currSpan.textContent = 'R$';
+  const priceInput = document.createElement('input');
+  priceInput.type = 'number';
+  priceInput.className = 'price-input';
+  priceInput.dataset.id = svc.id;
+  priceInput.value = svc.price;
+  priceInput.addEventListener('input', function() {
+    const s = findService(svc.id);
+    if (s) s.price = parseFloat(this.value) || 0;
+    recalcAll();
+    updateQuotePreview();
+  });
+  priceWrap.appendChild(currSpan);
+  priceWrap.appendChild(priceInput);
+  tdPrice.appendChild(priceWrap);
+
+  // Final
+  const tdFinal = document.createElement('td');
+  tdFinal.className = 'td-final' + (state.seasonOn ? ' season-active' : '');
+  tdFinal.dataset.for = svc.id;
+  tdFinal.textContent = '—';
+
+  // Commission
+  const tdComm = document.createElement('td');
+  tdComm.className = 'td-comm';
+  tdComm.dataset.comm = svc.id;
+  tdComm.textContent = '—';
+
+  // Atelier
+  const tdAtelier = document.createElement('td');
+  tdAtelier.className = 'td-atelier';
+  tdAtelier.dataset.atelier = svc.id;
+  tdAtelier.textContent = '—';
+
+  // Note
+  const tdNote = document.createElement('td');
+  tdNote.className = 'td-note';
+  tdNote.contentEditable = 'true';
+  tdNote.textContent = svc.note || '';
+  tdNote.addEventListener('blur', function() {
+    const s = findService(svc.id);
+    if (s) s.note = this.innerText;
+  });
+
+  // Delete
+  const tdDel = document.createElement('td');
+  const delBtn = document.createElement('button');
+  delBtn.className = 'row-delete';
+  delBtn.title = 'Remover serviço';
+  delBtn.textContent = '×';
+  delBtn.onclick = function() { deleteService(secId, svc.id); };
+  tdDel.appendChild(delBtn);
+
+  tr.appendChild(tdName);
+  tr.appendChild(tdDesc);
+  tr.appendChild(tdDur);
+  tr.appendChild(tdPrice);
+  tr.appendChild(tdFinal);
+  tr.appendChild(tdComm);
+  tr.appendChild(tdAtelier);
+  tr.appendChild(tdNote);
+  tr.appendChild(tdDel);
+
+  return tr;
+}
+
+// ═══════════════════════════════════════════════
+// RENDER PACKAGES
+// ═══════════════════════════════════════════════
+function renderPackages() {
+  const grid = document.getElementById('packages-grid');
+  grid.innerHTML = '';
+  state.packages.forEach(pkg => {
+    grid.appendChild(buildPackageCard(pkg));
+  });
+}
+
+function buildPackageCard(pkg) {
+  const card = document.createElement('div');
+  card.className = 'package-card';
+  card.dataset.pkgId = pkg.id;
+
+  // Header row
+  const hdr = document.createElement('div');
+  hdr.className = 'package-card__header';
+
+  const titleEl = document.createElement('div');
+  titleEl.className = 'package-card__title';
+  titleEl.innerHTML = '<em>Pacote</em> ';
+  const titleSpan = document.createElement('span');
+  titleSpan.contentEditable = 'true';
+  titleSpan.textContent = pkg.title;
+  titleSpan.addEventListener('blur', function() {
+    const p = findPackage(pkg.id);
+    if (p) p.title = this.innerText;
+  });
+  titleEl.appendChild(titleSpan);
+
+  const pkgDelBtn = document.createElement('button');
+  pkgDelBtn.className = 'pkg-delete';
+  pkgDelBtn.title = 'Remover pacote';
+  pkgDelBtn.textContent = '×';
+  pkgDelBtn.onclick = function() { deletePackage(pkg.id); };
+
+  hdr.appendChild(titleEl);
+  hdr.appendChild(pkgDelBtn);
+  card.appendChild(hdr);
+
+  // Discount row
+  const discWrap = document.createElement('div');
+  discWrap.className = 'package-discount-input-wrap';
+  const discLabel = document.createElement('label');
+  discLabel.textContent = 'Desconto:';
+  const discInput = document.createElement('input');
+  discInput.type = 'number';
+  discInput.className = 'pkg-disc-input';
+  discInput.value = pkg.discount;
+  discInput.min = 0;
+  discInput.max = 100;
+  discInput.addEventListener('input', function() {
+    const p = findPackage(pkg.id);
+    if (p) p.discount = parseFloat(this.value) || 0;
+    recalcPackage(pkg.id);
+  });
+  const discPct = document.createElement('span');
+  discPct.textContent = '%';
+  discPct.style.cssText = 'font-size:10px;color:var(--verde);';
+  discWrap.appendChild(discLabel);
+  discWrap.appendChild(discInput);
+  discWrap.appendChild(discPct);
+  card.appendChild(discWrap);
+
+  // Items list
+  const ul = document.createElement('ul');
+  ul.className = 'package-card__items';
+  ul.dataset.pkgId = pkg.id;
+  pkg.items.forEach(svcId => {
+    const svc = findService(svcId);
+    if (!svc) return;
+    ul.appendChild(buildPkgItemEl(pkg.id, svcId, svc.name));
+  });
+  card.appendChild(ul);
+
+  // Add service to package
+  const addWrap = document.createElement('div');
+  addWrap.className = 'pkg-add-wrap';
+  const addLbl = document.createElement('span');
+  addLbl.className = 'pkg-add-wrap__label';
+  addLbl.textContent = 'Adicionar serviço ao pacote';
+  addWrap.appendChild(addLbl);
+  const sel = document.createElement('select');
+  sel.className = 'pkg-service-select';
+  sel.dataset.pkgId = pkg.id;
+  populateServiceSelect(sel, pkg.id);
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-pkg-add-item';
+  addBtn.textContent = '+ Adicionar';
+  addBtn.onclick = function() {
+    const val = sel.value;
+    if (!val) return;
+    const p = findPackage(pkg.id);
+    if (p && !p.items.includes(val)) {
+      p.items.push(val);
+      const svc = findService(val);
+      if (svc) ul.appendChild(buildPkgItemEl(pkg.id, val, svc.name));
+      populateServiceSelect(sel, pkg.id);
+      recalcPackage(pkg.id);
+    }
+  };
+  addWrap.appendChild(sel);
+  addWrap.appendChild(addBtn);
+  card.appendChild(addWrap);
+
+  // Divider + totals
+  const divider = document.createElement('div');
+  divider.className = 'package-divider';
+  card.appendChild(divider);
+
+  const totalRow = document.createElement('div');
+  totalRow.className = 'package-total-row';
+  const totalLabel = document.createElement('span');
+  totalLabel.className = 'package-total-label';
+  totalLabel.textContent = 'Valor avulso';
+  const totalSum = document.createElement('span');
+  totalSum.className = 'package-total-sum';
+  totalSum.dataset.pkgSum = pkg.id;
+  totalSum.textContent = '—';
+  totalRow.appendChild(totalLabel);
+  totalRow.appendChild(totalSum);
+  card.appendChild(totalRow);
+
+  const discRow = document.createElement('div');
+  discRow.className = 'package-discount-row';
+  const discRowLabel = document.createElement('span');
+  discRowLabel.dataset.pkgDiscLabel = pkg.id;
+  discRowLabel.textContent = 'Desconto (' + pkg.discount + '%)';
+  const discRowVal = document.createElement('span');
+  discRowVal.dataset.pkgDisc = pkg.id;
+  discRowVal.style.color = 'var(--verde)';
+  discRowVal.textContent = '—';
+  discRow.appendChild(discRowLabel);
+  discRow.appendChild(discRowVal);
+  card.appendChild(discRow);
+
+  const finalEl = document.createElement('div');
+  finalEl.className = 'package-final';
+  finalEl.dataset.pkgFinal = pkg.id;
+  finalEl.textContent = '—';
+  card.appendChild(finalEl);
+
+  return card;
+}
+
+function buildPkgItemEl(pkgId, svcId, svcName) {
+  const li = document.createElement('li');
+  li.dataset.svcId = svcId;
+
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'pkg-item-name';
+  nameSpan.textContent = svcName;
+
+  const priceSpan = document.createElement('span');
+  priceSpan.className = 'pkg-item-price';
+  priceSpan.dataset.pkgItemPrice = pkgId + '-' + svcId;
+  priceSpan.textContent = '—';
+
+  const delBtn = document.createElement('button');
+  delBtn.className = 'pkg-item-delete';
+  delBtn.title = 'Remover do pacote';
+  delBtn.textContent = '×';
+  delBtn.onclick = function() {
+    const p = findPackage(pkgId);
+    if (p) {
+      p.items = p.items.filter(i => i !== svcId);
+      li.remove();
+      // Rebuild select
+      const sel = document.querySelector(`select.pkg-service-select[data-pkg-id="${pkgId}"]`);
+      if (sel) populateServiceSelect(sel, pkgId);
+      recalcPackage(pkgId);
+    }
+  };
+
+  li.appendChild(nameSpan);
+  li.appendChild(priceSpan);
+  li.appendChild(delBtn);
+  return li;
+}
+
+function populateServiceSelect(sel, pkgId) {
+  const pkg = findPackage(pkgId);
+  sel.innerHTML = '<option value="">— Escolher serviço —</option>';
+  state.sections.forEach(sec => {
+    const grp = document.createElement('optgroup');
+    grp.label = sec.title;
+    sec.services.forEach(svc => {
+      if (!pkg || !pkg.items.includes(svc.id)) {
+        const opt = document.createElement('option');
+        opt.value = svc.id;
+        opt.textContent = svc.name;
+        grp.appendChild(opt);
+      }
+    });
+    if (grp.children.length > 0) sel.appendChild(grp);
+  });
+}
+
+function rebuildPackageSelects() {
+  state.packages.forEach(pkg => {
+    const sel = document.querySelector(`select.pkg-service-select[data-pkg-id="${pkg.id}"]`);
+    if (sel) populateServiceSelect(sel, pkg.id);
+  });
+}
+
+// ═══════════════════════════════════════════════
+// RENDER POLICIES
+// ═══════════════════════════════════════════════
+function renderPolicies() {
+  const grid = document.getElementById('policy-grid');
+  grid.innerHTML = '';
+  state.policies.forEach(pol => {
+    grid.appendChild(buildPolicyCard(pol));
+  });
+}
+
+function buildPolicyCard(pol) {
+  const card = document.createElement('div');
+  card.className = 'policy-card';
+  card.dataset.polId = pol.id;
+
+  const titleEl = document.createElement('div');
+  titleEl.className = 'policy-card__title';
+  titleEl.contentEditable = 'true';
+  titleEl.textContent = pol.title;
+  titleEl.addEventListener('blur', function() {
+    pol.title = this.innerText;
+  });
+  card.appendChild(titleEl);
+
+  const ul = document.createElement('ul');
+  ul.dataset.polId = pol.id;
+  pol.items.forEach(item => {
+    ul.appendChild(buildPolicyItemEl(pol, item));
+  });
+  card.appendChild(ul);
+
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn-policy-add';
+  addBtn.textContent = 'Adicionar item';
+  addBtn.onclick = function() {
+    const newItem = { id: uid('pi'), text: 'Novo item de política' };
+    pol.items.push(newItem);
+    ul.appendChild(buildPolicyItemEl(pol, newItem));
+  };
+  card.appendChild(addBtn);
+
+  return card;
+}
+
+function buildPolicyItemEl(pol, item) {
+  const li = document.createElement('li');
+  li.dataset.itemId = item.id;
+
+  const bullet = document.createElement('span');
+  bullet.className = 'policy-bullet';
+  bullet.textContent = '·';
+
+  const textEl = document.createElement('span');
+  textEl.className = 'policy-item-text';
+  textEl.contentEditable = 'true';
+  textEl.innerHTML = item.text;
+  textEl.addEventListener('blur', function() {
+    item.text = this.innerHTML;
+  });
+
+  const delBtn = document.createElement('button');
+  delBtn.className = 'policy-item-delete';
+  delBtn.title = 'Remover item';
+  delBtn.textContent = '×';
+  delBtn.onclick = function() {
+    pol.items = pol.items.filter(i => i.id !== item.id);
+    li.remove();
+  };
+
+  li.appendChild(bullet);
+  li.appendChild(textEl);
+  li.appendChild(delBtn);
+  return li;
+}
+
+// ═══════════════════════════════════════════════
+// ADD / DELETE OPERATIONS
+// ═══════════════════════════════════════════════
+function addService(secId) {
+  const sec = findSection(secId);
+  if (!sec) return;
+  const newSvc = {
+    id: uid('svc'),
+    name: 'Novo Serviço',
+    badge: '',
+    desc: 'Descrição do serviço',
+    duration: '1h',
+    price: 0,
+    note: '',
+    highlight: false
+  };
+  sec.services.push(newSvc);
+  // Append row to existing tbody
+  const table = document.querySelector(`table.price-table[data-sec-id="${secId}"]`);
+  if (table) {
+    const tbody = table.querySelector('tbody');
+    if (tbody) tbody.appendChild(buildRowEl(newSvc, secId));
+  }
+  recalcAll();
+  rebuildBudgetServiceList();
+  rebuildPackageSelects();
+}
+
+function deleteService(secId, svcId) {
+  const sec = findSection(secId);
+  if (!sec) return;
+  if (sec.services.length <= 1) {
+    if (!confirm('Esta é a última linha desta seção. Deseja remover mesmo assim?')) return;
+  }
+  sec.services = sec.services.filter(s => s.id !== svcId);
+  // Remove row from DOM
+  const row = document.querySelector(`tr[data-svc-id="${svcId}"]`);
+  if (row) row.remove();
+  // Remove from packages
+  state.packages.forEach(pkg => {
+    if (pkg.items.includes(svcId)) {
+      pkg.items = pkg.items.filter(i => i !== svcId);
+      const li = document.querySelector(`li[data-svc-id="${svcId}"]`);
+      if (li) li.remove();
+      recalcPackage(pkg.id);
+    }
+  });
+  recalcAll();
+  rebuildBudgetServiceList();
+  rebuildPackageSelects();
+}
+
+function addSection() {
+  const num = String(state.sections.length + 1).padStart(2, '0');
+  const newSec = {
+    id: uid('sec'),
+    num: num,
+    title: 'Nova seção',
+    titleItalic: '',
+    sub: 'Subtítulo · Categorias',
+    services: [
+      { id: uid('svc'), name: 'Novo Serviço', badge: '', desc: 'Descrição', duration: '1h', price: 0, note: '', highlight: false }
+    ]
+  };
+  state.sections.push(newSec);
+  const container = document.getElementById('sections-container');
+  container.appendChild(buildSectionEl(newSec, state.sections.length - 1));
+  recalcAll();
+  rebuildBudgetServiceList();
+  rebuildPackageSelects();
+}
+
+function deleteSection(secId) {
+  const sec = findSection(secId);
+  if (!sec) return;
+  const hasServices = sec.services.length > 0;
+  const msg = hasServices
+    ? `Remover a seção "${sec.title}" com ${sec.services.length} serviço(s)? Esta ação não pode ser desfeita.`
+    : `Remover a seção "${sec.title}"?`;
+  if (!confirm(msg)) return;
+  state.sections = state.sections.filter(s => s.id !== secId);
+  const wrap = document.querySelector(`.section-wrap[data-sec-id="${secId}"]`);
+  if (wrap) wrap.remove();
+  rebuildBudgetServiceList();
+  rebuildPackageSelects();
+}
+
+function addPackage() {
+  const newPkg = {
+    id: uid('pkg'),
+    title: 'Novo Pacote',
+    items: [],
+    discount: 10
+  };
+  state.packages.push(newPkg);
+  const grid = document.getElementById('packages-grid');
+  grid.appendChild(buildPackageCard(newPkg));
+  recalcPackage(newPkg.id);
+}
+
+function deletePackage(pkgId) {
+  const pkg = findPackage(pkgId);
+  if (!pkg) return;
+  if (!confirm(`Remover o pacote "${pkg.title}"?`)) return;
+  state.packages = state.packages.filter(p => p.id !== pkgId);
+  const card = document.querySelector(`.package-card[data-pkg-id="${pkgId}"]`);
+  if (card) card.remove();
+}
+
+// ═══════════════════════════════════════════════
+// CALCULATIONS
+// ═══════════════════════════════════════════════
+function recalcRow(svc) {
+  const base = svc.price || 0;
+  const final = base * (state.seasonOn ? getSeasonMult() : 1);
+  const comm = final * (state.commPct / 100);
+  const atelier = final - comm;
+
+  const finalEl   = document.querySelector(`[data-for="${svc.id}"]`);
+  const commEl    = document.querySelector(`[data-comm="${svc.id}"]`);
+  const atelEl    = document.querySelector(`[data-atelier="${svc.id}"]`);
+
+  if (finalEl) {
+    finalEl.textContent = fmt(final);
+    finalEl.classList.toggle('season-active', state.seasonOn);
+  }
+  if (commEl)  commEl.textContent  = fmt(comm);
+  if (atelEl)  atelEl.textContent  = fmt(atelier);
+
+  return { base, final, comm, atelier };
+}
+
+function recalcPackage(pkgId) {
+  const pkg = findPackage(pkgId);
+  if (!pkg) return;
+
+  const vals = pkg.items.map(id => getFinalPrice(id));
+  const total = vals.reduce((a, b) => a + b, 0);
+  const disc = total * (pkg.discount / 100);
+  const final = total - disc;
+
+  // Update item prices
+  pkg.items.forEach((svcId, i) => {
+    const el = document.querySelector(`[data-pkg-item-price="${pkgId}-${svcId}"]`);
+    if (el) el.textContent = fmt(vals[i]);
+  });
+
+  const sumEl       = document.querySelector(`[data-pkg-sum="${pkgId}"]`);
+  const discEl      = document.querySelector(`[data-pkg-disc="${pkgId}"]`);
+  const discLblEl   = document.querySelector(`[data-pkg-disc-label="${pkgId}"]`);
+  const finalEl     = document.querySelector(`[data-pkg-final="${pkgId}"]`);
+
+  if (sumEl)     sumEl.textContent     = fmt(total);
+  if (discEl)    discEl.textContent    = '− ' + fmt(disc);
+  if (discLblEl) discLblEl.textContent = 'Desconto (' + pkg.discount + '%)';
+  if (finalEl)   finalEl.textContent   = fmt(final);
+}
+
+function recalcAll() {
+  state.sections.forEach(sec => {
+    sec.services.forEach(svc => recalcRow(svc));
+  });
+  state.packages.forEach(pkg => recalcPackage(pkg.id));
+}
+
+// ═══════════════════════════════════════════════
+// BUDGET MODAL
+// ═══════════════════════════════════════════════
+function openBudgetModal() {
+  rebuildBudgetServiceList();
+  document.getElementById('budget-modal').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBudgetModal() {
+  document.getElementById('budget-modal').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+function rebuildBudgetServiceList() {
+  const container = document.getElementById('budget-service-list');
+  if (!container) return;
+  container.innerHTML = '';
+  state.sections.forEach(sec => {
+    // Section label
+    const lbl = document.createElement('div');
+    lbl.className = 'budget-service-item__section';
+    lbl.style.cssText = 'padding: 10px 0 4px; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ouro); border-bottom:1px solid var(--champanhe); margin-bottom:2px;';
+    lbl.textContent = sec.title;
+    container.appendChild(lbl);
+
+    sec.services.forEach(svc => {
+      const item = document.createElement('div');
+      item.className = 'budget-service-item';
+      item.dataset.svcId = svc.id;
+
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.id = 'bgt-cb-' + svc.id;
+      cb.dataset.svcId = svc.id;
+      cb.onchange = updateQuotePreview;
+
+      const nameLbl = document.createElement('label');
+      nameLbl.htmlFor = 'bgt-cb-' + svc.id;
+      nameLbl.className = 'budget-service-item__name';
+      nameLbl.style.cursor = 'pointer';
+      nameLbl.textContent = svc.name;
+
+      const priceSpan = document.createElement('span');
+      priceSpan.className = 'budget-service-item__price';
+      priceSpan.dataset.bgtSvcPrice = svc.id;
+      priceSpan.textContent = fmt(getFinalPrice(svc.id));
+
+      item.appendChild(cb);
+      item.appendChild(nameLbl);
+      item.appendChild(priceSpan);
+      container.appendChild(item);
+    });
+  });
+}
+
+function getSelectedBudgetServices() {
+  const checkboxes = document.querySelectorAll('#budget-service-list input[type="checkbox"]:checked');
+  return Array.from(checkboxes).map(cb => {
+    const svc = findService(cb.dataset.svcId);
+    return svc;
+  }).filter(Boolean);
+}
+
+function updateQuotePreview() {
+  // Update prices in service list
+  document.querySelectorAll('[data-bgt-svc-price]').forEach(el => {
+    const svc = findService(el.dataset.bgtSvcPrice);
+    if (svc) el.textContent = fmt(getFinalPrice(svc.id));
+  });
+
+  const selected = getSelectedBudgetServices();
+  const preview = document.getElementById('quote-preview');
+
+  const clientName  = (document.getElementById('bgt-client-name')?.value || '').trim();
+  const eventDate   = (document.getElementById('bgt-event-date')?.value  || '').trim();
+  const occasion    = (document.getElementById('bgt-occasion')?.value    || '').trim();
+  const validity    = (document.getElementById('bgt-validity')?.value    || '30 dias').trim();
+  const obs         = (document.getElementById('bgt-obs')?.value         || '').trim();
+
+  if (selected.length === 0) {
+    preview.innerHTML = '<div class="quote-preview__empty">Selecione serviços ao lado para visualizar o orçamento.</div>';
+    return;
+  }
+
+  const total = selected.reduce((sum, s) => sum + getFinalPrice(s.id), 0);
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+  const docNum = String(Math.floor(Math.random()*900)+100) + '/' + now.getFullYear();
+  const validityText = validity || '15 dias corridos';
+
+  const rowsHtml = selected.map(s => `
+    <tr>
+      <td>
+        <div class="qp-svc-name">${s.name}${s.badge ? ` <span style="font-size:7px;background:var(--ouro);color:#fff;padding:1px 5px;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;margin-left:4px;">${s.badge}</span>` : ''}</div>
+        ${s.desc ? `<div class="qp-svc-desc">${s.desc}${s.duration ? ' · ' + s.duration : ''}</div>` : ''}
+      </td>
+      <td>${fmt(getFinalPrice(s.id))}${state.seasonOn ? ' <span style="font-size:8px;color:var(--ouro);">★</span>' : ''}</td>
+    </tr>
+  `).join('');
+
+  const condItems = [
+    'Sinal de <strong>50%</strong> para confirmação do agendamento — sem sinal não há reserva de data',
+    'Saldo restante liquidado até <strong>48h antes</strong> do evento',
+    'Cancelamento com menos de 7 dias: sinal não reembolsável',
+    'Reagendamento aceito uma vez, com aviso mínimo de 5 dias úteis',
+    `Proposta válida por <strong>${validityText}</strong> a partir de ${dateStr}`,
+    state.seasonOn ? `Alta temporada ativa (+${state.seasonPct}%) — valores já incluem o acréscimo` : 'Deslocamento fora de Porto Alegre: taxa a combinar previamente',
+    obs ? obs : 'Sessão de teste/simulação inclusa nos rituais de noiva e debutante quando indicado'
+  ].map(t => `<li>${t}</li>`).join('');
+
+  const waMsg = buildWaMessage(clientName, occasion, fmt(total));
+  const waUrl = `https://wa.me/5551997784304?text=${encodeURIComponent(waMsg)}`;
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(waUrl)}&color=2b1d13&bgcolor=faf7f2&margin=2`;
+
+  preview.innerHTML = `
+    <div class="qp-top-accent"></div>
+    <div class="qp-header">
+      <div>
+        <div class="qp-logo">AMMÁ <sup>CONCEPT</sup></div>
+        <div class="qp-tag">Atelier de Beleza · Porto Alegre, RS</div>
+        <div class="qp-hairline"></div>
+      </div>
+      <div>
+        <div class="qp-doc-type">Proposta de Serviço</div>
+        <div class="qp-doc-num">Nº ${docNum}</div>
+        <div class="qp-doc-date">Válido por ${validityText}</div>
+      </div>
+    </div>
+    <div class="qp-body">
+      <div class="qp-client-grid">
+        <div>
+          <div class="qp-block-label">Para</div>
+          <div class="qp-field"><span class="qp-f-label">Nome</span><div class="qp-f-value">${clientName || ''}</div></div>
+          <div class="qp-field"><span class="qp-f-label">Ocasião</span><div class="qp-f-value">${occasion || ''}</div></div>
+          <div class="qp-field"><span class="qp-f-label">Data do evento</span><div class="qp-f-value">${eventDate || ''}</div></div>
+        </div>
+        <div>
+          <div class="qp-block-label">Detalhes</div>
+          <div class="qp-field"><span class="qp-f-label">Elaborado por</span><div class="qp-f-value">Ammá Concept</div></div>
+          <div class="qp-field"><span class="qp-f-label">Localização do atendimento</span><div class="qp-f-value">Atelier · Domicílio · Hotel</div></div>
+          <div class="qp-field"><span class="qp-f-label">Emitido em</span><div class="qp-f-value">${dateStr}</div></div>
+        </div>
+      </div>
+      <div class="qp-divider"></div>
+      <div class="qp-services-title">Rituais selecionados.</div>
+      <table class="qp-table">
+        <thead><tr><th style="width:50%;">Ritual / Serviço</th><th style="width:20%;">Duração</th><th style="width:30%;">Valor</th></tr></thead>
+        <tbody>${selected.map(s => `
+          <tr>
+            <td>
+              <div class="qp-svc-name">${s.name}${s.badge ? ` <span style="font-size:7px;background:var(--ouro);color:#fff;padding:1px 5px;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle;margin-left:4px;">${s.badge}</span>` : ''}</div>
+              ${s.desc ? `<div class="qp-svc-desc">${s.desc}</div>` : ''}
+            </td>
+            <td><div class="qp-svc-name">${s.duration || '—'}</div></td>
+            <td>${fmt(getFinalPrice(s.id))}${state.seasonOn ? ' <span style="font-size:8px;color:var(--ouro);">★</span>' : ''}</td>
+          </tr>`).join('')}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="qp-total-label">Total da proposta</td>
+            <td class="qp-total-value">${fmt(total)}<span class="qp-total-note">Valores em Reais · inclui todos os itens acima</span></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="qp-conditions">
+        <div class="qp-cond-title">Condições</div>
+        <ul class="qp-cond-list">${condItems}</ul>
+      </div>
+      <p class="qp-note">"Não transformamos. Revelamos quem você já é."</p>
+    </div>
+    <div class="qp-footer">
+      <div class="qp-footer-brand"><strong>AMMÁ CONCEPT</strong><br>Porto Alegre · RS · Brasil</div>
+      <div class="qp-footer-qr">
+        <img src="${qrUrl}" width="64" height="64" style="image-rendering:crisp-edges;" alt="WhatsApp Ammá Concept">
+        <span>WhatsApp</span>
+      </div>
+      <div class="qp-footer-contact">
+        <a href="${waUrl}" style="color:var(--muted);text-decoration:none;">@ammaconceptt</a><br>
+        Agenda sob consulta
+      </div>
+    </div>
+  `;
+}
+
+function printBudget() {
+  document.body.classList.add('printing-budget');
+  window.print();
+  setTimeout(() => document.body.classList.remove('printing-budget'), 500);
+}
+
+function buildWaMessage(clientName, occasion, totalFmt) {
+  const firstName = clientName ? clientName.trim().split(' ')[0] : '';
+  const occ = (occasion || '').toLowerCase();
+  let ctx = '';
+  if (occ.includes('casamento') || occ.includes('noiva') || occ.includes('wedding')) {
+    ctx = 'para o meu casamento';
+  } else if (occ.includes('formatura') || occ.includes('colação')) {
+    ctx = 'para a minha formatura';
+  } else if (occ.includes('debutante') || occ.includes('15 anos') || occ.includes('debu')) {
+    ctx = 'para a minha festa de 15 anos';
+  } else if (occ.includes('aniversário') || occ.includes('aniversario') || occ.includes('birthday')) {
+    ctx = 'para o meu aniversário';
+  } else if (occ.includes('ensaio') || occ.includes('editorial') || occ.includes('foto')) {
+    ctx = 'para o meu ensaio fotográfico';
+  } else if (occ.includes('gala') || occ.includes('premiação') || occ.includes('jantar')) {
+    ctx = `para ${occasion}`;
+  } else if (occasion && occasion.trim()) {
+    ctx = `para ${occasion}`;
+  } else {
+    ctx = 'para o meu evento';
+  }
+  const greeting = firstName ? `Olá! Sou ${firstName} e recebi` : 'Olá! Recebi';
+  return `${greeting} a proposta de serviços da Ammá Concept ${ctx}, no valor de ${totalFmt}. Gostaria de confirmar os detalhes e avançar com o agendamento.`;
+}
+
+function maskDate(el) {
+  let v = el.value.replace(/\D/g, '').slice(0, 8);
+  if (v.length >= 5) v = v.slice(0,2) + '/' + v.slice(2,4) + '/' + v.slice(4);
+  else if (v.length >= 3) v = v.slice(0,2) + '/' + v.slice(2);
+  el.value = v;
+  updateQuotePreview();
+}
+
+// Close modal on backdrop click
+document.getElementById('budget-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeBudgetModal();
+});
+
+// ═══════════════════════════════════════════════
+// CONTROLS
+// ═══════════════════════════════════════════════
+function updateSeasonDisplay() {
+  const lbl = document.getElementById('season-label');
+  const multDisplay = document.getElementById('multiplier-display');
+  if (state.seasonOn) {
+    lbl.innerHTML = `Ativada <em>(+${state.seasonPct}%)</em>`;
+    multDisplay.innerHTML = getSeasonMult().toFixed(2) + '<span>×</span>';
+  } else {
+    lbl.innerHTML = 'Desativada <em>(+0%)</em>';
+    multDisplay.innerHTML = '1.00<span>×</span>';
+  }
+}
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  // Date
+  const now = new Date();
+  const ds = now.toLocaleDateString('pt-BR', { year: 'numeric', month: 'long' });
+  document.getElementById('data-atual').textContent = ds;
+  document.getElementById('footer-date').textContent = ds;
+
+  // Render all
+  renderSections();
+  renderPackages();
+  renderPolicies();
+
+  // Commission slider
+  const slider = document.getElementById('comm-slider');
+  slider.addEventListener('input', () => {
+    state.commPct = parseInt(slider.value);
+    document.getElementById('comm-display').innerHTML = state.commPct + '<span>%</span>';
+    recalcAll();
+  });
+
+  // Season toggle
+  document.getElementById('season-toggle').addEventListener('change', (e) => {
+    state.seasonOn = e.target.checked;
+    updateSeasonDisplay();
+    recalcAll();
+  });
+
+  // Season pct
+  document.getElementById('season-pct').addEventListener('input', function() {
+    state.seasonPct = parseFloat(this.value) || 0;
+    updateSeasonDisplay();
+    if (state.seasonOn) recalcAll();
+  });
+
+  recalcAll();
+});
+</script>
+</body>
+</html>

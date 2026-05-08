@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ammá Concept · Logo 06 · Compact sem CONCEPT · Instagram profile, favicon, nav mobile -->
+<!-- Uso mínimo: 60px width / 16mm impresso -->
+<svg viewBox="0 0 480 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+  </defs>
+  <text x="240" y="128" text-anchor="middle"
+    font-family="'Cormorant Garamond', serif" font-weight="300" font-size="108" letter-spacing="4"
+    fill="#B8965C">AMM&#193;</text>
+  <path d="M 128,128 C 150,80 172,52 200,84 C 222,110 238,128 258,100 C 278,72 305,52 328,88"
+    stroke="#B8965C" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · OG Image Generator</title>
+<meta name="description" content="Open Graph image Ammá Concept · 1200×630 · Compartilhamento social.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #a07840;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: #1a1410; color: var(--texto); -webkit-font-smoothing: antialiased; padding: 40px 32px 80px; }
+
+  .controls {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .ctrl-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.5);
+    margin-right: 4px;
+  }
+  .ctrl-btn {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ouro);
+    background: none;
+    border: 1px solid rgba(212,165,116,0.3);
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .ctrl-btn:hover, .ctrl-btn.is-active { border-color: var(--ouro); background: rgba(212,165,116,0.05); }
+  .ctrl-note {
+    font-size: 10px;
+    color: rgba(212,165,116,0.3);
+    letter-spacing: 0.1em;
+    margin-left: auto;
+  }
+
+  /* CANVAS WRAPPER — 1200×630 exact */
+  .canvas-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .canvas {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.5);
+    transform-origin: top left;
+    /* responsive scale handled by JS */
+  }
+
+  /* ─── VARIANT A: DARK (padrão) ─── */
+  .og--dark {
+    background: var(--cacau);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 96px;
+  }
+  .og--dark .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .og--dark .right-line {
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 1px;
+    background: rgba(212,165,116,0.12);
+  }
+  .og--dark .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.5);
+    margin-bottom: 16px;
+  }
+  .og--dark .logo-block {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .og--dark .logo-main {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 110px;
+    letter-spacing: 0.06em;
+    color: var(--ouro);
+    line-height: 1;
+  }
+  .og--dark .logo-sup {
+    font-family: var(--font-b);
+    font-size: 14px;
+    letter-spacing: 0.44em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.4);
+    align-self: center;
+  }
+  .og--dark .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .og--dark .tagline {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--champanhe);
+    line-height: 1.3;
+    max-width: 680px;
+  }
+  .og--dark .meta {
+    text-align: right;
+  }
+  .og--dark .meta-insta {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: rgba(201,184,154,0.5);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .og--dark .meta-city {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.3);
+  }
+  .og--dark .corner-accent {
+    position: absolute;
+    bottom: 80px;
+    right: 96px;
+    width: 1px;
+    height: 48px;
+    background: rgba(212,165,116,0.15);
+  }
+
+  /* ─── VARIANT B: LIGHT ─── */
+  .og--light {
+    background: var(--fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 96px;
+  }
+  .og--light .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+  .og--light .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .og--light .logo-main {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 110px;
+    letter-spacing: 0.06em;
+    color: var(--cacau);
+    line-height: 1;
+  }
+  .og--light .logo-sup {
+    font-family: var(--font-b);
+    font-size: 14px;
+    letter-spacing: 0.44em;
+    text-transform: uppercase;
+    color: var(--muted);
+    vertical-align: middle;
+    margin-left: 12px;
+  }
+  .og--light .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .og--light .tagline {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--texto);
+    line-height: 1.3;
+    max-width: 680px;
+  }
+  .og--light .hairline {
+    width: 48px;
+    height: 1px;
+    background: var(--ouro);
+    margin: 20px 0;
+  }
+  .og--light .meta {
+    text-align: right;
+  }
+  .og--light .meta-insta {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .og--light .meta-city {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--linha);
+  }
+
+  /* ─── VARIANT C: SPLIT ─── */
+  .og--split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .og--split .split-left {
+    background: var(--cacau);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .og--split .split-left::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 1px;
+    background: var(--ouro);
+  }
+  .og--split .split-right {
+    background: var(--fundo);
+    padding: 80px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .og--split .s-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.5);
+    margin-bottom: 16px;
+  }
+  .og--split .s-logo {
+    font-family: var(--font-d);
+    font-weight: 300;
+    font-size: 84px;
+    letter-spacing: 0.06em;
+    color: var(--ouro);
+    line-height: 1;
+  }
+  .og--split .s-concept {
+    font-family: var(--font-b);
+    font-size: 12px;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(212,165,116,0.4);
+    margin-top: 8px;
+  }
+  .og--split .s-city {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,184,154,0.35);
+  }
+  .og--split .s-tagline {
+    font-family: var(--font-d);
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--cacau);
+    line-height: 1.35;
+    margin-bottom: 24px;
+  }
+  .og--split .s-hairline {
+    width: 40px;
+    height: 1px;
+    background: var(--ouro);
+    margin-bottom: 20px;
+  }
+  .og--split .s-sub {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .og--split .top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--ouro);
+  }
+
+  /* HIDDEN variants */
+  .canvas.is-hidden { display: none; }
+
+  /* INFO PANEL */
+  .info-panel {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    background: rgba(212,165,116,0.04);
+    border: 1px solid rgba(212,165,116,0.12);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .info-panel p {
+    font-size: 10px;
+    color: rgba(212,165,116,0.4);
+    letter-spacing: 0.14em;
+    line-height: 1.8;
+  }
+  .info-panel strong { color: rgba(212,165,116,0.7); font-weight: 400; }
+  .info-panel a { color: var(--ouro); text-decoration: none; font-size: 10px; letter-spacing: 0.2em; }
+</style>
+</head>
+<body>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <span class="ctrl-label">Variante</span>
+  <button class="ctrl-btn is-active" onclick="showVariant('dark')">Dark · Cacau</button>
+  <button class="ctrl-btn" onclick="showVariant('light')">Light · Cream</button>
+  <button class="ctrl-btn" onclick="showVariant('split')">Split · Bicolor</button>
+  <span class="ctrl-note">1200 × 630px · Escala automática</span>
+</div>
+
+<!-- CANVAS WRAPPER -->
+<div class="canvas-wrap" id="canvas-wrap">
+
+  <!-- VARIANTE A: DARK -->
+  <div class="canvas og--dark" id="og-dark">
+    <div class="top-line"></div>
+    <div class="right-line"></div>
+    <div class="corner-accent"></div>
+    <div>
+      <div class="eyebrow">Atelier de Beleza · Porto Alegre, RS</div>
+      <div class="logo-block">
+        <span class="logo-main">AMMÁ</span>
+        <span class="logo-sup">CONCEPT</span>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="tagline">
+        Beleza não é padrão.<br>É <em>interpretação</em>.
+      </div>
+      <div class="meta">
+        <span class="meta-insta">@ammaconceptt</span>
+        <span class="meta-city">Porto Alegre · Sul do Brasil</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANTE B: LIGHT -->
+  <div class="canvas og--light is-hidden" id="og-light">
+    <div class="top-line"></div>
+    <div>
+      <div class="eyebrow">Atelier de Beleza · Porto Alegre, RS</div>
+      <div>
+        <span class="logo-main">AMMÁ</span><span class="logo-sup">CONCEPT</span>
+      </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <div class="hairline"></div>
+        <div class="tagline">
+          Não transformamos.<br><em>Revelamos.</em>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="meta-insta">@ammaconceptt</span>
+        <span class="meta-city">Porto Alegre · Sul do Brasil</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIANTE C: SPLIT -->
+  <div class="canvas og--split is-hidden" id="og-split">
+    <div class="top-line"></div>
+    <div class="split-left">
+      <div>
+        <div class="s-eyebrow">Atelier de Beleza</div>
+        <div class="s-logo">AMMÁ</div>
+        <div class="s-concept">Concept</div>
+      </div>
+      <div class="s-city">Porto Alegre · Sul do Brasil</div>
+    </div>
+    <div class="split-right">
+      <div class="s-tagline">
+        Beleza não é padrão.<br>É <em>interpretação</em>.
+      </div>
+      <div class="s-hairline"></div>
+      <div class="s-sub">Agenda sob consulta</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="info-panel">
+  <p>
+    <strong>Como exportar:</strong> abra no Chrome → <strong>Ctrl+Shift+I</strong> → aba Device → Custom → 1200×630 → Print screen.<br>
+    Ou use extensão de screenshot de tela cheia. Salvar como <strong>og-image.jpg</strong> em <code>images/</code> no projeto.
+  </p>
+  <p>
+    <strong>Uso:</strong> meta property og:image · Twitter card · Compartilhamento em redes sociais.<br>
+    Resolução: 1200×630px · Formato: JPG · Qualidade: 90%+
+  </p>
+</div>
+
+<script>
+  function showVariant(v) {
+    ['dark','light','split'].forEach(function(id) {
+      document.getElementById('og-'+id).classList.toggle('is-hidden', id !== v);
+    });
+    document.querySelectorAll('.ctrl-btn').forEach(function(btn) {
+      btn.classList.toggle('is-active', btn.textContent.toLowerCase().includes(v));
+    });
+  }
+
+  function scaleCanvas() {
+    var wrap = document.getElementById('canvas-wrap');
+    var canvases = document.querySelectorAll('.canvas');
+    var available = wrap.clientWidth;
+    var scale = Math.min(1, available / 1200);
+    canvases.forEach(function(c) {
+      c.style.transform = 'scale(' + scale + ')';
+      c.style.marginBottom = scale < 1 ? ((630 * scale - 630) + 'px') : '0';
+    });
+    wrap.style.height = (630 * scale) + 'px';
+  }
+
+  scaleCanvas();
+  window.addEventListener('resize', scaleCanvas);
+</script>
+
+</body>
+</html>

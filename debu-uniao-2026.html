@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept × Debu do União 2026</title>
+<meta name="description" content="Material oficial da parceria Ammá Concept · Debu do União 2026 · Atelier ultra-premium em Porto Alegre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #d4a574; --ouro-ink: #b88954;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --cacau-soft: #3a2a1d;
+    --champanhe: #e8d9c2; --perola: #f3ece2;
+    --linha: #c9b89a; --muted: #6b6b6b; --soft: #8a8277;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+    --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-b); font-weight: 300; background: var(--fundo); color: var(--texto); -webkit-font-smoothing: antialiased; line-height: 1.75; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* COVER */
+  .cover {
+    min-height: 100vh;
+    background: var(--cacau);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 60%, rgba(212,165,116,0.04) 100%);
+    pointer-events: none;
+  }
+  .cover__top { display: flex; align-items: center; gap: 16px; }
+  .cover__hairline { width: 48px; height: 1px; background: var(--ouro); }
+  .cover__eyebrow { font-size: 9px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--ouro); font-family: var(--font-b); font-weight: 400; }
+  .cover__body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 0; }
+  .cover__partnership { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ouro); margin-bottom: 32px; }
+  .cover__title { font-family: var(--font-d); font-weight: 300; font-size: clamp(3rem, 7vw, 6.5rem); line-height: 1.0; letter-spacing: -0.01em; color: var(--fundo); }
+  .cover__title em { font-style: italic; color: var(--ouro); }
+  .cover__sub { font-family: var(--font-d); font-style: italic; font-size: clamp(1rem, 2vw, 1.4rem); color: var(--champanhe); margin-top: 32px; max-width: 540px; line-height: 1.45; font-weight: 300; }
+  .cover__meta { border-top: 1px solid rgba(212,165,116,0.25); padding-top: 32px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .cover__meta-item { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--linha); }
+  .cover__meta-item strong { display: block; color: var(--champanhe); font-weight: 400; margin-bottom: 4px; font-size: 10px; }
+
+  /* DOC */
+  .doc { max-width: 960px; margin: 0 auto; padding: 80px 64px 120px; }
+
+  /* SECTION */
+  .section { padding: 72px 0 56px; border-top: 1px solid var(--linha); }
+  .section:first-child { border-top: none; padding-top: 0; }
+  .section__num { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); font-weight: 400; margin-bottom: 12px; }
+  .section__title { font-family: var(--font-d); font-weight: 300; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 40px; }
+  .section__title em { font-style: italic; }
+
+  p { font-size: 14.5px; color: var(--muted); line-height: 1.85; margin-bottom: 20px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 500; color: var(--texto); }
+
+  /* DARK BLOCK */
+  .dark { background: var(--cacau); padding: 48px 52px; margin: 32px 0; }
+  .dark .label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 20px; font-weight: 400; }
+  .dark p { color: var(--champanhe); font-size: 15px; line-height: 1.7; }
+  .dark .statement { font-family: var(--font-d); font-weight: 300; font-size: clamp(1.4rem, 2.8vw, 2.1rem); line-height: 1.2; color: var(--fundo); font-style: italic; margin-bottom: 0; }
+
+  /* HIGHLIGHT */
+  .highlight { background: var(--perola); border-left: 2px solid var(--ouro); padding: 28px 32px; margin: 32px 0; font-family: var(--font-d); font-weight: 300; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.6rem); line-height: 1.4; color: var(--texto); }
+  .highlight em { color: var(--ouro-ink); font-style: normal; }
+
+  /* GRID */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 32px 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0; }
+
+  /* CARD */
+  .card { background: var(--perola); padding: 28px 24px; }
+  .card--dark { background: var(--cacau); }
+  .card__label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 12px; font-weight: 400; }
+  .card--dark .card__label { color: var(--ouro); }
+  .card__title { font-family: var(--font-d); font-weight: 300; font-size: 1.5rem; line-height: 1.1; margin-bottom: 12px; }
+  .card--dark .card__title { color: var(--fundo); font-style: italic; font-size: 1.75rem; }
+  .card__body { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+  .card--dark .card__body { color: var(--champanhe); font-size: 13px; }
+
+  /* RITUAL LIST */
+  .ritual-list { list-style: none; margin-top: 16px; }
+  .ritual-list li { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--champanhe); padding: 7px 0; border-bottom: 1px solid rgba(201,184,154,0.15); }
+  .ritual-list li:last-child { border-bottom: none; }
+
+  /* TIMELINE */
+  .timeline { margin: 32px 0; }
+  .step { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(201,184,154,0.3); align-items: flex-start; }
+  .step:last-child { border-bottom: none; }
+  .step__num { font-family: var(--font-d); font-style: italic; font-size: 2rem; color: var(--ouro); flex-shrink: 0; width: 40px; line-height: 1; margin-top: 4px; }
+  .step__content h4 { font-family: var(--font-d); font-weight: 300; font-size: 1.35rem; margin-bottom: 8px; }
+  .step__content p { font-size: 13.5px; margin: 0; }
+
+  /* DEPO */
+  .depo { background: var(--perola); padding: 52px; margin: 32px 0; text-align: center; }
+  .depo__q { font-family: var(--font-d); font-style: italic; font-weight: 300; font-size: clamp(1.2rem, 2.5vw, 1.75rem); line-height: 1.35; color: var(--texto); margin-bottom: 20px; }
+  .depo__q::before { content: '\201C'; color: var(--ouro); }
+  .depo__q::after { content: '\201D'; color: var(--ouro); }
+  .depo__attr { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); }
+
+  /* CTA SECTION */
+  .cta-section { background: var(--cacau); padding: 80px; text-align: center; }
+  .cta-section .label { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ouro); margin-bottom: 24px; }
+  .cta-section h2 { font-family: var(--font-d); font-weight: 300; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--fundo); line-height: 1.05; margin-bottom: 20px; }
+  .cta-section h2 em { font-style: italic; color: var(--ouro); }
+  .cta-section p { font-family: var(--font-d); font-style: italic; color: var(--champanhe); font-size: 1.1rem; max-width: 480px; margin: 0 auto 40px; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-b); font-weight: 300; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--fundo); border: 1px solid var(--fundo); padding: 18px 36px; transition: background 400ms, color 400ms; }
+  .btn:hover { background: var(--fundo); color: var(--cacau); }
+
+  /* FOOTER */
+  .doc-footer { border-top: 1px solid var(--linha); padding-top: 32px; display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 80px; }
+
+  @media(max-width: 768px) {
+    .cover { padding: 48px 32px; }
+    .doc { padding: 48px 24px 80px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .cta-section { padding: 56px 32px; }
+    .dark { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div class="cover__top">
+    <div class="cover__hairline"></div>
+    <span class="cover__eyebrow">Parceria Oficial · Documento Confidencial</span>
+  </div>
+  <div class="cover__body">
+    <div class="cover__partnership">Ammá Concept × Debu do União</div>
+    <h1 class="cover__title">Para a sua<br><em>presença</em>.</h1>
+    <p class="cover__sub">O atelier de beleza oficial do evento mais concorrido do Sul do Brasil. Cuidado para revelar quem você já é no momento mais importante da sua trajetória.</p>
+  </div>
+  <div class="cover__meta">
+    <div class="cover__meta-item"><strong>Evento</strong>Debu do União 2026</div>
+    <div class="cover__meta-item"><strong>Parceiro</strong>Ammá Concept</div>
+    <div class="cover__meta-item"><strong>Cidade</strong>Porto Alegre, RS</div>
+    <div class="cover__meta-item"><strong>Contato</strong>@ammaconceptt</div>
+  </div>
+</div>
+
+<!-- DOCUMENTO -->
+<div class="doc">
+
+  <!-- 01 — A PARCERIA -->
+  <div class="section">
+    <div class="section__num">01 · A Parceria</div>
+    <h2 class="section__title">Por que a Ammá é <em>parceira oficial</em>.</h2>
+
+    <p>Duas escolhas que compartilham a mesma convicção: que momentos extraordinários merecem presença extraordinária. O Debu do União é o evento mais aguardado do calendário social gaúcho. A Ammá Concept é o atelier que recusa qualquer resultado que não revele quem a cliente já é.</p>
+
+    <div class="dark">
+      <div class="label">A Convicção Compartilhada</div>
+      <p class="statement">Um debut não é uma festa. É a primeira declaração pública de quem você é para o mundo.</p>
+      <p style="margin-top:20px;">E a beleza que acompanha esse momento não pode ser genérica. Não pode ser tendência aplicada sobre uma superfície. Precisa ser revelação, a versão mais inteira de você mesma, presente e reconhecível em cada foto que vai durar décadas.</p>
+    </div>
+  </div>
+
+  <!-- 02 — SOBRE A AMMÁ -->
+  <div class="section">
+    <div class="section__num">02 · Sobre a Ammá Concept</div>
+    <h2 class="section__title">Um atelier que <em>revela</em>.</h2>
+
+    <p>Em 2019, Fran e Amanda fundaram o Ammá Concept em Porto Alegre a partir de uma recusa: a recusa do modelo que prioriza volume sobre presença, velocidade sobre cuidado, padrão sobre interpretação.</p>
+
+    <div class="highlight">O Ammá Concept é o único atelier de beleza do Sul do Brasil que não transforma, <em>apenas revela</em>.</div>
+
+    <p>O atelier opera com agenda limitada por convicção. Não por limitação · por filosofia. Cada cliente recebe atenção integral: escuta antes de qualquer gesto, interpretação antes de qualquer técnica. O resultado não é um look. É uma presença.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card__label">Fundação</div>
+        <div class="card__title">Porto Alegre, 2019</div>
+        <p class="card__body">Criado por Fran e Amanda a partir de uma ruptura consciente com o modelo tradicional de beleza.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Filosofia</div>
+        <div class="card__title">Revelação, não transformação</div>
+        <p class="card__body">Cada cliente chega com uma história. O atelier escuta antes de tocar, e revela quem já estava lá.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Agenda</div>
+        <div class="card__title">Sob consulta</div>
+        <p class="card__body">Espera média de três semanas. A escassez não é tática, é a garantia de que nenhuma cliente recebe atenção dividida.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 — OS TRÊS RITUAIS -->
+  <div class="section">
+    <div class="section__num">03 · O que oferecemos</div>
+    <h2 class="section__title">Três rituais.<br>Um só <em>gesto</em>.</h2>
+
+    <p>A experiência Ammá para debutantes pode ser vivida em um ritual ou nos três, num dia inteiro dedicado à debutante. Cada território tem identidade própria e compartilha o mesmo DNA: revelação, nunca cobertura.</p>
+
+    <div class="grid-3">
+      <div class="card card--dark">
+        <div class="card__label"> · 01 Ritual</div>
+        <div class="card__title">Para o seu rosto.</div>
+        <ul class="ritual-list">
+          <li>Maquiagem de Debutante</li>
+          <li>Sobrancelha</li>
+          <li>Brow Lamination</li>
+          <li>Lifting de Cílios</li>
+          <li>Hidragloss</li>
+          <li>Spa Coreano</li>
+        </ul>
+      </div>
+      <div class="card card--dark">
+        <div class="card__label"> · 02 Ritual</div>
+        <div class="card__title">Para o seu cabelo.</div>
+        <ul class="ritual-list">
+          <li>Penteado de Debutante</li>
+          <li>Escova</li>
+          <li>Hidratação</li>
+          <li>Selagem</li>
+          <li>Hidratação Kerastase</li>
+          <li>Tonalizante</li>
+        </ul>
+      </div>
+      <div class="card card--dark">
+        <div class="card__label"> · 03 Ritual</div>
+        <div class="card__title">Para a sua presença.</div>
+        <ul class="ritual-list">
+          <li>Styling Completo</li>
+          <li>Consultoria de Imagem</li>
+          <li>Dia Completo no Atelier</li>
+          <li>Assessoria no Evento</li>
+          <li>Parceria Debu União 2026</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 — COMO FUNCIONA -->
+  <div class="section">
+    <div class="section__num">04 · Como funciona</div>
+    <h2 class="section__title">Três passos.<br>Uma <em>revelação</em>.</h2>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="step__num">1.</div>
+        <div class="step__content">
+          <h4>Inicie sua experiência.</h4>
+          <p>Entre em contato pelo Instagram <strong>@ammaconceptt</strong> ou pelo WhatsApp. Conte-nos sobre a data do evento, o estilo da debutante e o que ela imagina para o seu momento. Respondemos pessoalmente, em até 48 horas úteis.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">2.</div>
+        <div class="step__content">
+          <h4>Nós escutamos.</h4>
+          <p>Antes de qualquer técnica, há uma conversa. A debutante conta sua história, como quer se sentir, o que quer que as fotos revelem. O atelier interpreta. Nunca reproduz um padrão. Nunca aplica uma tendência. Começa pela escuta.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__num">3.</div>
+        <div class="step__content">
+          <h4>Ela é revelada.</h4>
+          <p>O resultado não é uma versão genérica de debutante. É ela, presente, reconhecível, inteira. A versão que vai durar nas fotos por décadas e que ela vai olhar e pensar: era exatamente eu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 — PARCERIA OFICIAL -->
+  <div class="section">
+    <div class="section__num">05 · Parceria Oficial</div>
+    <h2 class="section__title">Agora é <em>oficial</em>.</h2>
+
+    <div class="dark">
+      <div class="label">Ammá Concept · Salão Parceiro · Debu do União 2026</div>
+      <p class="statement">Debutantes, vocês não vão viver só uma produção, vocês vão viver o momento.</p>
+      <p style="margin-top:24px;">Glow impecável. Cabelo dos sonhos. Experiência no nível que esse dia merece. Porque quando é Debu, é pra ser inesquecível.</p>
+    </div>
+  </div>
+
+  <!-- 06 — INFORMAÇÕES PRÁTICAS -->
+  <div class="section">
+    <div class="section__num">06 · Informações práticas</div>
+    <h2 class="section__title">O que você <em>precisa saber</em>.</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card__label">Agendamento</div>
+        <div class="card__title">Agenda sob consulta</div>
+        <p class="card__body">As vagas para o Debu do União 2026 são limitadas por convicção. Recomendamos contato com pelo menos três meses de antecedência para garantir a data.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Localização</div>
+        <div class="card__title">Porto Alegre, RS</div>
+        <p class="card__body">O atelier está localizado em Porto Alegre. Para eventos fora da capital, consulte disponibilidade de deslocamento. Atendemos sob agendamento, não há atendimento por demanda espontânea.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Valores</div>
+        <div class="card__title">Agenda sob consulta</div>
+        <p class="card__body">Valores disponíveis mediante consulta. Não publicamos tabela de preços, cada experiência é construída de forma personalizada após a conversa inicial.</p>
+      </div>
+      <div class="card">
+        <div class="card__label">Contato</div>
+        <div class="card__title">@ammaconceptt</div>
+        <p class="card__body">Instagram: @ammaconceptt. Respondemos cada mensagem pessoalmente, em até 48 horas úteis. Nenhum atendimento automatizado. Apenas presença.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>Ammá Concept × Debu do União 2026</span>
+    <span>@ammaconceptt · Porto Alegre, RS</span>
+  </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-section">
+  <div class="label">Parceira oficial Debu do União 2026</div>
+  <h2>Para a sua <em>presença</em>.</h2>
+  <p>Inicie sua experiência. Respondemos pessoalmente, em até 48 horas úteis.</p>
+  <a href="https://instagram.com/ammaconceptt" target="_blank" class="btn">@ammaconceptt →</a>
+</div>
+
+</body>
+</html>

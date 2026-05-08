@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Assinatura de E-mail</title>
+<meta name="description" content="Assinatura de e-mail Ammá Concept · HTML inline para Gmail e Outlook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro: #B8965C; --ouro-ink: #b88954;
+    --fundo: #faf7f2; --texto: #2a2a2a;
+    --cacau: #2b1d13; --champanhe: #e8d9c2;
+    --perola: #f3ece2; --linha: #c9b89a; --muted: #6b6b6b;
+    --font-d: 'Cormorant Garamond', Georgia, serif;
+    --font-b: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-b); background: var(--fundo); color: var(--texto); -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 64px 48px 120px; }
+
+  .cover-bar { background: var(--cacau); color: var(--champanhe); padding: 10px 24px; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; text-align: center; color: var(--ouro); }
+
+  h1 { font-family: var(--font-d); font-weight: 300; font-size: 3rem; letter-spacing: -0.01em; margin: 48px 0 8px; }
+  h1 em { font-style: italic; }
+  .subtitle { font-size: 13px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 56px; }
+
+  .instr { background: var(--cacau); color: var(--champanhe); padding: 36px 40px; margin-bottom: 56px; }
+  .instr__label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+  .instr p { font-size: 13.5px; line-height: 1.75; color: var(--champanhe); margin-bottom: 12px; }
+  .instr p:last-child { margin-bottom: 0; }
+  .instr code { font-family: monospace; font-size: 11px; background: rgba(255,255,255,0.08); padding: 2px 7px; color: var(--ouro); border-radius: 0; }
+
+  .preview-label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro-ink); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .preview-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--ouro); }
+
+  .preview-box { border: 1px solid var(--linha); padding: 40px; margin-bottom: 48px; background: white; }
+  .preview-box--dark { background: var(--cacau); }
+
+  .variants { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 56px; }
+
+  .section-title { font-family: var(--font-d); font-weight: 300; font-size: 1.75rem; margin: 56px 0 20px; letter-spacing: -0.01em; }
+  .section-title em { font-style: italic; }
+
+  .code-wrap { background: var(--cacau); padding: 32px; margin-bottom: 48px; }
+  .code-wrap__label { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+  .code-wrap pre { font-family: monospace; font-size: 11px; line-height: 1.65; color: var(--champanhe); white-space: pre-wrap; word-break: break-all; }
+
+  .note { font-size: 12px; color: var(--muted); border-left: 1px solid var(--ouro); padding-left: 16px; line-height: 1.7; margin-top: 32px; }
+
+  @media(max-width:640px) { .variants { grid-template-columns: 1fr; } .page { padding: 32px 24px 80px; } }
+</style>
+</head>
+<body>
+
+<div class="cover-bar">Ammá Concept · Assinatura de E-mail · Material Interno</div>
+
+<div class="page">
+
+  <h1>Assinatura de <em>E-mail</em>.</h1>
+  <p class="subtitle">Duas versões · HTML inline compatível com Gmail, Outlook e Apple Mail</p>
+
+  <div class="instr">
+    <div class="instr__label">Instruções de Uso</div>
+    <p>Esta assinatura usa estilos inline para compatibilidade total com clientes de e-mail. Não depende de fontes externas, usa fallbacks seguros.</p>
+    <p><strong style="color:var(--fundo);">Gmail:</strong> Configurações → Ver todas as configurações → Assinatura → Criar nova → clique no ícone <code>&lt;/&gt;</code> (HTML) → cole o código abaixo.</p>
+    <p><strong style="color:var(--fundo);">Outlook:</strong> Arquivo → Opções → Email → Assinaturas → Nova → cole em modo HTML.</p>
+    <p>Substitua <code>[SEU NOME]</code> e <code>[CARGO]</code> antes de aplicar. Opções de cargo: <code>Fundadora</code> · <code>Artista de Beleza</code> · <code>Atelier de Beleza</code>.</p>
+  </div>
+
+  <!-- VERSÃO CLARA -->
+  <div class="preview-label">Versão Principal · Fundo Claro</div>
+  <div class="preview-box">
+    <table cellpadding="0" cellspacing="0" border="0" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+      <tr><td style="padding-top:20px;border-top:1px solid #B8965C;">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr><td>
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;letter-spacing:0.08em;color:#2a2a2a;line-height:1;">AMMÁ</span><span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:#8a8277;margin-left:6px;vertical-align:middle;">CONCEPT</span>
+          </td></tr>
+          <tr><td style="padding-top:16px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#2a2a2a;font-weight:400;">[SEU NOME]</span>
+          </td></tr>
+          <tr><td style="padding-top:4px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#6b6b6b;">[CARGO]</span>
+          </td></tr>
+          <tr><td style="padding-top:16px;padding-bottom:16px;">
+            <table cellpadding="0" cellspacing="0" border="0"><tr><td style="width:36px;height:1px;background-color:#B8965C;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+          </td></tr>
+          <tr><td>
+            <a href="https://instagram.com/ammaconceptt" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;color:#6b6b6b;text-decoration:none;">@ammaconceptt</a>
+          </td></tr>
+          <tr><td style="padding-top:6px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c9b89a;">Porto Alegre · Agenda sob consulta</span>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+  </div>
+
+  <!-- VERSÃO ESCURA -->
+  <div class="preview-label">Versão Invertida · Fundo Escuro</div>
+  <div class="preview-box preview-box--dark">
+    <table cellpadding="0" cellspacing="0" border="0" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+      <tr><td style="padding-top:20px;border-top:1px solid rgba(212,165,116,0.45);">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tr><td>
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;letter-spacing:0.08em;color:#faf7f2;line-height:1;">AMMÁ</span><span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:#8a8277;margin-left:6px;vertical-align:middle;">CONCEPT</span>
+          </td></tr>
+          <tr><td style="padding-top:16px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#faf7f2;font-weight:400;">[SEU NOME]</span>
+          </td></tr>
+          <tr><td style="padding-top:4px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#c9b89a;">[CARGO]</span>
+          </td></tr>
+          <tr><td style="padding-top:16px;padding-bottom:16px;">
+            <table cellpadding="0" cellspacing="0" border="0"><tr><td style="width:36px;height:1px;background-color:#B8965C;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+          </td></tr>
+          <tr><td>
+            <a href="https://instagram.com/ammaconceptt" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;color:#c9b89a;text-decoration:none;">@ammaconceptt</a>
+          </td></tr>
+          <tr><td style="padding-top:6px;">
+            <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,184,154,0.5);">Porto Alegre · Agenda sob consulta</span>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+  </div>
+
+  <!-- CÓDIGO HTML VERSÃO CLARA -->
+  <h2 class="section-title">Código · Versão <em>Principal</em>.</h2>
+  <div class="code-wrap">
+    <div class="code-wrap__label">Cole no campo HTML do cliente de e-mail, substitua [SEU NOME] e [CARGO]</div>
+    <pre>&lt;table cellpadding="0" cellspacing="0" border="0" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;"&gt;
+  &lt;tr&gt;&lt;td style="padding-top:20px;border-top:1px solid #B8965C;"&gt;
+    &lt;table cellpadding="0" cellspacing="0" border="0"&gt;
+      &lt;tr&gt;&lt;td&gt;
+        &lt;span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:400;letter-spacing:0.08em;color:#2a2a2a;line-height:1;"&gt;AMM&Aacute;&lt;/span&gt;&lt;span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:8px;letter-spacing:0.42em;text-transform:uppercase;color:#8a8277;margin-left:6px;vertical-align:middle;"&gt;CONCEPT&lt;/span&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td style="padding-top:16px;"&gt;
+        &lt;span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#2a2a2a;font-weight:400;"&gt;[SEU NOME]&lt;/span&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td style="padding-top:4px;"&gt;
+        &lt;span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#6b6b6b;"&gt;[CARGO]&lt;/span&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td style="padding-top:16px;padding-bottom:16px;"&gt;
+        &lt;table cellpadding="0" cellspacing="0" border="0"&gt;&lt;tr&gt;&lt;td style="width:36px;height:1px;background-color:#B8965C;font-size:0;line-height:0;"&gt;&amp;nbsp;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;
+        &lt;a href="https://instagram.com/ammaconceptt" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:0.22em;color:#6b6b6b;text-decoration:none;"&gt;@ammaconceptt&lt;/a&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td style="padding-top:6px;"&gt;
+        &lt;span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c9b89a;"&gt;Porto Alegre &middot; Agenda sob consulta&lt;/span&gt;
+      &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre>
+  </div>
+
+  <p class="note">Regra: sem telefone visível na assinatura. O número filtra, quem chega por indicação já sabe como contatar. Quem não sabe, encontra pelo Instagram. A ausência é intencional.</p>
+
+</div>
+</body>
+</html>

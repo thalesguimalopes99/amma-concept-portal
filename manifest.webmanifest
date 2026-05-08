@@ -1,0 +1,25 @@
+{
+  "name": "Ammá Concept",
+  "short_name": "Ammá",
+  "description": "Atelier ultra-premium de maquiagem, penteado e styling para noivas e eventos de alto padrão em Porto Alegre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#2B1D13",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

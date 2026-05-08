@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Onboarding de Artistas</title>
+<meta name="description" content="Onboarding de artistas Ammá Concept · Carta, padrões, protocolo de atendimento e checklist 30/60/90 dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ouro:      #B8965C;
+    --ouro-light:#d4a574;
+    --fundo:     #faf7f2;
+    --texto:     #2a2a2a;
+    --cacau:     #2b1d13;
+    --champanhe: #e8d9c2;
+    --perola:    #f3ece2;
+    --linha:     #c9b89a;
+    --muted:     #6b6b6b;
+    --danger:    #8b2e2e;
+    --verde:     #4a7c59;
+    --font-d:    'Cormorant Garamond', Georgia, serif;
+    --font-b:    'Raleway', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-b);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto);
+    background: #e5e0d8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP BAR ──────────────────────────────────── */
+  .top-bar {
+    background: var(--cacau);
+    color: rgba(184,150,92,0.6);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 9px 16px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 9px 32px;
+  }
+  .top-bar button {
+    background: none; border: 1px solid rgba(184,150,92,0.3); color: rgba(184,150,92,0.7);
+    padding: 4px 12px; font-family: var(--font-b); font-size: 8px; letter-spacing: 0.22em;
+    text-transform: uppercase; cursor: pointer; transition: all .15s;
+  }
+  .top-bar button:hover { border-color: var(--ouro); color: var(--ouro); }
+
+  /* ── WRAPPER ──────────────────────────────────── */
+  .wrapper { max-width: 900px; margin: 0 auto; padding: 0 40px 120px; }
+
+  /* ── COVER ────────────────────────────────────── */
+  .cover {
+    background: var(--cacau);
+    padding: 72px 56px 56px;
+    margin: 40px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--ouro), transparent);
+  }
+  .cover__ornament {
+    position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border: 1px solid rgba(184,150,92,0.08);
+    border-radius: 50%;
+  }
+  .cover__ornament-2 {
+    position: absolute; top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border: 1px solid rgba(184,150,92,0.12);
+    border-radius: 50%;
+  }
+  .cover__eyebrow {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(184,150,92,0.45); margin-bottom: 24px;
+  }
+  .cover__logo {
+    font-family: var(--font-d); font-weight: 300; font-size: 2.5rem;
+    letter-spacing: 0.08em; color: var(--ouro); line-height: 1; margin-bottom: 4px;
+  }
+  .cover__logo-sub {
+    font-family: var(--font-b); font-size: 8px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: rgba(212,165,116,0.25); margin-bottom: 40px;
+  }
+  .cover__title {
+    font-family: var(--font-d); font-style: italic; font-weight: 300;
+    font-size: clamp(1.8rem,4vw,2.8rem); color: var(--champanhe); line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .cover__meta {
+    border-top: 1px solid rgba(201,184,154,0.15); padding-top: 24px;
+    display: flex; gap: 40px;
+  }
+  .cover__meta-item { font-size: 10px; letter-spacing: 0.18em; color: rgba(201,184,154,0.35); }
+  .cover__meta-item strong { display: block; color: rgba(201,184,154,0.6); font-weight: 400; }
+
+  /* ── SECTION ──────────────────────────────────── */
+  .doc { background: var(--fundo); box-shadow: 0 4px 40px rgba(0,0,0,.12); }
+  .doc-section { padding: 56px; border-bottom: 1px solid var(--champanhe); }
+  .doc-section:last-child { border-bottom: none; }
+
+  .sec-label {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ouro);
+    font-family: var(--font-b); display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+  }
+  .sec-label::after { content: ''; flex: 1; height: 1px; background: var(--champanhe); }
+  .sec-title {
+    font-family: var(--font-d); font-weight: 300; font-size: clamp(1.5rem,3vw,2.2rem);
+    letter-spacing: -0.01em; color: var(--texto); margin-bottom: 20px; line-height: 1.1;
+  }
+  .sec-title em { font-style: italic; }
+
+  p.body { font-size: 13.5px; color: var(--muted); line-height: 1.85; margin-bottom: 18px; }
+  p.body:last-child { margin-bottom: 0; }
+  p.body strong { color: var(--texto); font-weight: 500; }
+
+  /* ── HIGHLIGHT ────────────────────────────────── */
+  .hl {
+    background: var(--perola); border-left: 2px solid var(--ouro);
+    padding: 18px 22px; margin: 20px 0; font-size: 13px; color: var(--muted); line-height: 1.85;
+  }
+  .hl strong { color: var(--texto); font-weight: 500; }
+  .hl.dark { background: var(--cacau); border-left-color: var(--ouro); }
+  .hl.dark, .hl.dark strong { color: var(--champanhe); }
+  .hl.dark strong { color: var(--ouro-light); }
+  .hl.red { background: rgba(139,46,46,0.06); border-left-color: var(--danger); }
+
+  /* ── CARTA ────────────────────────────────────── */
+  .carta {
+    background: var(--cacau); padding: 40px 48px; margin-bottom: 0;
+    border-top: 2px solid var(--ouro);
+  }
+  .carta__greeting {
+    font-family: var(--font-d); font-size: 1.1rem; color: var(--ouro-light);
+    margin-bottom: 20px; letter-spacing: 0.02em;
+  }
+  .carta__body {
+    font-size: 13.5px; color: rgba(201,184,154,0.65); line-height: 2;
+    max-width: 640px; margin-bottom: 28px;
+  }
+  .carta__body strong { color: var(--champanhe); font-weight: 400; }
+  .carta__sign {
+    font-family: var(--font-d); font-style: italic; font-size: 1.1rem;
+    color: var(--ouro); margin-top: 28px;
+  }
+
+  /* ── VALUES LIST ──────────────────────────────── */
+  .values-grid {
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin: 24px 0;
+  }
+  .value-card { background: var(--perola); padding: 22px 24px; border-top: 2px solid var(--ouro); }
+  .value-card__title {
+    font-family: var(--font-d); font-size: 1.1rem; color: var(--cacau); margin-bottom: 6px;
+  }
+  .value-card__title em { font-style: italic; }
+  .value-card__body { font-size: 12px; color: var(--muted); line-height: 1.8; }
+
+  /* ── TWO COL ──────────────────────────────────── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+  .col-card { background: var(--perola); padding: 22px 24px; }
+  .col-card__title {
+    font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro);
+    font-family: var(--font-b); margin-bottom: 12px;
+  }
+  .col-card ul { list-style: none; font-size: 12.5px; color: var(--muted); line-height: 2.1; }
+  .col-card ul li { display: flex; gap: 8px; }
+  .col-card ul li::before { content: '·'; color: var(--ouro); flex-shrink: 0; }
+  .col-card ul li strong { color: var(--texto); font-weight: 500; }
+  .col-card--dark { background: var(--cacau); }
+  .col-card--dark .col-card__title { color: rgba(184,150,92,0.5); }
+  .col-card--dark ul { color: rgba(201,184,154,0.55); }
+  .col-card--dark ul li::before { color: rgba(184,150,92,0.45); }
+
+  /* ── PROTOCOL STEPS ───────────────────────────── */
+  .protocol { margin: 24px 0; }
+  .proto-step {
+    display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--champanhe);
+  }
+  .proto-step:last-child { border-bottom: none; }
+  .proto-step__num {
+    font-family: var(--font-d); font-size: 1.6rem; font-weight: 300;
+    color: rgba(184,150,92,0.3); line-height: 1; flex-shrink: 0; width: 32px; margin-top: 2px;
+  }
+  .proto-step__content {}
+  .proto-step__title { font-weight: 500; color: var(--cacau); margin-bottom: 4px; font-size: 13.5px; }
+  .proto-step__body { font-size: 12.5px; color: var(--muted); line-height: 1.8; }
+  .proto-step__body strong { color: var(--texto); font-weight: 500; }
+  .proto-step__tag {
+    display: inline-block; font-size: 7px; letter-spacing: 0.2em; text-transform: uppercase;
+    background: var(--ouro); color: #fff; padding: 1px 6px; border-radius: 2px;
+    font-family: var(--font-b); margin-left: 6px; position: relative; top: -2px;
+  }
+
+  /* ── CHECKLIST ────────────────────────────────── */
+  .checklist-phases { display: flex; flex-direction: column; gap: 24px; margin: 24px 0; }
+  .phase { background: var(--fundo); border: 1px solid var(--champanhe); }
+  .phase__header {
+    background: var(--cacau); padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .phase__title {
+    font-family: var(--font-d); font-size: 1.1rem; font-weight: 300; color: var(--champanhe);
+  }
+  .phase__title em { font-style: italic; }
+  .phase__period { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(184,150,92,0.5); }
+  .phase__items { padding: 0; }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px; padding: 11px 20px;
+    border-bottom: 1px solid var(--champanhe); font-size: 13px;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-item input[type="checkbox"] {
+    width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0;
+    accent-color: var(--ouro); cursor: pointer;
+  }
+  .check-item__label { color: var(--texto); line-height: 1.5; }
+  .check-item__label span { font-size: 11px; color: var(--muted); display: block; }
+  .check-item__resp {
+    margin-left: auto; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ouro); white-space: nowrap; padding-left: 16px; opacity: .7;
+  }
+
+  /* ── SCRIPTS ──────────────────────────────────── */
+  .script-block {
+    background: var(--perola); border-left: 3px solid var(--ouro);
+    padding: 20px 24px; margin: 16px 0; position: relative;
+  }
+  .script-block__label {
+    font-size: 8px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ouro);
+    font-family: var(--font-b); margin-bottom: 10px;
+  }
+  .script-block__text {
+    font-size: 13px; color: var(--texto); line-height: 1.9; white-space: pre-line;
+    font-family: var(--font-b); font-weight: 300;
+  }
+  .script-block__copy {
+    position: absolute; top: 14px; right: 14px; background: none;
+    border: 1px solid var(--linha); padding: 4px 10px; font-size: 8px;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+    cursor: pointer; font-family: var(--font-b); transition: all .15s;
+  }
+  .script-block__copy:hover { border-color: var(--ouro); color: var(--ouro); }
+  .script-block__copy.copied { border-color: var(--verde); color: var(--verde); }
+
+  /* ── NON-NEGOTIABLES ──────────────────────────── */
+  .non-neg { background: var(--cacau); padding: 32px 40px; margin: 24px 0; }
+  .non-neg__title {
+    font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(184,150,92,0.5); font-family: var(--font-b); margin-bottom: 20px;
+  }
+  .non-neg__list { list-style: none; }
+  .non-neg__item {
+    display: flex; gap: 16px; padding: 12px 0;
+    border-bottom: 1px solid rgba(201,184,154,0.1); font-size: 13px;
+    color: rgba(201,184,154,0.6); line-height: 1.7;
+  }
+  .non-neg__item:last-child { border-bottom: none; }
+  .non-neg__item::before { content: '✕'; color: rgba(184,150,92,0.3); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+  .non-neg__item strong { color: var(--champanhe); font-weight: 400; }
+
+  /* ── PRINT ────────────────────────────────────── */
+  @media print {
+    .top-bar { display: none; }
+    body { background: #fff; }
+    .wrapper { padding: 0; max-width: none; }
+    .cover { margin: 0; }
+    .doc { box-shadow: none; }
+    .script-block__copy { display: none; }
+    .doc-section { page-break-inside: avoid; }
+    .carta, .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @page { size: A4; margin: 16mm; }
+  }
+  @media (max-width: 700px) {
+    .doc-section { padding: 32px 24px; }
+    .values-grid, .two-col { grid-template-columns: 1fr; }
+    .cover { padding: 40px 28px; }
+    .carta { padding: 28px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span>Ammá Concept · Onboarding de Artistas · Uso Interno</span>
+  <button onclick="window.print()">Imprimir</button>
+</div>
+
+<div class="wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover__ornament"></div>
+    <div class="cover__ornament-2"></div>
+    <div class="cover__eyebrow">Ammá Concept · Integração de Equipe</div>
+    <div class="cover__logo">AMMÁ <span style="font-family:var(--font-b);font-size:.4em;letter-spacing:.4em;color:rgba(212,165,116,.25);vertical-align:middle;margin-left:6px">CONCEPT</span></div>
+    <div class="cover__logo-sub">Atelier de Beleza · Porto Alegre, RS</div>
+    <div class="cover__title">Manual de<br>Integração de Artistas.</div>
+    <div class="cover__meta">
+      <div class="cover__meta-item"><strong>Versão</strong>1.0 · Abril 2026</div>
+      <div class="cover__meta-item"><strong>Uso</strong>Exclusivo interno</div>
+      <div class="cover__meta-item"><strong>Aprovação</strong>Amanda Grundler e Francine Savi · Fundadoras</div>
+    </div>
+  </div>
+
+  <div class="doc">
+
+    <!-- ── 00. CARTA DE BOAS-VINDAS ── -->
+    <div class="carta">
+      <div class="carta__greeting">Para você, que acabou de chegar.</div>
+      <div class="carta__body">
+        Você está aqui porque em algum momento eu olhei para o seu trabalho e pensei: <strong>ela entende.</strong>
+        Não só a técnica · isso a escola ensina. Mas algo sobre como você enxerga uma mulher quando ela senta na sua frente.
+        <br><br>
+        A Ammá não é um salão. É um atelier, e a diferença não está na decoração ou no preço.
+        Está em como a nossa cliente sai pela porta. Ela não sai diferente. <strong>Ela sai mais ela.</strong>
+        <br><br>
+        Este manual é um mapa. Não de regras · de como pensamos. Leia com cuidado, faça perguntas,
+        e se em algum momento sentir que algo não faz sentido, me diga. <strong>Só não improvise sem entender o porquê.</strong>
+        <br><br>
+        Seja bem-vinda à Ammá.
+      </div>
+      <div class="carta__sign">Amanda Grundler e Francine Savi<br><span style="font-family:var(--font-b);font-size:.6em;letter-spacing:.12em;color:rgba(184,150,92,.45)">FUNDADORAS · AMMÁ CONCEPT</span></div>
+    </div>
+
+    <!-- ── 01. O QUE A AMMÁ É ── -->
+    <div class="doc-section">
+      <div class="sec-label">01 · Identidade</div>
+      <h2 class="sec-title">O que a Ammá <em>é</em>.</h2>
+      <p class="body">
+        A Ammá Concept é um atelier de beleza ultra-premium em Porto Alegre. Não atendemos volume · atendemos presença. Cada artista tem uma cliente por vez. Não existe pressa, fila, ou serviço "encaixado".
+      </p>
+      <div class="hl dark">
+        <strong>A nossa frase-raiz:</strong> "Não transformamos. Revelamos quem você já é."<br><br>
+        Isso não é slogan. É o filtro de todas as nossas decisões. Se algo que você vai fazer, dizer
+        ou postar contraria essa ideia, não faça.
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__title"><em>Revelação</em>, não transformação</div>
+          <div class="value-card__body">
+            A cliente não precisa se tornar outra pessoa. Ela já existe. Nosso trabalho é amplificar
+            o que já está lá, não construir o que não é dela.
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__title"><em>Presença</em>, não velocidade</div>
+          <div class="value-card__body">
+            Uma hora com atenção total vale mais do que três horas no piloto automático.
+            A cliente sente quando você está presente, e sente quando não está.
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__title"><em>Curadoria</em>, não variedade</div>
+          <div class="value-card__body">
+            Não fazemos tudo. Fazemos poucos serviços com excelência absoluta.
+            Se uma cliente pede algo que não é nosso território, dizemos honestamente.
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__title"><em>Confiança</em>, não persuasão</div>
+          <div class="value-card__body">
+            Nunca empurramos serviço. Nunca criamos urgência falsa. A cliente que precisa ser convencida
+            não é a nossa cliente · e tudo bem.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 02. PADRÕES DE PRESENÇA ── -->
+    <div class="doc-section">
+      <div class="sec-label">02 · Padrão Ammá</div>
+      <h2 class="sec-title">Como você <em>aparece</em>.</h2>
+      <p class="body">
+        Você é a primeira impressão do atelier. Antes de tocar em qualquer produto, a cliente já formou
+        uma opinião sobre o lugar, e essa opinião começa em você.
+      </p>
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card__title">Visual e presença</div>
+          <ul>
+            <li>Produção cuidada, você é vitrine do próprio trabalho</li>
+            <li>Unhas limpas e aparadas, mãos são a ferramenta principal</li>
+            <li>Cabelo penteado ou preso, nunca solto durante o atendimento</li>
+            <li>Perfume discreto, muitas clientes têm sensibilidade</li>
+            <li>Roupas que não limitam movimento · sem decotes excessivos</li>
+            <li>Celular no silencioso durante atendimento · sem exceção</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="col-card__title">Pontualidade</div>
+          <ul>
+            <li><strong>30 minutos antes</strong> do primeiro atendimento do dia</li>
+            <li>Setup completo antes da cliente chegar, ela nunca espera montagem</li>
+            <li>Atraso próprio: avisar Amanda com <strong>antecedência mínima de 2h</strong></li>
+            <li>Atraso da cliente até 15min: absorver sem reduzir qualidade</li>
+            <li>Atraso acima de 15min: comunicar à Amanda para decisão</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="col-card__title">Higiene e setup</div>
+          <ul>
+            <li>Pincéis e ferramentas limpos a cada cliente · sem negociação</li>
+            <li>Paletas descartáveis para produtos cremosos</li>
+            <li>Mesa organizada antes da cliente sentar</li>
+            <li>Lixo descartado ao fim de cada atendimento</li>
+            <li>Produtos repostos ao fim do turno</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="col-card__title">Comportamento no espaço</div>
+          <ul>
+            <li>Tom de voz baixo, outros atendimentos acontecem no mesmo espaço</li>
+            <li>Sem comentários sobre outras clientes, <strong>jamais</strong></li>
+            <li>Sem reclamações sobre preço, tráfego, agenda na frente da cliente</li>
+            <li>Conversas pessoais por mensagem, não por voz no espaço</li>
+            <li>Tratar fornecedores e parceiros com o mesmo respeito das clientes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 03. PROTOCOLO DE ATENDIMENTO ── -->
+    <div class="doc-section">
+      <div class="sec-label">03 · Atendimento</div>
+      <h2 class="sec-title">Do primeiro contato ao <em>pós-atendimento</em>.</h2>
+      <div class="protocol">
+        <div class="proto-step">
+          <div class="proto-step__num">01</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Confirmação · 48h antes <span class="proto-step__tag">Amanda</span></div>
+            <div class="proto-step__body">
+              A Amanda confirma o agendamento com a cliente. A artista recebe o briefing do serviço
+              (incluindo preferências da cliente, histórico de atendimentos anteriores, qualquer sensibilidade informada).
+              <strong>Ler o briefing antes de dormir, nunca no dia do atendimento.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">02</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Recepção da cliente</div>
+            <div class="proto-step__body">
+              Levantar para receber. Olho no olho, nome dela. Não "oi, tudo bem?" · <strong>"Que bom te receber, [nome]."</strong>
+              Oferecer água ou chá antes de sentar. Setup já pronto, nada a montar na frente dela.
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">03</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Briefing oral, sempre, mesmo em revisita</div>
+            <div class="proto-step__body">
+              2–3 perguntas antes de tocar em qualquer produto:
+              <strong>"O que está acontecendo hoje?"</strong> (evento, clima, contexto).
+              <strong>"Tem alguma coisa que você definitivamente não quer?"</strong>
+              <strong>"Tem algum detalhe que você adora quando aparece?"</strong>
+              Ouvir. Não interromper com sugestões antes de entender.
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">04</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Durante o serviço</div>
+            <div class="proto-step__body">
+              A conversa segue o ritmo da cliente, se ela quer silêncio, silêncio é o serviço.
+              Se ela quer conversar, conversa com atenção (não com distração).
+              <strong>Não comentar o trabalho enquanto faz</strong>, "isso não está ficando bom" dito em voz alta
+              cria insegurança. Ajustar silenciosamente.
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">05</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Finalização</div>
+            <div class="proto-step__body">
+              Espelho apenas quando o resultado estiver pronto, nunca no meio.
+              Dar um momento de silêncio para ela se ver. Deixar a reação acontecer antes de perguntar.
+              Se ajuste for necessário: <strong>"Posso refinar algum detalhe?"</strong> · nunca "gostou?".
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">06</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Despedida e foto <span class="proto-step__tag">se autorizado</span></div>
+            <div class="proto-step__body">
+              Verificar no contrato ou histórico se há autorização de imagem.
+              Se sim: <strong>"Posso registrar?"</strong> · nunca assumir.
+              Entrega do cartão-convite de indicação ao final de todo atendimento.
+              <strong>"Qualquer ajuste que precisar, me fala."</strong>, deixa o canal aberto sem criar ansiedade.
+            </div>
+          </div>
+        </div>
+        <div class="proto-step">
+          <div class="proto-step__num">07</div>
+          <div class="proto-step__content">
+            <div class="proto-step__title">Pós-atendimento <span class="proto-step__tag">Amanda</span></div>
+            <div class="proto-step__body">
+              A Amanda envia mensagem à cliente nas 24h seguintes. A artista registra no histórico interno:
+              qualquer preferência, sensibilidade ou observação relevante para o próximo atendimento.
+              Isso garante que quem atender depois, mesmo sendo outra artista, saiba o que funciona para ela.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 04. TOM DE VOZ ── -->
+    <div class="doc-section">
+      <div class="sec-label">04 · Comunicação</div>
+      <h2 class="sec-title">Como a Ammá <em>fala</em>.</h2>
+      <p class="body">
+        O tom da Ammá é <strong>contemplativo, seguro, sem urgência.</strong>
+        Nunca entusiasmado demais. Nunca frio. Pensa numa conversa entre duas mulheres que se respeitam, não num atendimento de balcão.
+      </p>
+      <div class="two-col">
+        <div class="col-card--dark col-card">
+          <div class="col-card__title">Não dizemos</div>
+          <ul>
+            <li>"Que lindo!" para qualquer coisa</li>
+            <li>"Perfeito!" como resposta automática</li>
+            <li>"Rapidinho" ou "só um minutinho"</li>
+            <li>"Aproveita" ou "vai por mim"</li>
+            <li>Qualquer comparação com outra cliente</li>
+            <li>Preço em voz alta no espaço</li>
+            <li>"Você vai amar!" antes de terminar</li>
+          </ul>
+        </div>
+        <div class="col-card">
+          <div class="col-card__title">Dizemos</div>
+          <ul>
+            <li>"Que bom te receber, [nome]."</li>
+            <li>"Me conta o que está acontecendo hoje."</li>
+            <li>"Posso refinar algum detalhe?"</li>
+            <li>"Isso faz sentido para você?"</li>
+            <li>"Vou levar mais um momento aqui."</li>
+            <li>"Qualquer coisa, me fala." (ao despedir)</li>
+            <li>Nome da cliente, usar sempre que possível</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="font-family:var(--font-d);font-weight:300;font-size:1.3rem;margin:32px 0 16px;color:var(--texto)">Scripts de WhatsApp para artistas</h3>
+
+      <div class="script-block">
+        <div class="script-block__label">Quando cliente pergunta sobre disponibilidade</div>
+        <div class="script-block__text" id="s1">Olá, [nome]. Vou verificar a agenda e já te retorno com as opções disponíveis, costumamos responder em até 48 horas úteis.
+
+Para que eu possa te ajudar melhor: qual seria a ocasião?</div>
+        <button class="script-block__copy" onclick="copyS('s1',this)">Copiar</button>
+      </div>
+
+      <div class="script-block">
+        <div class="script-block__label">Quando cliente pede preço antes de entender o serviço</div>
+        <div class="script-block__text" id="s2">Os valores são personalizados conforme o serviço e a ocasião, não trabalhamos com tabela fixa porque cada atendimento é pensado de forma específica.
+
+Me conta um pouco mais sobre o que você precisa e eu te dou um retorno mais certeiro.</div>
+        <button class="script-block__copy" onclick="copyS('s2',this)">Copiar</button>
+      </div>
+
+      <div class="script-block">
+        <div class="script-block__label">Quando cliente compara com preço de outro lugar</div>
+        <div class="script-block__text" id="s3">Entendo. São propostas diferentes, não é uma questão de mais caro ou mais barato, é sobre o que faz sentido para o que você está buscando.
+
+Se quiser entender melhor o que a Ammá oferece antes de decidir, fico à disposição.</div>
+        <button class="script-block__copy" onclick="copyS('s3',this)">Copiar</button>
+      </div>
+
+      <div class="script-block">
+        <div class="script-block__label">Confirmação 24h antes do atendimento</div>
+        <div class="script-block__text" id="s4">[Nome], confirmo seu atendimento amanhã às [horário].
+
+Qualquer dúvida ou se precisar de algo, estou aqui. Te espero!</div>
+        <button class="script-block__copy" onclick="copyS('s4',this)">Copiar</button>
+      </div>
+
+    </div>
+
+    <!-- ── 05. REDES SOCIAIS ── -->
+    <div class="doc-section">
+      <div class="sec-label">05 · Presença digital</div>
+      <h2 class="sec-title">Você e a <em>marca</em>.</h2>
+      <p class="body">
+        Sua presença nas redes é sua. Mas quando você marca a Ammá ou fala em nome do atelier, passa a representar a marca.
+        Essas regras existem para proteger as duas reputações.
+      </p>
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card__title">Pode fazer</div>
+          <ul>
+            <li>Postar resultados do seu trabalho no atelier <strong>(com autorização de imagem da cliente)</strong></li>
+            <li>Marcar @ammaconceptt em posts de trabalho realizado aqui</li>
+            <li>Usar a hashtag do atelier em posts de beleza autoral</li>
+            <li>Compartilhar posts do perfil oficial da Ammá</li>
+            <li>Mencionar que você faz parte da equipe Ammá</li>
+          </ul>
+        </div>
+        <div class="col-card--dark col-card">
+          <div class="col-card__title">Não pode fazer</div>
+          <ul>
+            <li>Postar foto de cliente <strong>sem autorização expressa</strong></li>
+            <li>Divulgar preços, descontos ou condições via perfil pessoal</li>
+            <li>Responder perguntas sobre agendamento via DM pessoal, redirecionar para @ammaconceptt</li>
+            <li>Comentar sobre outras clientes do atelier em qualquer plataforma</li>
+            <li>Anunciar serviços próprios usando o nome ou estética da Ammá</li>
+            <li>Criar "pacotes Ammá" ou variações sem aprovação da Amanda</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hl">
+        Se uma seguidora entrar em contato via DM pessoal perguntando sobre a Ammá:
+        <strong>redirecione</strong> para o Instagram oficial (@ammaconceptt) ou WhatsApp do atelier.
+        Não agende por conta própria, todo agendamento passa pela Amanda.
+      </div>
+    </div>
+
+    <!-- ── 06. CHECKLIST 30/60/90 ── -->
+    <div class="doc-section">
+      <div class="sec-label">06 · Integração</div>
+      <h2 class="sec-title">Checklist <em>30 · 60 · 90</em> dias.</h2>
+      <p class="body">Marque cada item conforme for concluindo. Amanda valida os de responsabilidade dela nas reuniões de acompanhamento.</p>
+      <div class="checklist-phases">
+
+        <div class="phase">
+          <div class="phase__header">
+            <div class="phase__title">Semana <em>01</em> · Integração</div>
+            <div class="phase__period">Dias 1–7</div>
+          </div>
+          <div class="phase__items">
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Leu o brand-book completo<span>Especialmente: manifesto, posicionamento, tom de voz</span></div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Leu este manual de ponta a ponta<span>Perguntas e dúvidas registradas para reunião com Amanda</span></div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Tour completo no espaço + organização dos insumos<span>Sabe onde está cada produto, cada ferramenta</span></div><div class="check-item__resp">Amanda</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Acesso ao sistema de agenda e protocolo de confirmações<span>Entendeu o fluxo de 48h de antecedência</span></div><div class="check-item__resp">Amanda</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Primeiro atendimento acompanhado, observação silenciosa<span>Sem interagir com a cliente, apenas observar o padrão</span></div><div class="check-item__resp">Ambas</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Assinou o contrato de prestação de serviços / vínculo<span>Com todas as cláusulas de confidencialidade e uso de marca</span></div><div class="check-item__resp">Ambas</div></div>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase__header">
+            <div class="phase__title">Primeiro <em>mês</em> · Calibração</div>
+            <div class="phase__period">Dias 8–30</div>
+          </div>
+          <div class="phase__items">
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Realizou 5 atendimentos acompanhados com feedback pós-sessão<span>Amanda presente ou disponível para debriefing após cada um</span></div><div class="check-item__resp">Ambas</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Domina o briefing oral das 3 perguntas-padrão<span>Sem consultar o manual</span></div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Conhece os scripts de WhatsApp e consegue adaptar o tom<span>Sem copiar literalmente, internalizou o padrão</span></div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Recebeu feedback da Amanda sobre os primeiros atendimentos<span>Reunião estruturada de 45 minutos</span></div><div class="check-item__resp">Amanda</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Entrega o cartão-convite de indicação em todo atendimento finalizado</div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Registrou histórico de preferências de todas as clientes atendidas<span>No sistema interno · nunca deixar passar</span></div><div class="check-item__resp">Artista</div></div>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase__header">
+            <div class="phase__title">Segundo e terceiro <em>mês</em> · Autonomia</div>
+            <div class="phase__period">Dias 31–90</div>
+          </div>
+          <div class="phase__items">
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Realizou primeiro atendimento solo completo (sem acompanhamento)<span>Resultado validado por Amanda antes da cliente sair</span></div><div class="check-item__resp">Ambas</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Consegue lidar com situações de atraso da cliente dentro do protocolo</div><div class="check-item__resp">Artista</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Realizou atendimento de noiva ou debutante com Amanda presente<span>Só sobe de nível após esse marco</span></div><div class="check-item__resp">Ambas</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Avaliação formal de 90 dias com Amanda<span>Feedback bilateral, o que está funcionando, o que precisa de ajuste</span></div><div class="check-item__resp">Amanda</div></div>
+            <div class="check-item"><input type="checkbox"><div class="check-item__label">Definição do nível de autonomia a partir do 4º mês<span>Quais serviços pode conduzir solo · quais precisam de validação</span></div><div class="check-item__resp">Amanda</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 07. NÃO NEGOCIÁVEL ── -->
+    <div class="doc-section">
+      <div class="sec-label">07 · Não negociável</div>
+      <h2 class="sec-title">O que <em>não tem exceção</em>.</h2>
+      <p class="body">
+        Tudo que está neste manual tem contexto, tem nuance. Exceto o que está abaixo.
+        Esses pontos não têm "depende". Uma ocorrência é conversa. Reincidência encerra a relação.
+      </p>
+      <div class="non-neg">
+        <div class="non-neg__title">Condutas que encerram imediatamente o vínculo</div>
+        <ul class="non-neg__list">
+          <li class="non-neg__item"><strong>Comentar sobre uma cliente com outra cliente</strong>, qualquer coisa, em qualquer contexto, dentro ou fora do atelier.</li>
+          <li class="non-neg__item"><strong>Postar foto de cliente sem autorização expressa</strong>, não importa o resultado. Não importa a intenção.</li>
+          <li class="non-neg__item"><strong>Agendar atendimentos particulares usando o nome Ammá</strong> ou usando a base de clientes do atelier para oferta pessoal.</li>
+          <li class="non-neg__item"><strong>Revelar preços, política interna ou dados de clientes</strong> para terceiros, incluindo outras artistas fora da equipe.</li>
+          <li class="non-neg__item"><strong>Chegar ao atendimento sem condições de trabalhar</strong>, doente, sem dormir, ou em estado emocional que comprometa a presença, sem aviso prévio com mínimo de 2h.</li>
+          <li class="non-neg__item"><strong>Alterar o produto aplicado</strong> sem informar a cliente, trocar marca, fórmula ou técnica silenciosamente, mesmo "para melhorar".</li>
+        </ul>
+      </div>
+      <div class="hl" style="margin-top:24px">
+        <strong>Uma nota sobre erros:</strong> todo mundo erra. Um resultado que não ficou bom, uma palavra errada no momento errado,
+        um atraso não comunicado, isso é humano e tem solução. O que não tem solução é a falta de honestidade sobre o erro.
+        Se algo der errado, <strong>vem falar comigo antes da cliente perceber.</strong>
+      </div>
+    </div>
+
+    <!-- ── ASSINATURA ── -->
+    <div class="doc-section" style="background:var(--perola)">
+      <div class="sec-label">Compromisso</div>
+      <p class="body">
+        Li e compreendi o conteúdo deste manual. Estou ciente dos padrões, das expectativas e dos termos que regem
+        minha atuação como artista da Ammá Concept.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px">
+        <div>
+          <div style="height:1px;background:var(--linha);margin-bottom:8px;margin-top:56px"></div>
+          <div style="font-size:13px;color:var(--texto)">Assinatura da artista</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">Nome: ___________________________</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">Data: ____________________________</div>
+        </div>
+        <div>
+          <div style="height:1px;background:var(--linha);margin-bottom:8px;margin-top:56px"></div>
+          <div style="font-size:13px;color:var(--texto)">Amanda · Ammá Concept</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">Fundadora</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px">Data: ____________________________</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.doc -->
+
+</div><!-- /.wrapper -->
+
+<script>
+function copyS(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+    btn.textContent = 'Copiado ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// Persist checkboxes via localStorage
+document.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll('input[type="checkbox"]');
+  boxes.forEach((cb, i) => {
+    const key = 'amma-onboarding-cb-' + i;
+    cb.checked = localStorage.getItem(key) === '1';
+    cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+  });
+});
+</script>
+</body>
+</html>

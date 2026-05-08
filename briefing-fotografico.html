@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2B1D13">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<title>Ammá Concept · Briefing Fotográfico & Visual</title>
+<meta name="description" content="Briefing fotográfico Ammá Concept · Direção criativa, art direction, moodboard textual e regras de set para ensaios da marca.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:    #B8965C;
+    --cream:   #F5F0E8;
+    --cacau:   #2b1d13;
+    --ink:     #1A1714;
+    --perola:  #E8E0D5;
+    --soft:    #6B5E54;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--cacau);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px;
+    page-break-after: always;
+  }
+  .cover-label {
+    font-size: 10px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+  }
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--cream);
+    line-height: 1.05;
+    max-width: 700px;
+  }
+  .cover-title em { font-style: italic; color: var(--gold); }
+  .cover-meta {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 600px;
+    border-top: 1px solid rgba(184,150,92,.3);
+    padding-top: 32px;
+  }
+  .cover-meta dt { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .cover-meta dd { font-size: 13px; color: var(--cream); opacity: .8; }
+
+  /* ── Layout ── */
+  .page { max-width: 900px; margin: 0 auto; padding: 80px 48px; }
+  .section-num {
+    font-size: 9px;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  h2 em { font-style: italic; }
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--soft);
+    max-width: 680px;
+  }
+  .divider {
+    height: 1px;
+    background: var(--gold);
+    opacity: .2;
+    margin: 64px 0;
+  }
+
+  /* ── Grid 2 cols ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 40px 0; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 40px 0; }
+
+  /* ── Card base ── */
+  .card {
+    background: white;
+    padding: 32px;
+  }
+  .card-dark { background: var(--cacau); }
+  .card-perola { background: var(--perola); }
+  .card-num {
+    font-size: 9px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .card-dark h4 { color: var(--cream); }
+  .card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--soft);
+  }
+  .card-dark p { color: rgba(245,240,232,.65); }
+
+  /* ── Regras visuais ── */
+  .rule-block {
+    border-left: 2px solid var(--gold);
+    padding: 20px 28px;
+    margin: 16px 0;
+    background: white;
+  }
+  .rule-block.no { border-left-color: #8B3A3A; background: #fdf4f4; }
+  .rule-label {
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .rule-label.no { color: #8B3A3A; }
+  .rule-block p { font-size: 13px; color: var(--ink); }
+
+  /* ── Paleta luz ── */
+  .palette-row { display: flex; gap: 2px; margin: 24px 0; height: 48px; }
+  .swatch { flex: 1; }
+  .swatch-label { font-size: 10px; letter-spacing: .1em; text-align: center; margin-top: 6px; color: var(--soft); }
+
+  /* ── Moodboard textual ── */
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2px;
+    margin: 32px 0;
+  }
+  .mood-item {
+    background: var(--cacau);
+    padding: 28px 24px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .mood-item:nth-child(even) { background: #3D2B22; }
+  .mood-item:nth-child(3n) { background: #1A1208; }
+  .mood-tag {
+    font-size: 8px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .mood-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--cream);
+    line-height: 1.4;
+  }
+
+  /* ── CEP visual ── */
+  .cep-block {
+    border-top: 1px solid rgba(184,150,92,.2);
+    padding: 32px 0;
+  }
+  .cep-header {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 20px;
+  }
+  .cep-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    opacity: .5;
+    line-height: 1;
+  }
+  .cep-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .cep-subtitle { font-size: 12px; color: var(--soft); letter-spacing: .05em; }
+  .cep-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .spec-item dt {
+    font-size: 9px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5px;
+  }
+  .spec-item dd { font-size: 13px; color: var(--ink); line-height: 1.5; }
+
+  /* ── Bio block ── */
+  .bio-block {
+    background: white;
+    border: 1px solid rgba(184,150,92,.25);
+    padding: 32px 40px;
+    margin: 20px 0;
+    position: relative;
+  }
+  .bio-block .bio-version {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .bio-text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink);
+    white-space: pre-line;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+  }
+  .bio-char {
+    font-size: 10px;
+    color: var(--soft);
+    margin-top: 12px;
+    letter-spacing: .05em;
+  }
+  .copy-btn {
+    background: none;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all .3s;
+  }
+  .copy-btn:hover { background: var(--gold); color: var(--cacau); }
+
+  /* ── Print ── */
+  @media print {
+    .cover { min-height: 100vh; }
+    .page { padding: 48px; }
+    .copy-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     COVER
+══════════════════════════════════════════ -->
+<div class="cover">
+  <p class="cover-label">Ammá Concept · Documento Interno</p>
+  <h1 class="cover-title">
+    Briefing<br>
+    <em>Fotográfico</em><br>
+    & Visual.
+  </h1>
+  <dl class="cover-meta">
+    <div><dt>Documento</dt><dd>Art Direction Guide</dd></div>
+    <div><dt>Versão</dt><dd>1.0 · 2026</dd></div>
+    <div><dt>Uso</dt><dd>Fotógrafos, videomakers, artistas</dd></div>
+  </dl>
+</div>
+
+<!-- ══════════════════════════════════════════
+     01 — PROPÓSITO
+══════════════════════════════════════════ -->
+<div class="page">
+  <p class="section-num">01 · Propósito deste documento</p>
+  <h2>Toda imagem é uma <em>declaração</em>.</h2>
+  <p>
+    Na Ammá Concept, a fotografia não é registro, é extensão da identidade da marca.
+    Cada imagem publicada precisa comunicar a mesma coisa que o manifesto interno:
+    menos, com mais profundidade. Presença. Não performance.
+  </p>
+  <p style="margin-top: 20px;">
+    Este guia orienta fotógrafos, videomakers e as próprias artistas da casa na
+    produção de conteúdo visual alinhado ao posicionamento da marca.
+    Não é uma lista de restrições. É um ponto de vista.
+  </p>
+
+  <div class="divider"></div>
+
+  <p class="section-num">Premissa fundamental</p>
+  <h3>A câmera não documenta. <em>Revela.</em></h3>
+  <p>
+    Imagens da Ammá mostram o que acontece quando alguém está completamente presente
+    no próprio processo, não o resultado final de uma transformação espetacular.
+    O antes-e-depois não existe aqui. O durante é o conteúdo.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     02 — PALETA DE LUZ
+══════════════════════════════════════════ -->
+<div class="page" style="background: var(--perola);">
+  <p class="section-num">02 · Paleta de luz e tom</p>
+  <h2>Luz como <em>linguagem</em>.</h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <p class="card-num">Usar</p>
+      <h4>Luz natural difusa</h4>
+      <p>Janelas laterais. Ambientes com luz indireta. Hora dourada (6h–8h / 16h–18h). Sombras suaves que moldam sem endurecer.</p>
+    </div>
+    <div class="card card-dark">
+      <p class="card-num">Evitar</p>
+      <h4>Flash direto e luz dura</h4>
+      <p style="color: rgba(245,240,232,.65);">Ring light frontal. Flash com reflexo. Luz estroboscópica. Iluminação de estúdio excessivamente técnica.</p>
+    </div>
+    <div class="card">
+      <p class="card-num">Temperatura</p>
+      <h4>Quente a neutro</h4>
+      <p>3200K a 5000K. Prefira tons âmbar e cacau nas sombras. Evite tons azulados ou frios, contradizem a paleta da marca.</p>
+    </div>
+    <div class="card card-perola">
+      <p class="card-num">Referência de tom</p>
+      <h4>Pele real, não perfeita</h4>
+      <p>A edição não deve remover textura da pele. A marca celebra presença, não retoque excessivo. Luminosidade sim. Plástico não.</p>
+    </div>
+  </div>
+
+  <p class="section-num" style="margin-top: 48px;">Paleta de cor nas imagens</p>
+  <div class="palette-row">
+    <div>
+      <div class="swatch" style="background: #F5F0E8; height: 48px;"></div>
+      <p class="swatch-label">Cream</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #E8D9C4; height: 48px;"></div>
+      <p class="swatch-label">Pele clara</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #C8A882; height: 48px;"></div>
+      <p class="swatch-label">Âmbar</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #B8965C; height: 48px;"></div>
+      <p class="swatch-label">Ouro</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #7A5C48; height: 48px;"></div>
+      <p class="swatch-label">Terra</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #4A3328; height: 48px;"></div>
+      <p class="swatch-label">Cacau médio</p>
+    </div>
+    <div>
+      <div class="swatch" style="background: #2C1F1A; height: 48px;"></div>
+      <p class="swatch-label">Cacau profundo</p>
+    </div>
+  </div>
+  <p>Paleta restrita. Imagens com cores saturadas, fundos coloridos ou tons não listados
+  acima não devem ser publicadas sem aprovação da direção de arte.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     03 — MOODBOARD TEXTUAL
+══════════════════════════════════════════ -->
+<div class="page">
+  <p class="section-num">03 · Moodboard textual</p>
+  <h2>O que a imagem precisa <em>dizer</em>.</h2>
+  <p>Na ausência de referências visuais, estas descrições funcionam como âncora criativa
+  para fotógrafos e diretores de arte.</p>
+
+  <div class="mood-grid">
+    <div class="mood-item">
+      <p class="mood-tag">Presença</p>
+      <p class="mood-desc">Mãos no rosto. Olhos que não pedem permissão para existir.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Ritual</p>
+      <p class="mood-desc">Um pincel suspenso. O gesto antes do gesto.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Silêncio</p>
+      <p class="mood-desc">Espelho. Reflexo. A cliente e ela mesma · sem mais ninguém.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Textura</p>
+      <p class="mood-desc">Tecido cream próximo de pele. Nada plástico.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Tempo</p>
+      <p class="mood-desc">Desfoque intencional. Movimento sem pressa.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Detalhe</p>
+      <p class="mood-desc">O anel. O colo. O olho fechado. Nunca o todo.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Ouro</p>
+      <p class="mood-desc">Luz que toca. Não que explode.</p>
+    </div>
+    <div class="mood-item">
+      <p class="mood-tag">Intimidade</p>
+      <p class="mood-desc">Como se a câmera não estivesse lá.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     04 — CEPs VISUAIS (Sharp + Kapferer)
+══════════════════════════════════════════ -->
+<div class="page" style="background: var(--cacau); color: var(--cream);">
+  <p class="section-num" style="color: var(--gold);">04 · Category Entry Points visuais</p>
+  <h2 style="color: var(--cream);">Cinco momentos.<br><em>Cinco formas de ver.</em></h2>
+  <p style="color: rgba(245,240,232,.7);">
+    Cada CEP tem uma linguagem visual específica. A fotografia ativa o CEP certo
+    antes que qualquer legenda precise explicar.
+  </p>
+</div>
+
+<div class="page">
+  <div class="cep-block">
+    <div class="cep-header">
+      <span class="cep-num">i.</span>
+      <div>
+        <p class="cep-title">Noivado, O grande dia se aproxima</p>
+        <p class="cep-subtitle">Momento de entrada: ela está noiva ou próxima do casamento</p>
+      </div>
+    </div>
+    <dl class="cep-specs">
+      <div class="spec-item"><dt>Enquadramento</dt><dd>Close nas mãos, anel visível mas não protagonista. Detalhe do rosto, perfil.</dd></div>
+      <div class="spec-item"><dt>Luz</dt><dd>Dourada, hora da tarde. Refletida em superfície branca ou cream.</dd></div>
+      <div class="spec-item"><dt>Figurino</dt><dd>Branco ou cream. Sem excessos. Tecido com textura leve.</dd></div>
+      <div class="spec-item"><dt>Ambiente</dt><dd>Interior atelier ou quarto simples com luz natural. Nada genérico.</dd></div>
+      <div class="spec-item"><dt>Emoção</dt><dd>Calma antes. Não euforia. Consciência do momento.</dd></div>
+      <div class="spec-item"><dt>Evitar</dt><dd>Véu em evidência, champanhe, sorrisos posados para câmera.</dd></div>
+    </dl>
+  </div>
+
+  <div class="cep-block">
+    <div class="cep-header">
+      <span class="cep-num">ii.</span>
+      <div>
+        <p class="cep-title">Debutante · Tornar-se</p>
+        <p class="cep-subtitle">Momento de entrada: 15 anos se aproximam, primeira presença pública real</p>
+      </div>
+    </div>
+    <dl class="cep-specs">
+      <div class="spec-item"><dt>Enquadramento</dt><dd>Perfil ou três-quartos. Ela não olha para câmera, olha para algo interno.</dd></div>
+      <div class="spec-item"><dt>Luz</dt><dd>Difusa, suave. Sombra que acompanha o contorno do rosto.</dd></div>
+      <div class="spec-item"><dt>Figurino</dt><dd>Neutro. A maquiagem e o cabelo são o evento, a roupa apoia.</dd></div>
+      <div class="spec-item"><dt>Ambiente</dt><dd>Espelho no fundo. Ela e o reflexo. Dois momentos do mesmo ser.</dd></div>
+      <div class="spec-item"><dt>Emoção</dt><dd>Descoberta. Não exibição.</dd></div>
+      <div class="spec-item"><dt>Evitar</dt><dd>Vestido de debutante na sessão. Muito adereço. Efeitos de glitter.</dd></div>
+    </dl>
+  </div>
+
+  <div class="cep-block">
+    <div class="cep-header">
+      <span class="cep-num">iii.</span>
+      <div>
+        <p class="cep-title">Evento de prestígio · Chegada que precede</p>
+        <p class="cep-subtitle">Momento de entrada: ela vai a um evento importante; quer ser lembrada</p>
+      </div>
+    </div>
+    <dl class="cep-specs">
+      <div class="spec-item"><dt>Enquadramento</dt><dd>Busto ou meio-corpo. Erguida. Presença que preenche o frame.</dd></div>
+      <div class="spec-item"><dt>Luz</dt><dd>Mais contrastada que as outras. Sombra definida, ouro nos realces.</dd></div>
+      <div class="spec-item"><dt>Figurino</dt><dd>Preto, cacau ou cream estruturado. Sem estampas.</dd></div>
+      <div class="spec-item"><dt>Ambiente</dt><dd>Ambiente neutro. Ela é o ambiente.</dd></div>
+      <div class="spec-item"><dt>Emoção</dt><dd>Consciência. Não arrogância. A diferença é sutil e essencial.</dd></div>
+      <div class="spec-item"><dt>Evitar</dt><dd>Poses de moda editorial genérica. Olhar para câmera com sorriso aberto.</dd></div>
+    </dl>
+  </div>
+
+  <div class="cep-block">
+    <div class="cep-header">
+      <span class="cep-num">iv.</span>
+      <div>
+        <p class="cep-title">Crise de identidade · Reencontro</p>
+        <p class="cep-subtitle">Momento de entrada: ela se perdeu de si mesma e busca se reconhecer</p>
+      </div>
+    </div>
+    <dl class="cep-specs">
+      <div class="spec-item"><dt>Enquadramento</dt><dd>Espelho. Mãos no rosto. Close nos olhos. Fragmento · nunca todo o corpo.</dd></div>
+      <div class="spec-item"><dt>Luz</dt><dd>Suave, íntima. Quase insuficiente. Como uma vela.</dd></div>
+      <div class="spec-item"><dt>Figurino</dt><dd>Simples ao extremo. Camiseta cream ou robe. Cabelo solto ou preso sem esmero.</dd></div>
+      <div class="spec-item"><dt>Ambiente</dt><dd>Privado. Pequeno. Dentro · nunca externo.</dd></div>
+      <div class="spec-item"><dt>Emoção</dt><dd>Reconhecimento. O momento antes de decidir.</dd></div>
+      <div class="spec-item"><dt>Evitar</dt><dd>Drama excessivo. Lágrimas encenadas. Qualquer coisa que pareça stock photo.</dd></div>
+    </dl>
+  </div>
+
+  <div class="cep-block">
+    <div class="cep-header">
+      <span class="cep-num">v.</span>
+      <div>
+        <p class="cep-title">Pós-conquista · A celebração quieta</p>
+        <p class="cep-subtitle">Momento de entrada: ela conquistou algo significativo e quer marcar</p>
+      </div>
+    </div>
+    <dl class="cep-specs">
+      <div class="spec-item"><dt>Enquadramento</dt><dd>Aberto. Ela no espaço. Não é close · é presença no mundo.</dd></div>
+      <div class="spec-item"><dt>Luz</dt><dd>Natural, ampla, generosa. Hora dourada. Ela irradia.</dd></div>
+      <div class="spec-item"><dt>Figurino</dt><dd>Algo dela. A conquista não precisa de fantasia nova.</dd></div>
+      <div class="spec-item"><dt>Ambiente</dt><dd>Externo aprovado: jardim, corredor elegante, terraço. Nunca urbano genérico.</dd></div>
+      <div class="spec-item"><dt>Emoção</dt><dd>Paz. A conquista já aconteceu. Não é euforia · é certeza.</dd></div>
+      <div class="spec-item"><dt>Evitar</dt><dd>Balões, confete, gestos exagerados de comemoração.</dd></div>
+    </dl>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     05 — REGRAS DE SET
+══════════════════════════════════════════ -->
+<div class="page" style="background: white;">
+  <p class="section-num">05 · Regras de set e produção</p>
+  <h2>O que chega no <em>frame</em> importa.</h2>
+
+  <div class="grid-2" style="margin-top: 32px;">
+    <div>
+      <div class="rule-block">
+        <p class="rule-label">Objetos de cena · SIM</p>
+        <p>Pincéis de cerdas naturais · Espelhos com moldura simples · Tecidos cream ou cacau · Flores únicas (não buquê) · Água em vidro · Velas sem marca visível · Cadeira design minimalista · Bancada com textura natural</p>
+      </div>
+      <div class="rule-block" style="margin-top: 8px;">
+        <p class="rule-label">Equipamento visível · SIM</p>
+        <p>Pincéis da artista podem aparecer. Kits abertos com organização são contexto visual válido, desde que não pareçam propaganda de produto.</p>
+      </div>
+      <div class="rule-block" style="margin-top: 8px;">
+        <p class="rule-label">Figurino da artista</p>
+        <p>Todo preto ou todo branco/cream. Sem estampa. Sem logo de marca. Avental se houver, cacau ou preto, tecido nobre.</p>
+      </div>
+    </div>
+    <div>
+      <div class="rule-block no">
+        <p class="rule-label no">Objetos proibidos</p>
+        <p>Celular visível · Embalagem de produto com marca visível · Copo plástico ou descartável · Cadeira de plástico · Fundo com pôster ou banner · Espelho com moldura dourada brilhante · Qualquer objeto com cor saturada</p>
+      </div>
+      <div class="rule-block no" style="margin-top: 8px;">
+        <p class="rule-label no">Comportamento na câmera</p>
+        <p>Sorrisos forçados para câmera. Poses de moda sem contexto. Mãos no ar sem propósito. A cliente não precisa "fazer pose", precisa estar presente.</p>
+      </div>
+      <div class="rule-block no" style="margin-top: 8px;">
+        <p class="rule-label no">Pós-produção proibida</p>
+        <p>Filtros que alterem a paleta de cor para tons frios ou saturados. Remoção excessiva de textura da pele. Efeitos "vintage" ou sépia carregados. Vinheta exagerada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-num">Entregáveis esperados por sessão</p>
+  <div class="grid-3">
+    <div class="card card-perola">
+      <p class="card-num">Formato Grid</p>
+      <h4>1:1 e 4:5</h4>
+      <p>Mínimo 6 imagens em cada formato. Cores consistentes entre elas. Prontas para feed coeso.</p>
+    </div>
+    <div class="card">
+      <p class="card-num">Formato Stories</p>
+      <h4>9:16</h4>
+      <p>Mínimo 4 imagens. Uma deve ter área neutra superior para copy sobreposta.</p>
+    </div>
+    <div class="card card-dark">
+      <p class="card-num">Formato Editorial</p>
+      <h4>Horizontal</h4>
+      <p style="color:rgba(245,240,232,.65);">2–3 imagens wide para uso em site, apresentação e material impresso.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     06 — BIO DO INSTAGRAM
+══════════════════════════════════════════ -->
+<div class="page" style="background: var(--cacau); color: var(--cream);">
+  <p class="section-num" style="color: var(--gold);">06 · Bio do Instagram</p>
+  <h2 style="color: var(--cream);">150 caracteres.<br><em>Uma declaração.</em></h2>
+  <p style="color: rgba(245,240,232,.7);">
+    A bio é o único espaço no Instagram onde a marca fala por texto puro, sem imagem de apoio.
+    Precisa passar o posicionamento, o CEP principal e uma ação clara em menos de 3 linhas.
+    Três versões abaixo, da mais direta à mais editorial.
+  </p>
+</div>
+
+<div class="page">
+  <p class="section-num">Três versões, escolha uma para ativar</p>
+
+  <!-- Versão A -->
+  <div class="bio-block">
+    <span class="bio-version">Versão A · Direta</span>
+    <p class="bio-text">Atelier de maquiagem e styling.
+Porto Alegre · Agenda sob consulta.
+Não transformamos · revelamos.</p>
+    <p class="bio-char" id="bioA-count"></p>
+    <button class="copy-btn" onclick="copyBio('bioA')">Copiar →</button>
+    <p id="bioA" style="display:none;">Atelier de maquiagem e styling.
+Porto Alegre · Agenda sob consulta.
+Não transformamos · revelamos.</p>
+  </div>
+
+  <!-- Versão B -->
+  <div class="bio-block">
+    <span class="bio-version">Versão B · Editorial (recomendada)</span>
+    <p class="bio-text">Para quem já sabe quem é.
+Maquiagem · Cabelo · Styling.
+Porto Alegre · Agenda sob consulta.</p>
+    <p class="bio-char" id="bioB-count"></p>
+    <button class="copy-btn" onclick="copyBio('bioB')">Copiar →</button>
+    <p id="bioB" style="display:none;">Para quem já sabe quem é.
+Maquiagem · Cabelo · Styling.
+Porto Alegre · Agenda sob consulta.</p>
+  </div>
+
+  <!-- Versão C -->
+  <div class="bio-block">
+    <span class="bio-version">Versão C · Minimalista</span>
+    <p class="bio-text">Presença como forma de arte.
+Atelier ultra-premium · Porto Alegre.
+↓ Inicie sua experiência.</p>
+    <p class="bio-char" id="bioC-count"></p>
+    <button class="copy-btn" onclick="copyBio('bioC')">Copiar →</button>
+    <p id="bioC" style="display:none;">Presença como forma de arte.
+Atelier ultra-premium · Porto Alegre.
+↓ Inicie sua experiência.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-num">Link da bio · estratégia</p>
+  <h3>Um único link. <em>Destino certo.</em></h3>
+  <p>O link da bio deve apontar para a landing page oficial
+  (<strong>amm-concept.vercel.app</strong>), onde a cliente encontra rituais, história e o formulário
+  de contato. Não usar linktree ou agregadores: dilui a presença e foge do padrão
+  de uma marca que controla cada ponto de contato.</p>
+
+  <div class="grid-2" style="margin-top: 32px;">
+    <div class="rule-block">
+      <p class="rule-label">Link primário</p>
+      <p>amm-concept.vercel.app, ou domínio próprio quando disponível (ammaconceptt.com.br ou amma.com.br)</p>
+    </div>
+    <div class="rule-block no">
+      <p class="rule-label no">Evitar</p>
+      <p>Linktree · Beacons · Bio.link · Qualquer agregador genérico. Contradiz o posicionamento de exclusividade.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-num">Nome de usuário</p>
+  <h3>@ammaconceptt · <em>manter</em>.</h3>
+  <p>O duplo T é o handle atual. Não alterar até garantir disponibilidade de @ammaconcept
+  (um T) nas principais plataformas simultaneamente. Mudança isolada no Instagram
+  fragmenta o histórico de menções.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     07 — CHECKLIST DE APROVAÇÃO
+══════════════════════════════════════════ -->
+<div class="page" style="background: var(--perola);">
+  <p class="section-num">07 · Checklist antes de publicar</p>
+  <h2>Antes de ir ao <em>ar</em>.</h2>
+  <p>Cada imagem publicada no @ammaconceptt passa por esta verificação.</p>
+
+  <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+    <div style="background: white; padding: 28px 32px;">
+      <p class="section-num">Técnica</p>
+      <ul style="list-style: none; font-size: 13px; line-height: 2.4; color: var(--ink);">
+        <li>☐ &nbsp;Resolução mínima 1080px no lado menor</li>
+        <li>☐ &nbsp;Sem ruído digital excessivo</li>
+        <li>☐ &nbsp;Nitidez no elemento principal</li>
+        <li>☐ &nbsp;Paleta de cor dentro do guia</li>
+        <li>☐ &nbsp;Sem marca d'água visível</li>
+        <li>☐ &nbsp;Temperatura de luz: quente a neutra</li>
+      </ul>
+    </div>
+    <div style="background: white; padding: 28px 32px;">
+      <p class="section-num">Editorial</p>
+      <ul style="list-style: none; font-size: 13px; line-height: 2.4; color: var(--ink);">
+        <li>☐ &nbsp;Sem objetos proibidos em cena</li>
+        <li>☐ &nbsp;A imagem comunica um dos 5 CEPs?</li>
+        <li>☐ &nbsp;Sem sorrisos forçados</li>
+        <li>☐ &nbsp;Sem marca de produto visível</li>
+        <li>☐ &nbsp;Coerente com as últimas 6 publicações</li>
+        <li>☐ &nbsp;Passou pelo filtro: "isso parece Ammá?"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background: var(--cacau); padding: 32px 40px; margin-top: 2px;">
+    <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+    font-size: 20px; color: var(--cream); line-height: 1.6;">
+      "Se a imagem não passa no teste, não por falta de qualidade técnica,
+      mas por ausência de presença, não publicar. O feed silencioso é
+      preferível ao feed genérico."
+    </p>
+  </div>
+</div>
+
+<script>
+// Contagem de caracteres das bios
+['A','B','C'].forEach(v => {
+  const el = document.getElementById(`bio${v}`);
+  const count = document.getElementById(`bio${v}-count`);
+  if (el && count) {
+    const len = el.innerText.trim().length;
+    count.textContent = `${len} caracteres (limite Instagram: 150)`;
+    count.style.color = len > 150 ? '#8B3A3A' : '#6B5E54';
+  }
+});
+
+function copyBio(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.innerText.trim()).then(() => {
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b => {
+      if (b.getAttribute('onclick').includes(id)) {
+        const orig = b.textContent;
+        b.textContent = 'Copiado ✓';
+        setTimeout(() => b.textContent = orig, 2000);
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
