@@ -678,11 +678,47 @@
   <div class="section">
     <div class="section__label">05 · Rastreamento interno</div>
     <h2 class="section__title">Planilha de <em>controle</em>.</h2>
+    <div class="rules-grid" style="margin-bottom:24px;">
+      <div class="rule-card">
+        <div class="rule-card__title">Amanda Grundler</div>
+        <ul>
+          <li>Mensagens de reconhecimento <strong>Tier 01, 02 e 03</strong></li>
+          <li>Revisão semanal da planilha</li>
+          <li>Decisão final em caso ambíguo</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Francine Savi</div>
+        <ul>
+          <li>Preenchimento da planilha no <strong>1º contato</strong></li>
+          <li>Pergunta "como chegou?" no WhatsApp</li>
+          <li>Sinaliza a Amanda quando atendimento converte</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Artistas</div>
+        <ul>
+          <li>Entregam <strong>cartão físico</strong> ao fim do atendimento</li>
+          <li>Não respondem dúvidas sobre o programa</li>
+          <li>Encaminham qualquer pergunta para a Amanda</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Ritmo operacional</div>
+        <ul>
+          <li>Segunda 9h: revisão linha por linha</li>
+          <li>Mensagem Tier até <strong>quarta-feira</strong></li>
+          <li>Quarta EOD: reposição de cartões se &lt; 5 unidades</li>
+          <li>Trimestre: revisão de tiers e regras</li>
+        </ul>
+      </div>
+    </div>
     <div class="highlight">
       Registrar <strong>sempre no primeiro contato</strong> da nova cliente, antes de confirmar agendamento.
       Pergunta padrão: <em>"Como você chegou até a gente?"</em>
     </div>
 
+    <div style="overflow-x:auto;">
     <table class="track-table">
       <thead>
         <tr>
@@ -691,8 +727,12 @@
           <th>Data contato</th>
           <th>Serviço agendado</th>
           <th>Data atendimento</th>
+          <th>Fonte</th>
+          <th>Tier indicante</th>
+          <th>Limite reconhecimento</th>
           <th>Status</th>
           <th>Benefício entregue</th>
+          <th>Observação</th>
         </tr>
       </thead>
       <tbody>
@@ -702,8 +742,12 @@
           <td class="example">12/04/2026</td>
           <td class="example">Maq. Social</td>
           <td class="example">28/04/2026</td>
+          <td class="example">verbal</td>
+          <td class="example">Tier 01</td>
+          <td class="example">05/05/2026</td>
           <td><span class="status-badge status-badge--done">Convertida</span></td>
           <td class="example">Cartão + prioridade 60d</td>
+          <td class="example"> · </td>
         </tr>
         <tr>
           <td class="example">Ex: Luísa R.</td>
@@ -711,29 +755,26 @@
           <td class="example">15/04/2026</td>
           <td class="example">Penteado noiva</td>
           <td class="example"> · </td>
+          <td class="example">cartão-físico</td>
+          <td class="example">Tier 02</td>
+          <td class="example"> · </td>
           <td><span class="status-badge status-badge--booked">Agendada</span></td>
           <td class="example"> · </td>
+          <td class="example">Noiva · sobe um tier</td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           <td><span class="status-badge status-badge--pending">Em espera</span></td>
-          <td></td>
+          <td></td><td></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           <td><span class="status-badge status-badge--rewarded">Reconhecida</span></td>
-          <td></td>
+          <td></td><td></td>
         </tr>
       </tbody>
     </table>
+    </div>
     <div style="font-size:11px;color:var(--muted);margin-top:10px;font-style:italic;">
       Exportar para Google Sheets, manter acesso apenas para Amanda Grundler, Francine Savi e artistas com nível de acesso definido internamente <span contenteditable="true" style="border-bottom:1px dashed rgba(255,255,255,0.25);padding:0 4px;">(a definir)</span>.
     </div>
