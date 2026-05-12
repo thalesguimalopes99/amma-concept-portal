@@ -355,7 +355,8 @@
     margin: 32px 0;
   }
   .referral-card {
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
     background: var(--cacau);
     padding: 0;
     box-shadow: 0 8px 40px rgba(0,0,0,0.2);
@@ -479,6 +480,7 @@
     .steps, .tiers { grid-template-columns: 1fr; }
     .step__arrow { display: none; }
     .rules-grid { grid-template-columns: 1fr; }
+    .referral-card-wrap { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -945,34 +947,101 @@ Amanda</div>
     <div class="section__label">07 · Cartão-convite físico</div>
     <h2 class="section__title">Arte para <em>impressão</em>.</h2>
     <div class="highlight">
-      Entregar ao final de cada atendimento. Formato aproximado 9×5cm, frente/verso.
-      Papel cotton ou kraft com impressão em ouro. A cliente passa para quem ela quiser.
+      Cartão padrão entregue ao final de cada atendimento. Formato 9×5cm, frente/verso.
+      Papel cotton ou kraft com impressão em ouro. <strong>Três variantes</strong>, conforme o tier conquistado pela cliente que entrega.
     </div>
 
-    <div class="referral-card-wrap">
-      <div class="referral-card">
-        <div class="referral-card__body">
-          <div class="referral-card__logo">AMMÁ</div>
-          <div class="referral-card__sub">Concept · Porto Alegre</div>
-          <div class="referral-card__title">
-            Para quem você acredita<br>que já merecia isso.
+    <div class="referral-card-wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;justify-items:center;">
+
+      <div>
+        <div class="referral-card">
+          <div class="referral-card__body">
+            <div class="referral-card__logo">AMMÁ</div>
+            <div class="referral-card__sub">Concept · Porto Alegre</div>
+            <div class="referral-card__title">
+              Para quem você acredita<br>que já merecia isso.
+            </div>
+            <div class="referral-card__desc">
+              Maquiagem · Cabelo · Styling<br>
+              Atelier ultra-premium · Agenda sob consulta
+            </div>
+            <div class="referral-card__code">@ammaconceptt</div>
+            <div style="font-size:9px;color:rgba(201,184,154,0.3);letter-spacing:.1em;">
+              Diga que veio de mim.
+            </div>
           </div>
-          <div class="referral-card__desc">
-            Maquiagem · Cabelo · Styling<br>
-            Atelier ultra-premium · Agenda sob consulta
-          </div>
-          <div class="referral-card__code">@ammaconceptt</div>
-          <div style="font-size:9px;color:rgba(201,184,154,0.3);letter-spacing:.1em;">
-            Diga que veio de mim.
+          <div class="referral-card__footer">
+            Apresente este cartão no primeiro contato
           </div>
         </div>
-        <div class="referral-card__footer">
-          Apresente este cartão no primeiro contato
+        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:12px;letter-spacing:.18em;text-transform:uppercase;">
+          01 · Padrão
+        </div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;font-style:italic;line-height:1.6;">
+          Cotton 250g · entregue em todo atendimento
         </div>
       </div>
+
+      <div>
+        <div class="referral-card" style="position:relative;">
+          <div class="referral-card__body">
+            <div class="referral-card__logo">AMMÁ</div>
+            <div class="referral-card__sub">Concept · Reservado</div>
+            <div class="referral-card__title">
+              Você é parte do<br>círculo agora.
+            </div>
+            <div class="referral-card__desc">
+              Maquiagem · Cabelo · Styling<br>
+              Indicação reservada · Tier 02
+            </div>
+            <div class="referral-card__code">@ammaconceptt</div>
+            <div style="font-size:9px;color:rgba(201,184,154,0.3);letter-spacing:.1em;">
+              Diga que [Nome] te enviou.
+            </div>
+          </div>
+          <div class="referral-card__footer">
+            Círculo Ammá · Reservado
+          </div>
+          <div style="position:absolute;top:14px;right:14px;width:28px;height:28px;border:1px solid rgba(184,150,92,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(184,150,92,0.7);font-size:11px;font-family:var(--font-d);font-style:italic;">A</div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:12px;letter-spacing:.18em;text-transform:uppercase;">
+          02 · Reservado
+        </div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;font-style:italic;line-height:1.6;">
+          Cotton 350g · carimbo seco · Tier 02
+        </div>
+      </div>
+
+      <div>
+        <div class="referral-card" style="background:linear-gradient(180deg, var(--cacau) 0%, #1f1409 100%);">
+          <div class="referral-card__body" style="padding:48px 28px;">
+            <div style="width:40px;height:40px;background:radial-gradient(circle,#b8965c 0%,#8b6914 70%,#5a4209 100%);border-radius:50%;margin:0 auto 24px;box-shadow:0 4px 12px rgba(184,150,92,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-style:italic;color:#1f1409;font-size:18px;">A</div>
+            <div class="referral-card__logo" style="margin-bottom:8px;">AMMÁ</div>
+            <div class="referral-card__sub">Membro Fundadora</div>
+            <div class="referral-card__title" style="margin-top:12px;">
+              Envelope lacrado<br>entregue em mãos.
+            </div>
+            <div class="referral-card__desc" style="margin-top:16px;">
+              Carta manuscrita<br>+ 3 cartões personalizados
+            </div>
+          </div>
+          <div class="referral-card__footer">
+            Tier 03 · entrega ritual
+          </div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:12px;letter-spacing:.18em;text-transform:uppercase;">
+          03 · Carta selada
+        </div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;font-style:italic;line-height:1.6;">
+          Envelope C7 · selo de cera · 1–2 por trimestre
+        </div>
+      </div>
+
     </div>
-    <div style="font-size:11px;color:var(--muted);font-style:italic;text-align:center;">
-      Verso: fundo cacau · logo ouro · Instagram · "Apresente este cartão no primeiro contato"
+
+    <div style="font-size:11px;color:var(--muted);font-style:italic;text-align:center;margin-top:32px;line-height:1.8;">
+      Verso (todas variantes): fundo cacau · logo ouro · QR para @ammaconceptt<br>
+      Variante 01 acrescenta linha "_______________ indicou você." preenchida pela cliente à caneta antes da entrega
     </div>
   </div>
 
