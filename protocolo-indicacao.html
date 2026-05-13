@@ -250,8 +250,8 @@
     color: var(--muted);
     line-height: 2;
   }
-  .tier__reward-list li { display: flex; gap: 8px; }
-  .tier__reward-list li::before { content: '·'; color: var(--ouro); flex-shrink: 0; }
+  .tier__reward-list li { position: relative; padding-left: 14px; }
+  .tier__reward-list li::before { content: '·'; color: var(--ouro); position: absolute; left: 0; }
   .tier--3 .tier__reward-list { color: rgba(201,184,154,0.7); }
   .tier--3 .tier__reward-list li::before { color: var(--ouro-light); }
 
@@ -450,8 +450,8 @@
     color: var(--muted);
     line-height: 2;
   }
-  .rule-card ul li { display: flex; gap: 8px; }
-  .rule-card ul li::before { content: '·'; color: var(--ouro); flex-shrink: 0; }
+  .rule-card ul li { position: relative; padding-left: 14px; }
+  .rule-card ul li::before { content: '·'; color: var(--ouro); position: absolute; left: 0; }
   .rule-card ul li strong { color: var(--texto); font-weight: 500; }
 
   /* ── PRINT ───────────────────────────────────── */
