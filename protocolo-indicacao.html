@@ -739,10 +739,20 @@
       <div class="rule-card">
         <div class="rule-card__title">Ritmo operacional</div>
         <ul>
-          <li>Segunda 9h: revisão linha por linha</li>
+          <li>Segunda 9h · revisão linha por linha</li>
           <li>Mensagem Tier até <strong>quarta-feira</strong></li>
-          <li>Quarta EOD: reposição de cartões se &lt; 5 unidades</li>
-          <li>Trimestre: revisão de tiers e regras</li>
+          <li>Quarta EOD · reposição de cartões se &lt; 5 unidades</li>
+          <li>Última sexta do trimestre · revisão 1h com template</li>
+          <li>Dezembro · revisão anual completa</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <div class="rule-card__title">Sucessão · ausência da Amanda</div>
+        <ul>
+          <li>Amanda escreve sempre que consegue, mesmo de longe</li>
+          <li>Ausência <strong>até 7 dias</strong> · Francine envia mensagem-ponte</li>
+          <li>Ausência <strong>&gt; 7 dias</strong> · Francine assina <strong>Tier 01</strong> em nome da Amanda</li>
+          <li>Tier 02 e Tier 03 <strong>sempre esperam</strong> Amanda · peso simbólico não delegável</li>
         </ul>
       </div>
     </div>
@@ -765,6 +775,8 @@
           <th>Limite reconhecimento</th>
           <th>Status</th>
           <th>Benefício entregue</th>
+          <th>Coorte mês</th>
+          <th>Origem geracional</th>
           <th>Observação</th>
         </tr>
       </thead>
@@ -779,7 +791,9 @@
           <td class="example">Tier 01</td>
           <td class="example">05/05/2026</td>
           <td><span class="status-badge status-badge--done">Convertida</span></td>
-          <td class="example">Cartão + prioridade 60d</td>
+          <td class="example">Cartão + precedência 60d</td>
+          <td class="example">2026-04</td>
+          <td class="example">grau 1</td>
           <td class="example"> · </td>
         </tr>
         <tr>
@@ -793,23 +807,27 @@
           <td class="example"> · </td>
           <td><span class="status-badge status-badge--booked">Agendada</span></td>
           <td class="example"> · </td>
+          <td class="example">2026-04</td>
+          <td class="example">grau 1</td>
           <td class="example">Noiva · sobe um tier</td>
         </tr>
         <tr>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           <td><span class="status-badge status-badge--pending">Em espera</span></td>
-          <td></td><td></td>
+          <td></td><td></td><td></td><td></td>
         </tr>
         <tr>
           <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           <td><span class="status-badge status-badge--rewarded">Reconhecida</span></td>
-          <td></td><td></td>
+          <td></td><td></td><td></td><td></td>
         </tr>
       </tbody>
     </table>
     </div>
     <div style="font-size:11px;color:var(--muted);margin-top:10px;font-style:italic;">
-      Exportar para Google Sheets, manter acesso apenas para Amanda Grundler, Francine Savi e artistas com nível de acesso definido internamente <span contenteditable="true" style="border-bottom:1px dashed rgba(255,255,255,0.25);padding:0 4px;">(a definir)</span>.
+      Planilha em Google Sheets. Acesso: Amanda (total), Francine (edição limitada à Aba 1). Artistas não acessam.
+      <strong>Não criar dashboard, leaderboard, integração Looker/Notion/Power BI ou meta semanal de indicações.</strong>
+      Detalhes de coortes, health score e Sean Ellis test em documento operacional separado.
     </div>
   </div>
 
