@@ -148,6 +148,31 @@
     max-width: 680px;
   }
   .philosophy-block__body strong { color: var(--ouro-light); font-weight: 400; }
+  .manifesto-block { padding: 56px 48px; }
+  .manifesto-block__title {
+    font-family: var(--font-b);
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(184,150,92,0.6);
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  .manifesto-block__body {
+    font-family: var(--font-d);
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--champanhe);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .manifesto-block__body p { margin-bottom: 1.4em; }
+  .manifesto-block__body p:last-child { margin-bottom: 0; }
+  .manifesto-block__body em { font-style: italic; color: var(--ouro); }
+  @media (max-width: 700px) {
+    .manifesto-block { padding: 40px 28px; }
+  }
 
   /* ── MECHANIC STEPS ──────────────────────────── */
   .steps {
@@ -507,18 +532,19 @@
     Imprimir documento
   </button>
 
-  <!-- ── 01. FILOSOFIA ───────────────────────────── -->
+  <!-- ── 01. MANIFESTO ───────────────────────────── -->
   <div class="section">
-    <div class="section__label">01 · Filosofia</div>
-    <div class="philosophy-block">
-      <div class="philosophy-block__quote">
-        "Indicação não é marketing. É confiança transferida."
-      </div>
-      <div class="philosophy-block__body">
-        Quando uma cliente da Ammá indica alguém, ela está colocando <strong>sua reputação pessoal</strong> em jogo.
-        Isso vale mais do que qualquer anúncio. O protocolo existe para que esse ato seja <strong>reconhecido com a mesma elegância</strong>
-        que a cliente espera do atelier, sem pontos, sem cupons, sem mecânica de loja de conveniência.
-        A recompensa é <strong>privilégio, não desconto.</strong>
+    <div class="section__label">01 · Manifesto</div>
+    <div class="philosophy-block manifesto-block">
+      <div class="manifesto-block__title">Círculo Ammá</div>
+      <div class="manifesto-block__body">
+        <p>A Ammá não compra atenção.</p>
+        <p>Em uma época em que toda marca aluga voz, paga por audiência e troca relevância por orçamento, nós escolhemos o caminho contrário: <em>a Ammá só chega a quem foi trazida</em>.</p>
+        <p>Algumas portas se abrem pela agenda. A nossa, não. <em>A nossa se abre pelo nome de quem te trouxe.</em></p>
+        <p>Quem indica a Ammá não está ganhando comissão. Está colocando o próprio nome em cima do nosso · e esse gesto não tem preço de mercado. Tem preço de reputação. Por isso o reconhecemos com o que temos de mais raro: tempo, precedência, presença, posição.</p>
+        <p>O Círculo Ammá não é programa. <em>É a forma como a marca cresce sem precisar gritar.</em> Cada mulher trazida é uma porta a mais aberta, e cada porta aberta é a confirmação de que o nosso ofício foi feito direito.</p>
+        <p>Se você está aqui, é porque alguém quis que você estivesse.</p>
+        <p><em>Bem-vinda ao Círculo.</em></p>
       </div>
     </div>
   </div>
